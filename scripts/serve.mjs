@@ -23,7 +23,7 @@ function runDailyRefresh(key) {
   attemptedRefreshes.add(key);
   scheduledRefreshRunning = true;
   console.log(`[scheduler] Starting ${key} daily refresh.`);
-  const child = spawn("npm", ["run", "daily"], { cwd: root, env: process.env, stdio: "inherit" });
+  const child = spawn("npm", ["run", "publish:daily"], { cwd: root, env: process.env, stdio: "inherit" });
   child.on("error", (error) => {
     scheduledRefreshRunning = false;
     console.error(`[scheduler] Unable to start ${key}:`, error);

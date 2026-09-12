@@ -82,13 +82,13 @@ AH 身份映射不随日行情重复请求。`.github/workflows/refresh-ah.yml` 
 
 ## 部署
 
-公开部署使用 Cloudflare Pages 免费版（静态托管不限流量，免费构建额度 500 次/月，远超本项目每日 1–2 次的用量）：
+公开部署使用 Cloudflare Pages 免费版（直接上传模式，静态托管不限流量）。Pages 项目 `hk-connect-daily-dashboard` 已用 wrangler 创建，对应仓库根目录的 `wrangler.toml`。三条发布路径互为冗余：
 
-1. 本项目以独立 GitHub 仓库发布（见下方"与工作台同步"）。数据刷新的 GitHub Actions 与页面托管均以该仓库为准。
-2. Cloudflare Dashboard → Workers & Pages → Create → Pages → 连接 GitHub 独立仓库；构建命令留空，输出目录设为仓库根目录。
-3. 首次部署后获得 `*.pages.dev` 域名；`*.pages.dev` 在中国大陆可能被 DNS 污染，正式传播建议绑定自有域名（免费版支持，无需改动代码）。
+- **手动发布**：`npm run deploy`（依赖本机 `wrangler login`）。
+- **本地定时发布**：`npm run serve` 会在工作日 16:30/16:45 执行 `publish:daily`（刷新 + 校验 + 出图 + 部署）。
+- **CI 自动发布**：在 GitHub 仓库配置 `CLOUDFLARE_API_TOKEN` secret（Cloudflare Dashboard → My Profile → API Tokens，权限用 "Cloudflare Pages: Edit" 模板）后，每日收盘工作流在提交快照后会自动部署；未配置该 secret 时此步骤自动跳过，不影响数据刷新。
 
-根目录 `_headers` 提供安全响应头，并对 `latest.json` 与传播图设置不缓存，读者始终拿到最新收盘数据。GitHub Actions 每日收盘提交新快照后，Pages 会自动重新发布，无需人工干预。原 Vercel 配置（vercel.json）已由 `_headers` 取代。
+`*.pages.dev` 域名在中国大陆可能被 DNS 污染，正式传播建议绑定自有域名（免费版支持，无需改代码）。根目录 `_headers` 提供安全响应头，并对 `latest.json` 与传播图设置不缓存，读者始终拿到最新收盘数据。原 Vercel 配置（vercel.json）已由 `_headers` 取代。
 
 ### 与工作台同步
 
