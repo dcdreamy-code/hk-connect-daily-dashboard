@@ -60,4 +60,10 @@ createServer(async (request, response) => {
   console.log(`Dashboard: http://127.0.0.1:${port}`);
   checkScheduledRefresh();
   setInterval(checkScheduledRefresh, 30_000).unref();
+}).on("error", (error) => {
+  if (error.code === "EADDRINUSE") {
+    console.log(`Port ${port} is already served by another instance; nothing to do.`);
+    process.exit(0);
+  }
+  throw error;
 });
