@@ -1,0 +1,10 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+
+/public/data/latest.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+/public/images/latest.png
+  Cache-Control: public, max-age=0, must-revalidate

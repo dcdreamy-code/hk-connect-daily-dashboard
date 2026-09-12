@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="港美侠港股通每日资金榜，追踪成交额、涨跌幅、主力净流入、市值与活跃度。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="港美侠">
+    <meta property="og:title" content="港美侠 · 港股通每日资金榜">
+    <meta property="og:description" content="每日收盘更新的港股通资金榜：成交额、涨跌幅、主力净流入、总市值与 AH 溢价，附当日资金雷达与今日观察。">
+    <meta property="og:image" content="public/images/latest.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>港美侠 · 港股通每日资金榜</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23D3AA6A'/%3E%3Crect x='5' y='5' width='6' height='6' fill='%231B1D1B'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="masthead">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <p class="brand-name">港美侠</p>
+          <div class="brand-column">
+            <h1>港股通每日资金榜</h1>
+            <p class="brand-edition">GANGMEIXIA · HK &amp; US MARKET NOTE</p>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <label class="live-control" title="港股交易时段每 1 分钟刷新">
+            <input id="live-toggle" type="checkbox">
+            <span class="switch" aria-hidden="true"></span>
+            <span>盘中刷新</span>
+          </label>
+          <div class="data-state" aria-live="polite">
+            <span id="status-dot" class="status-dot"></span>
+            <span id="status-text">加载中</span>
+          </div>
+          <div class="quote-meta">
+            <span id="as-of">正在读取行情日期</span>
+            <span id="quote-time">行情时间 --</span>
+            <span id="freshness-text" class="freshness">等待数据</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="radar-cover" aria-labelledby="daily-view">
+      <div class="cover-main">
+        <div class="edition-line">
+          <span class="edition-title">港美侠资金雷达</span>
+          <span class="edition-no">收盘刊 <b id="issue-number">---</b></span>
+        </div>
+        <p class="section-kicker">今日一句话</p>
+        <h2 id="daily-view">正在读取今日市场结构</h2>
+        <div class="cover-stats">
+          <div class="cover-stat"><strong id="cover-advancers" class="up">--</strong><span>港股通上涨</span></div>
+          <div class="cover-stat"><strong id="cover-decliners" class="down">--</strong><span>港股通下跌</span></div>
+          <div class="cover-stat"><strong id="cover-turnover">--</strong><span>港股通成交额 · 港币</span></div>
+          <div class="cover-stat"><strong id="cover-inflow">--</strong><span>主力净流入 · 港币</span></div>
+        </div>
+      </div>
+      <aside class="radar-panel" aria-label="资金雷达">
+        <p class="radar-label">TOP 10 资金集中度</p>
+        <div class="dial-stage">
+          <div id="concentration-dial" class="concentration-dial">
+            <strong id="concentration-value">--</strong>
+          </div>
+        </div>
+        <p id="breadth-reading">市场宽度计算中</p>
+      </aside>
+    </section>
+
+    <main>
+      <section class="observation-band" aria-label="港美侠今日观察">
+        <div class="band-head">
+          <span class="band-label">今日观察</span>
+          <span class="band-sub">OBSERVATIONS · 03</span>
+        </div>
+        <ol id="observation-list"><li>正在计算资金集中度</li><li>正在识别成交龙头</li><li>正在识别活跃标的</li></ol>
+      </section>
+
+      <section class="market-strip" aria-label="港股通市场概览">
+        <div class="metric">
+          <span class="metric-label">港股通上涨</span>
+          <strong id="advancers" class="up">--</strong>
+          <span>家</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">港股通下跌</span>
+          <strong id="decliners" class="down">--</strong>
+          <span>家</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">港股通总成交额</span>
+          <strong id="market-turnover">--</strong>
+        </div>
+        <div class="metric metric-coverage">
+          <span class="metric-label">数据覆盖</span>
+          <strong id="coverage">--</strong>
+          <div class="coverage-track" aria-hidden="true"><span id="coverage-bar"></span></div>
+        </div>
+      </section>
+
+      <section class="ranking-section" aria-labelledby="ranking-title">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker paper">资金榜</p>
+            <h2 id="ranking-title">成交额 Top 50</h2>
+            <p id="ranking-note">按当日成交额由高到低排列</p>
+          </div>
+          <span id="result-count">--</span>
+        </div>
+
+        <div class="toolbar">
+          <div class="sort-controls">
+            <div class="segments" role="tablist" aria-label="排序指标">
+              <button class="segment active" role="tab" aria-selected="true" data-metric="turnover">成交额</button>
+              <button class="segment" role="tab" aria-selected="false" data-metric="mainNetInflow">主力净流入</button>
+              <button class="segment" role="tab" aria-selected="false" data-metric="changePercent">涨跌幅</button>
+              <button class="segment" role="tab" aria-selected="false" data-metric="marketCap">总市值</button>
+              <button class="segment" role="tab" aria-selected="false" data-metric="turnoverRate">换手率</button>
+            </div>
+            <button id="sort-direction" class="direction-button" type="button" aria-label="切换排序方向">从高到低</button>
+          </div>
+          <div class="toolbar-filters">
+            <a class="download-link" href="public/images/latest.png" download>下载传播图</a>
+            <label class="ah-filter"><input id="ah-only" type="checkbox"><span>仅看 AH</span></label>
+            <label class="search-field">
+              <span class="visually-hidden">搜索代码或名称</span>
+              <input id="search" type="search" placeholder="搜索代码或名称" autocomplete="off">
+            </label>
+          </div>
+        </div>
+
+        <section class="ranking-summary" aria-label="Top 50 统计汇总">
+          <div><span>成交额平均值</span><strong id="average-turnover">--</strong></div>
+          <div><span>成交额中位数</span><strong id="median-turnover">--</strong></div>
+          <div><span>平均涨跌幅</span><strong id="average-change">--</strong></div>
+          <div><span>中位涨跌幅</span><strong id="median-change">--</strong></div>
+          <div><span>涨跌家数</span><strong id="ranking-breadth">--</strong></div>
+          <div><span>最高 / 最低涨跌幅</span><strong id="change-range">--</strong></div>
+          <div><span>总市值平均值</span><strong id="average-market-cap">--</strong></div>
+          <div><span>总市值中位数</span><strong id="median-market-cap">--</strong></div>
+          <div><span>AH 股票</span><strong id="ah-count">--</strong></div>
+        </section>
+
+        <section class="focus-ranking" aria-labelledby="focus-title">
+          <div class="focus-heading"><span>FOCUS 10</span><h3 id="focus-title">成交额焦点</h3><p>条形长度为相对榜首成交额</p></div>
+          <ol id="focus-ranking"></ol>
+        </section>
+
+        <div id="loading" class="state-message">正在加载榜单数据...</div>
+        <div id="error" class="state-message error" hidden></div>
+        <div id="table-wrap" class="table-wrap" hidden>
+          <table>
+            <thead>
+              <tr>
+                <th class="rank-col">排名</th>
+                <th class="security-col">证券</th>
+                <th class="numeric optional-col">收盘价</th>
+                <th class="numeric">涨跌幅</th>
+                <th class="numeric">成交额</th>
+                <th class="numeric optional-col">主力净流入</th>
+                <th class="numeric optional-col">总市值</th>
+                <th class="numeric optional-col">换手率</th>
+                <th class="numeric optional-col">振幅</th>
+              </tr>
+            </thead>
+            <tbody id="ranking-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="foot-brand">
+        <span class="brand-mark small" aria-hidden="true"></span>
+        <p><strong>港美侠出品</strong> GANGMEIXIA MARKET NOTE</p>
+      </div>
+      <p id="source-note">数据来源说明将在加载后显示。</p>
+      <p class="foot-disclaimer">仅供信息参考，不构成投资建议。</p>
+    </footer>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

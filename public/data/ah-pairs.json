@@ -1,0 +1,1433 @@
+{
+  "generatedAt": "2026-09-10T09:48:57.040Z",
+  "pairs": {
+    "01081": {
+      "aCode": "002487",
+      "aPrice": 33.54,
+      "aChangePercent": 2.98,
+      "hChangePercent": 6.09,
+      "premiumPercent": 37.21
+    },
+    "01108": {
+      "aCode": "600876",
+      "aPrice": 7.91,
+      "aChangePercent": 10.01,
+      "hChangePercent": 4.74,
+      "premiumPercent": 298.63
+    },
+    "06166": {
+      "aCode": "603083",
+      "aPrice": 234.43,
+      "aChangePercent": 7.05,
+      "hChangePercent": 4.04,
+      "premiumPercent": 121.94
+    },
+    "01688": {
+      "aCode": "002600",
+      "aPrice": 12.84,
+      "aChangePercent": 3.22,
+      "hChangePercent": 3.2,
+      "premiumPercent": 129.2
+    },
+    "02249": {
+      "aCode": "688249",
+      "aPrice": 35.5,
+      "aChangePercent": 0,
+      "hChangePercent": 3.18,
+      "premiumPercent": 45.53
+    },
+    "01988": {
+      "aCode": "600016",
+      "aPrice": 3.65,
+      "aChangePercent": 0.27,
+      "hChangePercent": 3.03,
+      "premiumPercent": 19.71
+    },
+    "06951": {
+      "aCode": "300408",
+      "aPrice": 117.7,
+      "aChangePercent": -0.06,
+      "hChangePercent": 2.75,
+      "premiumPercent": 15.06
+    },
+    "01963": {
+      "aCode": "601963",
+      "aPrice": 11.38,
+      "aChangePercent": 1.7,
+      "hChangePercent": 2.68,
+      "premiumPercent": 54.09
+    },
+    "02768": {
+      "aCode": "002768",
+      "aPrice": 61.86,
+      "aChangePercent": 1.28,
+      "hChangePercent": 2.4,
+      "premiumPercent": 92.87
+    },
+    "02628": {
+      "aCode": "601628",
+      "aPrice": 38.28,
+      "aChangePercent": 0.34,
+      "hChangePercent": 2.24,
+      "premiumPercent": 48.49
+    },
+    "00317": {
+      "aCode": "600685",
+      "aPrice": 29.23,
+      "aChangePercent": 2.67,
+      "hChangePercent": 2.16,
+      "premiumPercent": 126.03
+    },
+    "03328": {
+      "aCode": "601328",
+      "aPrice": 7.44,
+      "aChangePercent": 2.06,
+      "hChangePercent": 2.15,
+      "premiumPercent": 7.92
+    },
+    "02883": {
+      "aCode": "601808",
+      "aPrice": 12.72,
+      "aChangePercent": -1.24,
+      "hChangePercent": 2.08,
+      "premiumPercent": 89.57
+    },
+    "02648": {
+      "aCode": "603345",
+      "aPrice": 75.64,
+      "aChangePercent": 1.74,
+      "hChangePercent": 2.07,
+      "premiumPercent": 43.8
+    },
+    "03618": {
+      "aCode": "601077",
+      "aPrice": 6.81,
+      "aChangePercent": 0.44,
+      "hChangePercent": 1.96,
+      "premiumPercent": 22.68
+    },
+    "03958": {
+      "aCode": "600958",
+      "aPrice": 9.18,
+      "aChangePercent": 0.44,
+      "hChangePercent": 1.88,
+      "premiumPercent": 80.39
+    },
+    "00921": {
+      "aCode": "000921",
+      "aPrice": 28.16,
+      "aChangePercent": 1.26,
+      "hChangePercent": 1.88,
+      "premiumPercent": 44.28
+    },
+    "02009": {
+      "aCode": "601992",
+      "aPrice": 1.41,
+      "aChangePercent": -0.7,
+      "hChangePercent": 1.67,
+      "premiumPercent": 170.25
+    },
+    "03866": {
+      "aCode": "002948",
+      "aPrice": 6.35,
+      "aChangePercent": 2.75,
+      "hChangePercent": 1.65,
+      "premiumPercent": 41.55
+    },
+    "00939": {
+      "aCode": "601939",
+      "aPrice": 10.95,
+      "aChangePercent": 1.2,
+      "hChangePercent": 1.61,
+      "premiumPercent": 31.11
+    },
+    "01339": {
+      "aCode": "601319",
+      "aPrice": 7.94,
+      "aChangePercent": 0.51,
+      "hChangePercent": 1.54,
+      "premiumPercent": 56.15
+    },
+    "03661": {
+      "aCode": "300661",
+      "aPrice": 106.69,
+      "aChangePercent": -0.98,
+      "hChangePercent": 1.46,
+      "premiumPercent": 38.14
+    },
+    "01375": {
+      "aCode": "601375",
+      "aPrice": 4.13,
+      "aChangePercent": 0.98,
+      "hChangePercent": 1.38,
+      "premiumPercent": 174.36
+    },
+    "01288": {
+      "aCode": "601288",
+      "aPrice": 6.94,
+      "aChangePercent": 1.91,
+      "hChangePercent": 1.27,
+      "premiumPercent": 27.18
+    },
+    "01347": {
+      "aCode": "688347",
+      "aPrice": 224.11,
+      "aChangePercent": 0.05,
+      "hChangePercent": 1.25,
+      "premiumPercent": 131.88
+    },
+    "09976": {
+      "aCode": "301308",
+      "aPrice": 347,
+      "aChangePercent": -0.3,
+      "hChangePercent": 1.24,
+      "premiumPercent": 90.83
+    },
+    "00728": {
+      "aCode": "601728",
+      "aPrice": 6.19,
+      "aChangePercent": 1.14,
+      "hChangePercent": 1.21,
+      "premiumPercent": 57.16
+    },
+    "06066": {
+      "aCode": "601066",
+      "aPrice": 24.41,
+      "aChangePercent": 0.66,
+      "hChangePercent": 1.18,
+      "premiumPercent": 137.83
+    },
+    "06196": {
+      "aCode": "002936",
+      "aPrice": 1.81,
+      "aChangePercent": 0.56,
+      "hChangePercent": 1.09,
+      "premiumPercent": 128.78
+    },
+    "02601": {
+      "aCode": "601601",
+      "aPrice": 33.63,
+      "aChangePercent": 0.6,
+      "hChangePercent": 1.02,
+      "premiumPercent": 32.84
+    },
+    "03988": {
+      "aCode": "601988",
+      "aPrice": 6.53,
+      "aChangePercent": 1.56,
+      "hChangePercent": 0.93,
+      "premiumPercent": 27.89
+    },
+    "01398": {
+      "aCode": "601398",
+      "aPrice": 8.1,
+      "aChangePercent": 1.25,
+      "hChangePercent": 0.86,
+      "premiumPercent": 24.45
+    },
+    "02603": {
+      "aCode": "002803",
+      "aPrice": 20.41,
+      "aChangePercent": -0.05,
+      "hChangePercent": 0.78,
+      "premiumPercent": 84.98
+    },
+    "02880": {
+      "aCode": "601880",
+      "aPrice": 1.5,
+      "aChangePercent": 1.35,
+      "hChangePercent": 0.74,
+      "premiumPercent": 156.02
+    },
+    "01618": {
+      "aCode": "601618",
+      "aPrice": 2.62,
+      "aChangePercent": 0,
+      "hChangePercent": 0.72,
+      "premiumPercent": 118.8
+    },
+    "00995": {
+      "aCode": "600012",
+      "aPrice": 15.86,
+      "aChangePercent": 0,
+      "hChangePercent": 0.7,
+      "premiumPercent": 16.99
+    },
+    "06886": {
+      "aCode": "601688",
+      "aPrice": 19.52,
+      "aChangePercent": 1.04,
+      "hChangePercent": 0.68,
+      "premiumPercent": 29.75
+    },
+    "06099": {
+      "aCode": "600999",
+      "aPrice": 18.09,
+      "aChangePercent": 1.01,
+      "hChangePercent": 0.67,
+      "premiumPercent": 39.79
+    },
+    "00300": {
+      "aCode": "000333",
+      "aPrice": 86.2,
+      "aChangePercent": 0.21,
+      "hChangePercent": 0.66,
+      "premiumPercent": 1.49
+    },
+    "01658": {
+      "aCode": "601658",
+      "aPrice": 5.46,
+      "aChangePercent": 1.11,
+      "hChangePercent": 0.66,
+      "premiumPercent": 18.99
+    },
+    "02016": {
+      "aCode": "601916",
+      "aPrice": 2.98,
+      "aChangePercent": 0.68,
+      "hChangePercent": 0.62,
+      "premiumPercent": 43.09
+    },
+    "06881": {
+      "aCode": "601881",
+      "aPrice": 12.27,
+      "aChangePercent": 0.82,
+      "hChangePercent": 0.58,
+      "premiumPercent": 84.39
+    },
+    "03968": {
+      "aCode": "600036",
+      "aPrice": 41.57,
+      "aChangePercent": 1.39,
+      "hChangePercent": 0.58,
+      "premiumPercent": -6.8
+    },
+    "00883": {
+      "aCode": "600938",
+      "aPrice": 34.42,
+      "aChangePercent": 0.7,
+      "hChangePercent": 0.56,
+      "premiumPercent": 60.84
+    },
+    "00537": {
+      "aCode": "688337",
+      "aPrice": 41.08,
+      "aChangePercent": -2.24,
+      "hChangePercent": 0.54,
+      "premiumPercent": 116.55
+    },
+    "06818": {
+      "aCode": "601818",
+      "aPrice": 3.05,
+      "aChangePercent": 0.66,
+      "hChangePercent": 0.53,
+      "premiumPercent": 26.23
+    },
+    "01336": {
+      "aCode": "601336",
+      "aPrice": 59.72,
+      "aChangePercent": -0.35,
+      "hChangePercent": 0.5,
+      "premiumPercent": 44.44
+    },
+    "00177": {
+      "aCode": "600377",
+      "aPrice": 12.61,
+      "aChangePercent": 0.96,
+      "hChangePercent": 0.5,
+      "premiumPercent": 45.25
+    },
+    "01071": {
+      "aCode": "600027",
+      "aPrice": 4.88,
+      "aChangePercent": -0.41,
+      "hChangePercent": 0.49,
+      "premiumPercent": 38.82
+    },
+    "00998": {
+      "aCode": "601998",
+      "aPrice": 8.93,
+      "aChangePercent": 0.34,
+      "hChangePercent": 0.48,
+      "premiumPercent": 23.85
+    },
+    "02701": {
+      "aCode": "300077",
+      "aPrice": 19.64,
+      "aChangePercent": 0.05,
+      "hChangePercent": 0.47,
+      "premiumPercent": 168.88
+    },
+    "01187": {
+      "aCode": "301087",
+      "aPrice": 51.7,
+      "aChangePercent": -0.33,
+      "hChangePercent": 0.44,
+      "premiumPercent": 90.68
+    },
+    "03678": {
+      "aCode": "001236",
+      "aPrice": 8.25,
+      "aChangePercent": 0.73,
+      "hChangePercent": 0.44,
+      "premiumPercent": 323.06
+    },
+    "06806": {
+      "aCode": "000166",
+      "aPrice": 4.58,
+      "aChangePercent": 0.66,
+      "hChangePercent": 0.39,
+      "premiumPercent": 109.17
+    },
+    "06030": {
+      "aCode": "600030",
+      "aPrice": 27.6,
+      "aChangePercent": 0.99,
+      "hChangePercent": 0.39,
+      "premiumPercent": 24.5
+    },
+    "01456": {
+      "aCode": "601456",
+      "aPrice": 8.85,
+      "aChangePercent": 0.23,
+      "hChangePercent": 0.39,
+      "premiumPercent": 166
+    },
+    "01776": {
+      "aCode": "000776",
+      "aPrice": 21.72,
+      "aChangePercent": 0.37,
+      "hChangePercent": 0.33,
+      "premiumPercent": 39.45
+    },
+    "01989": {
+      "aCode": "001389",
+      "aPrice": 174,
+      "aChangePercent": 0.05,
+      "hChangePercent": 0.31,
+      "premiumPercent": 58.94
+    },
+    "00895": {
+      "aCode": "002672",
+      "aPrice": 3.77,
+      "aChangePercent": -0.79,
+      "hChangePercent": 0.31,
+      "premiumPercent": 173.78
+    },
+    "01816": {
+      "aCode": "003816",
+      "aPrice": 4.31,
+      "aChangePercent": 0.23,
+      "hChangePercent": 0.16,
+      "premiumPercent": 62.03
+    },
+    "03969": {
+      "aCode": "688009",
+      "aPrice": 4.85,
+      "aChangePercent": -0.61,
+      "hChangePercent": 0.16,
+      "premiumPercent": 80.59
+    },
+    "01065": {
+      "aCode": "600874",
+      "aPrice": 5.7,
+      "aChangePercent": 0.18,
+      "hChangePercent": 0.13,
+      "premiumPercent": 77.24
+    },
+    "03996": {
+      "aCode": "601868",
+      "aPrice": 2.51,
+      "aChangePercent": 0,
+      "hChangePercent": 0,
+      "premiumPercent": 178.17
+    },
+    "02866": {
+      "aCode": "601866",
+      "aPrice": 2.56,
+      "aChangePercent": 1.59,
+      "hChangePercent": 0,
+      "premiumPercent": 210.17
+    },
+    "02611": {
+      "aCode": "601211",
+      "aPrice": 17.74,
+      "aChangePercent": 1.26,
+      "hChangePercent": 0,
+      "premiumPercent": 37.91
+    },
+    "00548": {
+      "aCode": "600548",
+      "aPrice": 8.33,
+      "aChangePercent": 0.6,
+      "hChangePercent": 0,
+      "premiumPercent": 43.22
+    },
+    "06826": {
+      "aCode": "688366",
+      "aPrice": 29.59,
+      "aChangePercent": -1.82,
+      "hChangePercent": -0.06,
+      "premiumPercent": 106.42
+    },
+    "06178": {
+      "aCode": "601788",
+      "aPrice": 14.4,
+      "aChangePercent": 0.14,
+      "hChangePercent": -0.07,
+      "premiumPercent": 126.14
+    },
+    "03750": {
+      "aCode": "300750",
+      "aPrice": 338.06,
+      "aChangePercent": 0.36,
+      "hChangePercent": -0.09,
+      "premiumPercent": -29.61
+    },
+    "02493": {
+      "aCode": "688062",
+      "aPrice": 25.6,
+      "aChangePercent": -1.61,
+      "hChangePercent": -0.1,
+      "premiumPercent": 45.44
+    },
+    "03908": {
+      "aCode": "601995",
+      "aPrice": 32.51,
+      "aChangePercent": 0.22,
+      "hChangePercent": -0.1,
+      "premiumPercent": 86.14
+    },
+    "06198": {
+      "aCode": "601298",
+      "aPrice": 9.51,
+      "aChangePercent": 0.53,
+      "hChangePercent": -0.11,
+      "premiumPercent": 46.78
+    },
+    "00941": {
+      "aCode": "600941",
+      "aPrice": 97.17,
+      "aChangePercent": 0.06,
+      "hChangePercent": -0.13,
+      "premiumPercent": 44.08
+    },
+    "03369": {
+      "aCode": "601326",
+      "aPrice": 3.64,
+      "aChangePercent": 0.28,
+      "hChangePercent": -0.2,
+      "premiumPercent": 73.71
+    },
+    "01186": {
+      "aCode": "601186",
+      "aPrice": 6.16,
+      "aChangePercent": 0.33,
+      "hChangePercent": -0.22,
+      "premiumPercent": 62.39
+    },
+    "00390": {
+      "aCode": "601390",
+      "aPrice": 4.45,
+      "aChangePercent": 0.23,
+      "hChangePercent": -0.29,
+      "premiumPercent": 52.58
+    },
+    "06745": {
+      "aCode": "601678",
+      "aPrice": 6,
+      "aChangePercent": -1.64,
+      "hChangePercent": -0.32,
+      "premiumPercent": 124.84
+    },
+    "02691": {
+      "aCode": "603093",
+      "aPrice": 13.57,
+      "aChangePercent": 1.8,
+      "hChangePercent": -0.36,
+      "premiumPercent": 130.77
+    },
+    "06809": {
+      "aCode": "688008",
+      "aPrice": 195.33,
+      "aChangePercent": 0.02,
+      "hChangePercent": -0.37,
+      "premiumPercent": -15.54
+    },
+    "00857": {
+      "aCode": "601857",
+      "aPrice": 11.27,
+      "aChangePercent": -0.44,
+      "hChangePercent": -0.39,
+      "premiumPercent": 30.59
+    },
+    "01138": {
+      "aCode": "600026",
+      "aPrice": 21.3,
+      "aChangePercent": -0.61,
+      "hChangePercent": -0.53,
+      "premiumPercent": 32.4
+    },
+    "02899": {
+      "aCode": "601899",
+      "aPrice": 34.11,
+      "aChangePercent": -0.84,
+      "hChangePercent": -0.69,
+      "premiumPercent": 6.8
+    },
+    "00588": {
+      "aCode": "601588",
+      "aPrice": 1.76,
+      "aChangePercent": -1.12,
+      "hChangePercent": -0.71,
+      "premiumPercent": 193.97
+    },
+    "06160": {
+      "aCode": "688235",
+      "aPrice": 253.7,
+      "aChangePercent": -1.21,
+      "hChangePercent": -0.77,
+      "premiumPercent": 43.3
+    },
+    "01088": {
+      "aCode": "601088",
+      "aPrice": 47.28,
+      "aChangePercent": -0.11,
+      "hChangePercent": -0.81,
+      "premiumPercent": 18.93
+    },
+    "00107": {
+      "aCode": "601107",
+      "aPrice": 6.02,
+      "aChangePercent": 1.18,
+      "hChangePercent": -0.82,
+      "premiumPercent": 45.27
+    },
+    "03986": {
+      "aCode": "603986",
+      "aPrice": 380.64,
+      "aChangePercent": -0.32,
+      "hChangePercent": -0.83,
+      "premiumPercent": -6.58
+    },
+    "00347": {
+      "aCode": "000898",
+      "aPrice": 2.08,
+      "aChangePercent": -0.95,
+      "hChangePercent": -0.85,
+      "premiumPercent": 109.65
+    },
+    "00916": {
+      "aCode": "001289",
+      "aPrice": 15.28,
+      "aChangePercent": -0.07,
+      "hChangePercent": -0.91,
+      "premiumPercent": 228.1
+    },
+    "06693": {
+      "aCode": "600988",
+      "aPrice": 44.3,
+      "aChangePercent": 0.96,
+      "hChangePercent": -0.96,
+      "premiumPercent": 31.66
+    },
+    "00811": {
+      "aCode": "601811",
+      "aPrice": 11.69,
+      "aChangePercent": 0.52,
+      "hChangePercent": -0.99,
+      "premiumPercent": 71.17
+    },
+    "01057": {
+      "aCode": "002703",
+      "aPrice": 16.19,
+      "aChangePercent": -2,
+      "hChangePercent": -1.02,
+      "premiumPercent": 387.23
+    },
+    "01330": {
+      "aCode": "601330",
+      "aPrice": 8.22,
+      "aChangePercent": -0.84,
+      "hChangePercent": -1.05,
+      "premiumPercent": 57.29
+    },
+    "00598": {
+      "aCode": "601598",
+      "aPrice": 6.52,
+      "aChangePercent": -0.61,
+      "hChangePercent": -1.06,
+      "premiumPercent": 63.41
+    },
+    "02318": {
+      "aCode": "601318",
+      "aPrice": 55.52,
+      "aChangePercent": 0.43,
+      "hChangePercent": -1.08,
+      "premiumPercent": 18.35
+    },
+    "02068": {
+      "aCode": "601068",
+      "aPrice": 4.68,
+      "aChangePercent": -0.21,
+      "hChangePercent": -1.1,
+      "premiumPercent": 204.83
+    },
+    "00323": {
+      "aCode": "600808",
+      "aPrice": 2.63,
+      "aChangePercent": -1.5,
+      "hChangePercent": -1.11,
+      "premiumPercent": 73.24
+    },
+    "01800": {
+      "aCode": "601800",
+      "aPrice": 6.02,
+      "aChangePercent": 0,
+      "hChangePercent": -1.13,
+      "premiumPercent": 101.68
+    },
+    "02359": {
+      "aCode": "603259",
+      "aPrice": 154.5,
+      "aChangePercent": -0.25,
+      "hChangePercent": -1.14,
+      "premiumPercent": -5.42
+    },
+    "06690": {
+      "aCode": "600690",
+      "aPrice": 21.17,
+      "aChangePercent": -0.61,
+      "hChangePercent": -1.14,
+      "premiumPercent": 18.88
+    },
+    "02238": {
+      "aCode": "601238",
+      "aPrice": 5.14,
+      "aChangePercent": -0.77,
+      "hChangePercent": -1.15,
+      "premiumPercent": 179.52
+    },
+    "06655": {
+      "aCode": "600801",
+      "aPrice": 24.96,
+      "aChangePercent": -0.56,
+      "hChangePercent": -1.17,
+      "premiumPercent": 73.29
+    },
+    "01349": {
+      "aCode": "688505",
+      "aPrice": 7.65,
+      "aChangePercent": -1.92,
+      "hChangePercent": -1.18,
+      "premiumPercent": 256.34
+    },
+    "02208": {
+      "aCode": "002202",
+      "aPrice": 18.14,
+      "aChangePercent": 1.62,
+      "hChangePercent": -1.19,
+      "premiumPercent": 131.54
+    },
+    "03223": {
+      "aCode": "300223",
+      "aPrice": 132.45,
+      "aChangePercent": 0.36,
+      "hChangePercent": -1.2,
+      "premiumPercent": 56.82
+    },
+    "03200": {
+      "aCode": "301200",
+      "aPrice": 260.89,
+      "aChangePercent": -0.82,
+      "hChangePercent": -1.21,
+      "premiumPercent": 188.58
+    },
+    "00525": {
+      "aCode": "601333",
+      "aPrice": 3.15,
+      "aChangePercent": 0.64,
+      "hChangePercent": -1.22,
+      "premiumPercent": 51.87
+    },
+    "00187": {
+      "aCode": "600860",
+      "aPrice": 8.46,
+      "aChangePercent": -2.42,
+      "hChangePercent": -1.24,
+      "premiumPercent": 253.89
+    },
+    "00670": {
+      "aCode": "600115",
+      "aPrice": 3.47,
+      "aChangePercent": -1.14,
+      "hChangePercent": -1.28,
+      "premiumPercent": 49.98
+    },
+    "00914": {
+      "aCode": "600585",
+      "aPrice": 17.65,
+      "aChangePercent": -1.18,
+      "hChangePercent": -1.3,
+      "premiumPercent": 23.2
+    },
+    "00874": {
+      "aCode": "600332",
+      "aPrice": 19.88,
+      "aChangePercent": -0.05,
+      "hChangePercent": -1.32,
+      "premiumPercent": 73.07
+    },
+    "03606": {
+      "aCode": "600660",
+      "aPrice": 54.3,
+      "aChangePercent": -1.52,
+      "hChangePercent": -1.35,
+      "premiumPercent": 15.75
+    },
+    "00168": {
+      "aCode": "600600",
+      "aPrice": 50.9,
+      "aChangePercent": -0.93,
+      "hChangePercent": -1.38,
+      "premiumPercent": 49.23
+    },
+    "09927": {
+      "aCode": "601127",
+      "aPrice": 47.07,
+      "aChangePercent": -2.79,
+      "hChangePercent": -1.43,
+      "premiumPercent": 53.13
+    },
+    "02333": {
+      "aCode": "601633",
+      "aPrice": 14.57,
+      "aChangePercent": -1.15,
+      "hChangePercent": -1.44,
+      "premiumPercent": 125.48
+    },
+    "01635": {
+      "aCode": "600635",
+      "aPrice": 4.79,
+      "aChangePercent": 0.21,
+      "hChangePercent": -1.49,
+      "premiumPercent": 142.44
+    },
+    "02676": {
+      "aCode": "688052",
+      "aPrice": 229.2,
+      "aChangePercent": -2.06,
+      "hChangePercent": -1.5,
+      "premiumPercent": 70.04
+    },
+    "00386": {
+      "aCode": "600028",
+      "aPrice": 5.56,
+      "aChangePercent": -0.89,
+      "hChangePercent": -1.52,
+      "premiumPercent": 34.17
+    },
+    "01919": {
+      "aCode": "601919",
+      "aPrice": 16.38,
+      "aChangePercent": -0.97,
+      "hChangePercent": -1.6,
+      "premiumPercent": 15.23
+    },
+    "03759": {
+      "aCode": "300759",
+      "aPrice": 41.55,
+      "aChangePercent": -0.34,
+      "hChangePercent": -1.6,
+      "premiumPercent": 71.78
+    },
+    "01055": {
+      "aCode": "600029",
+      "aPrice": 5,
+      "aChangePercent": -0.6,
+      "hChangePercent": -1.62,
+      "premiumPercent": 92.93
+    },
+    "02600": {
+      "aCode": "601600",
+      "aPrice": 9.92,
+      "aChangePercent": -1.1,
+      "hChangePercent": -1.63,
+      "premiumPercent": 32.48
+    },
+    "06821": {
+      "aCode": "002821",
+      "aPrice": 170.36,
+      "aChangePercent": -1.55,
+      "hChangePercent": -1.64,
+      "premiumPercent": 44.23
+    },
+    "01053": {
+      "aCode": "601005",
+      "aPrice": 1.25,
+      "aChangePercent": 0,
+      "hChangePercent": -1.64,
+      "premiumPercent": 62.39
+    },
+    "01898": {
+      "aCode": "601898",
+      "aPrice": 14.93,
+      "aChangePercent": -1.32,
+      "hChangePercent": -1.64,
+      "premiumPercent": 53.39
+    },
+    "00668": {
+      "aCode": "300866",
+      "aPrice": 129.32,
+      "aChangePercent": 0.87,
+      "hChangePercent": -1.67,
+      "premiumPercent": 21.93
+    },
+    "00338": {
+      "aCode": "600688",
+      "aPrice": 2.91,
+      "aChangePercent": -1.69,
+      "hChangePercent": -1.67,
+      "premiumPercent": 188.33
+    },
+    "02692": {
+      "aCode": "003021",
+      "aPrice": 69.12,
+      "aChangePercent": -1.82,
+      "hChangePercent": -1.71,
+      "premiumPercent": 112.67
+    },
+    "06865": {
+      "aCode": "601865",
+      "aPrice": 9.69,
+      "aChangePercent": -1.52,
+      "hChangePercent": -1.71,
+      "premiumPercent": 79.12
+    },
+    "00638": {
+      "aCode": "300638",
+      "aPrice": 18,
+      "aChangePercent": -1.75,
+      "hChangePercent": -1.77,
+      "premiumPercent": 192.3
+    },
+    "01528": {
+      "aCode": "601828",
+      "aPrice": 2.27,
+      "aChangePercent": -1.3,
+      "hChangePercent": -1.81,
+      "premiumPercent": 144.61
+    },
+    "02039": {
+      "aCode": "000039",
+      "aPrice": 9.5,
+      "aChangePercent": -1.04,
+      "hChangePercent": -1.83,
+      "premiumPercent": 37.81
+    },
+    "00753": {
+      "aCode": "601111",
+      "aPrice": 5.85,
+      "aChangePercent": -0.85,
+      "hChangePercent": -1.83,
+      "premiumPercent": 82.64
+    },
+    "09980": {
+      "aCode": "605499",
+      "aPrice": 113.43,
+      "aChangePercent": -3.26,
+      "hChangePercent": -1.86,
+      "premiumPercent": 32.22
+    },
+    "01157": {
+      "aCode": "000157",
+      "aPrice": 6.61,
+      "aChangePercent": -0.75,
+      "hChangePercent": -1.87,
+      "premiumPercent": 28.06
+    },
+    "01513": {
+      "aCode": "000513",
+      "aPrice": 27.3,
+      "aChangePercent": -0.18,
+      "hChangePercent": -1.98,
+      "premiumPercent": 53.31
+    },
+    "00358": {
+      "aCode": "600362",
+      "aPrice": 49.64,
+      "aChangePercent": 0.14,
+      "hChangePercent": -1.99,
+      "premiumPercent": 50.75
+    },
+    "00956": {
+      "aCode": "600956",
+      "aPrice": 7.36,
+      "aChangePercent": 0,
+      "hChangePercent": -2.05,
+      "premiumPercent": 157.25
+    },
+    "01171": {
+      "aCode": "600188",
+      "aPrice": 21.75,
+      "aChangePercent": -1.81,
+      "hChangePercent": -2.06,
+      "premiumPercent": 91.49
+    },
+    "02202": {
+      "aCode": "000002",
+      "aPrice": 3.16,
+      "aChangePercent": -0.94,
+      "hChangePercent": -2.09,
+      "premiumPercent": 57.55
+    },
+    "06936": {
+      "aCode": "002352",
+      "aPrice": 31.41,
+      "aChangePercent": -0.66,
+      "hChangePercent": -2.1,
+      "premiumPercent": 24.15
+    },
+    "01033": {
+      "aCode": "600871",
+      "aPrice": 2.31,
+      "aChangePercent": -1.28,
+      "hChangePercent": -2.11,
+      "premiumPercent": 288.61
+    },
+    "00719": {
+      "aCode": "000756",
+      "aPrice": 13.13,
+      "aChangePercent": -1.87,
+      "hChangePercent": -2.12,
+      "premiumPercent": 177.1
+    },
+    "00902": {
+      "aCode": "600011",
+      "aPrice": 6.95,
+      "aChangePercent": -1.28,
+      "hChangePercent": -2.12,
+      "premiumPercent": 40.83
+    },
+    "00763": {
+      "aCode": "000063",
+      "aPrice": 32.45,
+      "aChangePercent": -1.93,
+      "hChangePercent": -2.13,
+      "premiumPercent": 65.1
+    },
+    "09989": {
+      "aCode": "002399",
+      "aPrice": 9.82,
+      "aChangePercent": -1.7,
+      "hChangePercent": -2.18,
+      "premiumPercent": 169.83
+    },
+    "00564": {
+      "aCode": "601717",
+      "aPrice": 14.45,
+      "aChangePercent": -1.23,
+      "hChangePercent": -2.24,
+      "premiumPercent": 33.24
+    },
+    "09981": {
+      "aCode": "002130",
+      "aPrice": 17.17,
+      "aChangePercent": -2.28,
+      "hChangePercent": -2.25,
+      "premiumPercent": 101.35
+    },
+    "02727": {
+      "aCode": "601727",
+      "aPrice": 6.66,
+      "aChangePercent": -1.19,
+      "hChangePercent": -2.26,
+      "premiumPercent": 156.99
+    },
+    "02465": {
+      "aCode": "603906",
+      "aPrice": 18.06,
+      "aChangePercent": -2.17,
+      "hChangePercent": -2.28,
+      "premiumPercent": 134.36
+    },
+    "09611": {
+      "aCode": "603341",
+      "aPrice": 35.81,
+      "aChangePercent": -1.78,
+      "hChangePercent": -2.3,
+      "premiumPercent": 96.75
+    },
+    "00501": {
+      "aCode": "603501",
+      "aPrice": 78.93,
+      "aChangePercent": -1.35,
+      "hChangePercent": -2.32,
+      "premiumPercent": 32.59
+    },
+    "01880": {
+      "aCode": "601888",
+      "aPrice": 52.58,
+      "aChangePercent": -2.16,
+      "hChangePercent": -2.33,
+      "premiumPercent": 28.83
+    },
+    "00981": {
+      "aCode": "688981",
+      "aPrice": 119.18,
+      "aChangePercent": -1.1,
+      "hChangePercent": -2.38,
+      "premiumPercent": 119.61
+    },
+    "01385": {
+      "aCode": "688385",
+      "aPrice": 52.9,
+      "aChangePercent": -1.38,
+      "hChangePercent": -2.39,
+      "premiumPercent": 144.08
+    },
+    "06031": {
+      "aCode": "600031",
+      "aPrice": 20.01,
+      "aChangePercent": -1.04,
+      "hChangePercent": -2.47,
+      "premiumPercent": 18.4
+    },
+    "00553": {
+      "aCode": "600775",
+      "aPrice": 9.73,
+      "aChangePercent": -1.92,
+      "hChangePercent": -2.47,
+      "premiumPercent": 260
+    },
+    "06067": {
+      "aCode": "300568",
+      "aPrice": 14.74,
+      "aChangePercent": -1.54,
+      "hChangePercent": -2.54,
+      "premiumPercent": 136.73
+    },
+    "03288": {
+      "aCode": "603288",
+      "aPrice": 33.9,
+      "aChangePercent": -1.34,
+      "hChangePercent": -2.58,
+      "premiumPercent": 45.72
+    },
+    "03993": {
+      "aCode": "603993",
+      "aPrice": 19.01,
+      "aChangePercent": -0.42,
+      "hChangePercent": -2.58,
+      "premiumPercent": 28.18
+    },
+    "01377": {
+      "aCode": "301377",
+      "aPrice": 391.31,
+      "aChangePercent": -0.18,
+      "hChangePercent": -2.68,
+      "premiumPercent": 43.33
+    },
+    "01211": {
+      "aCode": "002594",
+      "aPrice": 83.52,
+      "aChangePercent": -2.75,
+      "hChangePercent": -2.75,
+      "premiumPercent": 22.75
+    },
+    "03296": {
+      "aCode": "603296",
+      "aPrice": 75.19,
+      "aChangePercent": -1.75,
+      "hChangePercent": -2.82,
+      "premiumPercent": 21.51
+    },
+    "01877": {
+      "aCode": "688180",
+      "aPrice": 31.67,
+      "aChangePercent": -2.07,
+      "hChangePercent": -2.83,
+      "premiumPercent": 116.03
+    },
+    "03347": {
+      "aCode": "300347",
+      "aPrice": 53.81,
+      "aChangePercent": -1.59,
+      "hChangePercent": -2.87,
+      "premiumPercent": 50.08
+    },
+    "01766": {
+      "aCode": "601766",
+      "aPrice": 6.1,
+      "aChangePercent": -0.97,
+      "hChangePercent": -2.88,
+      "premiumPercent": 36.37
+    },
+    "06613": {
+      "aCode": "300433",
+      "aPrice": 33.81,
+      "aChangePercent": -3.73,
+      "hChangePercent": -2.98,
+      "premiumPercent": 73.53
+    },
+    "03898": {
+      "aCode": "688187",
+      "aPrice": 45.7,
+      "aChangePercent": -0.87,
+      "hChangePercent": -3,
+      "premiumPercent": 79.54
+    },
+    "00991": {
+      "aCode": "601991",
+      "aPrice": 6.02,
+      "aChangePercent": 3.26,
+      "hChangePercent": -3.02,
+      "premiumPercent": 157.82
+    },
+    "01772": {
+      "aCode": "002460",
+      "aPrice": 48.34,
+      "aChangePercent": -1.57,
+      "hChangePercent": -3.03,
+      "premiumPercent": 57.52
+    },
+    "02607": {
+      "aCode": "601607",
+      "aPrice": 16.31,
+      "aChangePercent": -1.03,
+      "hChangePercent": -3.13,
+      "premiumPercent": 71.03
+    },
+    "01858": {
+      "aCode": "688236",
+      "aPrice": 13.71,
+      "aChangePercent": -1.3,
+      "hChangePercent": -3.14,
+      "premiumPercent": 103.81
+    },
+    "02579": {
+      "aCode": "300919",
+      "aPrice": 38.65,
+      "aChangePercent": -1.55,
+      "hChangePercent": -3.18,
+      "premiumPercent": 90.19
+    },
+    "02715": {
+      "aCode": "002747",
+      "aPrice": 29.5,
+      "aChangePercent": -1.86,
+      "hChangePercent": -3.22,
+      "premiumPercent": 133.84
+    },
+    "02476": {
+      "aCode": "300476",
+      "aPrice": 229.95,
+      "aChangePercent": -1.52,
+      "hChangePercent": -3.22,
+      "premiumPercent": 31.4
+    },
+    "06869": {
+      "aCode": "601869",
+      "aPrice": 435.74,
+      "aChangePercent": -1.42,
+      "hChangePercent": -3.38,
+      "premiumPercent": 187.18
+    },
+    "02050": {
+      "aCode": "002050",
+      "aPrice": 35.46,
+      "aChangePercent": -2.02,
+      "hChangePercent": -3.45,
+      "premiumPercent": 68.53
+    },
+    "06127": {
+      "aCode": "603127",
+      "aPrice": 42.57,
+      "aChangePercent": -2.67,
+      "hChangePercent": -3.53,
+      "premiumPercent": 127.89
+    },
+    "09696": {
+      "aCode": "002466",
+      "aPrice": 44.69,
+      "aChangePercent": -1.91,
+      "hChangePercent": -3.61,
+      "premiumPercent": 55.23
+    },
+    "03268": {
+      "aCode": "002881",
+      "aPrice": 42.18,
+      "aChangePercent": -4.89,
+      "hChangePercent": -3.66,
+      "premiumPercent": 149.7
+    },
+    "09995": {
+      "aCode": "688331",
+      "aPrice": 114.07,
+      "aChangePercent": -3.18,
+      "hChangePercent": -3.69,
+      "premiumPercent": 79.26
+    },
+    "02714": {
+      "aCode": "002714",
+      "aPrice": 42.22,
+      "aChangePercent": -2.38,
+      "hChangePercent": -3.75,
+      "premiumPercent": 30.11
+    },
+    "01304": {
+      "aCode": "688279",
+      "aPrice": 175.74,
+      "aChangePercent": -2.07,
+      "hChangePercent": -3.8,
+      "premiumPercent": 80.4
+    },
+    "06680": {
+      "aCode": "300748",
+      "aPrice": 25.31,
+      "aChangePercent": -1.75,
+      "hChangePercent": -3.88,
+      "premiumPercent": 83.57
+    },
+    "01787": {
+      "aCode": "600547",
+      "aPrice": 35.59,
+      "aChangePercent": -1.82,
+      "hChangePercent": -3.96,
+      "premiumPercent": 68.19
+    },
+    "01072": {
+      "aCode": "600875",
+      "aPrice": 25.6,
+      "aChangePercent": -2.88,
+      "hChangePercent": -4.16,
+      "premiumPercent": 47.59
+    },
+    "00568": {
+      "aCode": "002490",
+      "aPrice": 7.74,
+      "aChangePercent": -3.13,
+      "hChangePercent": -4.23,
+      "premiumPercent": 85.82
+    },
+    "01276": {
+      "aCode": "600276",
+      "aPrice": 42.93,
+      "aChangePercent": -3.98,
+      "hChangePercent": -4.31,
+      "premiumPercent": 14.18
+    },
+    "00038": {
+      "aCode": "601038",
+      "aPrice": 14.78,
+      "aChangePercent": -0.74,
+      "hChangePercent": -4.4,
+      "premiumPercent": 82.77
+    },
+    "03308": {
+      "aCode": "300308",
+      "aPrice": 890.1,
+      "aChangePercent": -2.07,
+      "hChangePercent": -4.43,
+      "premiumPercent": -7.16
+    },
+    "01812": {
+      "aCode": "000488",
+      "aPrice": 2.13,
+      "aChangePercent": -4.05,
+      "hChangePercent": -4.48,
+      "premiumPercent": 289.12
+    },
+    "02402": {
+      "aCode": "688339",
+      "aPrice": 17.62,
+      "aChangePercent": -2.71,
+      "hChangePercent": -4.5,
+      "premiumPercent": 76.68
+    },
+    "02196": {
+      "aCode": "600196",
+      "aPrice": 21.88,
+      "aChangePercent": -2.5,
+      "hChangePercent": -4.51,
+      "premiumPercent": 54.95
+    },
+    "00470": {
+      "aCode": "300450",
+      "aPrice": 30.07,
+      "aChangePercent": -2.47,
+      "hChangePercent": -4.66,
+      "premiumPercent": 32.17
+    },
+    "02315": {
+      "aCode": "688796",
+      "aPrice": 122.5,
+      "aChangePercent": -2.79,
+      "hChangePercent": -4.68,
+      "premiumPercent": 146.51
+    },
+    "02218": {
+      "aCode": "605198",
+      "aPrice": 75.68,
+      "aChangePercent": -1.71,
+      "hChangePercent": -5,
+      "premiumPercent": 252.81
+    },
+    "02631": {
+      "aCode": "688234",
+      "aPrice": 96.55,
+      "aChangePercent": -1.53,
+      "hChangePercent": -5.38,
+      "premiumPercent": 83.55
+    },
+    "09969": {
+      "aCode": "688428",
+      "aPrice": 27.25,
+      "aChangePercent": -5.68,
+      "hChangePercent": -5.46,
+      "premiumPercent": 132.73
+    },
+    "00699": {
+      "aCode": "600699",
+      "aPrice": 19.16,
+      "aChangePercent": -3.57,
+      "hChangePercent": -5.61,
+      "premiumPercent": 95.65
+    },
+    "09630": {
+      "aCode": "688630",
+      "aPrice": 409.3,
+      "aChangePercent": -0.36,
+      "hChangePercent": -5.97,
+      "premiumPercent": 43.28
+    },
+    "02475": {
+      "aCode": "002475",
+      "aPrice": 54.45,
+      "aChangePercent": -2.52,
+      "hChangePercent": -5.98,
+      "premiumPercent": 9.38
+    },
+    "06185": {
+      "aCode": "688185",
+      "aPrice": 65.8,
+      "aChangePercent": -4.39,
+      "hChangePercent": -6.35,
+      "premiumPercent": 186.63
+    },
+    "02338": {
+      "aCode": "000338",
+      "aPrice": 26.83,
+      "aChangePercent": -3.66,
+      "hChangePercent": -7.05,
+      "premiumPercent": -0.79
+    },
+    "02865": {
+      "aCode": "002865",
+      "aPrice": 37.89,
+      "aChangePercent": -1.84,
+      "hChangePercent": -7.21,
+      "premiumPercent": 247.73
+    }
+  }
+}
