@@ -90,13 +90,16 @@ export function sameMarketSnapshot(current, candidate) {
     && currentTimestamp === candidateTimestamp;
 }
 
-function enrich(quote, profiles, ahPairs) {
+function enrich(quote, profiles, ahPairs, shortSelling) {
   const profile = profiles[quote.code] ?? {};
+  const short = shortSelling[quote.code] ?? null;
   return {
     ...quote,
     industry: profile.industry ?? quote.industry ?? null,
     introduction: profile.introduction ?? null,
     ah: ahPairs[quote.code] ?? null,
+    shortRatio: short?.shortRatio ?? null,
+    shortAmt: short?.shortAmt ?? null,
   };
 }
 
@@ -136,6 +139,8 @@ export function buildSnapshot({
   profiles = {},
   ahPairs = {},
   history = null,
+  shortSelling = {},
+  southbound = null,
   generatedAt,
   tradeDate,
   marketStatus = "close",
@@ -149,7 +154,7 @@ export function buildSnapshot({
   const continuityBase = history && history.basedOn > 0 ? history : null;
   const top50Codes = new Set(rankings.turnover.map((item) => item.code));
   const enrichList = (items) => items.map((item) => {
-    const enriched = enrich(item, profiles, ahPairs);
+    const enriched = enrich(item, profiles, ahPairs, shortSelling);
     if (!continuityBase || !top50Codes.has(item.code)) return enriched;
     const streak = continuityBase.streakByCode[item.code];
     return {
@@ -185,6 +190,7 @@ export function buildSnapshot({
       unchanged: eligible.filter((quote) => quote.changePercent === 0).length,
       turnover: eligible.reduce((sum, quote) => sum + (quote.turnover ?? 0), 0),
       mainNetInflow: eligible.reduce((sum, quote) => sum + (quote.mainNetInflow ?? 0), 0),
+      southboundNetBuy: southbound && southbound.tradeDate === tradeDate ? southbound.netBuyHkd : null,
     },
     securities,
     rankings: {

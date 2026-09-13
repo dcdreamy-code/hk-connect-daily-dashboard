@@ -167,6 +167,13 @@ function securityCell(row, item, showContinuity) {
     badge.title = `TTM 市盈率 ${item.peTtm.toFixed(1)},公司近 12 个月亏损`;
     nameLine.append(badge);
   }
+  if (Number.isFinite(item.shortRatio) && item.shortRatio >= 30) {
+    const badge = document.createElement("span");
+    badge.className = "short-badge";
+    badge.textContent = "高沽空";
+    badge.title = `沽空比率 ${item.shortRatio.toFixed(1)}%,沽空占当日成交额比例显著偏高(港股大中型股常态为 15%-30%)`;
+    nameLine.append(badge);
+  }
   const code = document.createElement("span");
   code.className = "code";
   code.textContent = `${item.code}.HK`;
@@ -220,6 +227,8 @@ function detailRow(item) {
     detailFact("日内区间", `${formatPrice(item.low)} - ${formatPrice(item.high)}`),
     detailFact("市盈率 TTM", Number.isFinite(item.peTtm) ? item.peTtm.toFixed(2) : "--"),
     detailFact("市净率", Number.isFinite(item.pb) ? item.pb.toFixed(2) : "--"),
+    detailFact("沽空比率", Number.isFinite(item.shortRatio) ? formatRate(item.shortRatio) : "--"),
+    detailFact("沽空金额", Number.isFinite(item.shortAmt) ? `${formatHkd(item.shortAmt)} 港币` : "--"),
   );
   if (item.continuity) {
     const avg = item.continuity.avgTurnover5d;
@@ -386,6 +395,9 @@ function dashboard() {
     const inflow = document.querySelector("#cover-inflow");
     inflow.textContent = formatSignedHkd(snapshot.market.mainNetInflow);
     inflow.className = trendClass(snapshot.market.mainNetInflow);
+    const southbound = document.querySelector("#cover-southbound");
+    southbound.textContent = formatSignedHkd(snapshot.market.southboundNetBuy);
+    southbound.className = trendClass(snapshot.market.southboundNetBuy);
     const list = document.querySelector("#observation-list");
     list.replaceChildren(...insights.bullets.map((text) => {
       const item = document.createElement("li");

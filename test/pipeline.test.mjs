@@ -184,6 +184,35 @@ test("buildSnapshot excludes etf universe entries from coverage, rankings and se
   assert.equal(snapshot.market.turnover, 14492325440);
 });
 
+test("buildSnapshot enriches short selling and gates southbound by trade date", () => {
+  const quotes = fixture.data.diff.map(normalizeQuote);
+  const snapshot = buildSnapshot({
+    quotes,
+    universe: [{ code: "00001" }, { code: "00700" }, { code: "09988" }],
+    shortSelling: { "00700": { shortRatio: 20.64, shortAmt: 1234846000 } },
+    southbound: { tradeDate: "2026-09-10", netBuyHkd: 4431020000, turnoverHkd: 95492700000 },
+    generatedAt: "2026-09-10T08:30:00.000Z",
+    tradeDate: "2026-09-10",
+    limit: 50,
+  });
+  const tencent = snapshot.securities.find((item) => item.code === "00700");
+  assert.equal(tencent.shortRatio, 20.64);
+  assert.equal(tencent.shortAmt, 1234846000);
+  const changhe = snapshot.securities.find((item) => item.code === "00001");
+  assert.equal(changhe.shortRatio, null);
+  assert.equal(snapshot.market.southboundNetBuy, 4431020000);
+
+  const stale = buildSnapshot({
+    quotes,
+    universe: [{ code: "00001" }, { code: "00700" }, { code: "09988" }],
+    southbound: { tradeDate: "2026-09-09", netBuyHkd: 4431020000 },
+    generatedAt: "2026-09-10T08:30:00.000Z",
+    tradeDate: "2026-09-10",
+    limit: 50,
+  });
+  assert.equal(stale.market.southboundNetBuy, null);
+});
+
 test("sameMarketSnapshot ignores generation time when market timestamps match", () => {
   const current = { tradeDate: "2026-09-10", marketStatus: "close", securities: [{ timestamp: 100 }, { timestamp: 120 }] };
   const candidate = { tradeDate: "2026-09-10", marketStatus: "close", securities: [{ timestamp: 120 }] };

@@ -145,10 +145,12 @@ function renderCover(items, snapshot) {
   const circumference = 2 * Math.PI * radius;
   const arc = Math.min(100, Math.max(0, concentration)) / 100 * circumference;
   const headlineLines = wrapHeadline(buildDailyInsights(items).headline);
+  const southboundNetBuy = Number.isFinite(market.southboundNetBuy) ? market.southboundNetBuy : null;
   const stats = [
     ["港股通上涨", String(market.advancers ?? "--"), UP],
     ["港股通下跌", String(market.decliners ?? "--"), DOWN],
     ["港股通成交额 · 港币", compact(market.turnover), INK],
+    ["南向净买入 · 港币", southboundNetBuy === null ? "--" : `${southboundNetBuy > 0 ? "+" : southboundNetBuy < 0 ? "-" : ""}${compact(Math.abs(southboundNetBuy))}`, southboundNetBuy > 0 ? UP : southboundNetBuy < 0 ? DOWN : INK],
   ];
   return `
     <text x="42" y="234" class="cover-edition" fill="${COPPER}">港美侠资金雷达</text>

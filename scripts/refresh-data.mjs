@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchEastmoneyUniverseQuotes } from "../src/adapters/eastmoney.mjs";
+import { fetchEastmoneyShortSelling, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
 import { buildContinuity, buildSnapshot, rankableUniverse, sameMarketSnapshot } from "../src/lib/pipeline.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -79,6 +79,16 @@ const pool = rankableUniverse(universe);
 const quotes = await fetchEastmoneyUniverseQuotes(pool.map((item) => item.code));
 const generatedAt = new Date().toISOString();
 const tradeDate = resolveTradeDate(quotes);
+const [shortSelling, southbound] = await Promise.all([
+  fetchEastmoneyShortSelling({ tradeDate }).catch((error) => {
+    console.warn(`Short selling skipped: ${error.message}`);
+    return {};
+  }),
+  fetchSouthboundFlow().catch((error) => {
+    console.warn(`Southbound flow skipped: ${error.message}`);
+    return null;
+  }),
+]);
 const previousSnapshots = await loadPreviousSnapshots(tradeDate);
 const snapshot = buildSnapshot({
   quotes,
@@ -86,6 +96,8 @@ const snapshot = buildSnapshot({
   profiles,
   ahPairs: ahData.pairs,
   history: buildContinuity(previousSnapshots),
+  shortSelling,
+  southbound,
   generatedAt,
   tradeDate,
   marketStatus: marketStatus(tradeDate),

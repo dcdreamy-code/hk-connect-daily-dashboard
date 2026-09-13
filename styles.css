@@ -77,9 +77,9 @@ h1{margin:0;font-size:11px;font-weight:600;letter-spacing:.32em;color:var(--gold
 .section-kicker.paper:before{background:var(--copper)}
 .cover-main h2{max-width:22em;margin:0;font:700 33px/1.42 var(--serif);letter-spacing:.01em}
 .cover-stats{display:flex;margin-top:46px}
-.cover-stat{display:flex;flex-direction:column;gap:9px;padding-right:30px}
-.cover-stat+.cover-stat{padding-left:30px;border-left:1px solid var(--gold-faint)}
-.cover-stat strong{font:600 25px var(--mono);letter-spacing:.02em;white-space:nowrap}
+.cover-stat{display:flex;flex-direction:column;gap:9px;padding-right:20px}
+.cover-stat+.cover-stat{padding-left:20px;border-left:1px solid var(--gold-faint)}
+.cover-stat strong{font:600 24px var(--mono);letter-spacing:.02em;white-space:nowrap}
 .cover-stat span{font-size:10px;letter-spacing:.16em;color:#9fa49c;white-space:nowrap}
 .radar-cover .up{color:var(--up-dark)}
 .radar-cover .down{color:var(--down-dark)}
@@ -192,6 +192,7 @@ tbody tr.data-row:hover,tbody tr.data-row:focus-within{background:#f6f1e4}
 .streak-chip{flex:0 0 auto;padding:2px 4px;border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);font:600 8.5px var(--mono);letter-spacing:.08em}
 .streak-chip.is-new{border-color:var(--copper);background:rgba(164,118,58,.1);color:var(--copper-deep)}
 .loss-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--ink-soft);background:var(--ink);color:#f3efe6;font:600 8.5px var(--mono);letter-spacing:.08em}
+.short-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--ink-soft);background:transparent;color:var(--ink-soft);font:600 8.5px var(--mono);letter-spacing:.08em}
 .numeric{text-align:right;font:500 12.5px var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 .numeric.up{color:var(--up);font-weight:600}
 .numeric.down{color:var(--down);font-weight:600}
@@ -238,6 +239,7 @@ footer strong{color:var(--ink);font-weight:600}
   .cover-stat{padding:0}
   .cover-stat+.cover-stat{padding-left:0;border-left:0}
   .cover-stat:nth-child(even){padding-left:16px;border-left:1px solid var(--gold-faint)}
+  .cover-stat:nth-child(5){grid-column:1/-1;border-left:0;padding-left:0}
   .cover-stat strong{font-size:19px}
   .cover-stat span{font-size:8.5px;letter-spacing:.1em}
   .radar-panel{padding:20px 0 26px}

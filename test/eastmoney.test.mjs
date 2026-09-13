@@ -3,7 +3,9 @@ import fs from "node:fs/promises";
 import test from "node:test";
 import {
   fetchEastmoneyAhPairs,
+  fetchEastmoneyShortSelling,
   fetchEastmoneyUniverseQuotes,
+  fetchSouthboundFlow,
 } from "../src/adapters/eastmoney.mjs";
 
 const fixture = JSON.parse(await fs.readFile(new URL("./fixtures/eastmoney-quotes.json", import.meta.url)));
@@ -56,6 +58,50 @@ test("fetchEastmoneyUniverseQuotes batches requested securities", async () => {
     assert.equal(batchFields.split(",").includes("f9"), true);
     assert.equal(batchFields.split(",").includes("f23"), true);
   }
+});
+
+test("fetchEastmoneyShortSelling pages the daily report and keys by stock code", async () => {
+  const requested = [];
+  const fetchImpl = async (url) => {
+    const parsed = new URL(url);
+    requested.push({ page: parsed.searchParams.get("pageNumber"), filter: parsed.searchParams.get("filter") });
+    const page = Number(parsed.searchParams.get("pageNumber"));
+    const diff = page === 1
+      ? [{ SECUCODE: "09988.HK", SHORT_SELLING_AMT: 1234846000, SHORT_SELLING_RATIO: 20.64 }, { SECUCODE: "2513", SHORT_SELLING_AMT: 100, SHORT_SELLING_RATIO: 5 }]
+      : [{ SECUCODE: "01810.HK", SHORT_SELLING_AMT: 926145628, SHORT_SELLING_RATIO: 31.18 }];
+    return new Response(JSON.stringify({ result: { pages: 2, data: diff } }), { status: 200 });
+  };
+  const shorts = await fetchEastmoneyShortSelling({ tradeDate: "2026-09-11", fetchImpl, retries: 0 });
+  assert.deepEqual(requested.map((item) => item.page), ["1", "2"]);
+  assert.match(requested[0].filter, /2026-09-11/);
+  assert.equal(shorts["09988"].shortRatio, 20.64);
+  assert.equal("02513" in shorts, false);
+  assert.equal(shorts["01810"].shortRatio, 31.18);
+});
+
+test("fetchSouthboundFlow sums the two southbound legs in Hong Kong dollars", async () => {
+  const seenTypes = [];
+  const fetchImpl = async (url) => {
+    const mutualType = new URL(url).searchParams.get("filter").match(/"(\d{3})"/)[1];
+    seenTypes.push(mutualType);
+    const net = mutualType === "002" ? 3191.91 : 1239.11;
+    const deal = mutualType === "002" ? 57310.65 : 38182.05;
+    return new Response(JSON.stringify({
+      result: { data: [{ TRADE_DATE: "2026-09-11 00:00:00", NET_DEAL_AMT: net, DEAL_AMT: deal }] },
+    }), { status: 200 });
+  };
+  const flow = await fetchSouthboundFlow({ fetchImpl, retries: 0 });
+  assert.deepEqual(seenTypes, ["002", "004"]);
+  assert.equal(flow.tradeDate, "2026-09-11");
+  assert.equal(flow.netBuyHkd, 4431020000);
+  assert.equal(flow.turnoverHkd, 95492700000);
+});
+
+test("fetchSouthboundFlow throws when net buying is not disclosed", async () => {
+  const fetchImpl = async () => new Response(JSON.stringify({
+    result: { data: [{ TRADE_DATE: "2026-09-11 00:00:00", NET_DEAL_AMT: null, DEAL_AMT: 100 }] },
+  }), { status: 200 });
+  await assert.rejects(() => fetchSouthboundFlow({ fetchImpl, retries: 0 }), /not disclosed/);
 });
 
 test("fetchEastmoneyAhPairs maps H codes to A-share metadata", async () => {
