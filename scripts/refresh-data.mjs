@@ -113,8 +113,19 @@ try {
 }
 
 if (sameMarketSnapshot(currentSnapshot, snapshot)) {
-  console.log(`No newer market data for ${tradeDate}; keeping the existing snapshot.`);
-  process.exit(0);
+  const securitiesNow = currentSnapshot?.securities ?? [];
+  const missingShorts = Object.keys(shortSelling).length > 0
+    && securitiesNow.some((item) => item.shortRatio == null && shortSelling[item.code]);
+  const missingSouthbound = Boolean(southbound)
+    && southbound.tradeDate === tradeDate
+    && currentSnapshot?.market?.southboundNetBuy == null;
+  if (!missingShorts && !missingSouthbound) {
+    console.log(`No newer market data for ${tradeDate}; keeping the existing snapshot.`);
+    process.exit(0);
+  }
+  console.log(`Market data unchanged for ${tradeDate}; backfilling ${
+    [missingShorts && "short selling", missingSouthbound && "southbound flow"].filter(Boolean).join(" and ")
+  }.`);
 }
 
 await fs.mkdir(path.join(outputDir, "daily"), { recursive: true });
