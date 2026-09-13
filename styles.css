@@ -94,6 +94,9 @@ h1{margin:0;font-size:11px;font-weight:600;letter-spacing:.32em;color:var(--gold
 .concentration-dial:before{content:"";position:absolute;inset:14px;border-radius:50%;background:#1e211e;border:1px solid rgba(211,170,106,.3)}
 .concentration-dial strong{position:relative;z-index:1;font:600 32px var(--mono);color:var(--gold)}
 #breadth-reading{margin:0;padding-top:16px;border-top:1px solid var(--gold-faint);color:#d6d3c8;font-size:12.5px;line-height:1.8}
+.southbound-line{margin:0;padding:18px 0;display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-top:1px solid var(--gold-faint)}
+.southbound-line span{color:#9fa49c;font:600 10px var(--mono);letter-spacing:.2em;white-space:nowrap}
+.southbound-line strong{font:600 24px var(--mono);white-space:nowrap}
 
 /* ---------- 正文版面 ---------- */
 main{width:min(1320px,100%);margin:0 auto;padding:0 24px 46px}
@@ -180,7 +183,7 @@ td{height:52px;padding:7px 14px;border-bottom:1px solid var(--line);font-size:13
 tbody tr.data-row{cursor:pointer;transition:background 120ms ease}
 tbody tr.data-row:hover,tbody tr.data-row:focus-within{background:#f6f1e4}
 .rank-col{width:64px;text-align:center}
-.security-col{width:18%}
+.security-col{width:20%}
 .rank{color:var(--faint);text-align:center;font:600 11px var(--mono)}
 .security{width:18%}
 .security a{display:block;color:inherit;text-decoration:none}
@@ -239,7 +242,6 @@ footer strong{color:var(--ink);font-weight:600}
   .cover-stat{padding:0}
   .cover-stat+.cover-stat{padding-left:0;border-left:0}
   .cover-stat:nth-child(even){padding-left:16px;border-left:1px solid var(--gold-faint)}
-  .cover-stat:nth-child(5){grid-column:1/-1;border-left:0;padding-left:0}
   .cover-stat strong{font-size:19px}
   .cover-stat span{font-size:8.5px;letter-spacing:.1em}
   .radar-panel{padding:20px 0 26px}

@@ -170,8 +170,8 @@ function securityCell(row, item, showContinuity) {
   if (Number.isFinite(item.shortRatio) && item.shortRatio >= 30) {
     const badge = document.createElement("span");
     badge.className = "short-badge";
-    badge.textContent = "高沽空";
-    badge.title = `沽空比率 ${item.shortRatio.toFixed(1)}%,沽空占当日成交额比例显著偏高(港股大中型股常态为 15%-30%)`;
+    badge.textContent = "沽空";
+    badge.title = `沽空比率 ${item.shortRatio.toFixed(1)}%,显著高于港股大中型股 15%-30% 的常态区间`;
     nameLine.append(badge);
   }
   const code = document.createElement("span");
