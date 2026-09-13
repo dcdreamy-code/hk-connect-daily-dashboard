@@ -30,6 +30,8 @@ export function normalizeQuote(raw) {
     turnover: finiteNumber(raw.f6),
     amplitude: finiteNumber(raw.f7),
     turnoverRate: finiteNumber(raw.f8),
+    peTtm: finiteNumber(raw.f9),
+    pb: finiteNumber(raw.f23),
     marketCap: finiteNumber(raw.f20),
     high: finiteNumber(raw.f15),
     low: finiteNumber(raw.f16),

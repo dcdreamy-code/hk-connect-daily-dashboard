@@ -191,6 +191,7 @@ tbody tr.data-row:hover,tbody tr.data-row:focus-within{background:#f6f1e4}
 .ah-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--copper);background:rgba(164,118,58,.08);color:var(--copper-deep);font:600 8.5px var(--mono);letter-spacing:.1em}
 .streak-chip{flex:0 0 auto;padding:2px 4px;border:1px solid var(--line-strong);background:var(--surface);color:var(--muted);font:600 8.5px var(--mono);letter-spacing:.08em}
 .streak-chip.is-new{border-color:var(--copper);background:rgba(164,118,58,.1);color:var(--copper-deep)}
+.loss-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--ink-soft);background:var(--ink);color:#f3efe6;font:600 8.5px var(--mono);letter-spacing:.08em}
 .numeric{text-align:right;font:500 12.5px var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 .numeric.up{color:var(--up);font-weight:600}
 .numeric.down{color:var(--down);font-weight:600}

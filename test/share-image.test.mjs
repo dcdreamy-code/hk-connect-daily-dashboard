@@ -15,6 +15,8 @@ test("buildShareImageSvg renders single-line securities in a 1242 x 3660 report"
   assert.match(svg, /总市值/);
   assert.match(svg, /换手率/);
   assert.match(svg, />AH</);
+  assert.match(svg, /data-loss-mark=/);
+  assert.match(svg, />亏</);
   assert.match(svg, /今日观察/);
   assert.match(svg, /成交集中度/);
   assert.match(svg, /港美侠/);

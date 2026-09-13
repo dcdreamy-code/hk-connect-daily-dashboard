@@ -2,7 +2,7 @@ import { normalizeQuote } from "../lib/pipeline.mjs";
 
 const ENDPOINT = "https://push2delay.eastmoney.com/api/qt/clist/get";
 const UNIVERSE_ENDPOINT = "https://push2delay.eastmoney.com/api/qt/ulist.np/get";
-const FIELDS = "f12,f14,f2,f3,f4,f5,f6,f7,f8,f15,f16,f17,f18,f20,f62,f100,f124,f184";
+const FIELDS = "f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f15,f16,f17,f18,f20,f23,f62,f100,f124,f184";
 const PAGE_SIZE = 100;
 const AH_FIELDS = "f12,f191,f2,f3,f186,f187,f188";
 

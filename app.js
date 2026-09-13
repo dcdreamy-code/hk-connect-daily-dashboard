@@ -119,6 +119,17 @@ function appendCell(row, text, className = "") {
   return cell;
 }
 
+export function profitabilityCounts(items) {
+  let profitable = 0;
+  let losing = 0;
+  for (const item of items) {
+    if (!Number.isFinite(item.peTtm)) continue;
+    if (item.peTtm > 0) profitable += 1;
+    else if (item.peTtm < 0) losing += 1;
+  }
+  return { profitable, losing };
+}
+
 function securityCell(row, item, showContinuity) {
   const cell = document.createElement("td");
   cell.className = "security";
@@ -148,6 +159,13 @@ function securityCell(row, item, showContinuity) {
       ? "上一交易日未进入成交额 Top 50"
       : `连续 ${item.continuity.top50Days} 个交易日位于成交额 Top 50`;
     nameLine.append(chip);
+  }
+  if (Number.isFinite(item.peTtm) && item.peTtm < 0) {
+    const badge = document.createElement("span");
+    badge.className = "loss-badge";
+    badge.textContent = "亏";
+    badge.title = `TTM 市盈率 ${item.peTtm.toFixed(1)},公司近 12 个月亏损`;
+    nameLine.append(badge);
   }
   const code = document.createElement("span");
   code.className = "code";
@@ -200,6 +218,8 @@ function detailRow(item) {
     detailFact("振幅", formatRate(item.amplitude)),
     detailFact("成交量", formatVolume(item.volume)),
     detailFact("日内区间", `${formatPrice(item.low)} - ${formatPrice(item.high)}`),
+    detailFact("市盈率 TTM", Number.isFinite(item.peTtm) ? item.peTtm.toFixed(2) : "--"),
+    detailFact("市净率", Number.isFinite(item.pb) ? item.pb.toFixed(2) : "--"),
   );
   if (item.continuity) {
     const avg = item.continuity.avgTurnover5d;
@@ -305,7 +325,8 @@ function dashboard() {
     const directionLabel = state.direction === "desc" ? "由高到低" : "由低到高";
     elements.title.textContent = `${metricLabel} Top 50`;
     elements.note.textContent = `从全部港股通标的中按${metricLabel}${directionLabel}排列`;
-    elements.count.textContent = `${items.length} 只`;
+    const { profitable, losing } = profitabilityCounts(fullRanking);
+    elements.count.textContent = `${items.length} 只 · 盈利 ${profitable} / 亏损 ${losing}`;
     renderSummary(summarizeRanking(fullRanking));
   }
 

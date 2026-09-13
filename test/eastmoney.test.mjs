@@ -53,6 +53,8 @@ test("fetchEastmoneyUniverseQuotes batches requested securities", async () => {
     assert.equal(batchFields.split(",").includes("f62"), true);
     assert.equal(batchFields.split(",").includes("f184"), true);
     assert.equal(batchFields.split(",").includes("f100"), true);
+    assert.equal(batchFields.split(",").includes("f9"), true);
+    assert.equal(batchFields.split(",").includes("f23"), true);
   }
 });
 

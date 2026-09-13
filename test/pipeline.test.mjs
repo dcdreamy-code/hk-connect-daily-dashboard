@@ -25,6 +25,8 @@ test("normalizeQuote maps Eastmoney fields without stringifying numbers", () => 
     turnover: 392325440,
     amplitude: 1.66,
     turnoverRate: 0.15,
+    peTtm: 8.5,
+    pb: 0.92,
     marketCap: 268000000000,
     high: 70.35,
     low: 69.2,
@@ -38,6 +40,8 @@ test("normalizeQuote maps Eastmoney fields without stringifying numbers", () => 
   const missingOptional = normalizeQuote(fixture.data.diff[3]);
   assert.equal(missingOptional.mainNetInflow, null);
   assert.equal(missingOptional.industry, null);
+  assert.equal(missingOptional.peTtm, null);
+  assert.equal(missingOptional.pb, null);
 });
 
 test("rankQuotes filters to the universe and sorts all three rankings", () => {

@@ -7,6 +7,7 @@ import {
   formatPercent,
   formatRate,
   isNewerSnapshot,
+  profitabilityCounts,
   selectRanking,
   summarizeRanking,
   sortSecurities,
@@ -105,4 +106,15 @@ test("turnoverShare returns a bounded percentage of the ranking leader", () => {
   assert.equal(turnoverShare(50, 100), 50);
   assert.equal(turnoverShare(150, 100), 100);
   assert.equal(turnoverShare(null, 100), 0);
+});
+
+test("profitabilityCounts classifies TTM earnings and ignores missing values", () => {
+  const counts = profitabilityCounts([
+    { peTtm: 14.61 },
+    { peTtm: -73.73 },
+    { peTtm: 0 },
+    { peTtm: null },
+    {},
+  ]);
+  assert.deepEqual(counts, { profitable: 1, losing: 1 });
 });
