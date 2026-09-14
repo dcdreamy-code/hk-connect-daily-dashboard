@@ -94,19 +94,6 @@ export function buildDailySummary(snapshot) {
   const column = styleConfig.columns[rotate];
   const emoji = styleConfig.emoji;
 
-  const south = southboundPhrase(market.southboundNetBuy);
-  const southAsOf = market.southboundAsOf && market.southboundAsOf !== snapshot.tradeDate
-    ? `（${market.southboundAsOf.slice(5).replace("-", "/")}值）`
-    : "";
-  const southboundText = `${south.text} 亿港币${southAsOf}`;
-  const southboundNetDesc = market.southboundNetBuy >= 0
-    ? `净流入 ${southboundAbs(market.southboundNetBuy)} 亿`
-    : `净流出 ${southboundAbs(market.southboundNetBuy)} 亿`;
-
-  function southboundAbs(net) {
-    return (Math.abs(net) / 100_000_000).toFixed(2);
-  }
-
   const first = top[0];
   const top10 = top.slice(0, 10);
   const gainers = sortedBy(top10, "changePercent", 1).filter((item) => item.changePercent > 0).slice(0, 2);
@@ -114,50 +101,64 @@ export function buildDailySummary(snapshot) {
   const turnoverFocus = sortedBy(top, "turnoverRate", 1)[0] ?? null;
   const extremeUp = sortedBy(top, "changePercent", 1)[0] ?? null;
   const extremeDown = sortedBy(top, "changePercent", -1)[0] ?? null;
-  const newHighs = sortedBy(top.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.high) && item.high >= item.high52), "turnover", 1);
-  const newHigh = newHighs[0] ?? null;
+  const newHigh = sortedBy(top.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.high) && item.high >= item.high52), "turnover", 1)[0] ?? null;
+  const shortFocus = sortedBy(top.filter((item) => Number.isFinite(item.shortRatio) && item.shortRatio >= 20), "shortRatio", 1)[0] ?? null;
 
+  // 风格化开头句(按当日盘面特征选择)
+  const southboundAbs = Math.abs(market.southboundNetBuy / 100_000_000).toFixed(2);
+  const southboundNetDesc = Number.isFinite(market.southboundNetBuy)
+    ? (market.southboundNetBuy >= 0 ? `南向资金净流入 ${southboundAbs} 亿` : `南向资金净流出 ${southboundAbs} 亿`)
+    : "";
   const openings = {
-    polarized: market.southboundNetBuy >= 0
-      ? `今天港股通数据出炉，南向资金单日扫货 ${southboundAbs(market.southboundNetBuy)} 亿，但资金集中度达到了 ${concentration.toFixed(1)}%，头部博弈迹象明显。`
-      : `今天港股通数据出炉，南向资金单日净卖出 ${southboundAbs(market.southboundNetBuy)} 亿，资金集中度达到 ${concentration.toFixed(1)}%，头部博弈迹象明显。`,
-    rotation: `从今天港股通 Top 50 榜单来看，整体呈现 ${up} 涨 ${down} 跌的格局，南向资金${southboundNetDesc}。`,
-    brief: `今日港股通交投总额 ${toYi(market.turnover)} 亿，活跃股整体表现如下：`,
+    polarized: `资金高度集中的交易日：Top 10 标的合计占去全榜 ${concentration.toFixed(1)}% 的成交。`,
+    rotation: `盘面异动不少：单日换手率最高升至 ${Math.max(0, ...top.map((item) => item.turnoverRate ?? 0)).toFixed(2)}%。`,
+    brief: `大市窄幅波动，活跃股涨跌互现。`,
   };
-  const briefAlternate = `${monthDay}港股通收盘快照：南向资金${south.text} 亿港币，Top 50 榜单平均涨跌幅为 ${formatPercent(avgChange)}。`;
-  const opening = style === "brief" && rotate === 0 ? briefAlternate : openings[style];
+  const briefAlternate = `${monthDay}港股通收盘快照：${southboundNetDesc}，Top 50 榜单平均涨跌幅为 ${formatPercent(avgChange)}。`;
+  const opening = style === "brief" && rotate === 1 ? briefAlternate : openings[style];
 
-  const lines = [];
-  lines.push(`${column} | ${monthDay}`);
-  lines.push("");
-  lines.push(opening);
-  lines.push("");
-  lines.push(`${emoji[0]} 整体交投概览`);
-  lines.push(`• 南向资金：${southboundText}`);
-  lines.push(`• 港股通标的总成交：${toYi(market.turnover)} 亿港币`);
-  lines.push(`• Top 50 涨跌分布：${up} 涨 / ${down} 跌（均值 ${formatPercent(avgChange)}）`);
-  lines.push(`• 集中度：Top 10 成交额占比 ${concentration.toFixed(1)}%`);
-  lines.push("");
-  lines.push(`${emoji[1]} 头部成交分布（Top 10 数据）`);
-  lines.push(`• 成交第一：${nameOf(first)} 成交 ${toYi(first.turnover)} 亿（涨跌幅 ${changeOf(first)}）`);
-  if (gainers.length > 0) {
-    lines.push(`• 表现较强：${gainers.map((item) => `${nameOf(item)}（${changeOf(item)}）`).join("、")}`);
+  // 大盘段(开头已提及南向时不再重复)
+  const southAsOf = market.southboundAsOf && market.southboundAsOf !== snapshot.tradeDate
+    ? `（${market.southboundAsOf.slice(5).replace("-", "/")}值）`
+    : "";
+  const southLine = opening.includes("南向")
+    ? ""
+    : `${Number.isFinite(market.southboundNetBuy) ? southboundNetDesc.replace("南向资金", "南向资金全天") : "南向资金数据暂缺"}${southAsOf}；`;
+  const poolLine = `港股通标的今日合计成交 ${toYi(market.turnover)} 亿，其中 ${market.advancers} 家上涨、${market.decliners} 家下跌。`;
+  const t50Line = `成交额 Top 50 榜单里，${up} 家收涨、${down} 家收跌，平均涨跌幅 ${formatPercent(avgChange)}；Top 10 合计占去 ${concentration.toFixed(1)}% 的成交，成交继续向头部聚集。`;
+
+  // 头部成交段(前三名,句式变化避免机械感)
+  const closeDesc = (item) => {
+    if (!Number.isFinite(item.changePercent) || item.changePercent === 0) return "平盘报收";
+    return item.changePercent > 0 ? `收涨 ${item.changePercent.toFixed(2)}%` : `收跌 ${Math.abs(item.changePercent).toFixed(2)}%`;
+  };
+  let headPara = `${nameOf(first)}以 ${toYi(first.turnover)} 亿成交领跑全榜，${closeDesc(first)}`;
+  if (top[1]) headPara += `；${nameOf(top[1])}成交 ${toYi(top[1].turnover)} 亿紧随其后，${closeDesc(top[1])}`;
+  if (top[2]) headPara += `；${nameOf(top[2])}成交 ${toYi(top[2].turnover)} 亿位列第三，${closeDesc(top[2])}`;
+  headPara += "。";
+
+  // 焦点与异动段
+  const focusParts = [];
+  if (shortFocus) {
+    focusParts.push(`沽空方面，${nameOf(shortFocus)}沽空比率升至 ${shortFocus.shortRatio.toFixed(2)}%，空头力度在各标的之中最为突出`);
   }
-  if (losers.length > 0) {
-    lines.push(`• 调整回调：${losers.map((item) => `${nameOf(item)}（${changeOf(item)}）`).join("、")}`);
-  }
-  lines.push("");
-  lines.push(`${emoji[2]} 榜单焦点与异动（Top 50 监测）`);
-  if (turnoverFocus) {
-    lines.push(`• 换手率焦点：${nameOf(turnoverFocus)} 换手率 ${turnoverFocus.turnoverRate.toFixed(2)}%，成交 ${toYi(turnoverFocus.turnover)} 亿，收 ${changeOf(turnoverFocus)}`);
-  }
-  if (extremeUp && extremeDown) {
-    lines.push(`• 极值分布：最高涨幅 ${nameOf(extremeUp)}（${changeOf(extremeUp)}），最大跌幅 ${nameOf(extremeDown)}（${changeOf(extremeDown)}）`);
-  }
+  focusParts.push(`${nameOf(extremeUp)}上涨 ${Math.abs(extremeUp.changePercent).toFixed(2)}% 领涨，${nameOf(extremeDown)}下跌 ${Math.abs(extremeDown.changePercent).toFixed(2)}% 领跌`);
   if (newHigh) {
-    lines.push(`• 破高动态：${nameOf(newHigh)} 盘中触及 52 周高点`);
+    focusParts.push(`${nameOf(newHigh)}盘中触及 52 周高点`);
   }
-  lines.push("");
-  lines.push(`数据来源：港股通收盘正式快照（截至 ${hhmm}）`);
-  return lines.join("\n");
+  const focusSentence = focusParts.join("；") + "。";
+
+  return [
+    `${column} | ${monthDay}`,
+    "",
+    opening,
+    "",
+    southLine + poolLine + t50Line,
+    "",
+    headPara,
+    "",
+    focusSentence,
+    "",
+    `数据来源：港股通收盘正式快照（截至 ${hhmm}）`,
+  ].filter((block) => block !== "").join("\n\n");
 }
