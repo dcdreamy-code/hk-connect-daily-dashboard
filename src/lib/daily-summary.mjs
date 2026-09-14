@@ -134,7 +134,7 @@ export function buildDailySummary(snapshot) {
   lines.push("");
   lines.push(`${emoji[0]} 整体交投概览`);
   lines.push(`• 南向资金：${southboundText}`);
-  lines.push(`• 港股通总成交：${toYi(market.turnover)} 亿港币`);
+  lines.push(`• 港股通标的总成交：${toYi(market.turnover)} 亿港币`);
   lines.push(`• Top 50 涨跌分布：${up} 涨 / ${down} 跌（均值 ${formatPercent(avgChange)}）`);
   lines.push(`• 集中度：Top 10 成交额占比 ${concentration.toFixed(1)}%`);
   lines.push("");

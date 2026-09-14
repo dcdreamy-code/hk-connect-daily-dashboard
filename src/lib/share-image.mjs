@@ -159,7 +159,7 @@ function renderCover(items, snapshot) {
   const stats = [
     ["港股通上涨", String(market.advancers ?? "--"), UP],
     ["港股通下跌", String(market.decliners ?? "--"), DOWN],
-    ["港股通成交额 · 港币", compact(market.turnover), INK],
+    ["港股通标的成交额 · 港币", compact(market.turnover), INK],
     ["南向净买入 · 港币", southboundNetBuy === null ? "--" : `${southboundNetBuy > 0 ? "+" : southboundNetBuy < 0 ? "-" : ""}${compact(Math.abs(southboundNetBuy))}`, southboundNetBuy > 0 ? UP : southboundNetBuy < 0 ? DOWN : INK],
   ];
   return `
