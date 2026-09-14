@@ -143,7 +143,13 @@ function securityCell(row, item, showContinuity) {
   link.target = "_blank";
   link.rel = "noopener noreferrer";
   link.setAttribute("aria-label", `${item.name} ${item.code}.HK，打开雪球行情`);
-  link.addEventListener("click", (event) => event.stopPropagation());
+  link.addEventListener("click", (event) => {
+    if (window.matchMedia("(max-width: 760px)").matches) {
+      event.preventDefault();
+      return;
+    }
+    event.stopPropagation();
+  });
   const nameLine = document.createElement("div");
   nameLine.className = "security-name";
   const name = document.createElement("strong");
@@ -212,12 +218,17 @@ function detailFact(labelText, valueText, className = "") {
   return block;
 }
 
+function visibleColumnCount() {
+  return [...document.querySelectorAll("#table-wrap thead th")]
+    .filter((th) => getComputedStyle(th).display !== "none").length || 9;
+}
+
 function detailRow(item) {
   const row = document.createElement("tr");
   row.className = "detail-row";
   row.hidden = true;
   const cell = document.createElement("td");
-  cell.colSpan = 9;
+  cell.colSpan = visibleColumnCount();
   const panel = document.createElement("div");
   panel.className = "detail-panel";
   const industryBlock = document.createElement("div");
@@ -284,7 +295,15 @@ function detailRow(item) {
     const ahText = `A股 ${item.ah.aCode} · A股 ${formatPercent(item.ah.aChangePercent)} · H股 ${formatPercent(item.ah.hChangePercent)} · AH溢价 ${formatPercent(item.ah.premiumPercent)}`;
     facts.append(detailFact("AH 两地上市", ahText, "ah-detail"));
   }
-  panel.append(facts, introBlock);
+  const quoteLink = document.createElement("div");
+  quoteLink.className = "detail-link";
+  const quoteAnchor = document.createElement("a");
+  quoteAnchor.href = xueqiuUrl(item.code);
+  quoteAnchor.target = "_blank";
+  quoteAnchor.rel = "noopener noreferrer";
+  quoteAnchor.textContent = "在雪球查看行情 ↗";
+  quoteLink.append(quoteAnchor);
+  panel.append(facts, quoteLink, introBlock);
   cell.append(panel);
   row.append(cell);
   return row;
@@ -643,6 +662,12 @@ function dashboard() {
   document.addEventListener("visibilitychange", () => {
     checkLiveRefresh();
     checkStaticSnapshot();
+  });
+  window.addEventListener("resize", () => {
+    const colSpan = visibleColumnCount();
+    document.querySelectorAll("tr.detail-row td").forEach((cell) => {
+      cell.colSpan = colSpan;
+    });
   });
   setInterval(checkLiveRefresh, 15_000);
   setInterval(checkStaticSnapshot, 60_000);
