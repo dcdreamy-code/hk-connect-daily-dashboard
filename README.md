@@ -84,8 +84,8 @@ AH 身份映射不随日行情重复请求。`.github/workflows/refresh-ah.yml` 
 
 公开部署在 Cloudflare 双地址（同一份内容，自动同步更新）：
 
-- **主地址（中国大陆可正常打开）**：https://hk-connect-daily-dashboard.dcdreamy.workers.dev —— Workers 静态资产直传（`wrangler.worker.toml` + `.assetsignore`，只发布站点所需文件）
-- **备用地址**：https://hk-connect-daily-dashboard.pages.dev —— Pages 项目，海外访问备用
+- **主地址（中国大陆可正常打开）**：https://hk-gmx.dcdreamy.workers.dev —— Workers 静态资产直传（`wrangler.worker.toml` + `.assetsignore`，只发布站点所需文件）
+- **备用地址**：https://hk-gmx.pages.dev —— Pages 项目，海外访问备用
 
 三条发布路径互为冗余（每次同时更新两个地址）：
 
