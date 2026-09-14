@@ -137,7 +137,8 @@ if (sameMarketSnapshot(currentSnapshot, snapshot)) {
     return item.shortRatio != null && prev && prev.shortRatio == null;
   });
   const missingSouthbound = snapshot.market?.southboundNetBuy != null
-    && currentSnapshot?.market?.southboundNetBuy == null;
+    && (currentSnapshot?.market?.southboundNetBuy == null
+      || currentSnapshot?.market?.southboundAsOf != null);
   const missingWeek52 = snapshot.securities.some((item) => {
     const prev = currentByCode.get(item.code);
     return item.high52 != null && prev && prev.high52 == null;
