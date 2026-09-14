@@ -84,23 +84,26 @@ export function buildDailyInsights(items) {
   const extremeUp = items.filter((item) => Number.isFinite(item.changePercent)).toSorted((left, right) => right.changePercent - left.changePercent)[0];
   const extremeDown = items.filter((item) => Number.isFinite(item.changePercent)).toSorted((left, right) => left.changePercent - right.changePercent)[0];
   const shortFocus = items.filter((item) => Number.isFinite(item.shortRatio)).toSorted((left, right) => right.shortRatio - left.shortRatio)[0] ?? null;
-  const newHighs = items.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.close) && item.close >= item.high52 * 0.98);
-  const newLows = items.filter((item) => Number.isFinite(item.low52) && Number.isFinite(item.close) && item.close <= item.low52 * 1.02);
+  const atHighs = items.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.close) && item.close >= item.high52);
+  const atLows = items.filter((item) => Number.isFinite(item.low52) && Number.isFinite(item.close) && item.close <= item.low52);
+  const nearHighs = items.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.close) && item.close >= item.high52 * 0.98 && item.close < item.high52);
+  const nearLows = items.filter((item) => Number.isFinite(item.low52) && Number.isFinite(item.close) && item.close <= item.low52 * 1.02 && item.close > item.low52);
   const leaderDays = leader?.continuity?.top50Days;
 
-  const standout = newHighs.length >= 2
-    ? `${newHighs.slice(0, 2).map((item) => item.name).join("、")}创 52 周新高`
-    : newHighs.length === 1
-      ? `${newHighs[0].name}创 52 周新高`
-      : newLows.length >= 2
-        ? `${newLows.slice(0, 2).map((item) => item.name).join("、")}创 52 周新低`
-        : newLows.length === 1
-          ? `${newLows[0].name}创 52 周新低`
+  const names = (list) => list.slice(0, 2).map((item) => item.name).join("、");
+  const standout = atHighs.length >= 1
+    ? `${names(atHighs)}创 52 周新高`
+    : atLows.length >= 1
+      ? `${names(atLows)}创 52 周新低`
+      : nearHighs.length >= 1
+        ? `${names(nearHighs)}逼近 52 周高点`
+        : nearLows.length >= 1
+          ? `${names(nearLows)}逼近 52 周低点`
           : extremeUp
             ? `${extremeUp.name}领涨全场`
             : "";
 
-  const headline = `港股通 ${advancers} 涨 ${decliners} 跌${standout ? `；${standout}` : ""}。`;
+  const headline = `Top 50 榜单 ${advancers} 涨 ${decliners} 跌${standout ? `；${standout}` : ""}。`;
 
   const bullets = [
     `成交集中度｜Top 10 占 Top 50 成交额 ${concentration.toFixed(1)}%`,

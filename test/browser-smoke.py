@@ -49,7 +49,7 @@ def exercise(page, screenshot_name: str, test_live: bool = False, test_static_po
     assert page.locator("tr.data-row").count() == 50
     assert "Top 50" in page.locator("#ranking-title").inner_text()
     assert page.locator(".brand-name").inner_text() == "港美侠"
-    assert "港股通" in page.locator("#daily-view").inner_text()
+    assert "Top 50" in page.locator("#daily-view").inner_text()
     assert "涨" in page.locator("#daily-view").inner_text()
     assert page.locator("#observation-list li").count() == 3
     assert page.locator("#focus-ranking li").count() == 10

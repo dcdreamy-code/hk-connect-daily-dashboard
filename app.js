@@ -179,17 +179,17 @@ function securityCell(row, item, showContinuity) {
     badge.title = `沽空比率 ${item.shortRatio.toFixed(1)}%,显著高于港股大中型股 15%-30% 的常态区间`;
     nameLine.append(badge);
   }
-  if ([item.close, item.high52].every(Number.isFinite) && item.close >= item.high52 * 0.98) {
+  if ([item.close, item.high52].every(Number.isFinite) && item.close >= item.high52) {
     const badge = document.createElement("span");
     badge.className = "newhigh-badge";
     badge.textContent = "新高";
-    badge.title = `收盘价距 52 周最高 ${formatPrice(item.high52)} 不足 2%`;
+    badge.title = `收盘价 ${formatPrice(item.close)} 即 52 周最高价，创 52 周新高`;
     nameLine.append(badge);
-  } else if ([item.close, item.low52].every(Number.isFinite) && item.close <= item.low52 * 1.02) {
+  } else if ([item.close, item.low52].every(Number.isFinite) && item.close <= item.low52) {
     const badge = document.createElement("span");
     badge.className = "newlow-badge";
     badge.textContent = "新低";
-    badge.title = `收盘价距 52 周最低 ${formatPrice(item.low52)} 不足 2%`;
+    badge.title = `收盘价 ${formatPrice(item.close)} 即 52 周最低价，创 52 周新低`;
     nameLine.append(badge);
   }
   const code = document.createElement("span");

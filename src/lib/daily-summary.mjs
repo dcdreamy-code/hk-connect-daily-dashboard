@@ -114,7 +114,7 @@ export function buildDailySummary(snapshot) {
   const turnoverFocus = sortedBy(top, "turnoverRate", 1)[0] ?? null;
   const extremeUp = sortedBy(top, "changePercent", 1)[0] ?? null;
   const extremeDown = sortedBy(top, "changePercent", -1)[0] ?? null;
-  const newHighs = sortedBy(top.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.close) && item.close >= item.high52 * 0.98), "turnover", 1);
+  const newHighs = sortedBy(top.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.high) && item.high >= item.high52), "turnover", 1);
   const newHigh = newHighs[0] ?? null;
 
   const openings = {
@@ -155,7 +155,7 @@ export function buildDailySummary(snapshot) {
     lines.push(`• 极值分布：最高涨幅 ${ticker(extremeUp)}（${changeOf(extremeUp)}），最大跌幅 ${ticker(extremeDown)}（${changeOf(extremeDown)}）`);
   }
   if (newHigh) {
-    lines.push(`• 破高动态：${ticker(newHigh)} 今日盘中创阶段新高`);
+    lines.push(`• 破高动态：${ticker(newHigh)} 盘中触及 52 周高点`);
   }
   lines.push("");
   lines.push(`数据来源：港股通收盘正式快照（截至 ${hhmm}）`);
