@@ -219,6 +219,16 @@ tbody tr.data-row:hover,tbody tr.data-row:focus-within{background:#f6f1e4}
 .state-message{padding:52px 20px;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px;letter-spacing:.06em;text-align:center}
 .state-message.error{color:#982e2a}
 
+/* ---------- 发布文稿 ---------- */
+.summary-section{margin-top:30px;border-top:2px solid var(--ink);padding-top:20px}
+.summary-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:16px}
+.summary-head h2{margin:0;font:700 20px var(--serif);letter-spacing:.02em}
+.summary-head .section-kicker.paper{margin-bottom:8px}
+.summary-note{margin:6px 0 0;color:var(--muted);font-size:10.5px}
+.copy-button{flex:0 0 auto;height:36px;padding:0 16px;border:1px solid var(--copper);background:var(--copper);color:#fffdf8;font:600 12px var(--sans);letter-spacing:.08em;cursor:pointer;transition:background 120ms ease}
+.copy-button:hover{background:var(--copper-deep);border-color:var(--copper-deep)}
+.summary-text{margin:0;padding:18px 20px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--copper);font:400 11.5px/1.9 var(--mono);color:var(--ink-soft);white-space:pre-wrap;overflow-x:auto}
+
 /* ---------- 页脚 ---------- */
 footer{width:min(1320px,100%);margin:0 auto;padding:18px 24px 40px;display:flex;align-items:baseline;justify-content:space-between;gap:22px;border-top:2px solid var(--ink)}
 footer p{margin:0;color:var(--faint);font-size:9.5px;letter-spacing:.04em}
@@ -308,6 +318,9 @@ footer strong{color:var(--ink);font-weight:600}
   .optional-col{display:none}
   .detail-panel{gap:14px;padding:16px 12px}
   .detail-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px}
+  .summary-head{flex-direction:column;align-items:stretch;gap:10px}
+  .copy-button{width:100%;height:40px}
+  .summary-text{max-height:300px;overflow-y:auto;padding:14px}
   footer{flex-direction:column;align-items:flex-start;gap:6px;padding-inline:14px}
 }
 

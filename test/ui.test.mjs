@@ -92,6 +92,13 @@ test("dashboard exposes quote time and freshness status", async () => {
   assert.match(html, /id="freshness-text"/);
 });
 
+test("dashboard exposes the daily summary section for one-click publishing", async () => {
+  const html = await fs.readFile(new URL("../index.html", import.meta.url), "utf8");
+  assert.match(html, /id="summary-text"/);
+  assert.match(html, /id="copy-summary"/);
+  assert.match(html, /class="summary-section"/);
+});
+
 test("dashboard presents the Gangmeixia editorial brand and daily observation", async () => {
   const html = await fs.readFile(new URL("../index.html", import.meta.url), "utf8");
   assert.match(html, />港美侠</);

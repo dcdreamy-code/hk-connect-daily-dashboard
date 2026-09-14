@@ -53,6 +53,9 @@ def exercise(page, screenshot_name: str, test_live: bool = False, test_static_po
     assert page.locator("#observation-list li").count() == 3
     assert page.locator("#focus-ranking li").count() == 10
     assert page.locator("#concentration-value").inner_text().endswith("%")
+    summary_text = page.locator("#summary-text").inner_text()
+    assert "【港股通资金雷达" in summary_text
+    assert "$" in summary_text and "数据来源" in summary_text
     if page.viewport_size["width"] > 760:
         headers = page.locator("thead").inner_text()
         assert all(label in headers for label in ["总市值", "换手率", "振幅"])

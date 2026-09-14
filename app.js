@@ -445,6 +445,7 @@ function dashboard() {
     const southbound = document.querySelector("#cover-southbound");
     southbound.textContent = formatSignedHkd(snapshot.market.southboundNetBuy);
     southbound.className = trendClass(snapshot.market.southboundNetBuy);
+    renderSummaryText(snapshot);
     const list = document.querySelector("#observation-list");
     list.replaceChildren(...insights.bullets.map((text) => {
       const item = document.createElement("li");
@@ -460,6 +461,15 @@ function dashboard() {
     const breadth = snapshot.market.advancers / Math.max(1, snapshot.market.advancers + snapshot.market.decliners);
     document.querySelector("#breadth-reading").textContent = breadth >= .6 ? "上涨占优，市场宽度偏强" : breadth <= .4 ? "下跌占优，市场宽度偏弱" : "涨跌接近，市场表现分化";
     renderFocusRanking(topTen);
+  }
+
+  function renderSummaryText(snapshot) {
+    const textElement = document.querySelector("#summary-text");
+    try {
+      textElement.textContent = buildDailySummary(snapshot);
+    } catch (error) {
+      textElement.textContent = "今日盘点文稿生成失败，请稍后重试。";
+    }
   }
 
   function renderFocusRanking(items) {
@@ -649,6 +659,31 @@ function dashboard() {
       renderRows();
     }
   });
+  document.querySelector("#copy-summary").addEventListener("click", async () => {
+    const button = document.querySelector("#copy-summary");
+    const text = document.querySelector("#summary-text").textContent;
+    const markCopied = () => {
+      button.textContent = "已复制 ✓";
+      setTimeout(() => {
+        button.textContent = "复制全文";
+      }, 2000);
+    };
+    try {
+      await navigator.clipboard.writeText(text);
+      markCopied();
+    } catch (error) {
+      const helper = document.createElement("textarea");
+      helper.value = text;
+      helper.style.position = "fixed";
+      helper.style.opacity = "0";
+      document.body.append(helper);
+      helper.select();
+      const copied = document.execCommand("copy");
+      helper.remove();
+      if (copied) markCopied();
+      else button.textContent = "复制失败，请手动选择";
+    }
+  });
   document.addEventListener("visibilitychange", () => {
     checkLiveRefresh();
     checkStaticSnapshot();
@@ -690,6 +725,7 @@ function dashboard() {
 if (typeof document !== "undefined") dashboard();
 import { fetchEastmoneyUniverseQuotes } from "./src/adapters/eastmoney.mjs";
 import { formatPercent } from "./src/lib/format.mjs";
+import { buildDailySummary } from "./src/lib/daily-summary.mjs";
 
 export { formatPercent };
 import { buildSnapshot, carryForwardEnhancements, normalizeCode, rankableUniverse } from "./src/lib/pipeline.mjs";
