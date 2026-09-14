@@ -5,11 +5,6 @@ const metricCopy = {
   turnoverRate: "换手率",
 };
 
-export function formatPercent(value) {
-  if (!Number.isFinite(value)) return "--";
-  return `${value > 0 ? "+" : ""}${value.toFixed(2)}%`;
-}
-
 export function formatSignedHkd(value) {
   if (!Number.isFinite(value)) return "--";
   return `${value > 0 ? "+" : value < 0 ? "-" : ""}${formatHkd(Math.abs(value))}`;
@@ -694,6 +689,9 @@ function dashboard() {
 
 if (typeof document !== "undefined") dashboard();
 import { fetchEastmoneyUniverseQuotes } from "./src/adapters/eastmoney.mjs";
+import { formatPercent } from "./src/lib/format.mjs";
+
+export { formatPercent };
 import { buildSnapshot, carryForwardEnhancements, normalizeCode, rankableUniverse } from "./src/lib/pipeline.mjs";
 import { buildDailyInsights } from "./src/lib/share-image.mjs";
 import {
