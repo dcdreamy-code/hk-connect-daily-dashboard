@@ -196,6 +196,13 @@ tbody tr.data-row:hover,tbody tr.data-row:focus-within{background:#f6f1e4}
 .streak-chip.is-new{border-color:var(--copper);background:rgba(164,118,58,.1);color:var(--copper-deep)}
 .loss-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--ink-soft);background:var(--ink);color:#f3efe6;font:600 8.5px var(--mono);letter-spacing:.08em}
 .short-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--ink-soft);background:transparent;color:var(--ink-soft);font:600 8.5px var(--mono);letter-spacing:.08em}
+.newhigh-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--copper);background:var(--copper);color:#fffdf8;font:600 8.5px var(--mono);letter-spacing:.08em}
+.newlow-badge{flex:0 0 auto;padding:2px 4px;border:1px solid var(--ink-soft);background:transparent;color:var(--ink-soft);font:600 8.5px var(--mono);letter-spacing:.08em}
+.range52{min-width:0}
+.range52 .detail-label{margin-bottom:4px}
+.range52 .range-track{position:relative;height:4px;background:var(--line);overflow:visible}
+.range52 .range-track i{position:absolute;top:-2px;width:2px;height:8px;background:var(--copper)}
+.range52 strong{display:block;margin-top:4px;font:500 11px var(--mono);color:var(--copper-deep)}
 .numeric{text-align:right;font:500 12.5px var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
 .numeric.up{color:var(--up);font-weight:600}
 .numeric.down{color:var(--down);font-weight:600}

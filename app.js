@@ -130,6 +130,11 @@ export function profitabilityCounts(items) {
   return { profitable, losing };
 }
 
+export function rangePosition(close, high52, low52) {
+  if (![close, high52, low52].every(Number.isFinite) || high52 <= low52) return null;
+  return Math.min(100, Math.max(0, (close - low52) / (high52 - low52) * 100));
+}
+
 function securityCell(row, item, showContinuity) {
   const cell = document.createElement("td");
   cell.className = "security";
@@ -172,6 +177,19 @@ function securityCell(row, item, showContinuity) {
     badge.className = "short-badge";
     badge.textContent = "沽空";
     badge.title = `沽空比率 ${item.shortRatio.toFixed(1)}%,显著高于港股大中型股 15%-30% 的常态区间`;
+    nameLine.append(badge);
+  }
+  if ([item.close, item.high52].every(Number.isFinite) && item.close >= item.high52 * 0.98) {
+    const badge = document.createElement("span");
+    badge.className = "newhigh-badge";
+    badge.textContent = "新高";
+    badge.title = `收盘价距 52 周最高 ${formatPrice(item.high52)} 不足 2%`;
+    nameLine.append(badge);
+  } else if ([item.close, item.low52].every(Number.isFinite) && item.close <= item.low52 * 1.02) {
+    const badge = document.createElement("span");
+    badge.className = "newlow-badge";
+    badge.textContent = "新低";
+    badge.title = `收盘价距 52 周最低 ${formatPrice(item.low52)} 不足 2%`;
     nameLine.append(badge);
   }
   const code = document.createElement("span");
@@ -229,7 +247,27 @@ function detailRow(item) {
     detailFact("市净率", Number.isFinite(item.pb) ? item.pb.toFixed(2) : "--"),
     detailFact("沽空比率", Number.isFinite(item.shortRatio) ? formatRate(item.shortRatio) : "--"),
     detailFact("沽空金额", Number.isFinite(item.shortAmt) ? `${formatHkd(item.shortAmt)} 港币` : "--"),
+    detailFact("52周最高", Number.isFinite(item.high52) ? formatPrice(item.high52) : "--"),
+    detailFact("52周最低", Number.isFinite(item.low52) ? formatPrice(item.low52) : "--"),
   );
+  const position = rangePosition(item.close, item.high52, item.low52);
+  if (position !== null) {
+    const rangeBlock = document.createElement("div");
+    rangeBlock.className = "range52";
+    const label = document.createElement("span");
+    label.className = "detail-label";
+    label.textContent = "52周位置";
+    const track = document.createElement("div");
+    track.className = "range-track";
+    const marker = document.createElement("i");
+    marker.style.left = `${position.toFixed(1)}%`;
+    marker.title = `现价位于 52 周区间的 ${position.toFixed(0)}% 分位`;
+    track.append(marker);
+    const value = document.createElement("strong");
+    value.textContent = `${position.toFixed(0)}%`;
+    rangeBlock.append(label, track, value);
+    facts.append(rangeBlock);
+  }
   if (item.continuity) {
     const avg = item.continuity.avgTurnover5d;
     const versusAvg = Number.isFinite(avg) && avg > 0 && Number.isFinite(item.turnover)
@@ -503,7 +541,7 @@ function dashboard() {
       const { universe, profiles, ahPairs } = await loadLiveResources();
       const quotes = await fetchEastmoneyUniverseQuotes(universe.map((item) => item.code));
       const generatedAt = new Date().toISOString();
-      state.snapshot = buildSnapshot({
+      state.snapshot = carryForwardEnhancements(buildSnapshot({
         quotes,
         universe,
         profiles,
@@ -513,7 +551,7 @@ function dashboard() {
         marketStatus: final ? "close" : "intraday",
         limit: 50,
         minimumCoverage: 0.8,
-      });
+      }), state.baseSnapshot);
       state.lastRefreshAt = Date.now();
       renderHeader(state.snapshot);
       renderRows();
@@ -636,7 +674,7 @@ function dashboard() {
 
 if (typeof document !== "undefined") dashboard();
 import { fetchEastmoneyUniverseQuotes } from "./src/adapters/eastmoney.mjs";
-import { buildSnapshot, normalizeCode, rankableUniverse } from "./src/lib/pipeline.mjs";
+import { buildSnapshot, carryForwardEnhancements, normalizeCode, rankableUniverse } from "./src/lib/pipeline.mjs";
 import { buildDailyInsights } from "./src/lib/share-image.mjs";
 import {
   dataFreshness,

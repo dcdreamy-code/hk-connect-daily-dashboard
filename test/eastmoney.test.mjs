@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import test from "node:test";
 import {
+  fetchEastmoney52wRange,
   fetchEastmoneyAhPairs,
   fetchEastmoneyShortSelling,
   fetchEastmoneyUniverseQuotes,
@@ -102,6 +103,23 @@ test("fetchSouthboundFlow throws when net buying is not disclosed", async () => 
     result: { data: [{ TRADE_DATE: "2026-09-11 00:00:00", NET_DEAL_AMT: null, DEAL_AMT: 100 }] },
   }), { status: 200 });
   await assert.rejects(() => fetchSouthboundFlow({ fetchImpl, retries: 0 }), /not disclosed/);
+});
+
+test("fetchEastmoney52wRange derives high and low from weekly klines and tolerates failures", async () => {
+  const fetchImpl = async (url) => {
+    const secid = new URL(url).searchParams.get("secid");
+    if (secid === "116.00700") {
+      return new Response(JSON.stringify({
+        data: { klines: ["2026-09-04,442.800,456.200,433.000", "2026-09-11,428.400,442.600,419.400"] },
+      }), { status: 200 });
+    }
+    if (secid === "116.09988") return new Response(JSON.stringify({ data: null }), { status: 200 });
+    throw new Error("network down");
+  };
+  const ranges = await fetchEastmoney52wRange(["00700", "09988", "00005"], { fetchImpl, retries: 0, concurrency: 2 });
+  assert.deepEqual(ranges["00700"], { high52: 456.2, low52: 419.4 });
+  assert.equal("09988" in ranges, false);
+  assert.equal("00005" in ranges, false);
 });
 
 test("fetchEastmoneyAhPairs maps H codes to A-share metadata", async () => {

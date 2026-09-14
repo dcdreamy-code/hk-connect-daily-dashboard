@@ -90,9 +90,10 @@ export function sameMarketSnapshot(current, candidate) {
     && currentTimestamp === candidateTimestamp;
 }
 
-function enrich(quote, profiles, ahPairs, shortSelling) {
+function enrich(quote, profiles, ahPairs, shortSelling, week52) {
   const profile = profiles[quote.code] ?? {};
   const short = shortSelling[quote.code] ?? null;
+  const week = week52[quote.code] ?? null;
   return {
     ...quote,
     industry: profile.industry ?? quote.industry ?? null,
@@ -100,6 +101,8 @@ function enrich(quote, profiles, ahPairs, shortSelling) {
     ah: ahPairs[quote.code] ?? null,
     shortRatio: short?.shortRatio ?? null,
     shortAmt: short?.shortAmt ?? null,
+    high52: week?.high52 ?? null,
+    low52: week?.low52 ?? null,
   };
 }
 
@@ -133,6 +136,66 @@ export function buildContinuity(previousSnapshots) {
   return history;
 }
 
+export function carryForwardEnhancements(snapshot, base) {
+  if (!base) return snapshot;
+  const baseByCode = new Map((base.securities ?? []).map((item) => [item.code, item]));
+  const carry = (item) => {
+    const prev = baseByCode.get(item.code);
+    if (!prev) return item;
+    return {
+      ...item,
+      high52: prev.high52 != null
+        ? Math.max(prev.high52, Number.isFinite(item.high) ? item.high : prev.high52)
+        : null,
+      low52: prev.low52 != null
+        ? Math.min(prev.low52, Number.isFinite(item.low) ? item.low : prev.low52)
+        : null,
+      shortRatio: prev.shortRatio ?? null,
+      shortAmt: prev.shortAmt ?? null,
+    };
+  };
+  return {
+    ...snapshot,
+    market: { ...snapshot.market, southboundNetBuy: base.market?.southboundNetBuy ?? null },
+    securities: snapshot.securities.map(carry),
+    rankings: Object.fromEntries(
+      Object.entries(snapshot.rankings).map(([key, list]) => [key, list.map(carry)]),
+    ),
+  };
+}
+
+export function backfillEnhancements(snapshot, fallback) {
+  if (!fallback) return snapshot;
+  const fallbackByCode = new Map((fallback.securities ?? []).map((item) => [item.code, item]));
+  const fill = (item) => {
+    const prev = fallbackByCode.get(item.code);
+    if (!prev) return item;
+    return {
+      ...item,
+      shortRatio: item.shortRatio ?? prev.shortRatio ?? null,
+      shortAmt: item.shortAmt ?? prev.shortAmt ?? null,
+      high52: item.high52 ?? prev.high52 ?? null,
+      low52: item.low52 ?? prev.low52 ?? null,
+    };
+  };
+  const southboundNetBuy = snapshot.market?.southboundNetBuy ?? fallback.market?.southboundNetBuy ?? null;
+  const southboundAsOf = snapshot.market?.southboundNetBuy == null && fallback.market?.southboundNetBuy != null
+    ? fallback.tradeDate
+    : undefined;
+  return {
+    ...snapshot,
+    market: {
+      ...snapshot.market,
+      southboundNetBuy,
+      ...(southboundAsOf ? { southboundAsOf } : {}),
+    },
+    securities: snapshot.securities.map(fill),
+    rankings: Object.fromEntries(
+      Object.entries(snapshot.rankings).map(([key, list]) => [key, list.map(fill)]),
+    ),
+  };
+}
+
 export function buildSnapshot({
   quotes,
   universe,
@@ -141,6 +204,7 @@ export function buildSnapshot({
   history = null,
   shortSelling = {},
   southbound = null,
+  week52 = {},
   generatedAt,
   tradeDate,
   marketStatus = "close",
@@ -154,7 +218,7 @@ export function buildSnapshot({
   const continuityBase = history && history.basedOn > 0 ? history : null;
   const top50Codes = new Set(rankings.turnover.map((item) => item.code));
   const enrichList = (items) => items.map((item) => {
-    const enriched = enrich(item, profiles, ahPairs, shortSelling);
+    const enriched = enrich(item, profiles, ahPairs, shortSelling, week52);
     if (!continuityBase || !top50Codes.has(item.code)) return enriched;
     const streak = continuityBase.streakByCode[item.code];
     return {

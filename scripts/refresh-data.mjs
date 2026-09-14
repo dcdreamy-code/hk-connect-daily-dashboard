@@ -1,8 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchEastmoneyShortSelling, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
-import { buildContinuity, buildSnapshot, rankableUniverse, sameMarketSnapshot } from "../src/lib/pipeline.mjs";
+import { fetchEastmoney52wRange, fetchEastmoneyShortSelling, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
+import { backfillEnhancements, buildContinuity, buildSnapshot, rankableUniverse, sameMarketSnapshot } from "../src/lib/pipeline.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(root, "public", "data");
@@ -79,7 +79,7 @@ const pool = rankableUniverse(universe);
 const quotes = await fetchEastmoneyUniverseQuotes(pool.map((item) => item.code));
 const generatedAt = new Date().toISOString();
 const tradeDate = resolveTradeDate(quotes);
-const [shortSelling, southbound] = await Promise.all([
+const [shortSelling, southbound, week52] = await Promise.all([
   fetchEastmoneyShortSelling({ tradeDate }).catch((error) => {
     console.warn(`Short selling skipped: ${error.message}`);
     return {};
@@ -88,9 +88,16 @@ const [shortSelling, southbound] = await Promise.all([
     console.warn(`Southbound flow skipped: ${error.message}`);
     return null;
   }),
+  fetchEastmoney52wRange(pool.map((item) => item.code)).catch((error) => {
+    console.warn(`52w range skipped: ${error.message}`);
+    return {};
+  }),
 ]);
 const previousSnapshots = await loadPreviousSnapshots(tradeDate);
-const snapshot = buildSnapshot({
+const fallbackArchive = previousSnapshots.find((snap) => (snap.securities ?? []).some((item) => item.shortRatio != null))
+  ?? previousSnapshots[0]
+  ?? null;
+const snapshot = backfillEnhancements(buildSnapshot({
   quotes,
   universe: pool,
   profiles,
@@ -98,12 +105,13 @@ const snapshot = buildSnapshot({
   history: buildContinuity(previousSnapshots),
   shortSelling,
   southbound,
+  week52,
   generatedAt,
   tradeDate,
   marketStatus: marketStatus(tradeDate),
   limit: 50,
   minimumCoverage: 0.8,
-});
+}), fallbackArchive);
 
 let currentSnapshot = null;
 try {
@@ -113,20 +121,27 @@ try {
 }
 
 if (sameMarketSnapshot(currentSnapshot, snapshot)) {
-  const securitiesNow = currentSnapshot?.securities ?? [];
-  const missingShorts = Object.keys(shortSelling).length > 0
-    && securitiesNow.some((item) => item.shortRatio == null && shortSelling[item.code]);
-  const missingSouthbound = Boolean(southbound)
-    && southbound.tradeDate === tradeDate
+  const currentByCode = new Map((currentSnapshot?.securities ?? []).map((item) => [item.code, item]));
+  const missingShorts = snapshot.securities.some((item) => {
+    const prev = currentByCode.get(item.code);
+    return item.shortRatio != null && prev && prev.shortRatio == null;
+  });
+  const missingSouthbound = snapshot.market?.southboundNetBuy != null
     && currentSnapshot?.market?.southboundNetBuy == null;
-  if (!missingShorts && !missingSouthbound) {
+  const missingWeek52 = snapshot.securities.some((item) => {
+    const prev = currentByCode.get(item.code);
+    return item.high52 != null && prev && prev.high52 == null;
+  });
+  if (!missingShorts && !missingSouthbound && !missingWeek52) {
     console.log(`No newer market data for ${tradeDate}; keeping the existing snapshot.`);
     process.exit(0);
   }
   console.log(`Market data unchanged for ${tradeDate}; backfilling ${
-    [missingShorts && "short selling", missingSouthbound && "southbound flow"].filter(Boolean).join(" and ")
+    [missingShorts && "short selling", missingSouthbound && "southbound flow", missingWeek52 && "52w range"].filter(Boolean).join(" and ")
   }.`);
 }
+const fetchedRanges = Object.keys(week52).length;
+console.log(`52w range coverage: ${fetchedRanges}/${pool.length} securities.`);
 
 await fs.mkdir(path.join(outputDir, "daily"), { recursive: true });
 await atomicWrite(path.join(outputDir, "daily", `${tradeDate}.json`), snapshot);

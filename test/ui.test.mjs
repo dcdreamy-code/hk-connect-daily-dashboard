@@ -8,6 +8,7 @@ import {
   formatRate,
   isNewerSnapshot,
   profitabilityCounts,
+  rangePosition,
   selectRanking,
   summarizeRanking,
   sortSecurities,
@@ -117,4 +118,14 @@ test("profitabilityCounts classifies TTM earnings and ignores missing values", (
     {},
   ]);
   assert.deepEqual(counts, { profitable: 1, losing: 1 });
+});
+
+test("rangePosition maps close into the 52-week band with clamping", () => {
+  assert.equal(rangePosition(25, 100, 0), 25);
+  assert.equal(rangePosition(100, 100, 0), 100);
+  assert.equal(rangePosition(0, 100, 0), 0);
+  assert.equal(rangePosition(500, 456.2, 419.4), 100);
+  assert.equal(rangePosition(300, 456.2, 419.4), 0);
+  assert.equal(rangePosition(430, 430, 430), null);
+  assert.equal(rangePosition(430, null, 419.4), null);
 });

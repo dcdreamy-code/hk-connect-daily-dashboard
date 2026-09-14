@@ -2,8 +2,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import test from "node:test";
 import {
+  backfillEnhancements,
   buildContinuity,
   buildSnapshot,
+  carryForwardEnhancements,
   normalizeQuote,
   rankQuotes,
   rankableUniverse,
@@ -190,6 +192,7 @@ test("buildSnapshot enriches short selling and gates southbound by trade date", 
     quotes,
     universe: [{ code: "00001" }, { code: "00700" }, { code: "09988" }],
     shortSelling: { "00700": { shortRatio: 20.64, shortAmt: 1234846000 } },
+    week52: { "00700": { high52: 456.2, low52: 419.4 } },
     southbound: { tradeDate: "2026-09-10", netBuyHkd: 4431020000, turnoverHkd: 95492700000 },
     generatedAt: "2026-09-10T08:30:00.000Z",
     tradeDate: "2026-09-10",
@@ -198,8 +201,11 @@ test("buildSnapshot enriches short selling and gates southbound by trade date", 
   const tencent = snapshot.securities.find((item) => item.code === "00700");
   assert.equal(tencent.shortRatio, 20.64);
   assert.equal(tencent.shortAmt, 1234846000);
+  assert.equal(tencent.high52, 456.2);
+  assert.equal(tencent.low52, 419.4);
   const changhe = snapshot.securities.find((item) => item.code === "00001");
   assert.equal(changhe.shortRatio, null);
+  assert.equal(changhe.high52, null);
   assert.equal(snapshot.market.southboundNetBuy, 4431020000);
 
   const stale = buildSnapshot({
@@ -211,6 +217,67 @@ test("buildSnapshot enriches short selling and gates southbound by trade date", 
     limit: 50,
   });
   assert.equal(stale.market.southboundNetBuy, null);
+});
+
+test("carryForwardEnhancements restores previous-close context into live snapshots", () => {
+  const base = {
+    market: { southboundNetBuy: 4431020000 },
+    securities: [
+      { code: "00700", high52: 456.2, low52: 419.4, shortRatio: 13.4, shortAmt: 893435460 },
+      { code: "03308", high52: null, low52: null, shortRatio: 23, shortAmt: 100 },
+    ],
+  };
+  const live = {
+    market: { southboundNetBuy: null },
+    securities: [
+      { code: "00700", high: 460, low: 425, high52: null, low52: null, shortRatio: null, shortAmt: null },
+      { code: "00001", high: 70, low: 68, high52: null, low52: null, shortRatio: null, shortAmt: null },
+    ],
+    rankings: {},
+  };
+  live.rankings.turnover = [live.securities[0]];
+  const merged = carryForwardEnhancements(live, base);
+  const tencent = merged.securities.find((item) => item.code === "00700");
+  assert.equal(tencent.high52, 460);
+  assert.equal(tencent.low52, 419.4);
+  assert.equal(tencent.shortRatio, 13.4);
+  assert.equal(tencent.shortAmt, 893435460);
+  assert.equal(merged.market.southboundNetBuy, 4431020000);
+  const changhe = merged.securities.find((item) => item.code === "00001");
+  assert.equal(changhe.high52, null);
+  assert.equal(changhe.shortRatio, null);
+  assert.equal(merged.rankings.turnover[0].high52, 460);
+  assert.equal(carryForwardEnhancements(live, null), live);
+});
+
+test("backfillEnhancements fills missing context from the previous close archive", () => {
+  const fallback = {
+    tradeDate: "2026-09-11",
+    market: { southboundNetBuy: 4431020000 },
+    securities: [
+      { code: "00700", high52: 456.2, low52: 419.4, shortRatio: 13.4, shortAmt: 893435460 },
+      { code: "00001", high52: 55, low52: 48, shortRatio: 12, shortAmt: 500 },
+    ],
+  };
+  const snapshot = {
+    tradeDate: "2026-09-14",
+    market: { southboundNetBuy: null },
+    securities: [
+      { code: "00700", high52: 460, low52: 419.4, shortRatio: null, shortAmt: null },
+      { code: "09988", high52: null, low52: null, shortRatio: null, shortAmt: null },
+    ],
+    rankings: { turnover: [] },
+  };
+  const merged = backfillEnhancements(snapshot, fallback);
+  const tencent = merged.securities.find((item) => item.code === "00700");
+  assert.equal(tencent.shortRatio, 13.4);
+  assert.equal(tencent.high52, 460);
+  const alibaba = merged.securities.find((item) => item.code === "09988");
+  assert.equal(alibaba.high52, null);
+  assert.equal(alibaba.shortRatio, null);
+  assert.equal(merged.market.southboundNetBuy, 4431020000);
+  assert.equal(merged.market.southboundAsOf, "2026-09-11");
+  assert.equal(backfillEnhancements(snapshot, null), snapshot);
 });
 
 test("sameMarketSnapshot ignores generation time when market timestamps match", () => {
