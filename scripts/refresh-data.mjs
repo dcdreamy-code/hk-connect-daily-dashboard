@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchEastmoneyShortSelling, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
+import { fetchEastmoneyShortSelling, fetchEastmoneyStockNews, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
 import { fetchTencent52wRange } from "../src/adapters/tencent.mjs";
 import { backfillEnhancements, buildContinuity, buildSnapshot, rankableUniverse, sameMarketSnapshot } from "../src/lib/pipeline.mjs";
 
@@ -107,6 +107,23 @@ if (week52Archive) {
     }
   }
 }
+function focusCodesFor(snapshot) {
+  const turnover = snapshot.rankings?.turnover ?? [];
+  const picks = [
+    turnover[0],
+    turnover.toSorted((a, b) => (b.changePercent ?? 0) - (a.changePercent ?? 0))[0],
+    turnover.toSorted((a, b) => (a.changePercent ?? 0) - (b.changePercent ?? 0))[0],
+    turnover.find((item) => Number.isFinite(item.high52) && Number.isFinite(item.high) && item.high >= item.high52),
+    turnover.filter((item) => Number.isFinite(item.shortRatio) && item.shortRatio >= 20).toSorted((a, b) => b.shortRatio - a.shortRatio)[0],
+  ].filter(Boolean);
+  return [...new Map(picks.map((item) => [item.code, item])).keys()].slice(0, 6);
+}
+
+function searchKeywordFor(code, pool) {
+  const raw = pool.find((item) => item.code === code)?.name ?? code;
+  return raw.replace(/[-‑](?:W|S|SW|R)$/i, "").trim();
+}
+
 const snapshot = backfillEnhancements(buildSnapshot({
   quotes,
   universe: pool,
@@ -153,6 +170,34 @@ if (sameMarketSnapshot(currentSnapshot, snapshot)) {
 }
 const fetchedRanges = Object.keys(week52).length;
 console.log(`52w range coverage: ${fetchedRanges}/${pool.length} securities.`);
+
+const focusCodes = focusCodesFor(snapshot);
+if (focusCodes.length > 0) {
+  const newsResults = await Promise.all(focusCodes.map(async (code) => {
+    const keyword = searchKeywordFor(code, pool);
+    try {
+      const articles = await fetchEastmoneyStockNews({ keyword, date: tradeDate, limit: 1 });
+      return [code, articles];
+    } catch (error) {
+      console.warn(`news skipped for ${code} (${keyword}): ${error.message}`);
+      return null;
+    }
+  }));
+  const newsByCode = {};
+  for (const entry of newsResults) {
+    if (entry && entry[1].length > 0) newsByCode[entry[0]] = entry[1];
+  }
+  const attached = Object.keys(newsByCode).length;
+  for (const item of snapshot.securities) {
+    if (newsByCode[item.code]) item.news = newsByCode[item.code];
+  }
+  for (const list of Object.values(snapshot.rankings)) {
+    for (const item of list) {
+      if (newsByCode[item.code]) item.news = newsByCode[item.code];
+    }
+  }
+  console.log(`News attached: ${attached}/${focusCodes.length} focus stocks.`);
+}
 
 await fs.mkdir(path.join(outputDir, "daily"), { recursive: true });
 await atomicWrite(path.join(outputDir, "daily", `${tradeDate}.json`), snapshot);

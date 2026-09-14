@@ -276,6 +276,21 @@ test("backfillEnhancements fills missing context from the previous close archive
   assert.equal(backfillEnhancements(snapshot, null), snapshot);
 });
 
+test("buildSnapshot attaches focus news to matching securities only", () => {
+  const quotes = fixture.data.diff.map(normalizeQuote);
+  const snapshot = buildSnapshot({
+    quotes,
+    universe: [{ code: "00001" }, { code: "00700" }, { code: "09988" }],
+    newsByCode: { "00700": [{ title: "腾讯发布季报", mediaName: "证券时报", date: "2026-09-10 20:00:00", url: "http://example.com/x" }] },
+    generatedAt: "2026-09-10T08:30:00.000Z",
+    tradeDate: "2026-09-10",
+    limit: 50,
+  });
+  const tencent = snapshot.securities.find((item) => item.code === "00700");
+  assert.deepEqual(tencent.news[0].title, "腾讯发布季报");
+  assert.equal(snapshot.securities.find((item) => item.code === "00001").news, null);
+});
+
 test("sameMarketSnapshot ignores generation time when market timestamps match", () => {
   const current = { tradeDate: "2026-09-10", marketStatus: "close", securities: [{ timestamp: 100 }, { timestamp: 120 }] };
   const candidate = { tradeDate: "2026-09-10", marketStatus: "close", securities: [{ timestamp: 120 }] };

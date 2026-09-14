@@ -88,7 +88,7 @@ export function sameMarketSnapshot(current, candidate) {
     && currentTimestamp === candidateTimestamp;
 }
 
-function enrich(quote, profiles, ahPairs, shortSelling, week52) {
+function enrich(quote, profiles, ahPairs, shortSelling, week52, newsByCode) {
   const profile = profiles[quote.code] ?? {};
   const short = shortSelling[quote.code] ?? null;
   const week = week52[quote.code] ?? null;
@@ -101,6 +101,7 @@ function enrich(quote, profiles, ahPairs, shortSelling, week52) {
     shortAmt: short?.shortAmt ?? null,
     high52: week?.high52 ?? null,
     low52: week?.low52 ?? null,
+    news: newsByCode[quote.code] ?? null,
   };
 }
 
@@ -203,6 +204,7 @@ export function buildSnapshot({
   shortSelling = {},
   southbound = null,
   week52 = {},
+  newsByCode = {},
   generatedAt,
   tradeDate,
   marketStatus = "close",
@@ -216,7 +218,7 @@ export function buildSnapshot({
   const continuityBase = history && history.basedOn > 0 ? history : null;
   const top50Codes = new Set(rankings.turnover.map((item) => item.code));
   const enrichList = (items) => items.map((item) => {
-    const enriched = enrich(item, profiles, ahPairs, shortSelling, week52);
+    const enriched = enrich(item, profiles, ahPairs, shortSelling, week52, newsByCode);
     if (!continuityBase || !top50Codes.has(item.code)) return enriched;
     const streak = continuityBase.streakByCode[item.code];
     return {

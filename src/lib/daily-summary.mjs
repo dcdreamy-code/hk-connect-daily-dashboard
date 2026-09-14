@@ -137,6 +137,16 @@ export function buildDailySummary(snapshot) {
   if (top[2]) headPara += `；${nameOf(top[2])}成交 ${toYi(top[2].turnover)} 亿位列第三，${closeDesc(top[2])}`;
   headPara += "。";
 
+  // 消息面速览(仅统计焦点个股当天标题含其名称的新闻)
+  const newsItems = top.filter((item) => Array.isArray(item.news) && item.news.length > 0).slice(0, 4);
+  const newsPara = newsItems.length > 0
+    ? ["消息面速览", ...newsItems.map((item) => {
+        const article = item.news[0];
+        const title = article.title.length > 34 ? `${article.title.slice(0, 34)}…` : article.title;
+        return `• ${nameOf(item)}：${title}（${article.mediaName}）`;
+      })].join("\n")
+    : "";
+
   // 焦点与异动段
   const focusParts = [];
   if (shortFocus) {
@@ -148,7 +158,7 @@ export function buildDailySummary(snapshot) {
   }
   const focusSentence = focusParts.join("；") + "。";
 
-  return [
+  const blocks = [
     `${column} | ${monthDay}`,
     "",
     opening,
@@ -158,7 +168,8 @@ export function buildDailySummary(snapshot) {
     headPara,
     "",
     focusSentence,
-    "",
-    `数据来源：港股通收盘正式快照（截至 ${hhmm}）`,
-  ].filter((block) => block !== "").join("\n\n");
+  ];
+  if (newsPara) blocks.push("", newsPara);
+  blocks.push("", `数据来源：港股通收盘正式快照（截至 ${hhmm}）`);
+  return blocks.filter((block) => block !== "").join("\n\n");
 }

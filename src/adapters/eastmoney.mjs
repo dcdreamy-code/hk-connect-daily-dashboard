@@ -3,6 +3,7 @@ import { normalizeQuote } from "../lib/pipeline.mjs";
 const ENDPOINT = "https://push2delay.eastmoney.com/api/qt/clist/get";
 const UNIVERSE_ENDPOINT = "https://push2delay.eastmoney.com/api/qt/ulist.np/get";
 const DATACENTER_ENDPOINT = "https://datacenter-web.eastmoney.com/api/data/v1/get";
+const NEWS_SEARCH_ENDPOINT = "https://search-api-web.eastmoney.com/search/jsonp";
 const FIELDS = "f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f15,f16,f17,f18,f20,f23,f100,f124";
 const PAGE_SIZE = 100;
 const AH_FIELDS = "f12,f191,f2,f3,f186,f187,f188";
@@ -155,6 +156,52 @@ export async function fetchSouthboundFlow({
     netBuyHkd: Math.round((netDeal[0] + netDeal[1]) * 1e6),
     turnoverHkd: Math.round((deal[0] + deal[1]) * 1e6),
   };
+}
+
+
+export async function fetchEastmoneyStockNews({ keyword, date, limit = 2, fetchImpl = fetch, timeoutMs = 20000, retries = 1, retryDelayMs = 800 } = {}) {
+  const param = {
+    uid: "",
+    keyword,
+    type: ["cmsArticleWebOld"],
+    client: "web",
+    clientType: "web",
+    clientVersion: "curr",
+    param: { cmsArticleWebOld: { searchScope: "default", sort: "time", pageIndex: 1, pageSize: 10, preTag: "", postTag: "" } },
+  };
+  const url = `${NEWS_SEARCH_ENDPOINT}?cb=cb&param=${encodeURIComponent(JSON.stringify(param))}`;
+  let articles = null;
+  let lastError;
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    try {
+      const response = await fetchImpl(url, {
+        headers: { Accept: "*/*", Referer: "https://so.eastmoney.com/", "User-Agent": "Mozilla/5.0" },
+        signal: AbortSignal.timeout(timeoutMs),
+      });
+      if (!response.ok) throw new Error(`news search returned HTTP ${response.status}`);
+      const raw = (await response.text()).trim();
+      const wrapped = raw.match(/^[$\w]+\((.*)\)\s*;?\s*$/s);
+      const json = JSON.parse(wrapped ? wrapped[1] : raw);
+      const hits = json?.result?.cmsArticleWebOld;
+      if (Array.isArray(hits) && hits.length > 0) { articles = hits; break; }
+      lastError = new Error("no articles found");
+    } catch (error) {
+      lastError = error;
+      if (attempt < retries) await wait(retryDelayMs);
+    }
+  }
+  if (articles === null) throw new Error(`news search failed: ${lastError?.message ?? "unknown"}`);
+  return articles
+    .filter((article) => typeof article.date === "string" && article.date.startsWith(date))
+    .filter((article) => typeof article.title === "string" && article.title.includes(keyword))
+    .map((article) => ({
+      title: String(article.title ?? "").trim(),
+      mediaName: String(article.mediaName ?? "").trim(),
+      date: String(article.date),
+      url: String(article.url ?? ""),
+    }))
+    .filter((article) => article.title.length > 0)
+    .slice(0, limit);
 }
 
 function optionalNumber(value) {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "tradeDate": "2026-09-14",
-  "generatedAt": "2026-09-14T10:13:38.180Z",
+  "generatedAt": "2026-09-14T14:06:31.410Z",
   "marketStatus": "close",
   "source": {
     "market": "东方财富网页行情",
@@ -45,7 +45,8 @@
       "shortRatio": 40.145807417081,
       "shortAmt": 138325525,
       "high52": 73.655,
-      "low52": 47.293
+      "low52": 47.293,
+      "news": null
     },
     {
       "code": "00002",
@@ -71,7 +72,8 @@
       "shortRatio": 37.649046605298,
       "shortAmt": 64789050,
       "high52": 79.35,
-      "low52": 61.1
+      "low52": 61.1,
+      "news": null
     },
     {
       "code": "00003",
@@ -97,7 +99,8 @@
       "shortRatio": 39.990104060432,
       "shortAmt": 43771190,
       "high52": 7.475,
-      "low52": 6.28
+      "low52": 6.28,
+      "news": null
     },
     {
       "code": "00004",
@@ -123,7 +126,8 @@
       "shortRatio": 8.872160915484,
       "shortAmt": 1335140,
       "high52": 30.2,
-      "low52": 17.28
+      "low52": 17.28,
+      "news": null
     },
     {
       "code": "00005",
@@ -150,6 +154,7 @@
       "shortAmt": 383853480,
       "high52": 168.916,
       "low52": 94.532,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 22,
@@ -181,7 +186,8 @@
       "shortRatio": 37.443015828793,
       "shortAmt": 46678575,
       "high52": 64.23,
-      "low52": 45.8
+      "low52": 45.8,
+      "news": null
     },
     {
       "code": "00008",
@@ -207,7 +213,8 @@
       "shortRatio": 8.197569117543,
       "shortAmt": 3899955,
       "high52": 5.988,
-      "low52": 4.818
+      "low52": 4.818,
+      "news": null
     },
     {
       "code": "00010",
@@ -233,7 +240,8 @@
       "shortRatio": 14.251451461603,
       "shortAmt": 2248480,
       "high52": 16.68,
-      "low52": 12.06
+      "low52": 12.06,
+      "news": null
     },
     {
       "code": "00012",
@@ -259,7 +267,8 @@
       "shortRatio": 62.13188170252,
       "shortAmt": 84963220,
       "high52": 34.4,
-      "low52": 24.08
+      "low52": 24.08,
+      "news": null
     },
     {
       "code": "00013",
@@ -285,7 +294,8 @@
       "shortRatio": 12.771369531596,
       "shortAmt": 18405430,
       "high52": 28.8,
-      "low52": 15.57
+      "low52": 15.57,
+      "news": null
     },
     {
       "code": "00014",
@@ -311,7 +321,8 @@
       "shortRatio": 10.917680528242,
       "shortAmt": 3440360,
       "high52": 22.22,
-      "low52": 14.22
+      "low52": 14.22,
+      "news": null
     },
     {
       "code": "00016",
@@ -338,6 +349,7 @@
       "shortAmt": 221130550,
       "high52": 147.9,
       "low52": 86.42,
+      "news": null,
       "continuity": {
         "top50Days": 2,
         "prevRank": 19,
@@ -369,7 +381,8 @@
       "shortRatio": 33.41569102536,
       "shortAmt": 19854470,
       "high52": 12.45,
-      "low52": 5.66
+      "low52": 5.66,
+      "news": null
     },
     {
       "code": "00019",
@@ -395,7 +408,8 @@
       "shortRatio": 22.72702201194,
       "shortAmt": 20393900,
       "high52": 107.9,
-      "low52": 58.5
+      "low52": 58.5,
+      "news": null
     },
     {
       "code": "00020",
@@ -421,7 +435,8 @@
       "shortRatio": 33.583500804133,
       "shortAmt": 123456660,
       "high52": 2.94,
-      "low52": 1.23
+      "low52": 1.23,
+      "news": null
     },
     {
       "code": "00023",
@@ -447,7 +462,8 @@
       "shortRatio": 27.893708016317,
       "shortAmt": 15727736,
       "high52": 19.17,
-      "low52": 10.96
+      "low52": 10.96,
+      "news": null
     },
     {
       "code": "00027",
@@ -473,7 +489,8 @@
       "shortRatio": 62.03485115872,
       "shortAmt": 262067380,
       "high52": 42.52,
-      "low52": 27.78
+      "low52": 27.78,
+      "news": null
     },
     {
       "code": "00038",
@@ -505,7 +522,8 @@
       "shortRatio": 4.411896014655,
       "shortAmt": 824050,
       "high52": 10.376,
-      "low52": 6.33
+      "low52": 6.33,
+      "news": null
     },
     {
       "code": "00041",
@@ -531,7 +549,8 @@
       "shortRatio": 10.158936665042,
       "shortAmt": 367430,
       "high52": 18.5,
-      "low52": 12.769
+      "low52": 12.769,
+      "news": null
     },
     {
       "code": "00066",
@@ -557,7 +576,8 @@
       "shortRatio": 48.290751679331,
       "shortAmt": 48072360,
       "high52": 36.57,
-      "low52": 24.77
+      "low52": 24.77,
+      "news": null
     },
     {
       "code": "00068",
@@ -583,7 +603,8 @@
       "shortRatio": 7.534980465008,
       "shortAmt": 7390032,
       "high52": 48.5,
-      "low52": 7.4
+      "low52": 7.4,
+      "news": null
     },
     {
       "code": "00081",
@@ -609,7 +630,8 @@
       "shortRatio": 26.333673923462,
       "shortAmt": 2737565,
       "high52": 3.325,
-      "low52": 1.885
+      "low52": 1.885,
+      "news": null
     },
     {
       "code": "00083",
@@ -635,7 +657,8 @@
       "shortRatio": 40.586333852519,
       "shortAmt": 18703530,
       "high52": 13.28,
-      "low52": 9.07
+      "low52": 9.07,
+      "news": null
     },
     {
       "code": "00087",
@@ -661,7 +684,8 @@
       "shortRatio": 6.003689561574,
       "shortAmt": 590500,
       "high52": 15.6,
-      "low52": 10.37
+      "low52": 10.37,
+      "news": null
     },
     {
       "code": "00100",
@@ -688,6 +712,7 @@
       "shortAmt": 420431084,
       "high52": 1330,
       "low52": 186.2,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 5,
@@ -719,7 +744,8 @@
       "shortRatio": 11.293291457413,
       "shortAmt": 6099795,
       "high52": 9.78,
-      "low52": 6.71
+      "low52": 6.71,
+      "news": null
     },
     {
       "code": "00107",
@@ -751,7 +777,8 @@
       "shortRatio": 19.089656155692,
       "shortAmt": 642680,
       "high52": 5.76,
-      "low52": 4.05
+      "low52": 4.05,
+      "news": null
     },
     {
       "code": "00119",
@@ -777,7 +804,8 @@
       "shortRatio": 34.011901873648,
       "shortAmt": 4310830,
       "high52": 2.524,
-      "low52": 1.195
+      "low52": 1.195,
+      "news": null
     },
     {
       "code": "00123",
@@ -803,7 +831,8 @@
       "shortRatio": 1.622512615023,
       "shortAmt": 214855,
       "high52": 5.264,
-      "low52": 2.935
+      "low52": 2.935,
+      "news": null
     },
     {
       "code": "00135",
@@ -829,7 +858,8 @@
       "shortRatio": 20.041358327022,
       "shortAmt": 20387910,
       "high52": 8.662,
-      "low52": 6.34
+      "low52": 6.34,
+      "news": null
     },
     {
       "code": "00136",
@@ -855,7 +885,8 @@
       "shortRatio": 13.90254261948,
       "shortAmt": 17699120,
       "high52": 3.09,
-      "low52": 1.175
+      "low52": 1.175,
+      "news": null
     },
     {
       "code": "00142",
@@ -881,7 +912,8 @@
       "shortRatio": 55.983872443169,
       "shortAmt": 9700250,
       "high52": 6.47,
-      "low52": 4.55
+      "low52": 4.55,
+      "news": null
     },
     {
       "code": "00144",
@@ -907,7 +939,8 @@
       "shortRatio": 4.055777860627,
       "shortAmt": 3636400,
       "high52": 17.361,
-      "low52": 12.26
+      "low52": 12.26,
+      "news": null
     },
     {
       "code": "00148",
@@ -934,6 +967,7 @@
       "shortAmt": 123386250,
       "high52": 151.8,
       "low52": 22.9,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 37,
@@ -965,7 +999,8 @@
       "shortRatio": 21.44969938284,
       "shortAmt": 15878590,
       "high52": 5.862,
-      "low52": 2.785
+      "low52": 2.785,
+      "news": null
     },
     {
       "code": "00152",
@@ -991,7 +1026,8 @@
       "shortRatio": 28.678811959151,
       "shortAmt": 13228612,
       "high52": 8.84,
-      "low52": 4.92
+      "low52": 4.92,
+      "news": null
     },
     {
       "code": "00165",
@@ -1017,7 +1053,8 @@
       "shortRatio": 34.054232524638,
       "shortAmt": 6363820,
       "high52": 13.19,
-      "low52": 5.13
+      "low52": 5.13,
+      "news": null
     },
     {
       "code": "00168",
@@ -1049,7 +1086,8 @@
       "shortRatio": 28.39849946265,
       "shortAmt": 15447680,
       "high52": 53.3,
-      "low52": 39.34
+      "low52": 39.34,
+      "news": null
     },
     {
       "code": "00173",
@@ -1075,7 +1113,8 @@
       "shortRatio": 39.489174387061,
       "shortAmt": 270025,
       "high52": 2.89,
-      "low52": 1.88
+      "low52": 1.88,
+      "news": null
     },
     {
       "code": "00175",
@@ -1102,6 +1141,7 @@
       "shortAmt": 181540770,
       "high52": 25.12,
       "low52": 14.46,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -1139,7 +1179,8 @@
       "shortRatio": 9.318203903238,
       "shortAmt": 3354100,
       "high52": 10.69,
-      "low52": 8.12
+      "low52": 8.12,
+      "news": null
     },
     {
       "code": "00179",
@@ -1165,7 +1206,8 @@
       "shortRatio": 26.791888078115,
       "shortAmt": 8017425,
       "high52": 45.17,
-      "low52": 16.57
+      "low52": 16.57,
+      "news": null
     },
     {
       "code": "00187",
@@ -1197,7 +1239,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 7.5,
-      "low52": 2.69
+      "low52": 2.69,
+      "news": null
     },
     {
       "code": "00189",
@@ -1223,7 +1266,8 @@
       "shortRatio": 7.464498597455,
       "shortAmt": 9424230,
       "high52": 23.74,
-      "low52": 9.12
+      "low52": 9.12,
+      "news": null
     },
     {
       "code": "00200",
@@ -1249,7 +1293,8 @@
       "shortRatio": 42.179284820978,
       "shortAmt": 3196590,
       "high52": 6.29,
-      "low52": 2.96
+      "low52": 2.96,
+      "news": null
     },
     {
       "code": "00220",
@@ -1275,7 +1320,8 @@
       "shortRatio": 20.376368254404,
       "shortAmt": 9690095,
       "high52": 8.45,
-      "low52": 6.63
+      "low52": 6.63,
+      "news": null
     },
     {
       "code": "00241",
@@ -1301,7 +1347,8 @@
       "shortRatio": 46.342594258204,
       "shortAmt": 51058350,
       "high52": 7.685,
-      "low52": 2.815
+      "low52": 2.815,
+      "news": null
     },
     {
       "code": "00257",
@@ -1327,7 +1374,8 @@
       "shortRatio": 37.611452115388,
       "shortAmt": 14701555,
       "high52": 5.78,
-      "low52": 4.22
+      "low52": 4.22,
+      "news": null
     },
     {
       "code": "00267",
@@ -1353,7 +1401,8 @@
       "shortRatio": 22.265959315263,
       "shortAmt": 32908870,
       "high52": 13.707,
-      "low52": 10.135
+      "low52": 10.135,
+      "news": null
     },
     {
       "code": "00268",
@@ -1379,7 +1428,8 @@
       "shortRatio": 15.353962046959,
       "shortAmt": 31687910,
       "high52": 17.78,
-      "low52": 5.63
+      "low52": 5.63,
+      "news": null
     },
     {
       "code": "00270",
@@ -1405,7 +1455,8 @@
       "shortRatio": 17.977377723642,
       "shortAmt": 27717620,
       "high52": 8.92,
-      "low52": 6.142
+      "low52": 6.142,
+      "news": null
     },
     {
       "code": "00285",
@@ -1431,7 +1482,8 @@
       "shortRatio": 26.598835554004,
       "shortAmt": 54944000,
       "high52": 44.421,
-      "low52": 20.1
+      "low52": 20.1,
+      "news": null
     },
     {
       "code": "00288",
@@ -1458,6 +1510,7 @@
       "shortAmt": 91867772,
       "high52": 10.23,
       "low52": 6.39,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -1489,7 +1542,8 @@
       "shortRatio": 1.475554080789,
       "shortAmt": 628780,
       "high52": 10.14,
-      "low52": 1.4
+      "low52": 1.4,
+      "news": null
     },
     {
       "code": "00291",
@@ -1515,7 +1569,8 @@
       "shortRatio": 10.36667913989,
       "shortAmt": 37888885,
       "high52": 27.946,
-      "low52": 17.87
+      "low52": 17.87,
+      "news": null
     },
     {
       "code": "00293",
@@ -1541,7 +1596,8 @@
       "shortRatio": 10.328265652279,
       "shortAmt": 31398750,
       "high52": 14.96,
-      "low52": 9.45
+      "low52": 9.45,
+      "news": null
     },
     {
       "code": "00297",
@@ -1567,7 +1623,8 @@
       "shortRatio": 12.533696357021,
       "shortAmt": 2295830,
       "high52": 2.001,
-      "low52": 1.19
+      "low52": 1.19,
+      "news": null
     },
     {
       "code": "00300",
@@ -1599,7 +1656,8 @@
       "shortRatio": 54.511423398641,
       "shortAmt": 168461780,
       "high52": 101.7,
-      "low52": 73.236
+      "low52": 73.236,
+      "news": null
     },
     {
       "code": "00303",
@@ -1625,7 +1683,8 @@
       "shortRatio": 30.780329583397,
       "shortAmt": 24525042,
       "high52": 63.777,
-      "low52": 47.327
+      "low52": 47.327,
+      "news": null
     },
     {
       "code": "00308",
@@ -1651,7 +1710,8 @@
       "shortRatio": 22.29479506275,
       "shortAmt": 1207660,
       "high52": 1.95,
-      "low52": 1
+      "low52": 1,
+      "news": null
     },
     {
       "code": "00316",
@@ -1677,7 +1737,8 @@
       "shortRatio": 20.816274527348,
       "shortAmt": 32450600,
       "high52": 174.61,
-      "low52": 110.934
+      "low52": 110.934,
+      "news": null
     },
     {
       "code": "00317",
@@ -1709,7 +1770,8 @@
       "shortRatio": 2.29340230799,
       "shortAmt": 1820500,
       "high52": 17.845,
-      "low52": 10.9
+      "low52": 10.9,
+      "news": null
     },
     {
       "code": "00322",
@@ -1735,7 +1797,8 @@
       "shortRatio": 43.896969319667,
       "shortAmt": 50320900,
       "high52": 14.14,
-      "low52": 9.238
+      "low52": 9.238,
+      "news": null
     },
     {
       "code": "00323",
@@ -1767,7 +1830,8 @@
       "shortRatio": 22.030660509871,
       "shortAmt": 1058690,
       "high52": 3.07,
-      "low52": 1.57
+      "low52": 1.57,
+      "news": null
     },
     {
       "code": "00325",
@@ -1793,7 +1857,8 @@
       "shortRatio": 8.304575614949,
       "shortAmt": 3806265,
       "high52": 109.675,
-      "low52": 38.875
+      "low52": 38.875,
+      "news": null
     },
     {
       "code": "00336",
@@ -1819,7 +1884,8 @@
       "shortRatio": 6.691642358517,
       "shortAmt": 4630390,
       "high52": 5.092,
-      "low52": 2.767
+      "low52": 2.767,
+      "news": null
     },
     {
       "code": "00338",
@@ -1851,7 +1917,8 @@
       "shortRatio": 26.474858375887,
       "shortAmt": 3513210,
       "high52": 1.82,
-      "low52": 1.07
+      "low52": 1.07,
+      "news": null
     },
     {
       "code": "00340",
@@ -1877,7 +1944,8 @@
       "shortRatio": 5.46436110586,
       "shortAmt": 3482910,
       "high52": 4.108,
-      "low52": 1.66
+      "low52": 1.66,
+      "news": null
     },
     {
       "code": "00345",
@@ -1903,7 +1971,8 @@
       "shortRatio": 23.179353921537,
       "shortAmt": 795680,
       "high52": 8.815,
-      "low52": 5.485
+      "low52": 5.485,
+      "news": null
     },
     {
       "code": "00347",
@@ -1935,7 +2004,8 @@
       "shortRatio": 35.345624755085,
       "shortAmt": 1589230,
       "high52": 2.41,
-      "low52": 1.08
+      "low52": 1.08,
+      "news": null
     },
     {
       "code": "00354",
@@ -1961,7 +2031,8 @@
       "shortRatio": 22.322136995133,
       "shortAmt": 10429110,
       "high52": 6.553,
-      "low52": 2.89
+      "low52": 2.89,
+      "news": null
     },
     {
       "code": "00358",
@@ -1993,7 +2064,8 @@
       "shortRatio": 8.366141444359,
       "shortAmt": 37456240,
       "high52": 53.06,
-      "low52": 23.032
+      "low52": 23.032,
+      "news": null
     },
     {
       "code": "00363",
@@ -2019,7 +2091,8 @@
       "shortRatio": 9.366392264343,
       "shortAmt": 477930,
       "high52": 15.49,
-      "low52": 12.15
+      "low52": 12.15,
+      "news": null
     },
     {
       "code": "00371",
@@ -2045,7 +2118,8 @@
       "shortRatio": 9.344330220826,
       "shortAmt": 9346500,
       "high52": 2.832,
-      "low52": 1.58
+      "low52": 1.58,
+      "news": null
     },
     {
       "code": "00376",
@@ -2071,7 +2145,8 @@
       "shortRatio": 12.467361635918,
       "shortAmt": 3726740,
       "high52": 7.36,
-      "low52": 1.46
+      "low52": 1.46,
+      "news": null
     },
     {
       "code": "00384",
@@ -2097,7 +2172,8 @@
       "shortRatio": 27.843900141929,
       "shortAmt": 18678138,
       "high52": 8.5,
-      "low52": 4.97
+      "low52": 4.97,
+      "news": null
     },
     {
       "code": "00386",
@@ -2129,7 +2205,8 @@
       "shortRatio": 48.130929176364,
       "shortAmt": 204111370,
       "high52": 5.571,
-      "low52": 3.871
+      "low52": 3.871,
+      "news": null
     },
     {
       "code": "00388",
@@ -2156,6 +2233,7 @@
       "shortAmt": 408593080,
       "high52": 446.25,
       "low52": 352.57,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 25,
@@ -2193,7 +2271,8 @@
       "shortRatio": 26.755357797439,
       "shortAmt": 18522580,
       "high52": 5.181,
-      "low52": 3.151
+      "low52": 3.151,
+      "news": null
     },
     {
       "code": "00392",
@@ -2219,7 +2298,8 @@
       "shortRatio": 20.694374610284,
       "shortAmt": 13221960,
       "high52": 35.26,
-      "low52": 25.77
+      "low52": 25.77,
+      "news": null
     },
     {
       "code": "00425",
@@ -2245,7 +2325,8 @@
       "shortRatio": 14.897187050448,
       "shortAmt": 10042902,
       "high52": 45.996,
-      "low52": 23.3
+      "low52": 23.3,
+      "news": null
     },
     {
       "code": "00440",
@@ -2271,7 +2352,8 @@
       "shortRatio": 10.255907994958,
       "shortAmt": 800024,
       "high52": 50,
-      "low52": 30.08
+      "low52": 30.08,
+      "news": null
     },
     {
       "code": "00460",
@@ -2297,7 +2379,8 @@
       "shortRatio": 17.703243382422,
       "shortAmt": 2394765,
       "high52": 1.909,
-      "low52": 0.705
+      "low52": 0.705,
+      "news": null
     },
     {
       "code": "00467",
@@ -2323,7 +2406,8 @@
       "shortRatio": 16.442791116872,
       "shortAmt": 3145600,
       "high52": 1.1,
-      "low52": 0.33
+      "low52": 0.33,
+      "news": null
     },
     {
       "code": "00470",
@@ -2355,7 +2439,8 @@
       "shortRatio": 6.551244638102,
       "shortAmt": 1699428,
       "high52": 61.521,
-      "low52": 25.56
+      "low52": 25.56,
+      "news": null
     },
     {
       "code": "00501",
@@ -2387,7 +2472,8 @@
       "shortRatio": 27.629044625983,
       "shortAmt": 3660760,
       "high52": 124.886,
-      "low52": 67.7
+      "low52": 67.7,
+      "news": null
     },
     {
       "code": "00506",
@@ -2413,7 +2499,8 @@
       "shortRatio": 2.519828273262,
       "shortAmt": 248510,
       "high52": 5.023,
-      "low52": 3.02
+      "low52": 3.02,
+      "news": null
     },
     {
       "code": "00512",
@@ -2439,7 +2526,8 @@
       "shortRatio": 27.870345457867,
       "shortAmt": 7500147,
       "high52": 8.801,
-      "low52": 4.53
+      "low52": 4.53,
+      "news": null
     },
     {
       "code": "00522",
@@ -2465,7 +2553,8 @@
       "shortRatio": 4.289879635451,
       "shortAmt": 15872730,
       "high52": 243.43,
-      "low52": 66.8
+      "low52": 66.8,
+      "news": null
     },
     {
       "code": "00525",
@@ -2497,7 +2586,8 @@
       "shortRatio": 6.321173627115,
       "shortAmt": 674760,
       "high52": 2.537,
-      "low52": 1.927
+      "low52": 1.927,
+      "news": null
     },
     {
       "code": "00537",
@@ -2529,7 +2619,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 38,
-      "low52": 20.44
+      "low52": 20.44,
+      "news": null
     },
     {
       "code": "00546",
@@ -2555,7 +2646,8 @@
       "shortRatio": 28.373522104243,
       "shortAmt": 9733015,
       "high52": 9.954,
-      "low52": 4.346
+      "low52": 4.346,
+      "news": null
     },
     {
       "code": "00548",
@@ -2587,7 +2679,8 @@
       "shortRatio": 39.420240718766,
       "shortAmt": 348810,
       "high52": 7.839,
-      "low52": 6.079
+      "low52": 6.079,
+      "news": null
     },
     {
       "code": "00551",
@@ -2613,7 +2706,8 @@
       "shortRatio": 39.832721611964,
       "shortAmt": 18760945,
       "high52": 17.8,
-      "low52": 11.18
+      "low52": 11.18,
+      "news": null
     },
     {
       "code": "00552",
@@ -2639,7 +2733,8 @@
       "shortRatio": 15.445314737618,
       "shortAmt": 5592160,
       "high52": 4.723,
-      "low52": 3.753
+      "low52": 3.753,
+      "news": null
     },
     {
       "code": "00553",
@@ -2671,7 +2766,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 7.208,
-      "low52": 3.085
+      "low52": 3.085,
+      "news": null
     },
     {
       "code": "00564",
@@ -2703,7 +2799,8 @@
       "shortRatio": 5.567389459898,
       "shortAmt": 1154992,
       "high52": 24.568,
-      "low52": 11.88
+      "low52": 11.88,
+      "news": null
     },
     {
       "code": "00568",
@@ -2735,7 +2832,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 16.33,
-      "low52": 3.07
+      "low52": 3.07,
+      "news": null
     },
     {
       "code": "00570",
@@ -2761,7 +2859,8 @@
       "shortRatio": 17.712395444871,
       "shortAmt": 1430390,
       "high52": 2.68,
-      "low52": 1.255
+      "low52": 1.255,
+      "news": null
     },
     {
       "code": "00576",
@@ -2787,7 +2886,8 @@
       "shortRatio": 24.594035059321,
       "shortAmt": 32359780,
       "high52": 7.712,
-      "low52": 5.905
+      "low52": 5.905,
+      "news": null
     },
     {
       "code": "00586",
@@ -2813,7 +2913,8 @@
       "shortRatio": 47.873742304547,
       "shortAmt": 7007227,
       "high52": 13.9,
-      "low52": 7
+      "low52": 7,
+      "news": null
     },
     {
       "code": "00588",
@@ -2845,7 +2946,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 1.04,
-      "low52": 0.66
+      "low52": 0.66,
+      "news": null
     },
     {
       "code": "00590",
@@ -2871,7 +2973,8 @@
       "shortRatio": 17.61168713575,
       "shortAmt": 4569080,
       "high52": 33.48,
-      "low52": 18.49
+      "low52": 18.49,
+      "news": null
     },
     {
       "code": "00598",
@@ -2903,7 +3006,8 @@
       "shortRatio": 39.700926295303,
       "shortAmt": 5191920,
       "high52": 5.173,
-      "low52": 3.638
+      "low52": 3.638,
+      "news": null
     },
     {
       "code": "00600",
@@ -2929,7 +3033,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 36.9,
-      "low52": 9.6
+      "low52": 9.6,
+      "news": null
     },
     {
       "code": "00604",
@@ -2955,7 +3060,8 @@
       "shortRatio": 21.274497006891,
       "shortAmt": 398150,
       "high52": 1.08,
-      "low52": 0.6
+      "low52": 0.6,
+      "news": null
     },
     {
       "code": "00631",
@@ -2981,7 +3087,8 @@
       "shortRatio": 37.32157650495,
       "shortAmt": 38309920,
       "high52": 15.89,
-      "low52": 6.4
+      "low52": 6.4,
+      "news": null
     },
     {
       "code": "00636",
@@ -3007,7 +3114,8 @@
       "shortRatio": 4.550177817645,
       "shortAmt": 179315,
       "high52": 7.62,
-      "low52": 5.33
+      "low52": 5.33,
+      "news": null
     },
     {
       "code": "00638",
@@ -3039,7 +3147,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 21.332,
-      "low52": 6.79
+      "low52": 6.79,
+      "news": null
     },
     {
       "code": "00639",
@@ -3065,7 +3174,8 @@
       "shortRatio": 6.3991242619,
       "shortAmt": 4201480,
       "high52": 3.44,
-      "low52": 2
+      "low52": 2,
+      "news": null
     },
     {
       "code": "00656",
@@ -3091,7 +3201,8 @@
       "shortRatio": 21.613530915102,
       "shortAmt": 5645750,
       "high52": 5.76,
-      "low52": 3.42
+      "low52": 3.42,
+      "news": null
     },
     {
       "code": "00659",
@@ -3117,7 +3228,8 @@
       "shortRatio": 16.625797317896,
       "shortAmt": 807200,
       "high52": 9.3,
-      "low52": 6.42
+      "low52": 6.42,
+      "news": null
     },
     {
       "code": "00666",
@@ -3143,7 +3255,8 @@
       "shortRatio": 16.657844531042,
       "shortAmt": 1028889,
       "high52": 18.87,
-      "low52": 9.12
+      "low52": 9.12,
+      "news": null
     },
     {
       "code": "00667",
@@ -3169,7 +3282,8 @@
       "shortRatio": 14.914882226451,
       "shortAmt": 753605,
       "high52": 7.41,
-      "low52": 3.57
+      "low52": 3.57,
+      "news": null
     },
     {
       "code": "00668",
@@ -3201,7 +3315,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 141.2,
-      "low52": 90
+      "low52": 90,
+      "news": null
     },
     {
       "code": "00669",
@@ -3228,6 +3343,7 @@
       "shortAmt": 141733300,
       "high52": 148.5,
       "low52": 80.38,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -3265,7 +3381,8 @@
       "shortRatio": 14.071356476452,
       "shortAmt": 5257260,
       "high52": 6.4,
-      "low52": 2.57
+      "low52": 2.57,
+      "news": null
     },
     {
       "code": "00683",
@@ -3291,7 +3408,8 @@
       "shortRatio": 13.583983476288,
       "shortAmt": 2649985,
       "high52": 24.75,
-      "low52": 17.2
+      "low52": 17.2,
+      "news": null
     },
     {
       "code": "00688",
@@ -3317,7 +3435,8 @@
       "shortRatio": 29.692983682271,
       "shortAmt": 109231010,
       "high52": 16.45,
-      "low52": 11.11
+      "low52": 11.11,
+      "news": null
     },
     {
       "code": "00696",
@@ -3343,7 +3462,8 @@
       "shortRatio": 10.67606839745,
       "shortAmt": 3166590,
       "high52": 11.233,
-      "low52": 7.713
+      "low52": 7.713,
+      "news": null
     },
     {
       "code": "00697",
@@ -3369,7 +3489,8 @@
       "shortRatio": 19.85496372255,
       "shortAmt": 3240560,
       "high52": 2.583,
-      "low52": 1.3
+      "low52": 1.3,
+      "news": null
     },
     {
       "code": "00699",
@@ -3401,7 +3522,8 @@
       "shortRatio": 10.322960494997,
       "shortAmt": 997750,
       "high52": 21.294,
-      "low52": 11.11
+      "low52": 11.11,
+      "news": null
     },
     {
       "code": "00700",
@@ -3428,6 +3550,7 @@
       "shortAmt": 873612040,
       "high52": 677.7,
       "low52": 411,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 1,
@@ -3465,7 +3588,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 7.668,
-      "low52": 5.008
+      "low52": 5.008,
+      "news": null
     },
     {
       "code": "00728",
@@ -3497,7 +3621,8 @@
       "shortRatio": 18.187597712548,
       "shortAmt": 70167350,
       "high52": 5.791,
-      "low52": 4.054
+      "low52": 4.054,
+      "news": null
     },
     {
       "code": "00751",
@@ -3523,7 +3648,8 @@
       "shortRatio": 4.30703952143,
       "shortAmt": 150510,
       "high52": 7.59,
-      "low52": 3.76
+      "low52": 3.76,
+      "news": null
     },
     {
       "code": "00753",
@@ -3555,7 +3681,8 @@
       "shortRatio": 19.283563085417,
       "shortAmt": 19955160,
       "high52": 7.77,
-      "low52": 3.635
+      "low52": 3.635,
+      "news": null
     },
     {
       "code": "00762",
@@ -3581,7 +3708,8 @@
       "shortRatio": 13.450187802696,
       "shortAmt": 56275750,
       "high52": 9.818,
-      "low52": 5.42
+      "low52": 5.42,
+      "news": null
     },
     {
       "code": "00763",
@@ -3613,7 +3741,8 @@
       "shortRatio": 21.260554944819,
       "shortAmt": 30830176,
       "high52": 45.987,
-      "low52": 21.047
+      "low52": 21.047,
+      "news": null
     },
     {
       "code": "00772",
@@ -3639,7 +3768,8 @@
       "shortRatio": 21.955978484373,
       "shortAmt": 17750612,
       "high52": 45.5,
-      "low52": 18
+      "low52": 18,
+      "news": null
     },
     {
       "code": "00780",
@@ -3665,7 +3795,8 @@
       "shortRatio": 15.113190930074,
       "shortAmt": 15129796,
       "high52": 25.17,
-      "low52": 10.43
+      "low52": 10.43,
+      "news": null
     },
     {
       "code": "00788",
@@ -3691,7 +3822,8 @@
       "shortRatio": 28.731584966616,
       "shortAmt": 42601605,
       "high52": 12.257,
-      "low52": 8.439
+      "low52": 8.439,
+      "news": null
     },
     {
       "code": "00800",
@@ -3717,7 +3849,8 @@
       "shortRatio": 24.208489233858,
       "shortAmt": 3094569,
       "high52": 25.98,
-      "low52": 13.62
+      "low52": 13.62,
+      "news": null
     },
     {
       "code": "00811",
@@ -3749,7 +3882,8 @@
       "shortRatio": 8.217730892904,
       "shortAmt": 961440,
       "high52": 10.811,
-      "low52": 7.8
+      "low52": 7.8,
+      "news": null
     },
     {
       "code": "00817",
@@ -3775,7 +3909,8 @@
       "shortRatio": 20.189527475692,
       "shortAmt": 11573580,
       "high52": 2.04,
-      "low52": 1.16
+      "low52": 1.16,
+      "news": null
     },
     {
       "code": "00819",
@@ -3801,7 +3936,8 @@
       "shortRatio": 26.111719580817,
       "shortAmt": 12875080,
       "high52": 9.53,
-      "low52": 3.67
+      "low52": 3.67,
+      "news": null
     },
     {
       "code": "00826",
@@ -3827,7 +3963,8 @@
       "shortRatio": 23.700266537742,
       "shortAmt": 11294490,
       "high52": 4.511,
-      "low52": 2.401
+      "low52": 2.401,
+      "news": null
     },
     {
       "code": "00836",
@@ -3853,7 +3990,8 @@
       "shortRatio": 37.983346488795,
       "shortAmt": 63894780,
       "high52": 21.068,
-      "low52": 15.808
+      "low52": 15.808,
+      "news": null
     },
     {
       "code": "00839",
@@ -3879,7 +4017,8 @@
       "shortRatio": 17.045439831099,
       "shortAmt": 608830,
       "high52": 4.12,
-      "low52": 1.6
+      "low52": 1.6,
+      "news": null
     },
     {
       "code": "00853",
@@ -3905,7 +4044,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 16.28,
-      "low52": 5.83
+      "low52": 5.83,
+      "news": null
     },
     {
       "code": "00855",
@@ -3931,7 +4071,8 @@
       "shortRatio": 30.664730892876,
       "shortAmt": 1094090,
       "high52": 6.58,
-      "low52": 4.285
+      "low52": 4.285,
+      "news": null
     },
     {
       "code": "00856",
@@ -3957,7 +4098,8 @@
       "shortRatio": 35.997081862622,
       "shortAmt": 4302670,
       "high52": 12.72,
-      "low52": 6.832
+      "low52": 6.832,
+      "news": null
     },
     {
       "code": "00857",
@@ -3989,7 +4131,8 @@
       "shortRatio": 26.185667770781,
       "shortAmt": 141522550,
       "high52": 11.632,
-      "low52": 6.402
+      "low52": 6.402,
+      "news": null
     },
     {
       "code": "00867",
@@ -4015,7 +4158,8 @@
       "shortRatio": 39.407911552331,
       "shortAmt": 26883830,
       "high52": 15.286,
-      "low52": 9.321
+      "low52": 9.321,
+      "news": null
     },
     {
       "code": "00868",
@@ -4041,7 +4185,8 @@
       "shortRatio": 35.868967317183,
       "shortAmt": 29733370,
       "high52": 11.985,
-      "low52": 7.575
+      "low52": 7.575,
+      "news": null
     },
     {
       "code": "00874",
@@ -4073,7 +4218,8 @@
       "shortRatio": 22.230727132423,
       "shortAmt": 3566480,
       "high52": 19.537,
-      "low52": 13.23
+      "low52": 13.23,
+      "news": null
     },
     {
       "code": "00880",
@@ -4099,7 +4245,8 @@
       "shortRatio": 16.236547403125,
       "shortAmt": 1749300,
       "high52": 3.38,
-      "low52": 1.33
+      "low52": 1.33,
+      "news": null
     },
     {
       "code": "00881",
@@ -4125,7 +4272,8 @@
       "shortRatio": 16.97307719635,
       "shortAmt": 5019117,
       "high52": 15.82,
-      "low52": 3.115
+      "low52": 3.115,
+      "news": null
     },
     {
       "code": "00883",
@@ -4158,6 +4306,7 @@
       "shortAmt": 211894260,
       "high52": 29.49,
       "low52": 16.93,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 14,
@@ -4195,7 +4344,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 3.23,
-      "low52": 1.55
+      "low52": 1.55,
+      "news": null
     },
     {
       "code": "00901",
@@ -4221,7 +4371,8 @@
       "shortRatio": 1.460922730381,
       "shortAmt": 195220,
       "high52": 88.45,
-      "low52": 52
+      "low52": 52,
+      "news": null
     },
     {
       "code": "00902",
@@ -4253,7 +4404,8 @@
       "shortRatio": 28.302326948293,
       "shortAmt": 20182290,
       "high52": 7.175,
-      "low52": 4.795
+      "low52": 4.795,
+      "news": null
     },
     {
       "code": "00914",
@@ -4265,9 +4417,9 @@
       "turnover": 116589410,
       "amplitude": 2.43,
       "turnoverRate": 0.56,
-      "peTtm": 2.83,
+      "peTtm": 11.6,
       "pb": 0.39,
-      "marketCap": 20897921100,
+      "marketCap": 85571421415,
       "high": 16.58,
       "low": 16.18,
       "open": 16.49,
@@ -4285,7 +4437,8 @@
       "shortRatio": 40.695012362446,
       "shortAmt": 47446075,
       "high52": 26.29,
-      "low52": 16.13
+      "low52": 16.13,
+      "news": null
     },
     {
       "code": "00916",
@@ -4317,7 +4470,8 @@
       "shortRatio": 32.502788966733,
       "shortAmt": 26386295,
       "high52": 8.499,
-      "low52": 4.95
+      "low52": 4.95,
+      "news": null
     },
     {
       "code": "00917",
@@ -4343,7 +4497,8 @@
       "shortRatio": 1.289182593861,
       "shortAmt": 391757,
       "high52": 75.7,
-      "low52": 7.275
+      "low52": 7.275,
+      "news": null
     },
     {
       "code": "00921",
@@ -4375,7 +4530,8 @@
       "shortRatio": 30.460305055277,
       "shortAmt": 1387540,
       "high52": 26.016,
-      "low52": 18.066
+      "low52": 18.066,
+      "news": null
     },
     {
       "code": "00934",
@@ -4401,7 +4557,8 @@
       "shortRatio": 13.76284507227,
       "shortAmt": 587690,
       "high52": 4.37,
-      "low52": 3.36
+      "low52": 3.36,
+      "news": null
     },
     {
       "code": "00939",
@@ -4434,6 +4591,7 @@
       "shortAmt": 734693990,
       "high52": 9.9,
       "low52": 6.741,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 12,
@@ -4472,6 +4630,7 @@
       "shortAmt": 200349875,
       "high52": 83.48,
       "low52": 70.43,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -4509,7 +4668,8 @@
       "shortRatio": 32.469807777456,
       "shortAmt": 7230695,
       "high52": 4.55,
-      "low52": 2.83
+      "low52": 2.83,
+      "news": null
     },
     {
       "code": "00960",
@@ -4535,7 +4695,8 @@
       "shortRatio": 62.334563569617,
       "shortAmt": 116432657,
       "high52": 12.161,
-      "low52": 5.365
+      "low52": 5.365,
+      "news": null
     },
     {
       "code": "00966",
@@ -4561,7 +4722,8 @@
       "shortRatio": 20.641671979175,
       "shortAmt": 29635872,
       "high52": 24.73,
-      "low52": 12.95
+      "low52": 12.95,
+      "news": null
     },
     {
       "code": "00968",
@@ -4587,7 +4749,8 @@
       "shortRatio": 35.797906987712,
       "shortAmt": 19597490,
       "high52": 4.09,
-      "low52": 1.868
+      "low52": 1.868,
+      "news": null
     },
     {
       "code": "00975",
@@ -4613,7 +4776,8 @@
       "shortRatio": 13.10958580435,
       "shortAmt": 2355240,
       "high52": 14.58,
-      "low52": 5.81
+      "low52": 5.81,
+      "news": null
     },
     {
       "code": "00981",
@@ -4646,6 +4810,7 @@
       "shortAmt": 472724400,
       "high52": 93.5,
       "low52": 49.32,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 10,
@@ -4677,7 +4842,8 @@
       "shortRatio": 35.772943636283,
       "shortAmt": 2010350,
       "high52": 0.97,
-      "low52": 0.48
+      "low52": 0.48,
+      "news": null
     },
     {
       "code": "00991",
@@ -4709,7 +4875,8 @@
       "shortRatio": 14.957588676618,
       "shortAmt": 9622180,
       "high52": 3.425,
-      "low52": 1.884
+      "low52": 1.884,
+      "news": null
     },
     {
       "code": "00992",
@@ -4736,6 +4903,7 @@
       "shortAmt": 980153240,
       "high52": 36.16,
       "low52": 8.183,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 13,
@@ -4773,7 +4941,8 @@
       "shortRatio": 48.391698911561,
       "shortAmt": 1390700,
       "high52": 17.541,
-      "low52": 10.151
+      "low52": 10.151,
+      "news": null
     },
     {
       "code": "00998",
@@ -4805,7 +4974,8 @@
       "shortRatio": 15.401621983342,
       "shortAmt": 24368310,
       "high52": 8.57,
-      "low52": 6.093
+      "low52": 6.093,
+      "news": null
     },
     {
       "code": "00999",
@@ -4831,7 +5001,8 @@
       "shortRatio": 0.482840465994,
       "shortAmt": 180612,
       "high52": 11.83,
-      "low52": 5.89
+      "low52": 5.89,
+      "news": null
     },
     {
       "code": "01021",
@@ -4857,7 +5028,8 @@
       "shortRatio": 1.715579036178,
       "shortAmt": 6646214,
       "high52": 25.12,
-      "low52": 8.08
+      "low52": 8.08,
+      "news": null
     },
     {
       "code": "01024",
@@ -4884,6 +5056,7 @@
       "shortAmt": 315291920,
       "high52": 91.91,
       "low52": 30.4,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 46,
@@ -4915,7 +5088,8 @@
       "shortRatio": 31.603409732264,
       "shortAmt": 6596270,
       "high52": 2.81,
-      "low52": 1.3
+      "low52": 1.3,
+      "news": null
     },
     {
       "code": "01033",
@@ -4947,7 +5121,8 @@
       "shortRatio": 9.998841621589,
       "shortAmt": 1424240,
       "high52": 1.88,
-      "low52": 0.56
+      "low52": 0.56,
+      "news": null
     },
     {
       "code": "01038",
@@ -4973,7 +5148,8 @@
       "shortRatio": 49.196233765588,
       "shortAmt": 24853775,
       "high52": 66.45,
-      "low52": 47.57
+      "low52": 47.57,
+      "news": null
     },
     {
       "code": "01044",
@@ -4999,7 +5175,8 @@
       "shortRatio": 58.979606814524,
       "shortAmt": 97815870,
       "high52": 28.358,
-      "low52": 20.451
+      "low52": 20.451,
+      "news": null
     },
     {
       "code": "01052",
@@ -5025,7 +5202,8 @@
       "shortRatio": 23.07308852607,
       "shortAmt": 1666840,
       "high52": 4.68,
-      "low52": 3.36
+      "low52": 3.36,
+      "news": null
     },
     {
       "code": "01053",
@@ -5057,7 +5235,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 1.53,
-      "low52": 0.85
+      "low52": 0.85,
+      "news": null
     },
     {
       "code": "01055",
@@ -5089,7 +5268,8 @@
       "shortRatio": 25.213512725805,
       "shortAmt": 13562600,
       "high52": 6.62,
-      "low52": 2.93
+      "low52": 2.93,
+      "news": null
     },
     {
       "code": "01057",
@@ -5121,7 +5301,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 7.321,
-      "low52": 3.301
+      "low52": 3.301,
+      "news": null
     },
     {
       "code": "01060",
@@ -5147,7 +5328,8 @@
       "shortRatio": 31.414244516682,
       "shortAmt": 3955400,
       "high52": 1.15,
-      "low52": 0.44
+      "low52": 0.44,
+      "news": null
     },
     {
       "code": "01065",
@@ -5179,7 +5361,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 9.78,
-      "low52": 3.41
+      "low52": 3.41,
+      "news": null
     },
     {
       "code": "01066",
@@ -5193,7 +5376,7 @@
       "turnoverRate": 0.11,
       "peTtm": 9.08,
       "pb": 0.51,
-      "marketCap": 14260950443,
+      "marketCap": 14260873217,
       "high": 3.17,
       "low": 3.07,
       "open": 3.09,
@@ -5205,7 +5388,8 @@
       "shortRatio": 10.592373578604,
       "shortAmt": 1635166,
       "high52": 6.125,
-      "low52": 2.92
+      "low52": 2.92,
+      "news": null
     },
     {
       "code": "01070",
@@ -5231,7 +5415,8 @@
       "shortRatio": 12.742731455381,
       "shortAmt": 6344420,
       "high52": 17.71,
-      "low52": 8.412
+      "low52": 8.412,
+      "news": null
     },
     {
       "code": "01071",
@@ -5263,7 +5448,8 @@
       "shortRatio": 21.247148002223,
       "shortAmt": 17083510,
       "high52": 4.89,
-      "low52": 3.67
+      "low52": 3.67,
+      "news": null
     },
     {
       "code": "01072",
@@ -5295,7 +5481,8 @@
       "shortRatio": 10.005579481939,
       "shortAmt": 8762140,
       "high52": 46.093,
-      "low52": 15.053
+      "low52": 15.053,
+      "news": null
     },
     {
       "code": "01081",
@@ -5327,7 +5514,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 66.95,
-      "low52": 26.28
+      "low52": 26.28,
+      "news": null
     },
     {
       "code": "01083",
@@ -5353,7 +5541,8 @@
       "shortRatio": 16.16743119564,
       "shortAmt": 2000030,
       "high52": 4.04,
-      "low52": 2.9
+      "low52": 2.9,
+      "news": null
     },
     {
       "code": "01088",
@@ -5385,7 +5574,8 @@
       "shortRatio": 27.820557107812,
       "shortAmt": 127539240,
       "high52": 48.435,
-      "low52": 34.321
+      "low52": 34.321,
+      "news": null
     },
     {
       "code": "01093",
@@ -5412,6 +5602,7 @@
       "shortAmt": 229136550,
       "high52": 10.81,
       "low52": 6.38,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 42,
@@ -5443,7 +5634,8 @@
       "shortRatio": 24.497289601227,
       "shortAmt": 12775068,
       "high52": 21.55,
-      "low52": 15.17
+      "low52": 15.17,
+      "news": null
     },
     {
       "code": "01108",
@@ -5475,7 +5667,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 5.3,
-      "low52": 2.2
+      "low52": 2.2,
+      "news": null
     },
     {
       "code": "01109",
@@ -5501,7 +5694,8 @@
       "shortRatio": 32.0000352023,
       "shortAmt": 137431170,
       "high52": 38.539,
-      "low52": 25.359
+      "low52": 25.359,
+      "news": null
     },
     {
       "code": "01112",
@@ -5527,7 +5721,8 @@
       "shortRatio": 7.673206908824,
       "shortAmt": 2662645,
       "high52": 18.48,
-      "low52": 9.28
+      "low52": 9.28,
+      "news": null
     },
     {
       "code": "01113",
@@ -5553,7 +5748,8 @@
       "shortRatio": 30.776457333892,
       "shortAmt": 67253580,
       "high52": 50.55,
-      "low52": 34.06
+      "low52": 34.06,
+      "news": null
     },
     {
       "code": "01114",
@@ -5579,7 +5775,8 @@
       "shortRatio": 15.783767610021,
       "shortAmt": 4739710,
       "high52": 3.95,
-      "low52": 1.38
+      "low52": 1.38,
+      "news": null
     },
     {
       "code": "01117",
@@ -5605,7 +5802,8 @@
       "shortRatio": 7.871900733307,
       "shortAmt": 1009670,
       "high52": 1.735,
-      "low52": 0.88
+      "low52": 0.88,
+      "news": null
     },
     {
       "code": "01128",
@@ -5631,7 +5829,8 @@
       "shortRatio": 39.114413434102,
       "shortAmt": 4943174,
       "high52": 6.894,
-      "low52": 4.647
+      "low52": 4.647,
+      "news": null
     },
     {
       "code": "01133",
@@ -5657,7 +5856,8 @@
       "shortRatio": 2.19093007554,
       "shortAmt": 1850860,
       "high52": 28.473,
-      "low52": 8.623
+      "low52": 8.623,
+      "news": null
     },
     {
       "code": "01138",
@@ -5689,7 +5889,8 @@
       "shortRatio": 16.987563386164,
       "shortAmt": 86964080,
       "high52": 21.963,
-      "low52": 7.903
+      "low52": 7.903,
+      "news": null
     },
     {
       "code": "01157",
@@ -5721,7 +5922,8 @@
       "shortRatio": 3.871488695785,
       "shortAmt": 1140909,
       "high52": 10.443,
-      "low52": 5.875
+      "low52": 5.875,
+      "news": null
     },
     {
       "code": "01164",
@@ -5747,7 +5949,8 @@
       "shortRatio": 22.328718691644,
       "shortAmt": 40235675,
       "high52": 5.646,
-      "low52": 2.07
+      "low52": 2.07,
+      "news": null
     },
     {
       "code": "01171",
@@ -5779,7 +5982,8 @@
       "shortRatio": 13.462453102032,
       "shortAmt": 72155760,
       "high52": 16.822,
-      "low52": 8.692
+      "low52": 8.692,
+      "news": null
     },
     {
       "code": "01177",
@@ -5805,7 +6009,8 @@
       "shortRatio": 28.82532406518,
       "shortAmt": 114120925,
       "high52": 8.74,
-      "low52": 4.12
+      "low52": 4.12,
+      "news": null
     },
     {
       "code": "01186",
@@ -5837,7 +6042,8 @@
       "shortRatio": 2.622803373209,
       "shortAmt": 601007,
       "high52": 5.355,
-      "low52": 4.205
+      "low52": 4.205,
+      "news": null
     },
     {
       "code": "01187",
@@ -5869,7 +6075,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 41,
-      "low52": 25.88
+      "low52": 25.88,
+      "news": null
     },
     {
       "code": "01191",
@@ -5895,7 +6102,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 219.6,
-      "low52": 59.75
+      "low52": 59.75,
+      "news": null
     },
     {
       "code": "01193",
@@ -5921,7 +6129,8 @@
       "shortRatio": 17.407844087472,
       "shortAmt": 13515787,
       "high52": 22.43,
-      "low52": 14.23
+      "low52": 14.23,
+      "news": null
     },
     {
       "code": "01196",
@@ -5947,7 +6156,8 @@
       "shortRatio": 2.593782544886,
       "shortAmt": 2938670,
       "high52": 4.585,
-      "low52": 0.72
+      "low52": 0.72,
+      "news": null
     },
     {
       "code": "01199",
@@ -5973,7 +6183,8 @@
       "shortRatio": 13.621251395317,
       "shortAmt": 6300240,
       "high52": 6.273,
-      "low52": 4.245
+      "low52": 4.245,
+      "news": null
     },
     {
       "code": "01208",
@@ -5999,7 +6210,8 @@
       "shortRatio": 28.285749894114,
       "shortAmt": 118241540,
       "high52": 11.96,
-      "low52": 5.34
+      "low52": 5.34,
+      "news": null
     },
     {
       "code": "01209",
@@ -6025,7 +6237,8 @@
       "shortRatio": 18.831561522213,
       "shortAmt": 34628956,
       "high52": 49.044,
-      "low52": 35.011
+      "low52": 35.011,
+      "news": null
     },
     {
       "code": "01211",
@@ -6058,6 +6271,7 @@
       "shortAmt": 504073275,
       "high52": 114.989,
       "low52": 71.4,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 21,
@@ -6089,7 +6303,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 66,
-      "low52": 27.42
+      "low52": 27.42,
+      "news": null
     },
     {
       "code": "01258",
@@ -6115,7 +6330,8 @@
       "shortRatio": 18.096593418457,
       "shortAmt": 20794110,
       "high52": 18.638,
-      "low52": 9.898
+      "low52": 9.898,
+      "news": null
     },
     {
       "code": "01276",
@@ -6147,7 +6363,8 @@
       "shortRatio": 8.294346302291,
       "shortAmt": 11547656,
       "high52": 94.972,
-      "low52": 43.02
+      "low52": 43.02,
+      "news": null
     },
     {
       "code": "01277",
@@ -6173,7 +6390,8 @@
       "shortRatio": 7.284735229778,
       "shortAmt": 1976120,
       "high52": 2.58,
-      "low52": 1.07
+      "low52": 1.07,
+      "news": null
     },
     {
       "code": "01286",
@@ -6199,7 +6417,8 @@
       "shortRatio": 19.736636212218,
       "shortAmt": 4784515,
       "high52": 11.72,
-      "low52": 3.44
+      "low52": 3.44,
+      "news": null
     },
     {
       "code": "01288",
@@ -6231,7 +6450,8 @@
       "shortRatio": 49.216543163145,
       "shortAmt": 178377490,
       "high52": 6.645,
-      "low52": 4.769
+      "low52": 4.769,
+      "news": null
     },
     {
       "code": "01299",
@@ -6258,6 +6478,7 @@
       "shortAmt": 554538600,
       "high52": 90.17,
       "low52": 66.97,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 20,
@@ -6289,7 +6510,8 @@
       "shortRatio": 37.108908510788,
       "shortAmt": 5680320,
       "high52": 2.44,
-      "low52": 1.285
+      "low52": 1.285,
+      "news": null
     },
     {
       "code": "01304",
@@ -6321,7 +6543,8 @@
       "shortRatio": 3.184373480489,
       "shortAmt": 335960,
       "high52": 225.51,
-      "low52": 91.11
+      "low52": 91.11,
+      "news": null
     },
     {
       "code": "01308",
@@ -6347,7 +6570,8 @@
       "shortRatio": 31.434120678976,
       "shortAmt": 48431920,
       "high52": 48.5,
-      "low52": 22.9
+      "low52": 22.9,
+      "news": null
     },
     {
       "code": "01310",
@@ -6373,7 +6597,8 @@
       "shortRatio": 27.046991418626,
       "shortAmt": 1272707,
       "high52": 9.066,
-      "low52": 4.716
+      "low52": 4.716,
+      "news": null
     },
     {
       "code": "01313",
@@ -6399,7 +6624,8 @@
       "shortRatio": 54.46875,
       "shortAmt": 5943630,
       "high52": 2.022,
-      "low52": 0.97
+      "low52": 0.97,
+      "news": null
     },
     {
       "code": "01316",
@@ -6425,7 +6651,8 @@
       "shortRatio": 20.797887762147,
       "shortAmt": 8301125,
       "high52": 8.757,
-      "low52": 3.65
+      "low52": 3.65,
+      "news": null
     },
     {
       "code": "01318",
@@ -6451,7 +6678,8 @@
       "shortRatio": 41.328830523462,
       "shortAmt": 13831988,
       "high52": 110.859,
-      "low52": 46.94
+      "low52": 46.94,
+      "news": null
     },
     {
       "code": "01330",
@@ -6483,7 +6711,8 @@
       "shortRatio": 6.025126667924,
       "shortAmt": 164520,
       "high52": 7.447,
-      "low52": 4.468
+      "low52": 4.468,
+      "news": null
     },
     {
       "code": "01333",
@@ -6509,7 +6738,8 @@
       "shortRatio": 4.930027668048,
       "shortAmt": 476894,
       "high52": 55.5,
-      "low52": 10.47
+      "low52": 10.47,
+      "news": null
     },
     {
       "code": "01336",
@@ -6541,7 +6771,8 @@
       "shortRatio": 10.638612824968,
       "shortAmt": 38551062,
       "high52": 63.431,
-      "low52": 38.357
+      "low52": 38.357,
+      "news": null
     },
     {
       "code": "01339",
@@ -6573,7 +6804,8 @@
       "shortRatio": 24.700260594929,
       "shortAmt": 40268010,
       "high52": 7.463,
-      "low52": 4.463
+      "low52": 4.463,
+      "news": null
     },
     {
       "code": "01347",
@@ -6606,6 +6838,7 @@
       "shortAmt": 406189600,
       "high52": 219.6,
       "low52": 51.1,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 16,
@@ -6643,7 +6876,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 4.05,
-      "low52": 2.2
+      "low52": 2.2,
+      "news": null
     },
     {
       "code": "01357",
@@ -6669,7 +6903,8 @@
       "shortRatio": 30.525326050856,
       "shortAmt": 50476660,
       "high52": 9.723,
-      "low52": 3.493
+      "low52": 3.493,
+      "news": null
     },
     {
       "code": "01359",
@@ -6695,7 +6930,8 @@
       "shortRatio": 44.129828796402,
       "shortAmt": 13513445,
       "high52": 1.468,
-      "low52": 0.875
+      "low52": 0.875,
+      "news": null
     },
     {
       "code": "01361",
@@ -6721,7 +6957,8 @@
       "shortRatio": 19.065559329901,
       "shortAmt": 722905,
       "high52": 6.915,
-      "low52": 3.728
+      "low52": 3.728,
+      "news": null
     },
     {
       "code": "01364",
@@ -6747,7 +6984,8 @@
       "shortRatio": 19.996716068871,
       "shortAmt": 24167208,
       "high52": 31.03,
-      "low52": 18.55
+      "low52": 18.55,
+      "news": null
     },
     {
       "code": "01368",
@@ -6773,7 +7011,8 @@
       "shortRatio": 36.725613982439,
       "shortAmt": 22055622,
       "high52": 6.065,
-      "low52": 3.27
+      "low52": 3.27,
+      "news": null
     },
     {
       "code": "01375",
@@ -6805,7 +7044,8 @@
       "shortRatio": 5.063867777676,
       "shortAmt": 331815,
       "high52": 2.911,
-      "low52": 1.586
+      "low52": 1.586,
+      "news": null
     },
     {
       "code": "01377",
@@ -6837,7 +7077,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 455.6,
-      "low52": 263.2
+      "low52": 263.2,
+      "news": null
     },
     {
       "code": "01378",
@@ -6864,6 +7105,7 @@
       "shortAmt": 126864890,
       "high52": 39.71,
       "low52": 19.57,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 47,
@@ -6895,7 +7137,8 @@
       "shortRatio": 2.050071265633,
       "shortAmt": 1521780,
       "high52": 128.2,
-      "low52": 28.28
+      "low52": 28.28,
+      "news": null
     },
     {
       "code": "01385",
@@ -6927,7 +7170,8 @@
       "shortRatio": 11.633694922708,
       "shortAmt": 4705940,
       "high52": 56.934,
-      "low52": 22
+      "low52": 22,
+      "news": null
     },
     {
       "code": "01392",
@@ -6953,7 +7197,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 30.2,
-      "low52": 12.36
+      "low52": 12.36,
+      "news": null
     },
     {
       "code": "01398",
@@ -6986,6 +7231,7 @@
       "shortAmt": 198644205,
       "high52": 7.765,
       "low52": 5.21,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 33,
@@ -7017,7 +7263,8 @@
       "shortRatio": 49.022334953785,
       "shortAmt": 2099306,
       "high52": 92,
-      "low52": 28.42
+      "low52": 28.42,
+      "news": null
     },
     {
       "code": "01415",
@@ -7031,7 +7278,7 @@
       "turnoverRate": 0.28,
       "peTtm": 11.87,
       "pb": 3.21,
-      "marketCap": 20281801408,
+      "marketCap": 20271429568,
       "high": 23.9,
       "low": 22.98,
       "open": 23.9,
@@ -7043,7 +7290,8 @@
       "shortRatio": 16.144354002665,
       "shortAmt": 9216040,
       "high52": 42.71,
-      "low52": 19.9
+      "low52": 19.9,
+      "news": null
     },
     {
       "code": "01428",
@@ -7069,7 +7317,8 @@
       "shortRatio": 12.046473817796,
       "shortAmt": 2715400,
       "high52": 16.88,
-      "low52": 6.02
+      "low52": 6.02,
+      "news": null
     },
     {
       "code": "01440",
@@ -7095,7 +7344,8 @@
       "shortRatio": 1.859910191823,
       "shortAmt": 1800925,
       "high52": 18.55,
-      "low52": 6.62
+      "low52": 6.62,
+      "news": null
     },
     {
       "code": "01456",
@@ -7127,7 +7377,8 @@
       "shortRatio": 8.869676134489,
       "shortAmt": 535777,
       "high52": 6.441,
-      "low52": 3.641
+      "low52": 3.641,
+      "news": null
     },
     {
       "code": "01478",
@@ -7153,7 +7404,8 @@
       "shortRatio": 4.340611612038,
       "shortAmt": 1002565,
       "high52": 16.44,
-      "low52": 5.315
+      "low52": 5.315,
+      "news": null
     },
     {
       "code": "01511",
@@ -7179,7 +7431,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 102.3,
-      "low52": 50
+      "low52": 50,
+      "news": null
     },
     {
       "code": "01513",
@@ -7211,7 +7464,8 @@
       "shortRatio": 24.350100215926,
       "shortAmt": 6606770,
       "high52": 35.917,
-      "low52": 19.8
+      "low52": 19.8,
+      "news": null
     },
     {
       "code": "01519",
@@ -7223,9 +7477,9 @@
       "turnover": 192240352,
       "amplitude": 1.55,
       "turnoverRate": 0.24,
-      "peTtm": 31.66,
+      "peTtm": 31.65,
       "pb": 2.66,
-      "marketCap": 89484992116,
+      "marketCap": 89469293716,
       "high": 9.36,
       "low": 9.215,
       "open": 9.335,
@@ -7237,7 +7491,8 @@
       "shortRatio": 27.730143248844,
       "shortAmt": 53308525,
       "high52": 12.2,
-      "low52": 7.54
+      "low52": 7.54,
+      "news": null
     },
     {
       "code": "01528",
@@ -7269,7 +7524,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 1.65,
-      "low52": 0.94
+      "low52": 0.94,
+      "news": null
     },
     {
       "code": "01530",
@@ -7283,7 +7539,7 @@
       "turnoverRate": 0.78,
       "peTtm": 4.44,
       "pb": 1.29,
-      "marketCap": 40940154453,
+      "marketCap": 40936910453,
       "high": 16.34,
       "low": 15.2,
       "open": 15.41,
@@ -7295,7 +7551,8 @@
       "shortRatio": 12.650350297556,
       "shortAmt": 39766715,
       "high52": 35.17,
-      "low52": 14.56
+      "low52": 14.56,
+      "news": null
     },
     {
       "code": "01548",
@@ -7322,6 +7579,7 @@
       "shortAmt": 176384840,
       "high52": 37.36,
       "low52": 10.36,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 28,
@@ -7353,7 +7611,8 @@
       "shortRatio": 22.075891528689,
       "shortAmt": 4854380,
       "high52": 16.501,
-      "low52": 10.744
+      "low52": 10.744,
+      "news": null
     },
     {
       "code": "01585",
@@ -7379,7 +7638,8 @@
       "shortRatio": 21.866083205991,
       "shortAmt": 40034750,
       "high52": 14.48,
-      "low52": 8.44
+      "low52": 8.44,
+      "news": null
     },
     {
       "code": "01609",
@@ -7405,7 +7665,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 299,
-      "low52": 98.7
+      "low52": 98.7,
+      "news": null
     },
     {
       "code": "01610",
@@ -7431,7 +7692,8 @@
       "shortRatio": 5.962387563149,
       "shortAmt": 1161330,
       "high52": 2,
-      "low52": 0.93
+      "low52": 0.93,
+      "news": null
     },
     {
       "code": "01618",
@@ -7463,7 +7725,8 @@
       "shortRatio": 26.524814746736,
       "shortAmt": 5386805,
       "high52": 3.17,
-      "low52": 1.3
+      "low52": 1.3,
+      "news": null
     },
     {
       "code": "01635",
@@ -7495,7 +7758,8 @@
       "shortRatio": 0.257820893018,
       "shortAmt": 20435,
       "high52": 6.273,
-      "low52": 2.203
+      "low52": 2.203,
+      "news": null
     },
     {
       "code": "01651",
@@ -7521,7 +7785,8 @@
       "shortRatio": 23.279430756628,
       "shortAmt": 40731860,
       "high52": 73.25,
-      "low52": 27.3
+      "low52": 27.3,
+      "news": null
     },
     {
       "code": "01658",
@@ -7553,7 +7818,8 @@
       "shortRatio": 39.075917995644,
       "shortAmt": 55159825,
       "high52": 5.624,
-      "low52": 4.38
+      "low52": 4.38,
+      "news": null
     },
     {
       "code": "01672",
@@ -7579,7 +7845,8 @@
       "shortRatio": 26.294072852252,
       "shortAmt": 8230405,
       "high52": 19.86,
-      "low52": 7.95
+      "low52": 7.95,
+      "news": null
     },
     {
       "code": "01675",
@@ -7605,7 +7872,8 @@
       "shortRatio": 21.993212451027,
       "shortAmt": 6380918,
       "high52": 12.826,
-      "low52": 3.8
+      "low52": 3.8,
+      "news": null
     },
     {
       "code": "01681",
@@ -7631,7 +7899,8 @@
       "shortRatio": 3.860064568852,
       "shortAmt": 688230,
       "high52": 18.71,
-      "low52": 11.93
+      "low52": 11.93,
+      "news": null
     },
     {
       "code": "01686",
@@ -7657,7 +7926,8 @@
       "shortRatio": 10.029723817452,
       "shortAmt": 1663870,
       "high52": 7.9,
-      "low52": 4.24
+      "low52": 4.24,
+      "news": null
     },
     {
       "code": "01688",
@@ -7689,7 +7959,8 @@
       "shortRatio": 4.313269860768,
       "shortAmt": 2254748,
       "high52": 11.777,
-      "low52": 6.057
+      "low52": 6.057,
+      "news": null
     },
     {
       "code": "01729",
@@ -7715,7 +7986,8 @@
       "shortRatio": 22.297601163131,
       "shortAmt": 34218270,
       "high52": 24.616,
-      "low52": 11.89
+      "low52": 11.89,
+      "news": null
     },
     {
       "code": "01735",
@@ -7741,7 +8013,8 @@
       "shortRatio": 0.093839769134,
       "shortAmt": 40890,
       "high52": 11.37,
-      "low52": 7.5
+      "low52": 7.5,
+      "news": null
     },
     {
       "code": "01766",
@@ -7773,7 +8046,8 @@
       "shortRatio": 31.683024836002,
       "shortAmt": 21697185,
       "high52": 6.495,
-      "low52": 4.293
+      "low52": 4.293,
+      "news": null
     },
     {
       "code": "01768",
@@ -7799,7 +8073,8 @@
       "shortRatio": 21.251125522061,
       "shortAmt": 39923200,
       "high52": 465.6,
-      "low52": 289
+      "low52": 289,
+      "news": null
     },
     {
       "code": "01772",
@@ -7831,7 +8106,8 @@
       "shortRatio": 24.246814011567,
       "shortAmt": 56028468,
       "high52": 91.028,
-      "low52": 32.908
+      "low52": 32.908,
+      "news": null
     },
     {
       "code": "01776",
@@ -7863,7 +8139,8 @@
       "shortRatio": 16.912100148489,
       "shortAmt": 12522708,
       "high52": 20.825,
-      "low52": 13.575
+      "low52": 13.575,
+      "news": null
     },
     {
       "code": "01779",
@@ -7889,7 +8166,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 165.9,
-      "low52": 72.65
+      "low52": 72.65,
+      "news": null
     },
     {
       "code": "01783",
@@ -7915,7 +8193,8 @@
       "shortRatio": 8.846617374812,
       "shortAmt": 1834765,
       "high52": 8.5,
-      "low52": 2.86
+      "low52": 2.86,
+      "news": null
     },
     {
       "code": "01787",
@@ -7947,7 +8226,8 @@
       "shortRatio": 13.79934593336,
       "shortAmt": 48385810,
       "high52": 54.127,
-      "low52": 16.095
+      "low52": 16.095,
+      "news": null
     },
     {
       "code": "01788",
@@ -7973,7 +8253,8 @@
       "shortRatio": 3.070938977754,
       "shortAmt": 903005,
       "high52": 5.39,
-      "low52": 1.9
+      "low52": 1.9,
+      "news": null
     },
     {
       "code": "01789",
@@ -7987,7 +8268,7 @@
       "turnoverRate": 0.3,
       "peTtm": 12.43,
       "pb": 1.69,
-      "marketCap": 5290870576,
+      "marketCap": 5290821476,
       "high": 4.945,
       "low": 4.825,
       "open": 4.83,
@@ -7999,7 +8280,8 @@
       "shortRatio": 8.91593196657,
       "shortAmt": 1406400,
       "high52": 7.032,
-      "low52": 4.75
+      "low52": 4.75,
+      "news": null
     },
     {
       "code": "01797",
@@ -8025,7 +8307,8 @@
       "shortRatio": 12.30702651599,
       "shortAmt": 44952190,
       "high52": 33,
-      "low52": 17.59
+      "low52": 17.59,
+      "news": null
     },
     {
       "code": "01800",
@@ -8057,7 +8340,8 @@
       "shortRatio": 7.486695582157,
       "shortAmt": 2107280,
       "high52": 5.172,
-      "low52": 3.43
+      "low52": 3.43,
+      "news": null
     },
     {
       "code": "01801",
@@ -8084,6 +8368,7 @@
       "shortAmt": 277522900,
       "high52": 112.7,
       "low52": 69.55,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 27,
@@ -8116,6 +8401,7 @@
       "shortAmt": 753174532,
       "high52": 59.9,
       "low52": 21.3,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 9,
@@ -8147,7 +8433,8 @@
       "shortRatio": 13.504901071898,
       "shortAmt": 903410,
       "high52": 3.105,
-      "low52": 2.005
+      "low52": 2.005,
+      "news": null
     },
     {
       "code": "01816",
@@ -8179,7 +8466,8 @@
       "shortRatio": 45.661514503047,
       "shortAmt": 52008520,
       "high52": 3.672,
-      "low52": 2.6
+      "low52": 2.6,
+      "news": null
     },
     {
       "code": "01818",
@@ -8205,7 +8493,8 @@
       "shortRatio": 32.768856650709,
       "shortAmt": 68813960,
       "high52": 42.245,
-      "low52": 15.82
+      "low52": 15.82,
+      "news": null
     },
     {
       "code": "01828",
@@ -8231,7 +8520,8 @@
       "shortRatio": 14.94437498823,
       "shortAmt": 2144568,
       "high52": 50.8,
-      "low52": 26.8
+      "low52": 26.8,
+      "news": null
     },
     {
       "code": "01833",
@@ -8257,7 +8547,8 @@
       "shortRatio": 6.935955441363,
       "shortAmt": 1520656,
       "high52": 22.9,
-      "low52": 5.965
+      "low52": 5.965,
+      "news": null
     },
     {
       "code": "01836",
@@ -8283,7 +8574,8 @@
       "shortRatio": 33.231973437242,
       "shortAmt": 8155000,
       "high52": 15.45,
-      "low52": 11.12
+      "low52": 11.12,
+      "news": null
     },
     {
       "code": "01858",
@@ -8315,7 +8607,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 20.418,
-      "low52": 7.7
+      "low52": 7.7,
+      "news": null
     },
     {
       "code": "01860",
@@ -8327,9 +8620,9 @@
       "turnover": 135732525,
       "amplitude": 9.51,
       "turnoverRate": 0.79,
-      "peTtm": 29.75,
+      "peTtm": 29.74,
       "pb": 5.1,
-      "marketCap": 17627648940,
+      "marketCap": 17624140290,
       "high": 10.49,
       "low": 9.56,
       "open": 9.745,
@@ -8341,7 +8634,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 21.62,
-      "low52": 9.52
+      "low52": 9.52,
+      "news": null
     },
     {
       "code": "01866",
@@ -8367,7 +8661,8 @@
       "shortRatio": 17.953445397695,
       "shortAmt": 12499700,
       "high52": 12.61,
-      "low52": 6.65
+      "low52": 6.65,
+      "news": null
     },
     {
       "code": "01876",
@@ -8393,7 +8688,8 @@
       "shortRatio": 42.067961428024,
       "shortAmt": 49719408,
       "high52": 8.038,
-      "low52": 5.66
+      "low52": 5.66,
+      "news": null
     },
     {
       "code": "01877",
@@ -8425,7 +8721,8 @@
       "shortRatio": 8.87693054378,
       "shortAmt": 2948334,
       "high52": 34.16,
-      "low52": 15.25
+      "low52": 15.25,
+      "news": null
     },
     {
       "code": "01879",
@@ -8451,7 +8748,8 @@
       "shortRatio": 9.122618557935,
       "shortAmt": 10770450,
       "high52": 1050,
-      "low52": 228.4
+      "low52": 228.4,
+      "news": null
     },
     {
       "code": "01880",
@@ -8483,7 +8781,8 @@
       "shortRatio": 15.24588695001,
       "shortAmt": 4227778,
       "high52": 106.483,
-      "low52": 45.623
+      "low52": 45.623,
+      "news": null
     },
     {
       "code": "01882",
@@ -8509,7 +8808,8 @@
       "shortRatio": 47.228454093274,
       "shortAmt": 13170730,
       "high52": 25.4,
-      "low52": 17.21
+      "low52": 17.21,
+      "news": null
     },
     {
       "code": "01883",
@@ -8535,7 +8835,8 @@
       "shortRatio": 15.603484390165,
       "shortAmt": 1308280,
       "high52": 2.77,
-      "low52": 2.2
+      "low52": 2.2,
+      "news": null
     },
     {
       "code": "01888",
@@ -8562,6 +8863,7 @@
       "shortAmt": 572087700,
       "high52": 107.2,
       "low52": 9.82,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 7,
@@ -8593,7 +8895,8 @@
       "shortRatio": 16.771350075975,
       "shortAmt": 1400878,
       "high52": 8.43,
-      "low52": 4.095
+      "low52": 4.095,
+      "news": null
     },
     {
       "code": "01898",
@@ -8625,7 +8928,8 @@
       "shortRatio": 8.694190034036,
       "shortAmt": 12043370,
       "high52": 14.778,
-      "low52": 8.678
+      "low52": 8.678,
+      "news": null
     },
     {
       "code": "01907",
@@ -8651,7 +8955,8 @@
       "shortRatio": 40.530427904699,
       "shortAmt": 9946090,
       "high52": 4.221,
-      "low52": 1.763
+      "low52": 1.763,
+      "news": null
     },
     {
       "code": "01908",
@@ -8677,7 +8982,8 @@
       "shortRatio": 15.665987126127,
       "shortAmt": 12957290,
       "high52": 17.99,
-      "low52": 11.62
+      "low52": 11.62,
+      "news": null
     },
     {
       "code": "01910",
@@ -8703,7 +9009,8 @@
       "shortRatio": 26.765604879151,
       "shortAmt": 6108930,
       "high52": 21.179,
-      "low52": 12.06
+      "low52": 12.06,
+      "news": null
     },
     {
       "code": "01918",
@@ -8729,7 +9036,8 @@
       "shortRatio": 14.724914994754,
       "shortAmt": 8058055,
       "high52": 1.91,
-      "low52": 0.51
+      "low52": 0.51,
+      "news": null
     },
     {
       "code": "01919",
@@ -8761,7 +9069,8 @@
       "shortRatio": 20.996930858642,
       "shortAmt": 86126980,
       "high52": 18.04,
-      "low52": 11.106
+      "low52": 11.106,
+      "news": null
     },
     {
       "code": "01921",
@@ -8773,9 +9082,9 @@
       "turnover": 3670510,
       "amplitude": 7.59,
       "turnoverRate": 0.07,
-      "peTtm": 339.78,
+      "peTtm": 339.68,
       "pb": 2.85,
-      "marketCap": 5212821100,
+      "marketCap": 5211306900,
       "high": 3.54,
       "low": 3.28,
       "open": 3.5,
@@ -8787,7 +9096,8 @@
       "shortRatio": 9.470346082697,
       "shortAmt": 347610,
       "high52": 9.99,
-      "low52": 1.05
+      "low52": 1.05,
+      "news": null
     },
     {
       "code": "01928",
@@ -8813,7 +9123,8 @@
       "shortRatio": 31.481051351263,
       "shortAmt": 139261940,
       "high52": 22,
-      "low52": 12.77
+      "low52": 12.77,
+      "news": null
     },
     {
       "code": "01929",
@@ -8839,7 +9150,8 @@
       "shortRatio": 46.02110362911,
       "shortAmt": 74286980,
       "high52": 16.28,
-      "low52": 9.89
+      "low52": 9.89,
+      "news": null
     },
     {
       "code": "01951",
@@ -8851,9 +9163,9 @@
       "turnover": 25650845,
       "amplitude": 2.63,
       "turnoverRate": 0.45,
-      "peTtm": 31,
+      "peTtm": 30.99,
       "pb": 0.56,
-      "marketCap": 5679996503,
+      "marketCap": 5677028101,
       "high": 2.15,
       "low": 2.095,
       "open": 2.095,
@@ -8865,7 +9177,8 @@
       "shortRatio": 4.250881403712,
       "shortAmt": 1090387,
       "high52": 2.868,
-      "low52": 1.92
+      "low52": 1.92,
+      "news": null
     },
     {
       "code": "01952",
@@ -8891,7 +9204,8 @@
       "shortRatio": 3.70544202925,
       "shortAmt": 6196370,
       "high52": 60.8,
-      "low52": 22.7
+      "low52": 22.7,
+      "news": null
     },
     {
       "code": "01956",
@@ -8917,7 +9231,8 @@
       "shortRatio": 1.731061704215,
       "shortAmt": 660390,
       "high52": 125,
-      "low52": 58.1
+      "low52": 58.1,
+      "news": null
     },
     {
       "code": "01963",
@@ -8949,7 +9264,8 @@
       "shortRatio": 2.830170408304,
       "shortAmt": 331720,
       "high52": 8.75,
-      "low52": 6.423
+      "low52": 6.423,
+      "news": null
     },
     {
       "code": "01972",
@@ -8975,7 +9291,8 @@
       "shortRatio": 32.117781214838,
       "shortAmt": 13176196,
       "high52": 26.01,
-      "low52": 19.53
+      "low52": 19.53,
+      "news": null
     },
     {
       "code": "01988",
@@ -9007,7 +9324,8 @@
       "shortRatio": 19.851732300994,
       "shortAmt": 22859152,
       "high52": 4.263,
-      "low52": 2.954
+      "low52": 2.954,
+      "news": null
     },
     {
       "code": "01989",
@@ -9039,7 +9357,8 @@
       "shortRatio": 6.260236464691,
       "shortAmt": 5395700,
       "high52": 221.257,
-      "low52": 79.207
+      "low52": 79.207,
+      "news": null
     },
     {
       "code": "01997",
@@ -9065,7 +9384,8 @@
       "shortRatio": 36.406693963982,
       "shortAmt": 34076560,
       "high52": 33.88,
-      "low52": 19.32
+      "low52": 19.32,
+      "news": null
     },
     {
       "code": "01999",
@@ -9091,7 +9411,8 @@
       "shortRatio": 20.903068960071,
       "shortAmt": 12884338,
       "high52": 5.11,
-      "low52": 2.775
+      "low52": 2.775,
+      "news": null
     },
     {
       "code": "02005",
@@ -9117,7 +9438,8 @@
       "shortRatio": 17.062224424507,
       "shortAmt": 6497580,
       "high52": 3.095,
-      "low52": 1.955
+      "low52": 1.955,
+      "news": null
     },
     {
       "code": "02007",
@@ -9143,7 +9465,8 @@
       "shortRatio": 12.65778297455,
       "shortAmt": 2770604,
       "high52": 0.72,
-      "low52": 0.16
+      "low52": 0.16,
+      "news": null
     },
     {
       "code": "02009",
@@ -9175,7 +9498,8 @@
       "shortRatio": 17.057428202022,
       "shortAmt": 670200,
       "high52": 0.903,
-      "low52": 0.53
+      "low52": 0.53,
+      "news": null
     },
     {
       "code": "02013",
@@ -9201,7 +9525,8 @@
       "shortRatio": 10.634513917099,
       "shortAmt": 1395345,
       "high52": 3,
-      "low52": 0.81
+      "low52": 0.81,
+      "news": null
     },
     {
       "code": "02015",
@@ -9215,7 +9540,7 @@
       "turnoverRate": 0.5,
       "peTtm": -18.65,
       "pb": 1.32,
-      "marketCap": 98200708024,
+      "marketCap": 98195024632,
       "high": 47.8,
       "low": 45.84,
       "open": 45.9,
@@ -9227,7 +9552,8 @@
       "shortRatio": 36.163589740845,
       "shortAmt": 146323788,
       "high52": 105.3,
-      "low52": 44.56
+      "low52": 44.56,
+      "news": null
     },
     {
       "code": "02016",
@@ -9259,7 +9585,8 @@
       "shortRatio": 10.970807773428,
       "shortAmt": 1978165,
       "high52": 2.63,
-      "low52": 2.11
+      "low52": 2.11,
+      "news": null
     },
     {
       "code": "02018",
@@ -9285,7 +9612,8 @@
       "shortRatio": 38.637514483708,
       "shortAmt": 42720810,
       "high52": 50.45,
-      "low52": 30.85
+      "low52": 30.85,
+      "news": null
     },
     {
       "code": "02020",
@@ -9312,6 +9640,7 @@
       "shortAmt": 205336820,
       "high52": 96.61,
       "low52": 65.34,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -9343,7 +9672,8 @@
       "shortRatio": 8.35909241667,
       "shortAmt": 2702745,
       "high52": 136.9,
-      "low52": 49.82
+      "low52": 49.82,
+      "news": null
     },
     {
       "code": "02038",
@@ -9369,7 +9699,8 @@
       "shortRatio": 17.149663486257,
       "shortAmt": 1623170,
       "high52": 31.19,
-      "low52": 15.7
+      "low52": 15.7,
+      "news": null
     },
     {
       "code": "02039",
@@ -9401,7 +9732,8 @@
       "shortRatio": 9.773621360453,
       "shortAmt": 2363359,
       "high52": 12.594,
-      "low52": 6.55
+      "low52": 6.55,
+      "news": null
     },
     {
       "code": "02050",
@@ -9433,7 +9765,8 @@
       "shortRatio": 29.057401907139,
       "shortAmt": 15391650,
       "high52": 46.026,
-      "low52": 23.798
+      "low52": 23.798,
+      "news": null
     },
     {
       "code": "02057",
@@ -9459,7 +9792,8 @@
       "shortRatio": 28.862331870152,
       "shortAmt": 56610090,
       "high52": 205.6,
-      "low52": 137.543
+      "low52": 137.543,
+      "news": null
     },
     {
       "code": "02068",
@@ -9491,7 +9825,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 3.43,
-      "low52": 1.71
+      "low52": 1.71,
+      "news": null
     },
     {
       "code": "02096",
@@ -9517,7 +9852,8 @@
       "shortRatio": 11.051695551606,
       "shortAmt": 9011650,
       "high52": 14.173,
-      "low52": 9.07
+      "low52": 9.07,
+      "news": null
     },
     {
       "code": "02097",
@@ -9543,7 +9879,8 @@
       "shortRatio": 3.17241104613,
       "shortAmt": 1201070,
       "high52": 465.8,
-      "low52": 191.5
+      "low52": 191.5,
+      "news": null
     },
     {
       "code": "02099",
@@ -9569,7 +9906,8 @@
       "shortRatio": 7.9902112616,
       "shortAmt": 26294360,
       "high52": 280.6,
-      "low52": 110
+      "low52": 110,
+      "news": null
     },
     {
       "code": "02128",
@@ -9595,7 +9933,8 @@
       "shortRatio": 21.780322821576,
       "shortAmt": 3168110,
       "high52": 6.94,
-      "low52": 3.13
+      "low52": 3.13,
+      "news": null
     },
     {
       "code": "02142",
@@ -9621,7 +9960,8 @@
       "shortRatio": 19.424980743562,
       "shortAmt": 24289500,
       "high52": 17.07,
-      "low52": 9.46
+      "low52": 9.46,
+      "news": null
     },
     {
       "code": "02145",
@@ -9633,9 +9973,9 @@
       "turnover": 21368426,
       "amplitude": 3.2,
       "turnoverRate": 0.47,
-      "peTtm": 11.34,
+      "peTtm": 11.33,
       "pb": 2.99,
-      "marketCap": 8738890247,
+      "marketCap": 8732687799,
       "high": 22.7,
       "low": 21.98,
       "open": 22.5,
@@ -9647,7 +9987,8 @@
       "shortRatio": 27.050799155726,
       "shortAmt": 5780330,
       "high52": 103.396,
-      "low52": 20
+      "low52": 20,
+      "news": null
     },
     {
       "code": "02155",
@@ -9673,7 +10014,8 @@
       "shortRatio": 1.034469299525,
       "shortAmt": 112640,
       "high52": 11.88,
-      "low52": 5.5
+      "low52": 5.5,
+      "news": null
     },
     {
       "code": "02157",
@@ -9699,7 +10041,8 @@
       "shortRatio": 6.990076549561,
       "shortAmt": 3650490,
       "high52": 8.76,
-      "low52": 3.55
+      "low52": 3.55,
+      "news": null
     },
     {
       "code": "02162",
@@ -9725,7 +10068,8 @@
       "shortRatio": 16.841275199618,
       "shortAmt": 15889600,
       "high52": 89.75,
-      "low52": 44.66
+      "low52": 44.66,
+      "news": null
     },
     {
       "code": "02171",
@@ -9751,7 +10095,8 @@
       "shortRatio": 17.318966605654,
       "shortAmt": 5240030,
       "high52": 28.6,
-      "low52": 10.87
+      "low52": 10.87,
+      "news": null
     },
     {
       "code": "02172",
@@ -9777,7 +10122,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 14.51,
-      "low52": 8.005
+      "low52": 8.005,
+      "news": null
     },
     {
       "code": "02186",
@@ -9803,7 +10149,8 @@
       "shortRatio": 12.220251175228,
       "shortAmt": 4562077,
       "high52": 3.83,
-      "low52": 1.73
+      "low52": 1.73,
+      "news": null
     },
     {
       "code": "02192",
@@ -9829,7 +10176,8 @@
       "shortRatio": 32.91771199035,
       "shortAmt": 1273067,
       "high52": 14.696,
-      "low52": 6.159
+      "low52": 6.159,
+      "news": null
     },
     {
       "code": "02196",
@@ -9841,9 +10189,9 @@
       "turnover": 99367815,
       "amplitude": 6.37,
       "turnoverRate": 1.09,
-      "peTtm": 11.82,
+      "peTtm": 11.81,
       "pb": 0.81,
-      "marketCap": 45471684284,
+      "marketCap": 45446774684,
       "high": 17.16,
       "low": 16.12,
       "open": 16.12,
@@ -9861,7 +10209,8 @@
       "shortRatio": 23.2338307932,
       "shortAmt": 23086950,
       "high52": 28.55,
-      "low52": 14.45
+      "low52": 14.45,
+      "news": null
     },
     {
       "code": "02202",
@@ -9893,7 +10242,8 @@
       "shortRatio": 7.534414183816,
       "shortAmt": 1955032,
       "high52": 5.9,
-      "low52": 2.1
+      "low52": 2.1,
+      "news": null
     },
     {
       "code": "02208",
@@ -9925,7 +10275,8 @@
       "shortRatio": 18.818687271383,
       "shortAmt": 30801636,
       "high52": 18.26,
-      "low52": 8.94
+      "low52": 8.94,
+      "news": null
     },
     {
       "code": "02218",
@@ -9957,7 +10308,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 41.14,
-      "low52": 12.567
+      "low52": 12.567,
+      "news": null
     },
     {
       "code": "02225",
@@ -9983,7 +10335,8 @@
       "shortRatio": 2.768248021004,
       "shortAmt": 1990425,
       "high52": 6.99,
-      "low52": 0.89
+      "low52": 0.89,
+      "news": null
     },
     {
       "code": "02228",
@@ -10009,7 +10362,8 @@
       "shortRatio": 13.770400270667,
       "shortAmt": 27112610,
       "high52": 15.12,
-      "low52": 6.3
+      "low52": 6.3,
+      "news": null
     },
     {
       "code": "02232",
@@ -10035,7 +10389,8 @@
       "shortRatio": 30.013562948241,
       "shortAmt": 3633682,
       "high52": 7.425,
-      "low52": 5.285
+      "low52": 5.285,
+      "news": null
     },
     {
       "code": "02233",
@@ -10061,7 +10416,8 @@
       "shortRatio": 10.855757904538,
       "shortAmt": 1424790,
       "high52": 3.775,
-      "low52": 1.34
+      "low52": 1.34,
+      "news": null
     },
     {
       "code": "02238",
@@ -10093,7 +10449,8 @@
       "shortRatio": 1.550387596899,
       "shortAmt": 18600,
       "high52": 4.38,
-      "low52": 2.02
+      "low52": 2.02,
+      "news": null
     },
     {
       "code": "02249",
@@ -10125,7 +10482,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 37,
-      "low52": 26
+      "low52": 26,
+      "news": null
     },
     {
       "code": "02252",
@@ -10151,7 +10509,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 35.34,
-      "low52": 19.64
+      "low52": 19.64,
+      "news": null
     },
     {
       "code": "02259",
@@ -10178,6 +10537,7 @@
       "shortAmt": 163255620,
       "high52": 265,
       "low52": 82.7,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 48,
@@ -10209,7 +10569,8 @@
       "shortRatio": 28.613792356327,
       "shortAmt": 115856825,
       "high52": 85.5,
-      "low52": 43.5
+      "low52": 43.5,
+      "news": null
     },
     {
       "code": "02269",
@@ -10236,6 +10597,7 @@
       "shortAmt": 289134700,
       "high52": 54.45,
       "low52": 28.48,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 23,
@@ -10267,7 +10629,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 127.5,
-      "low52": 68.15
+      "low52": 68.15,
+      "news": null
     },
     {
       "code": "02273",
@@ -10293,7 +10656,8 @@
       "shortRatio": 5.880850539969,
       "shortAmt": 1343296,
       "high52": 33.51,
-      "low52": 24.31
+      "low52": 24.31,
+      "news": null
     },
     {
       "code": "02276",
@@ -10319,7 +10683,8 @@
       "shortRatio": 15.451400519735,
       "shortAmt": 9107962,
       "high52": 66.27,
-      "low52": 27.26
+      "low52": 27.26,
+      "news": null
     },
     {
       "code": "02282",
@@ -10345,7 +10710,8 @@
       "shortRatio": 62.053862396397,
       "shortAmt": 27406878,
       "high52": 16.517,
-      "low52": 9.5
+      "low52": 9.5,
+      "news": null
     },
     {
       "code": "02285",
@@ -10371,7 +10737,8 @@
       "shortRatio": 8.359570207937,
       "shortAmt": 8226250,
       "high52": 26.427,
-      "low52": 14.194
+      "low52": 14.194,
+      "news": null
     },
     {
       "code": "02313",
@@ -10397,7 +10764,8 @@
       "shortRatio": 25.344170935404,
       "shortAmt": 52983030,
       "high52": 70.92,
-      "low52": 34.06
+      "low52": 34.06,
+      "news": null
     },
     {
       "code": "02314",
@@ -10423,7 +10791,8 @@
       "shortRatio": 18.148147895275,
       "shortAmt": 2392260,
       "high52": 4.433,
-      "low52": 2.455
+      "low52": 2.455,
+      "news": null
     },
     {
       "code": "02315",
@@ -10455,7 +10824,8 @@
       "shortRatio": 3.451089126139,
       "shortAmt": 3193175,
       "high52": 75.3,
-      "low52": 21.54
+      "low52": 21.54,
+      "news": null
     },
     {
       "code": "02318",
@@ -10488,6 +10858,7 @@
       "shortAmt": 447749775,
       "high52": 71.555,
       "low52": 48.355,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 11,
@@ -10519,7 +10890,8 @@
       "shortRatio": 27.409464279264,
       "shortAmt": 43838830,
       "high52": 19.67,
-      "low52": 13.282
+      "low52": 13.282,
+      "news": null
     },
     {
       "code": "02328",
@@ -10545,7 +10917,8 @@
       "shortRatio": 36.972012892624,
       "shortAmt": 96632980,
       "high52": 18.971,
-      "low52": 13.144
+      "low52": 13.144,
+      "news": null
     },
     {
       "code": "02331",
@@ -10571,7 +10944,8 @@
       "shortRatio": 25.086656707021,
       "shortAmt": 59259190,
       "high52": 22.745,
-      "low52": 12.654
+      "low52": 12.654,
+      "news": null
     },
     {
       "code": "02333",
@@ -10603,7 +10977,8 @@
       "shortRatio": 2.717720194371,
       "shortAmt": 7882670,
       "high52": 17.498,
-      "low52": 7.41
+      "low52": 7.41,
+      "news": null
     },
     {
       "code": "02335",
@@ -10629,7 +11004,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 45.04,
-      "low52": 20.66
+      "low52": 20.66,
+      "news": null
     },
     {
       "code": "02338",
@@ -10661,7 +11037,8 @@
       "shortRatio": 23.574812697735,
       "shortAmt": 90839480,
       "high52": 45.01,
-      "low52": 13.19
+      "low52": 13.19,
+      "news": null
     },
     {
       "code": "02343",
@@ -10687,7 +11064,8 @@
       "shortRatio": 8.957163901488,
       "shortAmt": 3810960,
       "high52": 4.45,
-      "low52": 2.015
+      "low52": 2.015,
+      "news": null
     },
     {
       "code": "02356",
@@ -10713,7 +11091,8 @@
       "shortRatio": 4.750449039776,
       "shortAmt": 987588,
       "high52": 15.1,
-      "low52": 8.71
+      "low52": 8.71,
+      "news": null
     },
     {
       "code": "02357",
@@ -10739,7 +11118,8 @@
       "shortRatio": 9.906441693141,
       "shortAmt": 3174280,
       "high52": 4.584,
-      "low52": 2.79
+      "low52": 2.79,
+      "news": null
     },
     {
       "code": "02359",
@@ -10772,6 +11152,7 @@
       "shortAmt": 255835480,
       "high52": 212.8,
       "low52": 94.308,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -10803,7 +11184,8 @@
       "shortRatio": 19.553065470502,
       "shortAmt": 8530936,
       "high52": 64.261,
-      "low52": 24.2
+      "low52": 24.2,
+      "news": null
     },
     {
       "code": "02378",
@@ -10817,7 +11199,7 @@
       "turnoverRate": 0,
       "peTtm": 9.08,
       "pb": 1.67,
-      "marketCap": 257620823819,
+      "marketCap": 257544566319,
       "high": 103.9,
       "low": 102.6,
       "open": 103.1,
@@ -10829,7 +11211,8 @@
       "shortRatio": 4.858734639125,
       "shortAmt": 150235,
       "high52": 129.023,
-      "low52": 94.654
+      "low52": 94.654,
+      "news": null
     },
     {
       "code": "02380",
@@ -10855,7 +11238,8 @@
       "shortRatio": 8.061912980021,
       "shortAmt": 6928005,
       "high52": 3.659,
-      "low52": 2.59
+      "low52": 2.59,
+      "news": null
     },
     {
       "code": "02382",
@@ -10882,6 +11266,7 @@
       "shortAmt": 267923245,
       "high52": 90.194,
       "low52": 50.294,
+      "news": null,
       "continuity": {
         "top50Days": 2,
         "prevRank": 43,
@@ -10913,7 +11298,8 @@
       "shortRatio": 6.745274215954,
       "shortAmt": 2425160,
       "high52": 7.873,
-      "low52": 4.692
+      "low52": 4.692,
+      "news": null
     },
     {
       "code": "02388",
@@ -10940,6 +11326,7 @@
       "shortAmt": 188898550,
       "high52": 53.85,
       "low52": 33.476,
+      "news": null,
       "continuity": {
         "top50Days": 2,
         "prevRank": 49,
@@ -10971,7 +11358,8 @@
       "shortRatio": 9.79984555172,
       "shortAmt": 12049636,
       "high52": 92.45,
-      "low52": 37.66
+      "low52": 37.66,
+      "news": null
     },
     {
       "code": "02402",
@@ -11003,7 +11391,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 50,
-      "low52": 11.26
+      "low52": 11.26,
+      "news": null
     },
     {
       "code": "02419",
@@ -11029,7 +11418,8 @@
       "shortRatio": 3.233882515495,
       "shortAmt": 1275105,
       "high52": 90,
-      "low52": 37.76
+      "low52": 37.76,
+      "news": null
     },
     {
       "code": "02423",
@@ -11055,7 +11445,8 @@
       "shortRatio": 27.191153452721,
       "shortAmt": 62270940,
       "high52": 52.73,
-      "low52": 35.38
+      "low52": 35.38,
+      "news": null
     },
     {
       "code": "02432",
@@ -11081,7 +11472,8 @@
       "shortRatio": 11.11557668639,
       "shortAmt": 2591204,
       "high52": 64.5,
-      "low52": 20.16
+      "low52": 20.16,
+      "news": null
     },
     {
       "code": "02460",
@@ -11107,7 +11499,8 @@
       "shortRatio": 24.543478105528,
       "shortAmt": 1648662,
       "high52": 11.159,
-      "low52": 6.749
+      "low52": 6.749,
+      "news": null
     },
     {
       "code": "02465",
@@ -11139,7 +11532,8 @@
       "shortRatio": 0.605246711431,
       "shortAmt": 151320,
       "high52": 23.5,
-      "low52": 8.45
+      "low52": 8.45,
+      "news": null
     },
     {
       "code": "02473",
@@ -11165,7 +11559,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 15.96,
-      "low52": 0.425
+      "low52": 0.425,
+      "news": null
     },
     {
       "code": "02475",
@@ -11197,7 +11592,8 @@
       "shortRatio": 19.325429720316,
       "shortAmt": 45096090,
       "high52": 66.2,
-      "low52": 50.95
+      "low52": 50.95,
+      "news": null
     },
     {
       "code": "02476",
@@ -11229,7 +11625,8 @@
       "shortRatio": 7.541459700942,
       "shortAmt": 26442040,
       "high52": 475,
-      "low52": 165.6
+      "low52": 165.6,
+      "news": null
     },
     {
       "code": "02477",
@@ -11255,7 +11652,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 13.63,
-      "low52": 0.166
+      "low52": 0.166,
+      "news": null
     },
     {
       "code": "02493",
@@ -11287,7 +11685,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 31.46,
-      "low52": 19.86
+      "low52": 19.86,
+      "news": null
     },
     {
       "code": "02498",
@@ -11313,7 +11712,8 @@
       "shortRatio": 25.28408236902,
       "shortAmt": 11722287,
       "high52": 46.5,
-      "low52": 16.35
+      "low52": 16.35,
+      "news": null
     },
     {
       "code": "02506",
@@ -11339,7 +11739,8 @@
       "shortRatio": 0.218605174897,
       "shortAmt": 3312,
       "high52": 114.7,
-      "low52": 62.2
+      "low52": 62.2,
+      "news": null
     },
     {
       "code": "02507",
@@ -11365,7 +11766,8 @@
       "shortRatio": 8.989418928683,
       "shortAmt": 402030,
       "high52": 68.563,
-      "low52": 29.963
+      "low52": 29.963,
+      "news": null
     },
     {
       "code": "02510",
@@ -11391,7 +11793,8 @@
       "shortRatio": 5.780119817845,
       "shortAmt": 1880770,
       "high52": 14.3,
-      "low52": 6.364
+      "low52": 6.364,
+      "news": null
     },
     {
       "code": "02513",
@@ -11418,6 +11821,14 @@
       "shortAmt": 3098372600,
       "high52": 2980,
       "low52": 116.1,
+      "news": [
+        {
+          "title": "大模型重压之下：DeepSeek改口、Kimi辟谣、智谱融资",
+          "mediaName": "北京商报",
+          "date": "2026-09-14 21:22:26",
+          "url": "http://finance.eastmoney.com/a/202609143873667192.html"
+        }
+      ],
       "continuity": {
         "top50Days": 3,
         "prevRank": 3,
@@ -11449,7 +11860,8 @@
       "shortRatio": 16.096569760176,
       "shortAmt": 1553262,
       "high52": 4.698,
-      "low52": 1.53
+      "low52": 1.53,
+      "news": null
     },
     {
       "code": "02525",
@@ -11475,7 +11887,8 @@
       "shortRatio": 6.68229750761,
       "shortAmt": 4364028,
       "high52": 30.5,
-      "low52": 14.263
+      "low52": 14.263,
+      "news": null
     },
     {
       "code": "02526",
@@ -11501,7 +11914,8 @@
       "shortRatio": 5.146847111989,
       "shortAmt": 4114445,
       "high52": 765.5,
-      "low52": 178
+      "low52": 178,
+      "news": null
     },
     {
       "code": "02533",
@@ -11527,7 +11941,8 @@
       "shortRatio": 11.841274473288,
       "shortAmt": 8924173,
       "high52": 26.38,
-      "low52": 9.285
+      "low52": 9.285,
+      "news": null
     },
     {
       "code": "02553",
@@ -11553,7 +11968,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 54.4,
-      "low52": 17.01
+      "low52": 17.01,
+      "news": null
     },
     {
       "code": "02555",
@@ -11579,7 +11995,8 @@
       "shortRatio": 0.31268484578,
       "shortAmt": 5688,
       "high52": 8.757,
-      "low52": 4.025
+      "low52": 4.025,
+      "news": null
     },
     {
       "code": "02556",
@@ -11605,7 +12022,8 @@
       "shortRatio": 0.979593438727,
       "shortAmt": 1963340,
       "high52": 68.3,
-      "low52": 27.36
+      "low52": 27.36,
+      "news": null
     },
     {
       "code": "02565",
@@ -11631,7 +12049,8 @@
       "shortRatio": 0.074922447047,
       "shortAmt": 42223,
       "high52": 77,
-      "low52": 4.94
+      "low52": 4.94,
+      "news": null
     },
     {
       "code": "02575",
@@ -11657,7 +12076,8 @@
       "shortRatio": 0.571318515737,
       "shortAmt": 35300,
       "high52": 96.9,
-      "low52": 8.005
+      "low52": 8.005,
+      "news": null
     },
     {
       "code": "02577",
@@ -11683,7 +12103,8 @@
       "shortRatio": 14.527488370448,
       "shortAmt": 13468926,
       "high52": 103.7,
-      "low52": 36.68
+      "low52": 36.68,
+      "news": null
     },
     {
       "code": "02579",
@@ -11715,7 +12136,8 @@
       "shortRatio": 0.701687973753,
       "shortAmt": 114628,
       "high52": 46.005,
-      "low52": 22.58
+      "low52": 22.58,
+      "news": null
     },
     {
       "code": "02580",
@@ -11741,7 +12163,8 @@
       "shortRatio": 35.23834675822,
       "shortAmt": 1094126,
       "high52": 15.48,
-      "low52": 7.8
+      "low52": 7.8,
+      "news": null
     },
     {
       "code": "02583",
@@ -11767,7 +12190,8 @@
       "shortRatio": 0.795782912992,
       "shortAmt": 485310,
       "high52": 216,
-      "low52": 43.08
+      "low52": 43.08,
+      "news": null
     },
     {
       "code": "02586",
@@ -11781,7 +12205,7 @@
       "turnoverRate": 1.67,
       "peTtm": 20.51,
       "pb": 5.35,
-      "marketCap": 4082770299,
+      "marketCap": 4082628849,
       "high": 4.74,
       "low": 4.27,
       "open": 4.42,
@@ -11793,7 +12217,8 @@
       "shortRatio": 1.42589818777,
       "shortAmt": 929143,
       "high52": 10.6,
-      "low52": 3.78
+      "low52": 3.78,
+      "news": null
     },
     {
       "code": "02588",
@@ -11819,7 +12244,8 @@
       "shortRatio": 22.174333685743,
       "shortAmt": 19661190,
       "high52": 89.552,
-      "low52": 64.902
+      "low52": 64.902,
+      "news": null
     },
     {
       "code": "02589",
@@ -11845,7 +12271,8 @@
       "shortRatio": 1.215277751056,
       "shortAmt": 39478,
       "high52": 178.497,
-      "low52": 70.041
+      "low52": 70.041,
+      "news": null
     },
     {
       "code": "02590",
@@ -11871,7 +12298,8 @@
       "shortRatio": 6.784057148302,
       "shortAmt": 7085430,
       "high52": 33.9,
-      "low52": 8.305
+      "low52": 8.305,
+      "news": null
     },
     {
       "code": "02591",
@@ -11897,7 +12325,8 @@
       "shortRatio": 0.753614658631,
       "shortAmt": 389052,
       "high52": 48.36,
-      "low52": 3.435
+      "low52": 3.435,
+      "news": null
     },
     {
       "code": "02595",
@@ -11923,7 +12352,8 @@
       "shortRatio": 10.737175699361,
       "shortAmt": 2235020,
       "high52": 52.9,
-      "low52": 19.6
+      "low52": 19.6,
+      "news": null
     },
     {
       "code": "02600",
@@ -11955,7 +12385,8 @@
       "shortRatio": 23.685074428072,
       "shortAmt": 54011960,
       "high52": 15.062,
-      "low52": 6.662
+      "low52": 6.662,
+      "news": null
     },
     {
       "code": "02601",
@@ -11987,7 +12418,8 @@
       "shortRatio": 2.945503703858,
       "shortAmt": 10934284,
       "high52": 38.653,
-      "low52": 26.015
+      "low52": 26.015,
+      "news": null
     },
     {
       "code": "02602",
@@ -12013,7 +12445,8 @@
       "shortRatio": 17.154548491936,
       "shortAmt": 2117922,
       "high52": 24.414,
-      "low52": 13.808
+      "low52": 13.808,
+      "news": null
     },
     {
       "code": "02603",
@@ -12045,7 +12478,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 19.997,
-      "low52": 11.014
+      "low52": 11.014,
+      "news": null
     },
     {
       "code": "02607",
@@ -12077,7 +12511,8 @@
       "shortRatio": 20.809045738375,
       "shortAmt": 3673448,
       "high52": 12.3,
-      "low52": 10.555
+      "low52": 10.555,
+      "news": null
     },
     {
       "code": "02609",
@@ -12103,7 +12538,8 @@
       "shortRatio": 3.06064780934,
       "shortAmt": 141024,
       "high52": 19.88,
-      "low52": 2.65
+      "low52": 2.65,
+      "news": null
     },
     {
       "code": "02610",
@@ -12129,7 +12565,8 @@
       "shortRatio": 23.474660803901,
       "shortAmt": 3901202,
       "high52": 74.23,
-      "low52": 23.84
+      "low52": 23.84,
+      "news": null
     },
     {
       "code": "02611",
@@ -12161,7 +12598,8 @@
       "shortRatio": 25.296047255337,
       "shortAmt": 47950114,
       "high52": 17.784,
-      "low52": 12.383
+      "low52": 12.383,
+      "news": null
     },
     {
       "code": "02616",
@@ -12187,7 +12625,8 @@
       "shortRatio": 20.22372365401,
       "shortAmt": 15827820,
       "high52": 10.54,
-      "low52": 4.01
+      "low52": 4.01,
+      "news": null
     },
     {
       "code": "02617",
@@ -12213,7 +12652,8 @@
       "shortRatio": 0.382537728168,
       "shortAmt": 268560,
       "high52": 679.5,
-      "low52": 9.01
+      "low52": 9.01,
+      "news": null
     },
     {
       "code": "02618",
@@ -12239,7 +12679,8 @@
       "shortRatio": 29.423196978093,
       "shortAmt": 27719315,
       "high52": 16.76,
-      "low52": 10.2
+      "low52": 10.2,
+      "news": null
     },
     {
       "code": "02628",
@@ -12272,6 +12713,7 @@
       "shortAmt": 490054460,
       "high52": 35.449,
       "low52": 19.929,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 45,
@@ -12309,7 +12751,8 @@
       "shortRatio": 1.317721393656,
       "shortAmt": 763255,
       "high52": 138.7,
-      "low52": 43.22
+      "low52": 43.22,
+      "news": null
     },
     {
       "code": "02632",
@@ -12335,7 +12778,8 @@
       "shortRatio": 0.109186824872,
       "shortAmt": 6202,
       "high52": 137.5,
-      "low52": 27.7
+      "low52": 27.7,
+      "news": null
     },
     {
       "code": "02635",
@@ -12361,7 +12805,8 @@
       "shortRatio": 1.342475481257,
       "shortAmt": 700680,
       "high52": 83.2,
-      "low52": 9.38
+      "low52": 9.38,
+      "news": null
     },
     {
       "code": "02637",
@@ -12387,7 +12832,8 @@
       "shortRatio": 4.703914680104,
       "shortAmt": 994770,
       "high52": 302.4,
-      "low52": 97.5
+      "low52": 97.5,
+      "news": null
     },
     {
       "code": "02643",
@@ -12413,7 +12859,8 @@
       "shortRatio": 0.192039883461,
       "shortAmt": 28941,
       "high52": 60.2,
-      "low52": 11.4
+      "low52": 11.4,
+      "news": null
     },
     {
       "code": "02648",
@@ -12445,7 +12892,8 @@
       "shortRatio": 3.093193535936,
       "shortAmt": 526900,
       "high52": 90.448,
-      "low52": 53.598
+      "low52": 53.598,
+      "news": null
     },
     {
       "code": "02650",
@@ -12471,7 +12919,8 @@
       "shortRatio": 0.184223593541,
       "shortAmt": 1018907,
       "high52": 65.28,
-      "low52": 6.245
+      "low52": 6.245,
+      "news": null
     },
     {
       "code": "02652",
@@ -12497,7 +12946,8 @@
       "shortRatio": 1.085242734204,
       "shortAmt": 537399,
       "high52": 48.8,
-      "low52": 8.88
+      "low52": 8.88,
+      "news": null
     },
     {
       "code": "02655",
@@ -12523,7 +12973,8 @@
       "shortRatio": 1.756673352878,
       "shortAmt": 332442,
       "high52": 76.8,
-      "low52": 14.88
+      "low52": 14.88,
+      "news": null
     },
     {
       "code": "02656",
@@ -12549,7 +13000,8 @@
       "shortRatio": 1.072119617907,
       "shortAmt": 2364213,
       "high52": 158.4,
-      "low52": 8.405
+      "low52": 8.405,
+      "news": null
     },
     {
       "code": "02659",
@@ -12575,7 +13027,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 206,
-      "low52": 14.2
+      "low52": 14.2,
+      "news": null
     },
     {
       "code": "02661",
@@ -12601,7 +13054,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 162.7,
-      "low52": 4.365
+      "low52": 4.365,
+      "news": null
     },
     {
       "code": "02665",
@@ -12627,7 +13081,8 @@
       "shortRatio": 17.386079957597,
       "shortAmt": 601910,
       "high52": 17.88,
-      "low52": 2.01
+      "low52": 2.01,
+      "news": null
     },
     {
       "code": "02666",
@@ -12653,7 +13108,8 @@
       "shortRatio": 46.475528090364,
       "shortAmt": 12762467,
       "high52": 6.31,
-      "low52": 4.3
+      "low52": 4.3,
+      "news": null
     },
     {
       "code": "02669",
@@ -12679,7 +13135,8 @@
       "shortRatio": 47.871512133729,
       "shortAmt": 7854650,
       "high52": 5.01,
-      "low52": 3.05
+      "low52": 3.05,
+      "news": null
     },
     {
       "code": "02670",
@@ -12705,7 +13162,8 @@
       "shortRatio": 0.213325695005,
       "shortAmt": 85200,
       "high52": 358.4,
-      "low52": 86.2
+      "low52": 86.2,
+      "news": null
     },
     {
       "code": "02672",
@@ -12731,7 +13189,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 79,
-      "low52": 31.48
+      "low52": 31.48,
+      "news": null
     },
     {
       "code": "02675",
@@ -12757,7 +13216,8 @@
       "shortRatio": 4.361963741254,
       "shortAmt": 1018810,
       "high52": 73.7,
-      "low52": 31.26
+      "low52": 31.26,
+      "news": null
     },
     {
       "code": "02676",
@@ -12789,7 +13249,8 @@
       "shortRatio": 2.547924088212,
       "shortAmt": 316350,
       "high52": 252,
-      "low52": 104.1
+      "low52": 104.1,
+      "news": null
     },
     {
       "code": "02685",
@@ -12815,7 +13276,8 @@
       "shortRatio": 0.203411694149,
       "shortAmt": 360442,
       "high52": 43.36,
-      "low52": 3.68
+      "low52": 3.68,
+      "news": null
     },
     {
       "code": "02687",
@@ -12841,7 +13303,8 @@
       "shortRatio": 0.459733041758,
       "shortAmt": 194420,
       "high52": 371.8,
-      "low52": 82
+      "low52": 82,
+      "news": null
     },
     {
       "code": "02688",
@@ -12867,7 +13330,8 @@
       "shortRatio": 10.578404536067,
       "shortAmt": 22873030,
       "high52": 71.45,
-      "low52": 40.38
+      "low52": 40.38,
+      "news": null
     },
     {
       "code": "02689",
@@ -12893,7 +13357,8 @@
       "shortRatio": 9.536785049042,
       "shortAmt": 10127710,
       "high52": 9.97,
-      "low52": 5.1
+      "low52": 5.1,
+      "news": null
     },
     {
       "code": "02691",
@@ -12925,7 +13390,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 8.725,
-      "low52": 5.69
+      "low52": 5.69,
+      "news": null
     },
     {
       "code": "02692",
@@ -12936,10 +13402,10 @@
       "volume": 255800,
       "turnover": 9450980,
       "amplitude": 3.26,
-      "turnoverRate": 0.96,
-      "peTtm": 40.87,
+      "turnoverRate": 0.97,
+      "peTtm": 40.86,
       "pb": 1.71,
-      "marketCap": 9983602370,
+      "marketCap": 9980834710,
       "high": 37.52,
       "low": 36.3,
       "open": 37.2,
@@ -12957,7 +13423,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 94.364,
-      "low52": 36.3
+      "low52": 36.3,
+      "news": null
     },
     {
       "code": "02696",
@@ -12983,7 +13450,8 @@
       "shortRatio": 20.937089034922,
       "shortAmt": 19728515,
       "high52": 87.1,
-      "low52": 50.25
+      "low52": 50.25,
+      "news": null
     },
     {
       "code": "02697",
@@ -13009,7 +13477,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 886,
-      "low52": 253.2
+      "low52": 253.2,
+      "news": null
     },
     {
       "code": "02698",
@@ -13035,7 +13504,8 @@
       "shortRatio": 3.063468179099,
       "shortAmt": 742472,
       "high52": 35.477,
-      "low52": 23.233
+      "low52": 23.233,
+      "news": null
     },
     {
       "code": "02701",
@@ -13067,7 +13537,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 17.14,
-      "low52": 7.03
+      "low52": 7.03,
+      "news": null
     },
     {
       "code": "02706",
@@ -13093,7 +13564,8 @@
       "shortRatio": 2.509898697637,
       "shortAmt": 1261352,
       "high52": 161.6,
-      "low52": 21.44
+      "low52": 21.44,
+      "news": null
     },
     {
       "code": "02714",
@@ -13125,7 +13597,8 @@
       "shortRatio": 21.839284675626,
       "shortAmt": 11425602,
       "high52": 50.212,
-      "low52": 27.02
+      "low52": 27.02,
+      "news": null
     },
     {
       "code": "02715",
@@ -13157,7 +13630,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 26.18,
-      "low52": 11.22
+      "low52": 11.22,
+      "news": null
     },
     {
       "code": "02718",
@@ -13183,7 +13657,8 @@
       "shortRatio": 0.858125212067,
       "shortAmt": 571248,
       "high52": 357,
-      "low52": 23.86
+      "low52": 23.86,
+      "news": null
     },
     {
       "code": "02723",
@@ -13209,7 +13684,8 @@
       "shortRatio": 4.429154750136,
       "shortAmt": 4609830,
       "high52": 1006,
-      "low52": 155
+      "low52": 155,
+      "news": null
     },
     {
       "code": "02726",
@@ -13235,7 +13711,8 @@
       "shortRatio": 6.391551647766,
       "shortAmt": 3350325,
       "high52": 141,
-      "low52": 90.05
+      "low52": 90.05,
+      "news": null
     },
     {
       "code": "02727",
@@ -13267,7 +13744,8 @@
       "shortRatio": 26.423319507706,
       "shortAmt": 11797740,
       "high52": 5.694,
-      "low52": 2.87
+      "low52": 2.87,
+      "news": null
     },
     {
       "code": "02729",
@@ -13293,7 +13771,8 @@
       "shortRatio": 1.220967052103,
       "shortAmt": 2843436,
       "high52": 47,
-      "low52": 23.6
+      "low52": 23.6,
+      "news": null
     },
     {
       "code": "02768",
@@ -13325,7 +13804,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 59.3,
-      "low52": 22.56
+      "low52": 22.56,
+      "news": null
     },
     {
       "code": "02788",
@@ -13351,7 +13831,8 @@
       "shortRatio": 23.030442910243,
       "shortAmt": 19057295,
       "high52": 33.19,
-      "low52": 12.74
+      "low52": 12.74,
+      "news": null
     },
     {
       "code": "02799",
@@ -13377,7 +13858,8 @@
       "shortRatio": 16.632534911643,
       "shortAmt": 2449920,
       "high52": 1.09,
-      "low52": 0.54
+      "low52": 0.54,
+      "news": null
     },
     {
       "code": "02858",
@@ -13403,7 +13885,8 @@
       "shortRatio": 28.293466399318,
       "shortAmt": 4884050,
       "high52": 3.06,
-      "low52": 1.105
+      "low52": 1.105,
+      "news": null
     },
     {
       "code": "02865",
@@ -13435,7 +13918,8 @@
       "shortRatio": 1.97459399998,
       "shortAmt": 648417,
       "high52": 52.6,
-      "low52": 11.71
+      "low52": 11.71,
+      "news": null
     },
     {
       "code": "02866",
@@ -13467,7 +13951,8 @@
       "shortRatio": 7.399398186768,
       "shortAmt": 208895,
       "high52": 1.693,
-      "low52": 0.843
+      "low52": 0.843,
+      "news": null
     },
     {
       "code": "02869",
@@ -13493,7 +13978,8 @@
       "shortRatio": 13.77458748422,
       "shortAmt": 2038010,
       "high52": 4.87,
-      "low52": 3.58
+      "low52": 3.58,
+      "news": null
     },
     {
       "code": "02877",
@@ -13519,7 +14005,8 @@
       "shortRatio": 41.249485869699,
       "shortAmt": 6288150,
       "high52": 9.05,
-      "low52": 6.277
+      "low52": 6.277,
+      "news": null
     },
     {
       "code": "02880",
@@ -13551,7 +14038,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 1.087,
-      "low52": 0.62
+      "low52": 0.62,
+      "news": null
     },
     {
       "code": "02883",
@@ -13583,7 +14071,8 @@
       "shortRatio": 29.460877299698,
       "shortAmt": 46673340,
       "high52": 11.417,
-      "low52": 6.09
+      "low52": 6.09,
+      "news": null
     },
     {
       "code": "02888",
@@ -13609,7 +14098,8 @@
       "shortRatio": 4.878028132493,
       "shortAmt": 13925900,
       "high52": 247.2,
-      "low52": 135.864
+      "low52": 135.864,
+      "news": null
     },
     {
       "code": "02889",
@@ -13635,7 +14125,8 @@
       "shortRatio": 0.154771265986,
       "shortAmt": 102743,
       "high52": 288.8,
-      "low52": 79.15
+      "low52": 79.15,
+      "news": null
     },
     {
       "code": "02899",
@@ -13668,6 +14159,7 @@
       "shortAmt": 253755040,
       "high52": 46.059,
       "low52": 26.096,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 8,
@@ -13705,7 +14197,8 @@
       "shortRatio": 4.225641565518,
       "shortAmt": 3877400,
       "high52": 205.8,
-      "low52": 83.75
+      "low52": 83.75,
+      "news": null
     },
     {
       "code": "03268",
@@ -13737,7 +14230,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 34.185,
-      "low52": 16.02
+      "low52": 16.02,
+      "news": null
     },
     {
       "code": "03277",
@@ -13763,7 +14257,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 116.713,
-      "low52": 57.05
+      "low52": 57.05,
+      "news": null
     },
     {
       "code": "03288",
@@ -13795,7 +14290,8 @@
       "shortRatio": 41.332814012561,
       "shortAmt": 8823066,
       "high52": 37.465,
-      "low52": 26.88
+      "low52": 26.88,
+      "news": null
     },
     {
       "code": "03296",
@@ -13827,7 +14323,8 @@
       "shortRatio": 35.241150394267,
       "shortAmt": 21185355,
       "high52": 101,
-      "low52": 57.05
+      "low52": 57.05,
+      "news": null
     },
     {
       "code": "03306",
@@ -13853,7 +14350,8 @@
       "shortRatio": 1.889974538216,
       "shortAmt": 1390020,
       "high52": 22.84,
-      "low52": 16.13
+      "low52": 16.13,
+      "news": null
     },
     {
       "code": "03308",
@@ -13886,6 +14384,7 @@
       "shortAmt": 116855250,
       "high52": 1317.612,
       "low52": 878.612,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 6,
@@ -13917,7 +14416,8 @@
       "shortRatio": 1.54319237102,
       "shortAmt": 145836,
       "high52": 44.38,
-      "low52": 21.8
+      "low52": 21.8,
+      "news": null
     },
     {
       "code": "03311",
@@ -13943,7 +14443,8 @@
       "shortRatio": 24.695917427182,
       "shortAmt": 18311170,
       "high52": 10.095,
-      "low52": 6.92
+      "low52": 6.92,
+      "news": null
     },
     {
       "code": "03317",
@@ -13969,7 +14470,8 @@
       "shortRatio": 1.482898924476,
       "shortAmt": 3129920,
       "high52": 382.8,
-      "low52": 38.02
+      "low52": 38.02,
+      "news": null
     },
     {
       "code": "03320",
@@ -13995,7 +14497,8 @@
       "shortRatio": 8.247270480117,
       "shortAmt": 2549580,
       "high52": 6.29,
-      "low52": 4.1
+      "low52": 4.1,
+      "news": null
     },
     {
       "code": "03323",
@@ -14021,7 +14524,8 @@
       "shortRatio": 39.004448870916,
       "shortAmt": 34263270,
       "high52": 7.089,
-      "low52": 3.33
+      "low52": 3.33,
+      "news": null
     },
     {
       "code": "03328",
@@ -14053,7 +14557,8 @@
       "shortRatio": 15.318520952145,
       "shortAmt": 37467915,
       "high52": 8.16,
-      "low52": 5.963
+      "low52": 5.963,
+      "news": null
     },
     {
       "code": "03330",
@@ -14079,7 +14584,8 @@
       "shortRatio": 11.420024847576,
       "shortAmt": 24034672,
       "high52": 31.143,
-      "low52": 11.7
+      "low52": 11.7,
+      "news": null
     },
     {
       "code": "03339",
@@ -14105,7 +14611,8 @@
       "shortRatio": 2.898430271003,
       "shortAmt": 453835,
       "high52": 3.62,
-      "low52": 2.31
+      "low52": 2.31,
+      "news": null
     },
     {
       "code": "03347",
@@ -14137,7 +14644,8 @@
       "shortRatio": 20.961326716149,
       "shortAmt": 21674914,
       "high52": 56.855,
-      "low52": 27.975
+      "low52": 27.975,
+      "news": null
     },
     {
       "code": "03355",
@@ -14149,9 +14657,9 @@
       "turnover": 45021422,
       "amplitude": 9.44,
       "turnoverRate": 0.3,
-      "peTtm": 16.84,
+      "peTtm": 16.82,
       "pb": 2.77,
-      "marketCap": 14911878880,
+      "marketCap": 14897158880,
       "high": 39.7,
       "low": 36.02,
       "open": 38.9,
@@ -14163,7 +14671,8 @@
       "shortRatio": 20.551398842978,
       "shortAmt": 9252532,
       "high52": 56.435,
-      "low52": 27.96
+      "low52": 27.96,
+      "news": null
     },
     {
       "code": "03360",
@@ -14189,7 +14698,8 @@
       "shortRatio": 31.249485286757,
       "shortAmt": 17583075,
       "high52": 7.98,
-      "low52": 4.77
+      "low52": 4.77,
+      "news": null
     },
     {
       "code": "03369",
@@ -14221,7 +14731,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 3.908,
-      "low52": 2.088
+      "low52": 2.088,
+      "news": null
     },
     {
       "code": "03380",
@@ -14247,7 +14758,8 @@
       "shortRatio": 12.703919766223,
       "shortAmt": 355180,
       "high52": 1.93,
-      "low52": 1.04
+      "low52": 1.04,
+      "news": null
     },
     {
       "code": "03388",
@@ -14273,7 +14785,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 34,
-      "low52": 16.76
+      "low52": 16.76,
+      "news": null
     },
     {
       "code": "03393",
@@ -14299,7 +14812,8 @@
       "shortRatio": 27.007804043316,
       "shortAmt": 4576420,
       "high52": 33.32,
-      "low52": 10.19
+      "low52": 10.19,
+      "news": null
     },
     {
       "code": "03396",
@@ -14325,7 +14839,8 @@
       "shortRatio": 3.892149275747,
       "shortAmt": 12553013,
       "high52": 20.6,
-      "low52": 7.645
+      "low52": 7.645,
+      "news": null
     },
     {
       "code": "03606",
@@ -14357,7 +14872,8 @@
       "shortRatio": 17.906442963744,
       "shortAmt": 18553480,
       "high52": 83.644,
-      "low52": 47.7
+      "low52": 47.7,
+      "news": null
     },
     {
       "code": "03613",
@@ -14383,7 +14899,8 @@
       "shortRatio": 15.702757794295,
       "shortAmt": 887830,
       "high52": 9.1,
-      "low52": 5.81
+      "low52": 5.81,
+      "news": null
     },
     {
       "code": "03618",
@@ -14415,7 +14932,8 @@
       "shortRatio": 3.650070560978,
       "shortAmt": 4290125,
       "high52": 7.164,
-      "low52": 5.28
+      "low52": 5.28,
+      "news": null
     },
     {
       "code": "03625",
@@ -14441,7 +14959,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 153,
-      "low52": 58.7
+      "low52": 58.7,
+      "news": null
     },
     {
       "code": "03633",
@@ -14455,7 +14974,7 @@
       "turnoverRate": 0.1,
       "peTtm": 31.47,
       "pb": 0.91,
-      "marketCap": 7173554143,
+      "marketCap": 7172221643,
       "high": 2.78,
       "low": 2.625,
       "open": 2.78,
@@ -14467,7 +14986,8 @@
       "shortRatio": 12.725919540918,
       "shortAmt": 956685,
       "high52": 6.82,
-      "low52": 2.19
+      "low52": 2.19,
+      "news": null
     },
     {
       "code": "03661",
@@ -14499,7 +15019,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 142.3,
-      "low52": 75.6
+      "low52": 75.6,
+      "news": null
     },
     {
       "code": "03668",
@@ -14525,7 +15046,8 @@
       "shortRatio": 2.914846944986,
       "shortAmt": 1360510,
       "high52": 48.69,
-      "low52": 23.336
+      "low52": 23.336,
+      "news": null
     },
     {
       "code": "03677",
@@ -14551,7 +15073,8 @@
       "shortRatio": 1.638456884163,
       "shortAmt": 76323,
       "high52": 12.93,
-      "low52": 4.305
+      "low52": 4.305,
+      "news": null
     },
     {
       "code": "03678",
@@ -14583,7 +15106,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 4.555,
-      "low52": 2.02
+      "low52": 2.02,
+      "news": null
     },
     {
       "code": "03690",
@@ -14610,6 +15134,7 @@
       "shortAmt": 416466610,
       "high52": 109.7,
       "low52": 63.65,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 15,
@@ -14641,7 +15166,8 @@
       "shortRatio": 39.122402336197,
       "shortAmt": 170294040,
       "high52": 44.02,
-      "low52": 27.86
+      "low52": 27.86,
+      "news": null
     },
     {
       "code": "03696",
@@ -14667,7 +15193,8 @@
       "shortRatio": 6.738490214005,
       "shortAmt": 38834280,
       "high52": 80.9,
-      "low52": 29.98
+      "low52": 29.98,
+      "news": null
     },
     {
       "code": "03698",
@@ -14693,7 +15220,8 @@
       "shortRatio": 36.789452805571,
       "shortAmt": 5967825,
       "high52": 5.27,
-      "low52": 2.813
+      "low52": 2.813,
+      "news": null
     },
     {
       "code": "03738",
@@ -14719,7 +15247,8 @@
       "shortRatio": 3.45147161656,
       "shortAmt": 4423790,
       "high52": 6.99,
-      "low52": 2.17
+      "low52": 2.17,
+      "news": null
     },
     {
       "code": "03750",
@@ -14752,6 +15281,7 @@
       "shortAmt": 274507950,
       "high52": 792.871,
       "low52": 424.488,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 29,
@@ -14789,7 +15319,8 @@
       "shortRatio": 15.661556819641,
       "shortAmt": 42075070,
       "high52": 34.86,
-      "low52": 14.22
+      "low52": 14.22,
+      "news": null
     },
     {
       "code": "03774",
@@ -14815,7 +15346,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 33.98,
-      "low52": 12.9
+      "low52": 12.9,
+      "news": null
     },
     {
       "code": "03800",
@@ -14841,7 +15373,8 @@
       "shortRatio": 23.604882385795,
       "shortAmt": 22135685,
       "high52": 1.51,
-      "low52": 0.55
+      "low52": 0.55,
+      "news": null
     },
     {
       "code": "03808",
@@ -14867,7 +15400,8 @@
       "shortRatio": 29.979672366784,
       "shortAmt": 42811370,
       "high52": 46.34,
-      "low52": 18.28
+      "low52": 18.28,
+      "news": null
     },
     {
       "code": "03858",
@@ -14893,7 +15427,8 @@
       "shortRatio": 29.310419244382,
       "shortAmt": 13853300,
       "high52": 174.33,
-      "low52": 25.01
+      "low52": 25.01,
+      "news": null
     },
     {
       "code": "03866",
@@ -14925,7 +15460,8 @@
       "shortRatio": 3.674263989076,
       "shortAmt": 343830,
       "high52": 5.405,
-      "low52": 3.524
+      "low52": 3.524,
+      "news": null
     },
     {
       "code": "03868",
@@ -14951,7 +15487,8 @@
       "shortRatio": 38.500671901432,
       "shortAmt": 3835940,
       "high52": 1.383,
-      "low52": 0.77
+      "low52": 0.77,
+      "news": null
     },
     {
       "code": "03877",
@@ -14977,7 +15514,8 @@
       "shortRatio": 29.940762077351,
       "shortAmt": 14222480,
       "high52": 2.56,
-      "low52": 1.67
+      "low52": 1.67,
+      "news": null
     },
     {
       "code": "03881",
@@ -15003,7 +15541,8 @@
       "shortRatio": 0.880764701394,
       "shortAmt": 312850,
       "high52": 40.88,
-      "low52": 17.13
+      "low52": 17.13,
+      "news": null
     },
     {
       "code": "03888",
@@ -15029,7 +15568,8 @@
       "shortRatio": 33.844524496999,
       "shortAmt": 53811824,
       "high52": 38.07,
-      "low52": 20.37
+      "low52": 20.37,
+      "news": null
     },
     {
       "code": "03896",
@@ -15055,7 +15595,8 @@
       "shortRatio": 16.78194584356,
       "shortAmt": 27365530,
       "high52": 9.75,
-      "low52": 4.22
+      "low52": 4.22,
+      "news": null
     },
     {
       "code": "03898",
@@ -15087,7 +15628,8 @@
       "shortRatio": 37.077351607445,
       "shortAmt": 24604414,
       "high52": 45.566,
-      "low52": 29
+      "low52": 29,
+      "news": null
     },
     {
       "code": "03899",
@@ -15113,7 +15655,8 @@
       "shortRatio": 28.739502032476,
       "shortAmt": 10340360,
       "high52": 13.57,
-      "low52": 6.89
+      "low52": 6.89,
+      "news": null
     },
     {
       "code": "03900",
@@ -15139,7 +15682,8 @@
       "shortRatio": 26.529212204975,
       "shortAmt": 8470737,
       "high52": 11.98,
-      "low52": 5.565
+      "low52": 5.565,
+      "news": null
     },
     {
       "code": "03908",
@@ -15171,7 +15715,8 @@
       "shortRatio": 20.879099249879,
       "shortAmt": 71562744,
       "high52": 23.357,
-      "low52": 16.646
+      "low52": 16.646,
+      "news": null
     },
     {
       "code": "03918",
@@ -15197,7 +15742,8 @@
       "shortRatio": 36.16999091672,
       "shortAmt": 1343230,
       "high52": 6.82,
-      "low52": 3.089
+      "low52": 3.089,
+      "news": null
     },
     {
       "code": "03931",
@@ -15223,7 +15769,8 @@
       "shortRatio": 29.411925942788,
       "shortAmt": 9678691,
       "high52": 39.3,
-      "low52": 15.92
+      "low52": 15.92,
+      "news": null
     },
     {
       "code": "03933",
@@ -15249,7 +15796,8 @@
       "shortRatio": 8.024796936194,
       "shortAmt": 5705300,
       "high52": 16.676,
-      "low52": 7.681
+      "low52": 7.681,
+      "news": null
     },
     {
       "code": "03939",
@@ -15275,7 +15823,8 @@
       "shortRatio": 3.555807271877,
       "shortAmt": 8097040,
       "high52": 18.578,
-      "low52": 6.848
+      "low52": 6.848,
+      "news": null
     },
     {
       "code": "03958",
@@ -15307,7 +15856,8 @@
       "shortRatio": 22.161555457758,
       "shortAmt": 6843526,
       "high52": 8.16,
-      "low52": 5.12
+      "low52": 5.12,
+      "news": null
     },
     {
       "code": "03968",
@@ -15340,6 +15890,7 @@
       "shortAmt": 183268325,
       "high52": 53.55,
       "low52": 42.347,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -15377,7 +15928,8 @@
       "shortRatio": 13.183323828013,
       "shortAmt": 692315,
       "high52": 3.755,
-      "low52": 2.885
+      "low52": 2.885,
+      "news": null
     },
     {
       "code": "03986",
@@ -15410,6 +15962,7 @@
       "shortAmt": 31678280,
       "high52": 1248,
       "low52": 219.145,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 44,
@@ -15448,6 +16001,7 @@
       "shortAmt": 233827340,
       "high52": 6.14,
       "low52": 3.854,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 18,
@@ -15485,7 +16039,8 @@
       "shortRatio": 15.952814037651,
       "shortAmt": 87986490,
       "high52": 24.804,
-      "low52": 11.664
+      "low52": 11.664,
+      "news": null
     },
     {
       "code": "03996",
@@ -15517,7 +16072,8 @@
       "shortRatio": 10.760419857163,
       "shortAmt": 885320,
       "high52": 1.514,
-      "low52": 1.014
+      "low52": 1.014,
+      "news": null
     },
     {
       "code": "03998",
@@ -15543,7 +16099,8 @@
       "shortRatio": 28.953812104224,
       "shortAmt": 18805180,
       "high52": 5.057,
-      "low52": 3.3
+      "low52": 3.3,
+      "news": null
     },
     {
       "code": "06030",
@@ -15575,7 +16132,8 @@
       "shortRatio": 13.500481728739,
       "shortAmt": 19992760,
       "high52": 31.712,
-      "low52": 22.771
+      "low52": 22.771,
+      "news": null
     },
     {
       "code": "06031",
@@ -15607,7 +16165,8 @@
       "shortRatio": 11.802517949115,
       "shortAmt": 7647282,
       "high52": 26.953,
-      "low52": 17.78
+      "low52": 17.78,
+      "news": null
     },
     {
       "code": "06049",
@@ -15633,7 +16192,8 @@
       "shortRatio": 21.614420030227,
       "shortAmt": 1460760,
       "high52": 35.893,
-      "low52": 25.6
+      "low52": 25.6,
+      "news": null
     },
     {
       "code": "06055",
@@ -15659,7 +16219,8 @@
       "shortRatio": 1.351188988307,
       "shortAmt": 391360,
       "high52": 47.58,
-      "low52": 18.32
+      "low52": 18.32,
+      "news": null
     },
     {
       "code": "06060",
@@ -15685,7 +16246,8 @@
       "shortRatio": 7.933116644312,
       "shortAmt": 5034349,
       "high52": 18.7,
-      "low52": 8.83
+      "low52": 8.83,
+      "news": null
     },
     {
       "code": "06066",
@@ -15717,7 +16279,8 @@
       "shortRatio": 8.479299585526,
       "shortAmt": 2503545,
       "high52": 13.968,
-      "low52": 9.979
+      "low52": 9.979,
+      "news": null
     },
     {
       "code": "06067",
@@ -15749,7 +16312,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 13.41,
-      "low52": 6.88
+      "low52": 6.88,
+      "news": null
     },
     {
       "code": "06069",
@@ -15763,7 +16327,7 @@
       "turnoverRate": 0.68,
       "peTtm": 12.02,
       "pb": 1.48,
-      "marketCap": 6629243606,
+      "marketCap": 6624370236,
       "high": 6.315,
       "low": 5.3,
       "open": 6.035,
@@ -15775,7 +16339,8 @@
       "shortRatio": 13.882615938088,
       "shortAmt": 6067560,
       "high52": 11.891,
-      "low52": 5.3
+      "low52": 5.3,
+      "news": null
     },
     {
       "code": "06078",
@@ -15801,7 +16366,8 @@
       "shortRatio": 7.18647627358,
       "shortAmt": 680274,
       "high52": 15.4,
-      "low52": 8.1
+      "low52": 8.1,
+      "news": null
     },
     {
       "code": "06082",
@@ -15827,7 +16393,8 @@
       "shortRatio": 22.220879628389,
       "shortAmt": 105391236,
       "high52": 70.75,
-      "low52": 27.32
+      "low52": 27.32,
+      "news": null
     },
     {
       "code": "06088",
@@ -15853,7 +16420,8 @@
       "shortRatio": 13.817224909408,
       "shortAmt": 21364855,
       "high52": 10.89,
-      "low52": 4.33
+      "low52": 4.33,
+      "news": null
     },
     {
       "code": "06090",
@@ -15879,7 +16447,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 143,
-      "low52": 25.66
+      "low52": 25.66,
+      "news": null
     },
     {
       "code": "06098",
@@ -15905,7 +16474,8 @@
       "shortRatio": 1.937930579888,
       "shortAmt": 381630,
       "high52": 6.506,
-      "low52": 4.8
+      "low52": 4.8,
+      "news": null
     },
     {
       "code": "06099",
@@ -15937,7 +16507,8 @@
       "shortRatio": 2.685730141689,
       "shortAmt": 1964420,
       "high52": 17.941,
-      "low52": 11.891
+      "low52": 11.891,
+      "news": null
     },
     {
       "code": "06106",
@@ -15963,7 +16534,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 140.5,
-      "low52": 41.6
+      "low52": 41.6,
+      "news": null
     },
     {
       "code": "06110",
@@ -15989,7 +16561,8 @@
       "shortRatio": 18.688776667755,
       "shortAmt": 2753325,
       "high52": 3.249,
-      "low52": 0.985
+      "low52": 0.985,
+      "news": null
     },
     {
       "code": "06127",
@@ -16021,7 +16594,8 @@
       "shortRatio": 2.731531937313,
       "shortAmt": 2812468,
       "high52": 29.98,
-      "low52": 14.992
+      "low52": 14.992,
+      "news": null
     },
     {
       "code": "06160",
@@ -16054,6 +16628,7 @@
       "shortAmt": 236721520,
       "high52": 235.6,
       "low52": 153,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 36,
@@ -16092,6 +16667,7 @@
       "shortAmt": 65384975,
       "high52": 172.9,
       "low52": 60.5,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 17,
@@ -16123,7 +16699,8 @@
       "shortRatio": 2.39058001488,
       "shortAmt": 30299,
       "high52": 56.54,
-      "low52": 12.51
+      "low52": 12.51,
+      "news": null
     },
     {
       "code": "06178",
@@ -16155,7 +16732,8 @@
       "shortRatio": 8.667520785241,
       "shortAmt": 687149,
       "high52": 11.06,
-      "low52": 6.89
+      "low52": 6.89,
+      "news": null
     },
     {
       "code": "06181",
@@ -16181,7 +16759,8 @@
       "shortRatio": 19.06407816208,
       "shortAmt": 38909160,
       "high52": 884.35,
-      "low52": 282.2
+      "low52": 282.2,
+      "news": null
     },
     {
       "code": "06185",
@@ -16213,7 +16792,8 @@
       "shortRatio": 1.248018769627,
       "shortAmt": 1516472,
       "high52": 55.85,
-      "low52": 19.22
+      "low52": 19.22,
+      "news": null
     },
     {
       "code": "06186",
@@ -16239,7 +16819,8 @@
       "shortRatio": 40.021675231651,
       "shortAmt": 17554355,
       "high52": 4.268,
-      "low52": 2.48
+      "low52": 2.48,
+      "news": null
     },
     {
       "code": "06196",
@@ -16271,7 +16852,8 @@
       "shortRatio": 5.357898075703,
       "shortAmt": 81080,
       "high52": 1.34,
-      "low52": 0.83
+      "low52": 0.83,
+      "news": null
     },
     {
       "code": "06198",
@@ -16303,7 +16885,8 @@
       "shortRatio": 11.749900845373,
       "shortAmt": 1704930,
       "high52": 7.66,
-      "low52": 6.088
+      "low52": 6.088,
+      "news": null
     },
     {
       "code": "06600",
@@ -16329,7 +16912,8 @@
       "shortRatio": 1.040445394465,
       "shortAmt": 1434358,
       "high52": 201.6,
-      "low52": 37.86
+      "low52": 37.86,
+      "news": null
     },
     {
       "code": "06613",
@@ -16361,7 +16945,8 @@
       "shortRatio": 17.516959025347,
       "shortAmt": 13698760,
       "high52": 33.314,
-      "low52": 15.054
+      "low52": 15.054,
+      "news": null
     },
     {
       "code": "06618",
@@ -16387,7 +16972,8 @@
       "shortRatio": 41.79119541222,
       "shortAmt": 71576161,
       "high52": 71.7,
-      "low52": 31.84
+      "low52": 31.84,
+      "news": null
     },
     {
       "code": "06636",
@@ -16413,7 +16999,8 @@
       "shortRatio": 14.014724191234,
       "shortAmt": 4389015,
       "high52": 131.1,
-      "low52": 56
+      "low52": 56,
+      "news": null
     },
     {
       "code": "06651",
@@ -16439,7 +17026,8 @@
       "shortRatio": 2.383929944864,
       "shortAmt": 1305100,
       "high52": 147,
-      "low52": 35
+      "low52": 35,
+      "news": null
     },
     {
       "code": "06655",
@@ -16471,7 +17059,8 @@
       "shortRatio": 23.52719381568,
       "shortAmt": 6249145,
       "high52": 19.959,
-      "low52": 11.35
+      "low52": 11.35,
+      "news": null
     },
     {
       "code": "06656",
@@ -16497,7 +17086,8 @@
       "shortRatio": 23.491183885812,
       "shortAmt": 10321180,
       "high52": 666.302,
-      "low52": 255.6
+      "low52": 255.6,
+      "news": null
     },
     {
       "code": "06658",
@@ -16523,7 +17113,8 @@
       "shortRatio": 1.533795388634,
       "shortAmt": 593240,
       "high52": 194.2,
-      "low52": 91
+      "low52": 91,
+      "news": null
     },
     {
       "code": "06666",
@@ -16549,7 +17140,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 1.7,
-      "low52": 0.72
+      "low52": 0.72,
+      "news": null
     },
     {
       "code": "06675",
@@ -16575,7 +17167,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 45.48,
-      "low52": 19.2
+      "low52": 19.2,
+      "news": null
     },
     {
       "code": "06680",
@@ -16607,7 +17200,8 @@
       "shortRatio": 11.628271831594,
       "shortAmt": 2270546,
       "high52": 28.852,
-      "low52": 15.51
+      "low52": 15.51,
+      "news": null
     },
     {
       "code": "06681",
@@ -16633,7 +17227,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 17.79,
-      "low52": 1.24
+      "low52": 1.24,
+      "news": null
     },
     {
       "code": "06682",
@@ -16659,7 +17254,8 @@
       "shortRatio": 21.931556846343,
       "shortAmt": 20961866,
       "high52": 70,
-      "low52": 23.7
+      "low52": 23.7,
+      "news": null
     },
     {
       "code": "06683",
@@ -16685,7 +17281,8 @@
       "shortRatio": 6.83003269976,
       "shortAmt": 561602,
       "high52": 12.86,
-      "low52": 3.615
+      "low52": 3.615,
+      "news": null
     },
     {
       "code": "06687",
@@ -16711,7 +17308,8 @@
       "shortRatio": 9.263712757159,
       "shortAmt": 685219,
       "high52": 41.72,
-      "low52": 11.89
+      "low52": 11.89,
+      "news": null
     },
     {
       "code": "06690",
@@ -16743,7 +17341,8 @@
       "shortRatio": 32.002583887267,
       "shortAmt": 113219024,
       "high52": 27.175,
-      "low52": 18.025
+      "low52": 18.025,
+      "news": null
     },
     {
       "code": "06693",
@@ -16775,7 +17374,8 @@
       "shortRatio": 4.851095180074,
       "shortAmt": 3629440,
       "high52": 49.534,
-      "low52": 22.28
+      "low52": 22.28,
+      "news": null
     },
     {
       "code": "06699",
@@ -16801,7 +17401,8 @@
       "shortRatio": 7.30795729347,
       "shortAmt": 4323260,
       "high52": 95.95,
-      "low52": 48.16
+      "low52": 48.16,
+      "news": null
     },
     {
       "code": "06715",
@@ -16827,7 +17428,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 120.2,
-      "low52": 57.3
+      "low52": 57.3,
+      "news": null
     },
     {
       "code": "06745",
@@ -16859,7 +17461,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 4.19,
-      "low52": 2.64
+      "low52": 2.64,
+      "news": null
     },
     {
       "code": "06806",
@@ -16891,7 +17494,8 @@
       "shortRatio": 7.982593400136,
       "shortAmt": 843376,
       "high52": 3.495,
-      "low52": 2.354
+      "low52": 2.354,
+      "news": null
     },
     {
       "code": "06808",
@@ -16917,7 +17521,8 @@
       "shortRatio": 29.293150308124,
       "shortAmt": 1499432,
       "high52": 1.94,
-      "low52": 0.89
+      "low52": 0.89,
+      "news": null
     },
     {
       "code": "06809",
@@ -16949,7 +17554,8 @@
       "shortRatio": 22.450775180606,
       "shortAmt": 127063480,
       "high52": 542.559,
-      "low52": 152.259
+      "low52": 152.259,
+      "news": null
     },
     {
       "code": "06818",
@@ -16981,7 +17587,8 @@
       "shortRatio": 8.709601669478,
       "shortAmt": 8521385,
       "high52": 3.683,
-      "low52": 2.765
+      "low52": 2.765,
+      "news": null
     },
     {
       "code": "06821",
@@ -17013,7 +17620,8 @@
       "shortRatio": 4.840550785043,
       "shortAmt": 11173300,
       "high52": 154.9,
-      "low52": 67.705
+      "low52": 67.705,
+      "news": null
     },
     {
       "code": "06826",
@@ -17045,7 +17653,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 29.703,
-      "low52": 14.751
+      "low52": 14.751,
+      "news": null
     },
     {
       "code": "06855",
@@ -17071,7 +17680,8 @@
       "shortRatio": 23.842037717426,
       "shortAmt": 16195664,
       "high52": 79.3,
-      "low52": 30
+      "low52": 30,
+      "news": null
     },
     {
       "code": "06862",
@@ -17097,7 +17707,8 @@
       "shortRatio": 32.756221821135,
       "shortAmt": 87430070,
       "high52": 17.099,
-      "low52": 9.77
+      "low52": 9.77,
+      "news": null
     },
     {
       "code": "06865",
@@ -17129,7 +17740,8 @@
       "shortRatio": 29.863889910234,
       "shortAmt": 4910655,
       "high52": 13.689,
-      "low52": 5.81
+      "low52": 5.81,
+      "news": null
     },
     {
       "code": "06869",
@@ -17162,6 +17774,7 @@
       "shortAmt": 777538650,
       "high52": 304.661,
       "low52": 30.801,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 4,
@@ -17193,7 +17806,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 287,
-      "low52": 115.6
+      "low52": 115.6,
+      "news": null
     },
     {
       "code": "06881",
@@ -17225,7 +17839,8 @@
       "shortRatio": 15.323158061001,
       "shortAmt": 6995702,
       "high52": 11.904,
-      "low52": 6.891
+      "low52": 6.891,
+      "news": null
     },
     {
       "code": "06886",
@@ -17257,7 +17872,8 @@
       "shortRatio": 23.078747817956,
       "shortAmt": 25408730,
       "high52": 21.108,
-      "low52": 14.072
+      "low52": 14.072,
+      "news": null
     },
     {
       "code": "06936",
@@ -17289,7 +17905,8 @@
       "shortRatio": 6.329336688679,
       "shortAmt": 3629628,
       "high52": 37.722,
-      "low52": 27.734
+      "low52": 27.734,
+      "news": null
     },
     {
       "code": "06938",
@@ -17315,7 +17932,8 @@
       "shortRatio": 1.520036241461,
       "shortAmt": 260060,
       "high52": 95.8,
-      "low52": 43.6
+      "low52": 43.6,
+      "news": null
     },
     {
       "code": "06951",
@@ -17347,7 +17965,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 136,
-      "low52": 86.05
+      "low52": 86.05,
+      "news": null
     },
     {
       "code": "06963",
@@ -17373,7 +17992,8 @@
       "shortRatio": 17.10752045499,
       "shortAmt": 3349240,
       "high52": 4.321,
-      "low52": 3.12
+      "low52": 3.12,
+      "news": null
     },
     {
       "code": "06969",
@@ -17399,7 +18019,8 @@
       "shortRatio": 33.284436248762,
       "shortAmt": 23825450,
       "high52": 18.75,
-      "low52": 6.7
+      "low52": 6.7,
+      "news": null
     },
     {
       "code": "06979",
@@ -17425,7 +18046,8 @@
       "shortRatio": 8.237103991128,
       "shortAmt": 1861978,
       "high52": 9.81,
-      "low52": 6.99
+      "low52": 6.99,
+      "news": null
     },
     {
       "code": "06990",
@@ -17451,7 +18073,8 @@
       "shortRatio": 8.761181445717,
       "shortAmt": 35596540,
       "high52": 581,
-      "low52": 339.6
+      "low52": 339.6,
+      "news": null
     },
     {
       "code": "06993",
@@ -17477,7 +18100,8 @@
       "shortRatio": 23.012047738267,
       "shortAmt": 457510,
       "high52": 4.15,
-      "low52": 2.4
+      "low52": 2.4,
+      "news": null
     },
     {
       "code": "07618",
@@ -17503,7 +18127,8 @@
       "shortRatio": 1.24727727929,
       "shortAmt": 319708,
       "high52": 17.17,
-      "low52": 10.51
+      "low52": 10.51,
+      "news": null
     },
     {
       "code": "07630",
@@ -17529,7 +18154,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 47.98,
-      "low52": 10.31
+      "low52": 10.31,
+      "news": null
     },
     {
       "code": "07666",
@@ -17555,7 +18181,8 @@
       "shortRatio": 23.630823099724,
       "shortAmt": 49986300,
       "high52": 29.98,
-      "low52": 9.46
+      "low52": 9.46,
+      "news": null
     },
     {
       "code": "07688",
@@ -17581,7 +18208,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 49.98,
-      "low52": 12.12
+      "low52": 12.12,
+      "news": null
     },
     {
       "code": "09606",
@@ -17607,7 +18235,8 @@
       "shortRatio": 16.126751694064,
       "shortAmt": 36723540,
       "high52": 554,
-      "low52": 158.5
+      "low52": 158.5,
+      "news": null
     },
     {
       "code": "09611",
@@ -17639,7 +18268,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 36.289,
-      "low52": 20.129
+      "low52": 20.129,
+      "news": null
     },
     {
       "code": "09626",
@@ -17665,7 +18295,8 @@
       "shortRatio": 9.987881093969,
       "shortAmt": 29281650,
       "high52": 285.6,
-      "low52": 116.4
+      "low52": 116.4,
+      "news": null
     },
     {
       "code": "09630",
@@ -17697,7 +18328,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 555,
-      "low52": 228
+      "low52": 228,
+      "news": null
     },
     {
       "code": "09633",
@@ -17723,7 +18355,8 @@
       "shortRatio": 34.502529833164,
       "shortAmt": 52658296,
       "high52": 55.12,
-      "low52": 38.96
+      "low52": 38.96,
+      "news": null
     },
     {
       "code": "09636",
@@ -17749,7 +18382,8 @@
       "shortRatio": 7.247787883329,
       "shortAmt": 1302740,
       "high52": 78.08,
-      "low52": 23.68
+      "low52": 23.68,
+      "news": null
     },
     {
       "code": "09637",
@@ -17775,7 +18409,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 46.82,
-      "low52": 22.48
+      "low52": 22.48,
+      "news": null
     },
     {
       "code": "09658",
@@ -17801,7 +18436,8 @@
       "shortRatio": 21.14010267779,
       "shortAmt": 289890,
       "high52": 15.38,
-      "low52": 9.16
+      "low52": 9.16,
+      "news": null
     },
     {
       "code": "09660",
@@ -17827,7 +18463,8 @@
       "shortRatio": 35.788031182063,
       "shortAmt": 83192469,
       "high52": 11.32,
-      "low52": 3.6
+      "low52": 3.6,
+      "news": null
     },
     {
       "code": "09678",
@@ -17853,7 +18490,8 @@
       "shortRatio": 1.308125954059,
       "shortAmt": 1535203,
       "high52": 657.5,
-      "low52": 61
+      "low52": 61,
+      "news": null
     },
     {
       "code": "09688",
@@ -17879,7 +18517,8 @@
       "shortRatio": 27.630519710438,
       "shortAmt": 25376541,
       "high52": 27.28,
-      "low52": 12.31
+      "low52": 12.31,
+      "news": null
     },
     {
       "code": "09690",
@@ -17905,7 +18544,8 @@
       "shortRatio": 22.301634975514,
       "shortAmt": 1929284,
       "high52": 20.52,
-      "low52": 11.25
+      "low52": 11.25,
+      "news": null
     },
     {
       "code": "09696",
@@ -17937,7 +18577,8 @@
       "shortRatio": 2.513636652472,
       "shortAmt": 2251140,
       "high52": 69.15,
-      "low52": 30.24
+      "low52": 30.24,
+      "news": null
     },
     {
       "code": "09699",
@@ -17963,7 +18604,8 @@
       "shortRatio": 15.131631319369,
       "shortAmt": 2158201,
       "high52": 16.27,
-      "low52": 6.92
+      "low52": 6.92,
+      "news": null
     },
     {
       "code": "09858",
@@ -17989,7 +18631,8 @@
       "shortRatio": 15.317337680252,
       "shortAmt": 6735855,
       "high52": 5.29,
-      "low52": 2.72
+      "low52": 2.72,
+      "news": null
     },
     {
       "code": "09863",
@@ -18015,7 +18658,8 @@
       "shortRatio": 27.149691930322,
       "shortAmt": 94545964,
       "high52": 69.2,
-      "low52": 32.8
+      "low52": 32.8,
+      "news": null
     },
     {
       "code": "09868",
@@ -18041,7 +18685,8 @@
       "shortRatio": 43.314804889016,
       "shortAmt": 155000036,
       "high52": 110.8,
-      "low52": 40.2
+      "low52": 40.2,
+      "news": null
     },
     {
       "code": "09880",
@@ -18067,7 +18712,8 @@
       "shortRatio": 12.306472001902,
       "shortAmt": 36719175,
       "high52": 161,
-      "low52": 74.4
+      "low52": 74.4,
+      "news": null
     },
     {
       "code": "09887",
@@ -18093,7 +18739,8 @@
       "shortRatio": 1.731472539745,
       "shortAmt": 2148725,
       "high52": 97.5,
-      "low52": 44.72
+      "low52": 44.72,
+      "news": null
     },
     {
       "code": "09888",
@@ -18120,6 +18767,7 @@
       "shortAmt": 241262135,
       "high52": 161.2,
       "low52": 86.5,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 38,
@@ -18151,7 +18799,8 @@
       "shortRatio": 6.687960722635,
       "shortAmt": 369647,
       "high52": 21.72,
-      "low52": 9.04
+      "low52": 9.04,
+      "news": null
     },
     {
       "code": "09896",
@@ -18177,7 +18826,8 @@
       "shortRatio": 35.895973656466,
       "shortAmt": 22963028,
       "high52": 48.703,
-      "low52": 17.51
+      "low52": 17.51,
+      "news": null
     },
     {
       "code": "09899",
@@ -18203,7 +18853,8 @@
       "shortRatio": 13.55502045177,
       "shortAmt": 3586855,
       "high52": 296,
-      "low52": 84.75
+      "low52": 84.75,
+      "news": null
     },
     {
       "code": "09903",
@@ -18230,6 +18881,7 @@
       "shortAmt": 68739200,
       "high52": 887.5,
       "low52": 148.9,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -18261,7 +18913,8 @@
       "shortRatio": 17.24270745607,
       "shortAmt": 7341370,
       "high52": 14.09,
-      "low52": 6.94
+      "low52": 6.94,
+      "news": null
     },
     {
       "code": "09926",
@@ -18288,6 +18941,14 @@
       "shortAmt": 486568800,
       "high52": 156,
       "low52": 80.2,
+      "news": [
+        {
+          "title": "康方生物达成“关键一击” 头对头试验赢过年销300亿美元大单品",
+          "mediaName": "财联社",
+          "date": "2026-09-14 15:35:39",
+          "url": "http://finance.eastmoney.com/a/202609143873394287.html"
+        }
+      ],
       "continuity": {
         "top50Days": 3,
         "prevRank": 39,
@@ -18325,7 +18986,8 @@
       "shortRatio": 11.295304950098,
       "shortAmt": 5490050,
       "high52": 130.587,
-      "low52": 35.02
+      "low52": 35.02,
+      "news": null
     },
     {
       "code": "09969",
@@ -18357,7 +19019,8 @@
       "shortRatio": 7.841809119186,
       "shortAmt": 29701920,
       "high52": 20.18,
-      "low52": 9.65
+      "low52": 9.65,
+      "news": null
     },
     {
       "code": "09973",
@@ -18383,7 +19046,8 @@
       "shortRatio": 8.09297253011,
       "shortAmt": 5218944,
       "high52": 33.995,
-      "low52": 22.615
+      "low52": 22.615,
+      "news": null
     },
     {
       "code": "09980",
@@ -18415,7 +19079,8 @@
       "shortRatio": 10.595409966121,
       "shortAmt": 2816410,
       "high52": 222.03,
-      "low52": 96.633
+      "low52": 96.633,
+      "news": null
     },
     {
       "code": "09981",
@@ -18447,7 +19112,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 23.291,
-      "low52": 9.5
+      "low52": 9.5,
+      "news": null
     },
     {
       "code": "09985",
@@ -18473,7 +19139,8 @@
       "shortRatio": 8.279473113453,
       "shortAmt": 1664919,
       "high52": 13.457,
-      "low52": 6.86
+      "low52": 6.86,
+      "news": null
     },
     {
       "code": "09987",
@@ -18499,7 +19166,8 @@
       "shortRatio": 27.545075406206,
       "shortAmt": 43260290,
       "high52": 444.387,
-      "low52": 308.326
+      "low52": 308.326,
+      "news": null
     },
     {
       "code": "09988",
@@ -18526,6 +19194,7 @@
       "shortAmt": 1074802460,
       "high52": 185.173,
       "low52": 88.65,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 2,
@@ -18563,7 +19232,8 @@
       "shortRatio": null,
       "shortAmt": null,
       "high52": 5.814,
-      "low52": 3.74
+      "low52": 3.74,
+      "news": null
     },
     {
       "code": "09992",
@@ -18590,6 +19260,7 @@
       "shortAmt": 168328840,
       "high52": 288.675,
       "low52": 137.375,
+      "news": null,
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -18621,7 +19292,8 @@
       "shortRatio": 0.966716003669,
       "shortAmt": 218135,
       "high52": 5.26,
-      "low52": 0.85
+      "low52": 0.85,
+      "news": null
     },
     {
       "code": "09995",
@@ -18653,7 +19325,8 @@
       "shortRatio": 17.129848119211,
       "shortAmt": 32910125,
       "high52": 126.6,
-      "low52": 63.3
+      "low52": 63.3,
+      "news": null
     },
     {
       "code": "09999",
@@ -18680,6 +19353,7 @@
       "shortAmt": 308724180,
       "high52": 243.418,
       "low52": 166.919,
+      "news": null,
       "continuity": {
         "top50Days": 3,
         "prevRank": 26,
@@ -18715,6 +19389,14 @@
         "shortAmt": 3098372600,
         "high52": 2980,
         "low52": 116.1,
+        "news": [
+          {
+            "title": "大模型重压之下：DeepSeek改口、Kimi辟谣、智谱融资",
+            "mediaName": "北京商报",
+            "date": "2026-09-14 21:22:26",
+            "url": "http://finance.eastmoney.com/a/202609143873667192.html"
+          }
+        ],
         "continuity": {
           "top50Days": 3,
           "prevRank": 3,
@@ -18747,6 +19429,7 @@
         "shortAmt": 1074802460,
         "high52": 185.173,
         "low52": 88.65,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 2,
@@ -18779,6 +19462,7 @@
         "shortAmt": 873612040,
         "high52": 677.7,
         "low52": 411,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 1,
@@ -18817,6 +19501,7 @@
         "shortAmt": 777538650,
         "high52": 304.661,
         "low52": 30.801,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 4,
@@ -18855,6 +19540,7 @@
         "shortAmt": 472724400,
         "high52": 93.5,
         "low52": 49.32,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 10,
@@ -18887,6 +19573,7 @@
         "shortAmt": 753174532,
         "high52": 59.9,
         "low52": 21.3,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 9,
@@ -18919,6 +19606,7 @@
         "shortAmt": 572087700,
         "high52": 107.2,
         "low52": 9.82,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 7,
@@ -18951,6 +19639,7 @@
         "shortAmt": 980153240,
         "high52": 36.16,
         "low52": 8.183,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 13,
@@ -18989,6 +19678,7 @@
         "shortAmt": 734693990,
         "high52": 9.9,
         "low52": 6.741,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 12,
@@ -19021,6 +19711,7 @@
         "shortAmt": 420431084,
         "high52": 1330,
         "low52": 186.2,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 5,
@@ -19059,6 +19750,7 @@
         "shortAmt": 116855250,
         "high52": 1317.612,
         "low52": 878.612,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 6,
@@ -19097,6 +19789,7 @@
         "shortAmt": 447749775,
         "high52": 71.555,
         "low52": 48.355,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 11,
@@ -19135,6 +19828,7 @@
         "shortAmt": 406189600,
         "high52": 219.6,
         "low52": 51.1,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 16,
@@ -19167,6 +19861,7 @@
         "shortAmt": 554538600,
         "high52": 90.17,
         "low52": 66.97,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 20,
@@ -19199,6 +19894,7 @@
         "shortAmt": 289134700,
         "high52": 54.45,
         "low52": 28.48,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 23,
@@ -19237,6 +19933,7 @@
         "shortAmt": 504073275,
         "high52": 114.989,
         "low52": 71.4,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 21,
@@ -19269,6 +19966,14 @@
         "shortAmt": 486568800,
         "high52": 156,
         "low52": 80.2,
+        "news": [
+          {
+            "title": "康方生物达成“关键一击” 头对头试验赢过年销300亿美元大单品",
+            "mediaName": "财联社",
+            "date": "2026-09-14 15:35:39",
+            "url": "http://finance.eastmoney.com/a/202609143873394287.html"
+          }
+        ],
         "continuity": {
           "top50Days": 3,
           "prevRank": 39,
@@ -19307,6 +20012,7 @@
         "shortAmt": 211894260,
         "high52": 29.49,
         "low52": 16.93,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 14,
@@ -19345,6 +20051,7 @@
         "shortAmt": 253755040,
         "high52": 46.059,
         "low52": 26.096,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 8,
@@ -19383,6 +20090,7 @@
         "shortAmt": 490054460,
         "high52": 35.449,
         "low52": 19.929,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 45,
@@ -19415,6 +20123,7 @@
         "shortAmt": 123386250,
         "high52": 151.8,
         "low52": 22.9,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 37,
@@ -19447,6 +20156,7 @@
         "shortAmt": 416466610,
         "high52": 109.7,
         "low52": 63.65,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 15,
@@ -19479,6 +20189,7 @@
         "shortAmt": 408593080,
         "high52": 446.25,
         "low52": 352.57,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 25,
@@ -19511,6 +20222,7 @@
         "shortAmt": 176384840,
         "high52": 37.36,
         "low52": 10.36,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 28,
@@ -19549,6 +20261,7 @@
         "shortAmt": 65384975,
         "high52": 172.9,
         "low52": 60.5,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 17,
@@ -19581,6 +20294,7 @@
         "shortAmt": 383853480,
         "high52": 168.916,
         "low52": 94.532,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 22,
@@ -19613,6 +20327,7 @@
         "shortAmt": 277522900,
         "high52": 112.7,
         "low52": 69.55,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 27,
@@ -19645,6 +20360,7 @@
         "shortAmt": 315291920,
         "high52": 91.91,
         "low52": 30.4,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 46,
@@ -19683,6 +20399,7 @@
         "shortAmt": 233827340,
         "high52": 6.14,
         "low52": 3.854,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 18,
@@ -19721,6 +20438,7 @@
         "shortAmt": 200349875,
         "high52": 83.48,
         "low52": 70.43,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -19753,6 +20471,7 @@
         "shortAmt": 241262135,
         "high52": 161.2,
         "low52": 86.5,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 38,
@@ -19791,6 +20510,7 @@
         "shortAmt": 31678280,
         "high52": 1248,
         "low52": 219.145,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 44,
@@ -19823,6 +20543,7 @@
         "shortAmt": 229136550,
         "high52": 10.81,
         "low52": 6.38,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 42,
@@ -19855,6 +20576,7 @@
         "shortAmt": 308724180,
         "high52": 243.418,
         "low52": 166.919,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 26,
@@ -19887,6 +20609,7 @@
         "shortAmt": 188898550,
         "high52": 53.85,
         "low52": 33.476,
+        "news": null,
         "continuity": {
           "top50Days": 2,
           "prevRank": 49,
@@ -19919,6 +20642,7 @@
         "shortAmt": 163255620,
         "high52": 265,
         "low52": 82.7,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 48,
@@ -19957,6 +20681,7 @@
         "shortAmt": 255835480,
         "high52": 212.8,
         "low52": 94.308,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -19995,6 +20720,7 @@
         "shortAmt": 236721520,
         "high52": 235.6,
         "low52": 153,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 36,
@@ -20027,6 +20753,7 @@
         "shortAmt": 68739200,
         "high52": 887.5,
         "low52": 148.9,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20065,6 +20792,7 @@
         "shortAmt": 274507950,
         "high52": 792.871,
         "low52": 424.488,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 29,
@@ -20097,6 +20825,7 @@
         "shortAmt": 168328840,
         "high52": 288.675,
         "low52": 137.375,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20129,6 +20858,7 @@
         "shortAmt": 205336820,
         "high52": 96.61,
         "low52": 65.34,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20161,6 +20891,7 @@
         "shortAmt": 267923245,
         "high52": 90.194,
         "low52": 50.294,
+        "news": null,
         "continuity": {
           "top50Days": 2,
           "prevRank": 43,
@@ -20193,6 +20924,7 @@
         "shortAmt": 141733300,
         "high52": 148.5,
         "low52": 80.38,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20225,6 +20957,7 @@
         "shortAmt": 221130550,
         "high52": 147.9,
         "low52": 86.42,
+        "news": null,
         "continuity": {
           "top50Days": 2,
           "prevRank": 19,
@@ -20257,6 +20990,7 @@
         "shortAmt": 91867772,
         "high52": 10.23,
         "low52": 6.39,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20295,6 +21029,7 @@
         "shortAmt": 198644205,
         "high52": 7.765,
         "low52": 5.21,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 33,
@@ -20327,6 +21062,7 @@
         "shortAmt": 126864890,
         "high52": 39.71,
         "low52": 19.57,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 47,
@@ -20359,6 +21095,7 @@
         "shortAmt": 181540770,
         "high52": 25.12,
         "low52": 14.46,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20397,6 +21134,7 @@
         "shortAmt": 183268325,
         "high52": 53.55,
         "low52": 42.347,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20430,7 +21168,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 30.2,
-        "low52": 12.36
+        "low52": 12.36,
+        "news": null
       },
       {
         "code": "09969",
@@ -20462,7 +21201,8 @@
         "shortRatio": 7.841809119186,
         "shortAmt": 29701920,
         "high52": 20.18,
-        "low52": 9.65
+        "low52": 9.65,
+        "news": null
       },
       {
         "code": "06821",
@@ -20494,7 +21234,8 @@
         "shortRatio": 4.840550785043,
         "shortAmt": 11173300,
         "high52": 154.9,
-        "low52": 67.705
+        "low52": 67.705,
+        "news": null
       },
       {
         "code": "01440",
@@ -20520,7 +21261,8 @@
         "shortRatio": 1.859910191823,
         "shortAmt": 1800925,
         "high52": 18.55,
-        "low52": 6.62
+        "low52": 6.62,
+        "news": null
       },
       {
         "code": "00336",
@@ -20546,7 +21288,8 @@
         "shortRatio": 6.691642358517,
         "shortAmt": 4630390,
         "high52": 5.092,
-        "low52": 2.767
+        "low52": 2.767,
+        "news": null
       },
       {
         "code": "01797",
@@ -20572,7 +21315,8 @@
         "shortRatio": 12.30702651599,
         "shortAmt": 44952190,
         "high52": 33,
-        "low52": 17.59
+        "low52": 17.59,
+        "news": null
       },
       {
         "code": "03774",
@@ -20598,7 +21342,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 33.98,
-        "low52": 12.9
+        "low52": 12.9,
+        "news": null
       },
       {
         "code": "09606",
@@ -20624,7 +21369,8 @@
         "shortRatio": 16.126751694064,
         "shortAmt": 36723540,
         "high52": 554,
-        "low52": 158.5
+        "low52": 158.5,
+        "news": null
       },
       {
         "code": "02238",
@@ -20656,7 +21402,8 @@
         "shortRatio": 1.550387596899,
         "shortAmt": 18600,
         "high52": 4.38,
-        "low52": 2.02
+        "low52": 2.02,
+        "news": null
       },
       {
         "code": "02672",
@@ -20682,7 +21429,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 79,
-        "low52": 31.48
+        "low52": 31.48,
+        "news": null
       },
       {
         "code": "02687",
@@ -20708,7 +21456,8 @@
         "shortRatio": 0.459733041758,
         "shortAmt": 194420,
         "high52": 371.8,
-        "low52": 82
+        "low52": 82,
+        "news": null
       },
       {
         "code": "03347",
@@ -20740,7 +21489,8 @@
         "shortRatio": 20.961326716149,
         "shortAmt": 21674914,
         "high52": 56.855,
-        "low52": 27.975
+        "low52": 27.975,
+        "news": null
       },
       {
         "code": "02586",
@@ -20754,7 +21504,7 @@
         "turnoverRate": 1.67,
         "peTtm": 20.51,
         "pb": 5.35,
-        "marketCap": 4082770299,
+        "marketCap": 4082628849,
         "high": 4.74,
         "low": 4.27,
         "open": 4.42,
@@ -20766,7 +21516,8 @@
         "shortRatio": 1.42589818777,
         "shortAmt": 929143,
         "high52": 10.6,
-        "low52": 3.78
+        "low52": 3.78,
+        "news": null
       },
       {
         "code": "01768",
@@ -20792,7 +21543,8 @@
         "shortRatio": 21.251125522061,
         "shortAmt": 39923200,
         "high52": 465.6,
-        "low52": 289
+        "low52": 289,
+        "news": null
       },
       {
         "code": "02526",
@@ -20818,7 +21570,8 @@
         "shortRatio": 5.146847111989,
         "shortAmt": 4114445,
         "high52": 765.5,
-        "low52": 178
+        "low52": 178,
+        "news": null
       },
       {
         "code": "03759",
@@ -20850,7 +21603,8 @@
         "shortRatio": 15.661556819641,
         "shortAmt": 42075070,
         "high52": 34.86,
-        "low52": 14.22
+        "low52": 14.22,
+        "news": null
       },
       {
         "code": "06658",
@@ -20876,7 +21630,8 @@
         "shortRatio": 1.533795388634,
         "shortAmt": 593240,
         "high52": 194.2,
-        "low52": 91
+        "low52": 91,
+        "news": null
       },
       {
         "code": "02157",
@@ -20902,7 +21657,8 @@
         "shortRatio": 6.990076549561,
         "shortAmt": 3650490,
         "high52": 8.76,
-        "low52": 3.55
+        "low52": 3.55,
+        "news": null
       },
       {
         "code": "09926",
@@ -20929,6 +21685,14 @@
         "shortAmt": 486568800,
         "high52": 156,
         "low52": 80.2,
+        "news": [
+          {
+            "title": "康方生物达成“关键一击” 头对头试验赢过年销300亿美元大单品",
+            "mediaName": "财联社",
+            "date": "2026-09-14 15:35:39",
+            "url": "http://finance.eastmoney.com/a/202609143873394287.html"
+          }
+        ],
         "continuity": {
           "top50Days": 3,
           "prevRank": 39,
@@ -20966,7 +21730,8 @@
         "shortRatio": 3.451089126139,
         "shortAmt": 3193175,
         "high52": 75.3,
-        "low52": 21.54
+        "low52": 21.54,
+        "news": null
       },
       {
         "code": "01860",
@@ -20978,9 +21743,9 @@
         "turnover": 135732525,
         "amplitude": 9.51,
         "turnoverRate": 0.79,
-        "peTtm": 29.75,
+        "peTtm": 29.74,
         "pb": 5.1,
-        "marketCap": 17627648940,
+        "marketCap": 17624140290,
         "high": 10.49,
         "low": 9.56,
         "open": 9.745,
@@ -20992,7 +21757,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 21.62,
-        "low52": 9.52
+        "low52": 9.52,
+        "news": null
       },
       {
         "code": "01609",
@@ -21018,7 +21784,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 299,
-        "low52": 98.7
+        "low52": 98.7,
+        "news": null
       },
       {
         "code": "06127",
@@ -21050,7 +21817,8 @@
         "shortRatio": 2.731531937313,
         "shortAmt": 2812468,
         "high52": 29.98,
-        "low52": 14.992
+        "low52": 14.992,
+        "news": null
       },
       {
         "code": "02268",
@@ -21076,7 +21844,8 @@
         "shortRatio": 28.613792356327,
         "shortAmt": 115856825,
         "high52": 85.5,
-        "low52": 43.5
+        "low52": 43.5,
+        "news": null
       },
       {
         "code": "03692",
@@ -21102,7 +21871,8 @@
         "shortRatio": 39.122402336197,
         "shortAmt": 170294040,
         "high52": 44.02,
-        "low52": 27.86
+        "low52": 27.86,
+        "news": null
       },
       {
         "code": "01548",
@@ -21129,6 +21899,7 @@
         "shortAmt": 176384840,
         "high52": 37.36,
         "low52": 10.36,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 28,
@@ -21148,7 +21919,7 @@
         "turnoverRate": 0.78,
         "peTtm": 4.44,
         "pb": 1.29,
-        "marketCap": 40940154453,
+        "marketCap": 40936910453,
         "high": 16.34,
         "low": 15.2,
         "open": 15.41,
@@ -21160,7 +21931,8 @@
         "shortRatio": 12.650350297556,
         "shortAmt": 39766715,
         "high52": 35.17,
-        "low52": 14.56
+        "low52": 14.56,
+        "news": null
       },
       {
         "code": "00819",
@@ -21186,7 +21958,8 @@
         "shortRatio": 26.111719580817,
         "shortAmt": 12875080,
         "high52": 9.53,
-        "low52": 3.67
+        "low52": 3.67,
+        "news": null
       },
       {
         "code": "02196",
@@ -21198,9 +21971,9 @@
         "turnover": 99367815,
         "amplitude": 6.37,
         "turnoverRate": 1.09,
-        "peTtm": 11.82,
+        "peTtm": 11.81,
         "pb": 0.81,
-        "marketCap": 45471684284,
+        "marketCap": 45446774684,
         "high": 17.16,
         "low": 16.12,
         "open": 16.12,
@@ -21218,7 +21991,8 @@
         "shortRatio": 23.2338307932,
         "shortAmt": 23086950,
         "high52": 28.55,
-        "low52": 14.45
+        "low52": 14.45,
+        "news": null
       },
       {
         "code": "02359",
@@ -21251,6 +22025,7 @@
         "shortAmt": 255835480,
         "high52": 212.8,
         "low52": 94.308,
+        "news": null,
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -21282,7 +22057,8 @@
         "shortRatio": 12.771369531596,
         "shortAmt": 18405430,
         "high52": 28.8,
-        "low52": 15.57
+        "low52": 15.57,
+        "news": null
       },
       {
         "code": "02269",
@@ -21309,6 +22085,7 @@
         "shortAmt": 289134700,
         "high52": 54.45,
         "low52": 28.48,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 23,
@@ -21340,7 +22117,8 @@
         "shortRatio": 3.892149275747,
         "shortAmt": 12553013,
         "high52": 20.6,
-        "low52": 7.645
+        "low52": 7.645,
+        "news": null
       },
       {
         "code": "09863",
@@ -21366,7 +22144,8 @@
         "shortRatio": 27.149691930322,
         "shortAmt": 94545964,
         "high52": 69.2,
-        "low52": 32.8
+        "low52": 32.8,
+        "news": null
       },
       {
         "code": "01177",
@@ -21392,7 +22171,8 @@
         "shortRatio": 28.82532406518,
         "shortAmt": 114120925,
         "high52": 8.74,
-        "low52": 4.12
+        "low52": 4.12,
+        "news": null
       },
       {
         "code": "06687",
@@ -21418,7 +22198,8 @@
         "shortRatio": 9.263712757159,
         "shortAmt": 685219,
         "high52": 41.72,
-        "low52": 11.89
+        "low52": 11.89,
+        "news": null
       },
       {
         "code": "01877",
@@ -21450,7 +22231,8 @@
         "shortRatio": 8.87693054378,
         "shortAmt": 2948334,
         "high52": 34.16,
-        "low52": 15.25
+        "low52": 15.25,
+        "news": null
       },
       {
         "code": "01368",
@@ -21476,7 +22258,8 @@
         "shortRatio": 36.725613982439,
         "shortAmt": 22055622,
         "high52": 6.065,
-        "low52": 3.27
+        "low52": 3.27,
+        "news": null
       },
       {
         "code": "06067",
@@ -21508,7 +22291,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 13.41,
-        "low52": 6.88
+        "low52": 6.88,
+        "news": null
       },
       {
         "code": "02142",
@@ -21534,7 +22318,8 @@
         "shortRatio": 19.424980743562,
         "shortAmt": 24289500,
         "high52": 17.07,
-        "low52": 9.46
+        "low52": 9.46,
+        "news": null
       },
       {
         "code": "01988",
@@ -21566,7 +22351,8 @@
         "shortRatio": 19.851732300994,
         "shortAmt": 22859152,
         "high52": 4.263,
-        "low52": 2.954
+        "low52": 2.954,
+        "news": null
       },
       {
         "code": "00270",
@@ -21592,7 +22378,8 @@
         "shortRatio": 17.977377723642,
         "shortAmt": 27717620,
         "high52": 8.92,
-        "low52": 6.142
+        "low52": 6.142,
+        "news": null
       },
       {
         "code": "00467",
@@ -21618,7 +22405,8 @@
         "shortRatio": 16.442791116872,
         "shortAmt": 3145600,
         "high52": 1.1,
-        "low52": 0.33
+        "low52": 0.33,
+        "news": null
       },
       {
         "code": "07618",
@@ -21644,7 +22432,8 @@
         "shortRatio": 1.24727727929,
         "shortAmt": 319708,
         "high52": 17.17,
-        "low52": 10.51
+        "low52": 10.51,
+        "news": null
       },
       {
         "code": "01112",
@@ -21670,7 +22459,8 @@
         "shortRatio": 7.673206908824,
         "shortAmt": 2662645,
         "high52": 18.48,
-        "low52": 9.28
+        "low52": 9.28,
+        "news": null
       },
       {
         "code": "01801",
@@ -21697,6 +22487,7 @@
         "shortAmt": 277522900,
         "high52": 112.7,
         "low52": 69.55,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 27,
@@ -21728,7 +22519,8 @@
         "shortRatio": 23.491183885812,
         "shortAmt": 10321180,
         "high52": 666.302,
-        "low52": 255.6
+        "low52": 255.6,
+        "news": null
       },
       {
         "code": "06666",
@@ -21754,7 +22546,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 1.7,
-        "low52": 0.72
+        "low52": 0.72,
+        "news": null
       },
       {
         "code": "02356",
@@ -21780,7 +22573,8 @@
         "shortRatio": 4.750449039776,
         "shortAmt": 987588,
         "high52": 15.1,
-        "low52": 8.71
+        "low52": 8.71,
+        "news": null
       },
       {
         "code": "01316",
@@ -21806,7 +22600,8 @@
         "shortRatio": 20.797887762147,
         "shortAmt": 8301125,
         "high52": 8.757,
-        "low52": 3.65
+        "low52": 3.65,
+        "news": null
       }
     ],
     "losers": [
@@ -21834,7 +22629,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 219.6,
-        "low52": 59.75
+        "low52": 59.75,
+        "news": null
       },
       {
         "code": "02723",
@@ -21860,7 +22656,8 @@
         "shortRatio": 4.429154750136,
         "shortAmt": 4609830,
         "high52": 1006,
-        "low52": 155
+        "low52": 155,
+        "news": null
       },
       {
         "code": "02272",
@@ -21886,7 +22683,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 127.5,
-        "low52": 68.15
+        "low52": 68.15,
+        "news": null
       },
       {
         "code": "06106",
@@ -21912,7 +22710,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 140.5,
-        "low52": 41.6
+        "low52": 41.6,
+        "news": null
       },
       {
         "code": "01879",
@@ -21938,7 +22737,8 @@
         "shortRatio": 9.122618557935,
         "shortAmt": 10770450,
         "high52": 1050,
-        "low52": 228.4
+        "low52": 228.4,
+        "news": null
       },
       {
         "code": "06636",
@@ -21964,7 +22764,8 @@
         "shortRatio": 14.014724191234,
         "shortAmt": 4389015,
         "high52": 131.1,
-        "low52": 56
+        "low52": 56,
+        "news": null
       },
       {
         "code": "01236",
@@ -21990,7 +22791,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 66,
-        "low52": 27.42
+        "low52": 27.42,
+        "news": null
       },
       {
         "code": "06675",
@@ -22016,7 +22818,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 45.48,
-        "low52": 19.2
+        "low52": 19.2,
+        "news": null
       },
       {
         "code": "02553",
@@ -22042,7 +22845,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 54.4,
-        "low52": 17.01
+        "low52": 17.01,
+        "news": null
       },
       {
         "code": "02513",
@@ -22069,6 +22873,14 @@
         "shortAmt": 3098372600,
         "high52": 2980,
         "low52": 116.1,
+        "news": [
+          {
+            "title": "大模型重压之下：DeepSeek改口、Kimi辟谣、智谱融资",
+            "mediaName": "北京商报",
+            "date": "2026-09-14 21:22:26",
+            "url": "http://finance.eastmoney.com/a/202609143873667192.html"
+          }
+        ],
         "continuity": {
           "top50Days": 3,
           "prevRank": 3,
@@ -22100,7 +22912,8 @@
         "shortRatio": 7.534980465008,
         "shortAmt": 7390032,
         "high52": 48.5,
-        "low52": 7.4
+        "low52": 7.4,
+        "news": null
       },
       {
         "code": "06166",
@@ -22133,6 +22946,7 @@
         "shortAmt": 65384975,
         "high52": 172.9,
         "low52": 60.5,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 17,
@@ -22171,6 +22985,7 @@
         "shortAmt": 116855250,
         "high52": 1317.612,
         "low52": 878.612,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 6,
@@ -22208,7 +23023,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 455.6,
-        "low52": 263.2
+        "low52": 263.2,
+        "news": null
       },
       {
         "code": "02726",
@@ -22234,7 +23050,8 @@
         "shortRatio": 6.391551647766,
         "shortAmt": 3350325,
         "high52": 141,
-        "low52": 90.05
+        "low52": 90.05,
+        "news": null
       },
       {
         "code": "02697",
@@ -22260,7 +23077,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 886,
-        "low52": 253.2
+        "low52": 253.2,
+        "news": null
       },
       {
         "code": "01021",
@@ -22286,7 +23104,8 @@
         "shortRatio": 1.715579036178,
         "shortAmt": 6646214,
         "high52": 25.12,
-        "low52": 8.08
+        "low52": 8.08,
+        "news": null
       },
       {
         "code": "02675",
@@ -22312,7 +23131,8 @@
         "shortRatio": 4.361963741254,
         "shortAmt": 1018810,
         "high52": 73.7,
-        "low52": 31.26
+        "low52": 31.26,
+        "news": null
       },
       {
         "code": "03625",
@@ -22338,7 +23158,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 153,
-        "low52": 58.7
+        "low52": 58.7,
+        "news": null
       },
       {
         "code": "02729",
@@ -22364,7 +23185,8 @@
         "shortRatio": 1.220967052103,
         "shortAmt": 2843436,
         "high52": 47,
-        "low52": 23.6
+        "low52": 23.6,
+        "news": null
       },
       {
         "code": "07630",
@@ -22390,7 +23212,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 47.98,
-        "low52": 10.31
+        "low52": 10.31,
+        "news": null
       },
       {
         "code": "02685",
@@ -22416,7 +23239,8 @@
         "shortRatio": 0.203411694149,
         "shortAmt": 360442,
         "high52": 43.36,
-        "low52": 3.68
+        "low52": 3.68,
+        "news": null
       },
       {
         "code": "03668",
@@ -22442,7 +23266,8 @@
         "shortRatio": 2.914846944986,
         "shortAmt": 1360510,
         "high52": 48.69,
-        "low52": 23.336
+        "low52": 23.336,
+        "news": null
       },
       {
         "code": "03317",
@@ -22468,7 +23293,8 @@
         "shortRatio": 1.482898924476,
         "shortAmt": 3129920,
         "high52": 382.8,
-        "low52": 38.02
+        "low52": 38.02,
+        "news": null
       },
       {
         "code": "02249",
@@ -22500,7 +23326,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 37,
-        "low52": 26
+        "low52": 26,
+        "news": null
       },
       {
         "code": "03986",
@@ -22533,6 +23360,7 @@
         "shortAmt": 31678280,
         "high52": 1248,
         "low52": 219.145,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 44,
@@ -22564,7 +23392,8 @@
         "shortRatio": 0.795782912992,
         "shortAmt": 485310,
         "high52": 216,
-        "low52": 43.08
+        "low52": 43.08,
+        "news": null
       },
       {
         "code": "02225",
@@ -22590,7 +23419,8 @@
         "shortRatio": 2.768248021004,
         "shortAmt": 1990425,
         "high52": 6.99,
-        "low52": 0.89
+        "low52": 0.89,
+        "news": null
       },
       {
         "code": "01956",
@@ -22616,7 +23446,8 @@
         "shortRatio": 1.731061704215,
         "shortAmt": 660390,
         "high52": 125,
-        "low52": 58.1
+        "low52": 58.1,
+        "news": null
       },
       {
         "code": "00376",
@@ -22642,7 +23473,8 @@
         "shortRatio": 12.467361635918,
         "shortAmt": 3726740,
         "high52": 7.36,
-        "low52": 1.46
+        "low52": 1.46,
+        "news": null
       },
       {
         "code": "06082",
@@ -22668,7 +23500,8 @@
         "shortRatio": 22.220879628389,
         "shortAmt": 105391236,
         "high52": 70.75,
-        "low52": 27.32
+        "low52": 27.32,
+        "news": null
       },
       {
         "code": "02670",
@@ -22694,7 +23527,8 @@
         "shortRatio": 0.213325695005,
         "shortAmt": 85200,
         "high52": 358.4,
-        "low52": 86.2
+        "low52": 86.2,
+        "news": null
       },
       {
         "code": "00100",
@@ -22721,6 +23555,7 @@
         "shortAmt": 420431084,
         "high52": 1330,
         "low52": 186.2,
+        "news": null,
         "continuity": {
           "top50Days": 3,
           "prevRank": 5,
@@ -22752,7 +23587,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 49.98,
-        "low52": 12.12
+        "low52": 12.12,
+        "news": null
       },
       {
         "code": "02650",
@@ -22778,7 +23614,8 @@
         "shortRatio": 0.184223593541,
         "shortAmt": 1018907,
         "high52": 65.28,
-        "low52": 6.245
+        "low52": 6.245,
+        "news": null
       },
       {
         "code": "01164",
@@ -22804,7 +23641,8 @@
         "shortRatio": 22.328718691644,
         "shortAmt": 40235675,
         "high52": 5.646,
-        "low52": 2.07
+        "low52": 2.07,
+        "news": null
       },
       {
         "code": "09981",
@@ -22836,7 +23674,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 23.291,
-        "low52": 9.5
+        "low52": 9.5,
+        "news": null
       },
       {
         "code": "06809",
@@ -22868,7 +23707,8 @@
         "shortRatio": 22.450775180606,
         "shortAmt": 127063480,
         "high52": 542.559,
-        "low52": 152.259
+        "low52": 152.259,
+        "news": null
       },
       {
         "code": "03355",
@@ -22880,9 +23720,9 @@
         "turnover": 45021422,
         "amplitude": 9.44,
         "turnoverRate": 0.3,
-        "peTtm": 16.84,
+        "peTtm": 16.82,
         "pb": 2.77,
-        "marketCap": 14911878880,
+        "marketCap": 14897158880,
         "high": 39.7,
         "low": 36.02,
         "open": 38.9,
@@ -22894,7 +23734,8 @@
         "shortRatio": 20.551398842978,
         "shortAmt": 9252532,
         "high52": 56.435,
-        "low52": 27.96
+        "low52": 27.96,
+        "news": null
       },
       {
         "code": "02335",
@@ -22920,7 +23761,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 45.04,
-        "low52": 20.66
+        "low52": 20.66,
+        "news": null
       },
       {
         "code": "00960",
@@ -22946,7 +23788,8 @@
         "shortRatio": 62.334563569617,
         "shortAmt": 116432657,
         "high52": 12.161,
-        "low52": 5.365
+        "low52": 5.365,
+        "news": null
       },
       {
         "code": "02575",
@@ -22972,7 +23815,8 @@
         "shortRatio": 0.571318515737,
         "shortAmt": 35300,
         "high52": 96.9,
-        "low52": 8.005
+        "low52": 8.005,
+        "news": null
       },
       {
         "code": "03296",
@@ -23004,7 +23848,8 @@
         "shortRatio": 35.241150394267,
         "shortAmt": 21185355,
         "high52": 101,
-        "low52": 57.05
+        "low52": 57.05,
+        "news": null
       },
       {
         "code": "03738",
@@ -23030,7 +23875,8 @@
         "shortRatio": 3.45147161656,
         "shortAmt": 4423790,
         "high52": 6.99,
-        "low52": 2.17
+        "low52": 2.17,
+        "news": null
       },
       {
         "code": "02533",
@@ -23056,7 +23902,8 @@
         "shortRatio": 11.841274473288,
         "shortAmt": 8924173,
         "high52": 26.38,
-        "low52": 9.285
+        "low52": 9.285,
+        "news": null
       },
       {
         "code": "00600",
@@ -23082,7 +23929,8 @@
         "shortRatio": null,
         "shortAmt": null,
         "high52": 36.9,
-        "low52": 9.6
+        "low52": 9.6,
+        "news": null
       },
       {
         "code": "01989",
@@ -23114,7 +23962,8 @@
         "shortRatio": 6.260236464691,
         "shortAmt": 5395700,
         "high52": 221.257,
-        "low52": 79.207
+        "low52": 79.207,
+        "news": null
       },
       {
         "code": "01208",
@@ -23140,7 +23989,8 @@
         "shortRatio": 28.285749894114,
         "shortAmt": 118241540,
         "high52": 11.96,
-        "low52": 5.34
+        "low52": 5.34,
+        "news": null
       },
       {
         "code": "01672",
@@ -23166,7 +24016,8 @@
         "shortRatio": 26.294072852252,
         "shortAmt": 8230405,
         "high52": 19.86,
-        "low52": 7.95
+        "low52": 7.95,
+        "news": null
       },
       {
         "code": "00340",
@@ -23192,7 +24043,8 @@
         "shortRatio": 5.46436110586,
         "shortAmt": 3482910,
         "high52": 4.108,
-        "low52": 1.66
+        "low52": 1.66,
+        "news": null
       }
     ]
   }

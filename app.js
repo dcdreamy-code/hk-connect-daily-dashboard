@@ -255,6 +255,10 @@ function detailRow(item) {
     detailFact("52周最高", Number.isFinite(item.high52) ? formatPrice(item.high52) : "--"),
     detailFact("52周最低", Number.isFinite(item.low52) ? formatPrice(item.low52) : "--"),
   );
+  if (Array.isArray(item.news) && item.news.length > 0) {
+    const article = item.news[0];
+    facts.append(detailFact("最新消息", `${article.title}（${article.mediaName}）`));
+  }
   const position = rangePosition(item.close, item.high52, item.low52);
   if (position !== null) {
     const rangeBlock = document.createElement("div");

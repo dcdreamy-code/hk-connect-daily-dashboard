@@ -1,0 +1,33 @@
+{
+  "result": {
+    "cmsArticleWebOld": [
+      {
+        "date": "2026-09-14 21:22:26",
+        "image": "",
+        "code": "202609143873667192",
+        "title": "大模型重压之下：DeepSeek改口、Kimi辟谣、智谱融资",
+        "content": "从基本面看，已上市的智谱和Minimax都需要证明造血能力。",
+        "mediaName": "北京商报",
+        "url": "http://finance.eastmoney.com/a/202609143873667192.html"
+      },
+      {
+        "date": "2026-09-14 21:21:00",
+        "image": "",
+        "code": "202609143873670374",
+        "title": "AI主线风偏降温：智谱及Minimax齐跌",
+        "content": "大模型双雄智谱及Minimax齐跌。",
+        "mediaName": "财联社",
+        "url": "http://finance.eastmoney.com/a/202609143873670374.html"
+      },
+      {
+        "date": "2026-09-13 18:00:00",
+        "image": "",
+        "code": "202609133873600001",
+        "title": "昨日旧闻不应出现在今日结果里",
+        "content": "过滤测试用。",
+        "mediaName": "测试媒体",
+        "url": "http://example.com/old"
+      }
+    ]
+  }
+}

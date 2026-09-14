@@ -91,6 +91,17 @@ test("top three turnover leaders are narrated with varied verbs", () => {
   assert.match(text, /智谱以 79\.67 亿成交领跑全榜，收跌 9\.08%；阿里巴巴-W成交 51\.22 亿紧随其后，收跌 1\.49%；腾讯控股成交 48\.92 亿位列第三，收涨 0\.51%。/);
 });
 
+test("sessions with focus news append a message digest paragraph", () => {
+  const stocks = makeStocks(24, 2).map((item, index) => {
+    if (index === 0) {
+      return { ...item, news: [{ title: "测试股1公告重大合作事项", mediaName: "测试媒体", date: "2026-09-14 20:00:00", url: "http://example.com" }] };
+    }
+    return item;
+  });
+  const text = buildDailySummary(baseSnapshot(stocks));
+  assert.match(text, /消息面速览\n• 测试股1：测试股1公告重大合作事项（测试媒体）/);
+});
+
 test("buildDailySummary rejects an empty ranking", () => {
   assert.throws(() => buildDailySummary({ market: {}, rankings: {} }), /turnover ranking/);
 });
