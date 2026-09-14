@@ -51,10 +51,9 @@ test("polarized sessions use the observation column and concentration opening", 
   assert.match(text, /南向资金单日扫货 50\.00 亿，但资金集中度达到了 \d+\.\d%，头部博弈迹象明显。/);
   assert.match(text, /📊 整体交投概览/);
   assert.match(text, /🏆 头部成交分布（Top 10 数据）/);
-  assert.match(text, /• 成交第一：\$龙头股\(00001\)\$ 成交 60\.00 亿（涨跌幅 \+2\.50%）/);
+  assert.match(text, /• 成交第一：龙头股 成交 60\.00 亿（涨跌幅 \+2\.50%）/);
   assert.match(text, /🔍 榜单焦点与异动（Top 50 监测）/);
   assert.match(text, /数据来源：港股通收盘正式快照（截至 \d{2}:\d{2}）/);
-  assert.match(text, /\$龙头股\(00001\)\$ \$测试股1\(10000\)\$ \$测试股2\(10001\)\$/);
 });
 
 test("rotation sessions use the radar column and turnover focus", () => {
@@ -65,7 +64,7 @@ test("rotation sessions use the radar column and turnover focus", () => {
   const text = buildDailySummary(baseSnapshot(stocks, { market: { southboundNetBuy: -1_200_000_000 } }));
   assert.match(text, /【港股通每日异动雷达】 \| 09月14日/);
   assert.match(text, /从今天港股通 Top 50 榜单来看，整体呈现 \d+ 涨 \d+ 跌的格局，南向资金净流出 12\.00 亿。/);
-  assert.match(text, /• 换手率焦点：\$高换手股\(00002\)\$ 换手率 18\.50%，成交 15\.00 亿，收 \+4\.20%/);
+  assert.match(text, /• 换手率焦点：高换手股 换手率 18\.50%，成交 15\.00 亿，收 \+4\.20%/);
 });
 
 test("brief sessions use the snapshot column and alternate opening on odd days", () => {

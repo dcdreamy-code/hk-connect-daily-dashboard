@@ -41,8 +41,8 @@ function hkDateParts(iso) {
   return { monthDay: `${get("month")}月${get("day")}日`, hhmm: `${get("hour")}:${get("minute")}` };
 }
 
-function ticker(item) {
-  return `$${item.name}(${item.code})$`;
+function nameOf(item) {
+  return item.name;
 }
 
 function changeOf(item) {
@@ -139,26 +139,25 @@ export function buildDailySummary(snapshot) {
   lines.push(`• 集中度：Top 10 成交额占比 ${concentration.toFixed(1)}%`);
   lines.push("");
   lines.push(`${emoji[1]} 头部成交分布（Top 10 数据）`);
-  lines.push(`• 成交第一：${ticker(first)} 成交 ${toYi(first.turnover)} 亿（涨跌幅 ${changeOf(first)}）`);
+  lines.push(`• 成交第一：${nameOf(first)} 成交 ${toYi(first.turnover)} 亿（涨跌幅 ${changeOf(first)}）`);
   if (gainers.length > 0) {
-    lines.push(`• 表现较强：${gainers.map((item) => `${ticker(item)}（${changeOf(item)}）`).join("、")}`);
+    lines.push(`• 表现较强：${gainers.map((item) => `${nameOf(item)}（${changeOf(item)}）`).join("、")}`);
   }
   if (losers.length > 0) {
-    lines.push(`• 调整回调：${losers.map((item) => `${ticker(item)}（${changeOf(item)}）`).join("、")}`);
+    lines.push(`• 调整回调：${losers.map((item) => `${nameOf(item)}（${changeOf(item)}）`).join("、")}`);
   }
   lines.push("");
   lines.push(`${emoji[2]} 榜单焦点与异动（Top 50 监测）`);
   if (turnoverFocus) {
-    lines.push(`• 换手率焦点：${ticker(turnoverFocus)} 换手率 ${turnoverFocus.turnoverRate.toFixed(2)}%，成交 ${toYi(turnoverFocus.turnover)} 亿，收 ${changeOf(turnoverFocus)}`);
+    lines.push(`• 换手率焦点：${nameOf(turnoverFocus)} 换手率 ${turnoverFocus.turnoverRate.toFixed(2)}%，成交 ${toYi(turnoverFocus.turnover)} 亿，收 ${changeOf(turnoverFocus)}`);
   }
   if (extremeUp && extremeDown) {
-    lines.push(`• 极值分布：最高涨幅 ${ticker(extremeUp)}（${changeOf(extremeUp)}），最大跌幅 ${ticker(extremeDown)}（${changeOf(extremeDown)}）`);
+    lines.push(`• 极值分布：最高涨幅 ${nameOf(extremeUp)}（${changeOf(extremeUp)}），最大跌幅 ${nameOf(extremeDown)}（${changeOf(extremeDown)}）`);
   }
   if (newHigh) {
-    lines.push(`• 破高动态：${ticker(newHigh)} 盘中触及 52 周高点`);
+    lines.push(`• 破高动态：${nameOf(newHigh)} 盘中触及 52 周高点`);
   }
   lines.push("");
   lines.push(`数据来源：港股通收盘正式快照（截至 ${hhmm}）`);
-  lines.push(top.slice(0, 3).map(ticker).join(" "));
   return lines.join("\n");
 }
