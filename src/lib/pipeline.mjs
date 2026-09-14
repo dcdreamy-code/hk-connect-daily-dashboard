@@ -37,8 +37,6 @@ export function normalizeQuote(raw) {
     low: finiteNumber(raw.f16),
     open: finiteNumber(raw.f17),
     previousClose: finiteNumber(raw.f18),
-    mainNetInflow: finiteNumber(raw.f62),
-    mainNetInflowRatio: finiteNumber(raw.f184),
     industry: optionalText(raw.f100),
     timestamp: finiteNumber(raw.f124),
   };
@@ -253,7 +251,6 @@ export function buildSnapshot({
       decliners: eligible.filter((quote) => quote.changePercent < 0).length,
       unchanged: eligible.filter((quote) => quote.changePercent === 0).length,
       turnover: eligible.reduce((sum, quote) => sum + (quote.turnover ?? 0), 0),
-      mainNetInflow: eligible.reduce((sum, quote) => sum + (quote.mainNetInflow ?? 0), 0),
       southboundNetBuy: southbound && southbound.tradeDate === tradeDate ? southbound.netBuyHkd : null,
     },
     securities,

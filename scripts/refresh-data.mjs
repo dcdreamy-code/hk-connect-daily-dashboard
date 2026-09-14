@@ -1,7 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchEastmoney52wRange, fetchEastmoneyShortSelling, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
+import { fetchEastmoneyShortSelling, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
+import { fetchTencent52wRange } from "../src/adapters/tencent.mjs";
 import { backfillEnhancements, buildContinuity, buildSnapshot, rankableUniverse, sameMarketSnapshot } from "../src/lib/pipeline.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -88,7 +89,7 @@ const [shortSelling, southbound, week52] = await Promise.all([
     console.warn(`Southbound flow skipped: ${error.message}`);
     return null;
   }),
-  fetchEastmoney52wRange(pool.map((item) => item.code)).catch((error) => {
+  fetchTencent52wRange(pool.map((item) => item.code)).catch((error) => {
     console.warn(`52w range skipped: ${error.message}`);
     return {};
   }),
@@ -96,7 +97,16 @@ const [shortSelling, southbound, week52] = await Promise.all([
 const previousSnapshots = await loadPreviousSnapshots(tradeDate);
 const fallbackArchive = previousSnapshots.find((snap) => (snap.securities ?? []).some((item) => item.shortRatio != null))
   ?? previousSnapshots[0]
-  ?? null;
+  ?? null;// 52w data must never regress: fill fresh-fetch misses from the newest archive that has it
+const week52Archive = previousSnapshots.find((snap) => (snap.securities ?? []).some((item) => item.high52 != null));
+const mergedWeek52 = { ...week52 };
+if (week52Archive) {
+  for (const item of week52Archive.securities ?? []) {
+    if (item.high52 != null && mergedWeek52[item.code] == null) {
+      mergedWeek52[item.code] = { high52: item.high52, low52: item.low52 };
+    }
+  }
+}
 const snapshot = backfillEnhancements(buildSnapshot({
   quotes,
   universe: pool,
@@ -105,7 +115,7 @@ const snapshot = backfillEnhancements(buildSnapshot({
   history: buildContinuity(previousSnapshots),
   shortSelling,
   southbound,
-  week52,
+  week52: mergedWeek52,
   generatedAt,
   tradeDate,
   marketStatus: marketStatus(tradeDate),

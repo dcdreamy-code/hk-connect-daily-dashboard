@@ -34,13 +34,10 @@ test("normalizeQuote maps Eastmoney fields without stringifying numbers", () => 
     low: 69.2,
     open: 69.5,
     previousClose: 69.35,
-    mainNetInflow: -12300000,
-    mainNetInflowRatio: -3.14,
     industry: "综合企业",
     timestamp: 1788969600,
   });
   const missingOptional = normalizeQuote(fixture.data.diff[3]);
-  assert.equal(missingOptional.mainNetInflow, null);
   assert.equal(missingOptional.industry, null);
   assert.equal(missingOptional.peTtm, null);
   assert.equal(missingOptional.pb, null);
@@ -87,7 +84,6 @@ test("buildSnapshot adds profiles and a market summary", () => {
   assert.equal(snapshot.market.advancers, 2);
   assert.equal(snapshot.market.decliners, 1);
   assert.equal(snapshot.market.turnover, 14492325440);
-  assert.equal(snapshot.market.mainNetInflow, 286000720);
   assert.equal(snapshot.rankings.turnover[0].industry, "互联网");
   assert.equal(snapshot.rankings.turnover[0].introduction, "社交与数字内容平台。");
   assert.equal(snapshot.rankings.turnover[0].ah.aCode, "600700");

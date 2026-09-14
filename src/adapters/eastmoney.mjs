@@ -2,9 +2,8 @@ import { normalizeQuote } from "../lib/pipeline.mjs";
 
 const ENDPOINT = "https://push2delay.eastmoney.com/api/qt/clist/get";
 const UNIVERSE_ENDPOINT = "https://push2delay.eastmoney.com/api/qt/ulist.np/get";
-const KLINE_ENDPOINT = "https://push2his.eastmoney.com/api/qt/stock/kline/get";
 const DATACENTER_ENDPOINT = "https://datacenter-web.eastmoney.com/api/data/v1/get";
-const FIELDS = "f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f15,f16,f17,f18,f20,f23,f62,f100,f124,f184";
+const FIELDS = "f12,f14,f2,f3,f4,f5,f6,f7,f8,f9,f15,f16,f17,f18,f20,f23,f100,f124";
 const PAGE_SIZE = 100;
 const AH_FIELDS = "f12,f191,f2,f3,f186,f187,f188";
 
@@ -156,79 +155,6 @@ export async function fetchSouthboundFlow({
     netBuyHkd: Math.round((netDeal[0] + netDeal[1]) * 1e6),
     turnoverHkd: Math.round((deal[0] + deal[1]) * 1e6),
   };
-}
-
-export async function fetchEastmoney52wRange(codes, {
-  fetchImpl = fetch,
-  timeoutMs = 15000,
-  retries = 1,
-  retryDelayMs = 800,
-  requestDelayMs = 120,
-  concurrency = 5,
-  weeks = 52,
-  passes = 3,
-} = {}) {
-  const rangeByCode = {};
-  const fetchOne = async (code) => {
-    const url = new URL(KLINE_ENDPOINT);
-    url.search = new URLSearchParams({
-      secid: `116.${code}`,
-      klt: "102",
-      fqt: "1",
-      lmt: String(weeks),
-      end: "20500101",
-      fields1: "f1,f2,f3",
-      fields2: "f51,f53,f54,f55",
-    });
-    let rows = null;
-    let lastError;
-    for (let attempt = 0; attempt <= retries; attempt += 1) {
-      try {
-        const payload = await requestJson(url, { fetchImpl, timeoutMs, retries: 0, referer: "https://quote.eastmoney.com/" });
-        const klines = payload?.data?.klines;
-        if (Array.isArray(klines) && klines.length > 0) {
-          rows = klines;
-          break;
-        }
-        lastError = new Error("empty klines (possibly rate limited)");
-      } catch (error) {
-        lastError = error;
-      }
-      if (attempt < retries) await wait(retryDelayMs);
-    }
-    if (rows === null) {
-      console.warn(`52w range skipped for ${code}: ${lastError?.message ?? "unknown error"}`);
-      return;
-    }
-    let high = null;
-    let low = null;
-    for (const row of rows) {
-      const parts = String(row).split(",");
-      const rowHigh = Number(parts[2]);
-      const rowLow = Number(parts[3]);
-      if (Number.isFinite(rowHigh) && (high === null || rowHigh > high)) high = rowHigh;
-      if (Number.isFinite(rowLow) && (low === null || rowLow < low)) low = rowLow;
-    }
-    if (high !== null && low !== null) rangeByCode[code] = { high52: high, low52: low };
-  };
-  let pending = [...codes];
-  for (let pass = 1; pass <= passes && pending.length > 0; pass += 1) {
-    if (pass > 1) await wait(1000);
-    const queue = pending;
-    pending = [];
-    await Promise.all(Array.from({ length: Math.max(1, Math.min(concurrency, queue.length)) }, async function worker() {
-      while (queue.length > 0) {
-        const code = queue.shift();
-        await fetchOne(code);
-        await wait(requestDelayMs);
-      }
-    }));
-    pending = [...codes].filter((code) => !(code in rangeByCode));
-    if (pending.length > 0 && pass < passes) {
-      console.log(`52w range pass ${pass}: ${codes.length - pending.length}/${codes.length} fetched, retrying ${pending.length}.`);
-    }
-  }
-  return rangeByCode;
 }
 
 function optionalNumber(value) {

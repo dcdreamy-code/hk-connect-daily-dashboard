@@ -1,6 +1,5 @@
 const metricCopy = {
   turnover: "成交额",
-  mainNetInflow: "主力净流入",
   changePercent: "涨跌幅",
   marketCap: "总市值",
   turnoverRate: "换手率",
@@ -319,7 +318,6 @@ function createDataRow(item, rank, { showContinuity = false } = {}) {
   appendCell(row, formatPrice(item.close), "numeric optional-col");
   appendCell(row, formatPercent(item.changePercent), `numeric ${trendClass(item.changePercent)}`);
   appendCell(row, formatHkd(item.turnover), "numeric");
-  appendCell(row, formatSignedHkd(item.mainNetInflow), `numeric optional-col ${trendClass(item.mainNetInflow)}`);
   appendCell(row, formatHkd(item.marketCap), "numeric optional-col");
   appendCell(row, formatRate(item.turnoverRate), "numeric optional-col");
   appendCell(row, formatRate(item.amplitude), "numeric optional-col");
@@ -449,9 +447,6 @@ function dashboard() {
     document.querySelector("#cover-advancers").textContent = snapshot.market.advancers;
     document.querySelector("#cover-decliners").textContent = snapshot.market.decliners;
     document.querySelector("#cover-turnover").textContent = formatHkd(snapshot.market.turnover);
-    const inflow = document.querySelector("#cover-inflow");
-    inflow.textContent = formatSignedHkd(snapshot.market.mainNetInflow);
-    inflow.className = trendClass(snapshot.market.mainNetInflow);
     const southbound = document.querySelector("#cover-southbound");
     southbound.textContent = formatSignedHkd(snapshot.market.southboundNetBuy);
     southbound.className = trendClass(snapshot.market.southboundNetBuy);
