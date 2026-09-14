@@ -77,29 +77,39 @@ export function buildDailyInsights(items) {
   const changes = numbers(items, "changePercent");
   const advancers = changes.filter((value) => value > 0).length;
   const decliners = changes.filter((value) => value < 0).length;
-  const meanChange = average(changes) ?? 0;
-  const tone = decliners >= advancers * 1.5 || meanChange <= -1
-    ? "活跃股整体偏弱"
-    : advancers >= decliners * 1.5 || meanChange >= 1
-      ? "活跃股整体偏强"
-      : Math.abs(advancers - decliners) <= 6
-        ? "活跃股涨跌相对均衡"
-        : "活跃股表现分化";
   const totalTurnover = items.reduce((sum, item) => sum + (item.turnover ?? 0), 0);
   const topTenTurnover = items.slice(0, 10).reduce((sum, item) => sum + (item.turnover ?? 0), 0);
   const concentration = totalTurnover ? topTenTurnover / totalTurnover * 100 : 0;
   const leader = items[0];
-  const extreme = items.filter((item) => Number.isFinite(item.changePercent)).toSorted((left, right) => Math.abs(right.changePercent) - Math.abs(left.changePercent))[0];
-  const activeCandidates = items.filter((item) => Number.isFinite(item.turnoverRate)).toSorted((left, right) => right.turnoverRate - left.turnoverRate);
-  const mostActive = activeCandidates.find((item) => item.code !== extreme.code) ?? activeCandidates[0];
-  return {
-    headline: `${tone}：Top 50 中 ${advancers} 涨、${decliners} 跌，平均涨跌幅 ${percent(meanChange)}。`,
-    bullets: [
-      `成交集中度｜Top 10 占 Top 50 成交额 ${concentration.toFixed(1)}%`,
-      `成交龙头｜${leader.name} ${compact(leader.turnover)}港币，涨跌幅 ${percent(leader.changePercent)}`,
-      `异动焦点｜${extreme.name} ${percent(extreme.changePercent)}；${mostActive.name} 换手率 ${percent(mostActive.turnoverRate, false)}`,
-    ],
-  };
+  const extremeUp = items.filter((item) => Number.isFinite(item.changePercent)).toSorted((left, right) => right.changePercent - left.changePercent)[0];
+  const extremeDown = items.filter((item) => Number.isFinite(item.changePercent)).toSorted((left, right) => left.changePercent - right.changePercent)[0];
+  const shortFocus = items.filter((item) => Number.isFinite(item.shortRatio)).toSorted((left, right) => right.shortRatio - left.shortRatio)[0] ?? null;
+  const newHighs = items.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.close) && item.close >= item.high52 * 0.98);
+  const newLows = items.filter((item) => Number.isFinite(item.low52) && Number.isFinite(item.close) && item.close <= item.low52 * 1.02);
+  const leaderDays = leader?.continuity?.top50Days;
+
+  const standout = newHighs.length >= 2
+    ? `${newHighs.slice(0, 2).map((item) => item.name).join("、")}创 52 周新高`
+    : newHighs.length === 1
+      ? `${newHighs[0].name}创 52 周新高`
+      : newLows.length >= 2
+        ? `${newLows.slice(0, 2).map((item) => item.name).join("、")}创 52 周新低`
+        : newLows.length === 1
+          ? `${newLows[0].name}创 52 周新低`
+          : extremeUp
+            ? `${extremeUp.name}领涨全场`
+            : "";
+
+  const headline = `港股通 ${advancers} 涨 ${decliners} 跌${standout ? `；${standout}` : ""}。`;
+
+  const bullets = [
+    `成交集中度｜Top 10 占 Top 50 成交额 ${concentration.toFixed(1)}%`,
+    `龙头观察｜${leader.name} 成交 ${compact(leader.turnover)}港币居首${leaderDays ? `，连续 ${leaderDays} 日上榜` : ""}`,
+    shortFocus && shortFocus.shortRatio >= 20
+      ? `沽空与极值｜${extremeUp.name} ${percent(extremeUp.changePercent)} 领涨，${extremeDown.name} ${percent(extremeDown.changePercent)} 领跌；${shortFocus.name} 沽空比 ${percent(shortFocus.shortRatio, false)}`
+      : `极值扫描｜${extremeUp.name} ${percent(extremeUp.changePercent)} 领涨，${extremeDown.name} ${percent(extremeDown.changePercent)} 领跌`,
+  ];
+  return { headline, bullets };
 }
 
 function concentrationOf(items) {

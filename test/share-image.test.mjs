@@ -29,10 +29,12 @@ test("buildShareImageSvg renders single-line securities in a 1242 x 3660 report"
 test("buildDailyInsights derives traceable facts from turnover Top 50", () => {
   const insights = buildDailyInsights(snapshot.rankings.turnover);
   assert.equal(insights.bullets.length, 3);
-  assert.match(insights.headline, /Top 50/);
-  assert.match(insights.bullets[0], /Top 10/);
+  assert.match(insights.headline, /港股通 \d+ 涨 \d+ 跌/);
+  assert.match(insights.bullets[0], /Top 10 占 Top 50 成交额/);
   assert.match(insights.bullets[1], new RegExp(snapshot.rankings.turnover[0].name));
-  const extreme = snapshot.rankings.turnover.toSorted((a, b) => Math.abs(b.changePercent) - Math.abs(a.changePercent))[0];
-  const alternativeActive = snapshot.rankings.turnover.toSorted((a, b) => b.turnoverRate - a.turnoverRate).find((item) => item.code !== extreme.code);
-  assert.match(insights.bullets[2], new RegExp(alternativeActive.name));
+  const extremeUp = snapshot.rankings.turnover.toSorted((a, b) => b.changePercent - a.changePercent)[0];
+  const extremeDown = snapshot.rankings.turnover.toSorted((a, b) => a.changePercent - b.changePercent)[0];
+  const scan = insights.bullets[2];
+  assert.match(scan, new RegExp(extremeUp.name));
+  assert.match(scan, new RegExp(extremeDown.name));
 });
