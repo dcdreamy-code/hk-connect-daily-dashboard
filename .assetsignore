@@ -1,0 +1,13 @@
+node_modules
+outputs
+.github
+docs
+test
+scripts
+GGTBDZQMD.xls
+README.md
+package.json
+package-lock.json
+wrangler.toml
+wrangler.worker.toml
+.gitignore

@@ -11,7 +11,7 @@
     "daily": "npm run refresh && npm run validate && npm run image",
     "validate": "node scripts/validate-data.mjs public/data/latest.json",
     "serve": "node scripts/serve.mjs",
-    "deploy": "wrangler pages deploy",
+    "deploy": "wrangler deploy -c wrangler.worker.toml && wrangler pages deploy",
     "publish:daily": "npm run daily && npm run deploy"
   },
   "engines": {

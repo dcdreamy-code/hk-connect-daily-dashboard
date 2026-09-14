@@ -82,13 +82,18 @@ AH 身份映射不随日行情重复请求。`.github/workflows/refresh-ah.yml` 
 
 ## 部署
 
-公开部署使用 Cloudflare Pages 免费版（直接上传模式，静态托管不限流量）。Pages 项目 `hk-connect-daily-dashboard` 已用 wrangler 创建，对应仓库根目录的 `wrangler.toml`。三条发布路径互为冗余：
+公开部署在 Cloudflare 双地址（同一份内容，自动同步更新）：
+
+- **主地址（中国大陆可正常打开）**：https://hk-connect-daily-dashboard.dcdreamy.workers.dev —— Workers 静态资产直传（`wrangler.worker.toml` + `.assetsignore`，只发布站点所需文件）
+- **备用地址**：https://hk-connect-daily-dashboard.pages.dev —— Pages 项目，海外访问备用
+
+三条发布路径互为冗余（每次同时更新两个地址）：
 
 - **手动发布**：`npm run deploy`（依赖本机 `wrangler login`）。
 - **本地定时发布**：`npm run serve` 会在工作日 16:30/16:45 执行 `publish:daily`（刷新 + 校验 + 出图 + 部署）。
 - **CI 自动发布**：在 GitHub 仓库配置 `CLOUDFLARE_API_TOKEN` secret（Cloudflare Dashboard → My Profile → API Tokens，权限用 "Cloudflare Pages: Edit" 模板）后，每日收盘工作流在提交快照后会自动部署；未配置该 secret 时此步骤自动跳过，不影响数据刷新。
 
-`*.pages.dev` 域名在中国大陆可能被 DNS 污染，正式传播建议绑定自有域名（免费版支持，无需改代码）。根目录 `_headers` 提供安全响应头，并对 `latest.json` 与传播图设置不缓存，读者始终拿到最新收盘数据。原 Vercel 配置（vercel.json）已由 `_headers` 取代。
+`*.workers.dev` 与 `*.pages.dev` 的可达性因地区运营商而异，以实测为准；正式传播建议绑定自有域名（免费版支持，无需改代码）。根目录 `_headers` 提供安全响应头，并对 `latest.json` 与传播图设置不缓存，读者始终拿到最新收盘数据。
 
 ### 与工作台同步
 
