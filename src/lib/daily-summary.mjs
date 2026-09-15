@@ -199,7 +199,8 @@ export function buildDailySummary(snapshot) {
     for (const item of newsItems) {
       const article = item.news[0];
       const title = article.title.length > 34 ? `${article.title.slice(0, 34)}…` : article.title;
-      lines.push(`• ${nameOf(item)}：${title}（${article.mediaName}）`);
+      const prefix = title.startsWith(nameOf(item)) ? "" : `${nameOf(item)}：`;
+      lines.push(`• ${prefix}${title}（${article.mediaName}）`);
     }
   }
   lines.push(`数据来源：港股通收盘正式快照（截至 ${hhmm}）`);
