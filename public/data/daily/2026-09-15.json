@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "tradeDate": "2026-09-15",
-  "generatedAt": "2026-09-15T08:45:30.365Z",
+  "generatedAt": "2026-09-15T09:45:39.347Z",
   "marketStatus": "close",
   "source": {
     "market": "东方财富网页行情",
@@ -18,8 +18,9 @@
     "decliners": 492,
     "unchanged": 20,
     "turnover": 136392954348,
-    "southboundNetBuy": 4471480000,
-    "southboundAsOf": "2026-09-14"
+    "turnoverPrev": null,
+    "indexes": [],
+    "southboundNetBuy": 880670000
   },
   "securities": [
     {
@@ -144,7 +145,7 @@
       "turnoverRate": 0.09,
       "peTtm": 14.52,
       "pb": 2.02,
-      "marketCap": 2738741136407,
+      "marketCap": 2738656548407,
       "high": 163.1,
       "low": 159.4,
       "open": 163,
@@ -2098,9 +2099,9 @@
       "turnover": 599506496,
       "amplitude": 3.06,
       "turnoverRate": 0.54,
-      "peTtm": 13.82,
+      "peTtm": 13.81,
       "pb": 0.58,
-      "marketCap": 559885130848,
+      "marketCap": 559402420706,
       "high": 4.745,
       "low": 4.6,
       "open": 4.745,
@@ -3344,9 +3345,9 @@
       "turnover": 22167090,
       "amplitude": 2.61,
       "turnoverRate": 0.21,
-      "peTtm": 60.11,
+      "peTtm": 60.06,
       "pb": 1.06,
-      "marketCap": 10634624900,
+      "marketCap": 10625693750,
       "high": 1.35,
       "low": 1.315,
       "open": 1.35,
@@ -3418,10 +3419,10 @@
       "low52": 411,
       "news": [
         {
-          "title": "港股午盘｜恒指跌0.23% 腾讯控股涨近3%",
-          "mediaName": "第一财经",
-          "date": "2026-09-15 12:07:04",
-          "url": "http://stock.eastmoney.com/a/202609153874515838.html"
+          "title": "腾讯控股：9月15日斥资1.01亿港元回购229000股",
+          "mediaName": "南方财经网",
+          "date": "2026-09-15 17:40:00",
+          "url": "http://finance.eastmoney.com/a/202609153874784711.html"
         }
       ],
       "continuity": {
@@ -9281,7 +9282,7 @@
       "turnoverRate": 0.26,
       "peTtm": 16.35,
       "pb": 1.69,
-      "marketCap": 46740029600,
+      "marketCap": 46731933600,
       "high": 41.54,
       "low": 40.16,
       "open": 41.04,
@@ -9359,7 +9360,7 @@
       "turnoverRate": 0.19,
       "peTtm": 28.61,
       "pb": 1.04,
-      "marketCap": 12442541040,
+      "marketCap": 12440444880,
       "high": 16.25,
       "low": 15.5,
       "open": 16.24,
@@ -10593,7 +10594,7 @@
       "turnoverRate": 1.13,
       "peTtm": 9.56,
       "pb": 0.65,
-      "marketCap": 65127417182,
+      "marketCap": 65122447852,
       "high": 7.825,
       "low": 7.57,
       "open": 7.78,
@@ -10761,7 +10762,7 @@
       "turnoverRate": 0.51,
       "peTtm": 23.44,
       "pb": 5.99,
-      "marketCap": 584133683004,
+      "marketCap": 584146854440,
       "high": 198.8,
       "low": 193.3,
       "open": 194.7,
@@ -13109,7 +13110,7 @@
       "turnoverRate": 1.01,
       "peTtm": -158.54,
       "pb": 2.43,
-      "marketCap": 221623255450,
+      "marketCap": 221617268890,
       "high": 38.94,
       "low": 38.02,
       "open": 38.2,
@@ -14289,7 +14290,7 @@
       "turnoverRate": 0.33,
       "peTtm": 11.86,
       "pb": 1.94,
-      "marketCap": 14271416305,
+      "marketCap": 14268827545,
       "high": 14.02,
       "low": 13.44,
       "open": 13.75,
@@ -16951,7 +16952,14 @@
       "shortAmt": 27399240,
       "high52": 542.559,
       "low52": 152.259,
-      "news": null,
+      "news": [
+        {
+          "title": "澜起科技：9月15日斥资2039.23万元回购10.8万股",
+          "mediaName": "南方财经网",
+          "date": "2026-09-15 17:28:49",
+          "url": "http://finance.eastmoney.com/a/202609153874773634.html"
+        }
+      ],
       "continuity": {
         "top50Days": 1,
         "prevRank": null,
@@ -18501,7 +18509,7 @@
       "turnoverRate": 0.11,
       "peTtm": 14.9,
       "pb": 2.72,
-      "marketCap": 113035089024,
+      "marketCap": 113009375318,
       "high": 336,
       "low": 330,
       "open": 335,
@@ -18724,10 +18732,10 @@
         "low52": 411,
         "news": [
           {
-            "title": "港股午盘｜恒指跌0.23% 腾讯控股涨近3%",
-            "mediaName": "第一财经",
-            "date": "2026-09-15 12:07:04",
-            "url": "http://stock.eastmoney.com/a/202609153874515838.html"
+            "title": "腾讯控股：9月15日斥资1.01亿港元回购229000股",
+            "mediaName": "南方财经网",
+            "date": "2026-09-15 17:40:00",
+            "url": "http://finance.eastmoney.com/a/202609153874784711.html"
           }
         ],
         "continuity": {
@@ -18953,7 +18961,7 @@
         "turnoverRate": 0.09,
         "peTtm": 14.52,
         "pb": 2.02,
-        "marketCap": 2738741136407,
+        "marketCap": 2738656548407,
         "high": 163.1,
         "low": 159.4,
         "open": 163,
@@ -19735,7 +19743,14 @@
         "shortAmt": 27399240,
         "high52": 542.559,
         "low52": 152.259,
-        "news": null,
+        "news": [
+          {
+            "title": "澜起科技：9月15日斥资2039.23万元回购10.8万股",
+            "mediaName": "南方财经网",
+            "date": "2026-09-15 17:28:49",
+            "url": "http://finance.eastmoney.com/a/202609153874773634.html"
+          }
+        ],
         "continuity": {
           "top50Days": 1,
           "prevRank": null,
@@ -20691,7 +20706,14 @@
         "shortAmt": 27399240,
         "high52": 542.559,
         "low52": 152.259,
-        "news": null,
+        "news": [
+          {
+            "title": "澜起科技：9月15日斥资2039.23万元回购10.8万股",
+            "mediaName": "南方财经网",
+            "date": "2026-09-15 17:28:49",
+            "url": "http://finance.eastmoney.com/a/202609153874773634.html"
+          }
+        ],
         "continuity": {
           "top50Days": 1,
           "prevRank": null,

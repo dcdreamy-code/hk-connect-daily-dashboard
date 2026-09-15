@@ -48,9 +48,11 @@ test("dataFreshness classifies quote age from the market timestamp", () => {
 
 test("localRefreshSlot supports a primary run, fallback run, and startup catch-up", () => {
   assert.equal(localRefreshSlot(hkTime("2026-09-10T08:29:00Z")), null);
+  assert.equal(localRefreshSlot(hkTime("2026-09-10T11:00:00Z")), "evening");
+  assert.equal(localRefreshSlot(hkTime("2026-09-10T10:59:00Z")), "fallback");
   assert.equal(localRefreshSlot(hkTime("2026-09-10T08:30:00Z")), "primary");
   assert.equal(localRefreshSlot(hkTime("2026-09-10T08:44:00Z")), "primary");
   assert.equal(localRefreshSlot(hkTime("2026-09-10T08:45:00Z")), "fallback");
-  assert.equal(localRefreshSlot(hkTime("2026-09-10T12:00:00Z")), "fallback");
+  assert.equal(localRefreshSlot(hkTime("2026-09-10T12:00:00Z")), "evening");
   assert.equal(localRefreshSlot(hkTime("2026-09-12T08:45:00Z")), null);
 });

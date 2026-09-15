@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { fetchEastmoneyShortSelling, fetchEastmoneyStockNews, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
+import { fetchEastmoneyIndexes, fetchEastmoneyShortSelling, fetchEastmoneyStockNews, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
 import { fetchTencent52wRange } from "../src/adapters/tencent.mjs";
 import { hongKongDate } from "../src/lib/market-clock.mjs";
 import { backfillEnhancements, buildContinuity, buildSnapshot, rankableUniverse, sameMarketSnapshot } from "../src/lib/pipeline.mjs";

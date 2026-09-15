@@ -46,7 +46,10 @@ export function shouldRefreshAtClose({ now = new Date(), enabled, visible, refre
 export function localRefreshSlot(now = new Date()) {
   const { weekday, time } = hongKongParts(now);
   if (weekday === "Sat" || weekday === "Sun" || time < "16:30") return null;
-  return time < "16:45" ? "primary" : "fallback";
+  if (time < "16:45") return "primary";
+  // 晚间档:东财的南向数据行收盘后约一小时才入库,晚间补抓当日的南向净买入
+  if (time < "19:00") return "fallback";
+  return "evening";
 }
 
 export function dataFreshness(timestampMs, now = new Date()) {
