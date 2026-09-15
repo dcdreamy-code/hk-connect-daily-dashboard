@@ -125,6 +125,10 @@ const [shortSelling, southbound, week52] = await Promise.all([
     console.warn(`52w range skipped: ${error.message}`);
     return {};
   }),
+  fetchEastmoneyIndexes().catch((error) => {
+    console.warn(`indexes skipped: ${error.message}`);
+    return [];
+  }),
 ]);
 const previousSnapshots = await loadPreviousSnapshots(tradeDate);
 const fallbackArchive = previousSnapshots.find((snap) => (snap.securities ?? []).some((item) => item.shortRatio != null))

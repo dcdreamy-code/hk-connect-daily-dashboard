@@ -136,7 +136,40 @@ export function buildDailySummary(snapshot) {
   lines.push(`• 南向资金：${southboundText}`);
   lines.push(`• 港股通标的总成交：${toYi(market.turnover)} 亿港币`);
   lines.push(`• Top 50 涨跌分布：${up} 涨 / ${down} 跌（均值 ${formatPercent(avgChange)}）`);
+  // 行业聚合(Top 50 内,行业样本 ≥2)与指数/量能对比
+  const byIndustry = new Map();
+  for (const item of top) {
+    const ind = item.industry;
+    if (!ind) continue;
+    const agg = byIndustry.get(ind) ?? { name: ind, count: 0, sumPct: 0, leader: nameOf(item), leaderPct: -Infinity };
+    agg.count += 1;
+    agg.sumPct += item.changePercent ?? 0;
+    if ((item.changePercent ?? -Infinity) > agg.leaderPct) {
+      agg.leader = nameOf(item);
+      agg.leaderPct = item.changePercent ?? 0;
+    }
+    byIndustry.set(ind, agg);
+  }
+  const industries = [...byIndustry.values()].filter((group) => group.count >= 2).sort((a, b) => b.sumPct / b.count - a.sumPct / a.count);
+  const hotIndustry = industries[0] ?? null;
+  const coldIndustry = industries.length > 1 ? industries[industries.length - 1] : null;
+  const turnoverDelta = Number.isFinite(market.turnoverPrev) && Number.isFinite(market.turnover)
+    ? market.turnover - market.turnoverPrev
+    : null;
+  const deltaText = turnoverDelta === null
+    ? ""
+    : `（较上一交易日${turnoverDelta >= 0 ? "放量" : "缩量"} ${compact(Math.abs(turnoverDelta))} 亿）`;
+  const indexText = (market.indexes ?? []).map((idx) => `${idx.name}${idx.changePct >= 0 ? "涨" : "跌"} ${Math.abs(idx.changePct).toFixed(2)}%`).join("、");
+
   lines.push(`• 集中度：Top 10 成交额占比 ${concentration.toFixed(1)}%`);
+  if (indexText) {
+    lines.push(`• ${indexText}`);
+  }
+  if (hotIndustry && coldIndustry) {
+    const hotAvg = (hotIndustry.sumPct / hotIndustry.count).toFixed(2);
+    const coldAvg = (coldIndustry.sumPct / coldIndustry.count).toFixed(2);
+    lines.push(`• 板块方面：${hotIndustry.name}相对最强（${hotIndustry.count} 家平均 ${hotAvg}，${hotIndustry.leader}领涨），${coldIndustry.name}相对调整（${coldIndustry.count} 家平均 ${coldAvg}，${coldIndustry.leader}领跌）`);
+  }
   lines.push("");
   lines.push(`${emoji[1]} 头部成交分布（Top 10 数据）`);
   lines.push(`• 成交第一：${nameOf(first)} 成交 ${toYi(first.turnover)} 亿（涨跌幅 ${changeOf(first)}）`);

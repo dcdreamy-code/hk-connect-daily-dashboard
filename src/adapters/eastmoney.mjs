@@ -204,6 +204,34 @@ export async function fetchEastmoneyStockNews({ keyword, date, limit = 2, fetchI
     .slice(0, limit);
 }
 
+const INDEX_SECIDS = [["100.HSI", "恒生指数"]];
+
+export async function fetchEastmoneyIndexes({ fetchImpl = fetch, timeoutMs = 15000, retries = 1, retryDelayMs = 800 } = {}) {
+  return Promise.all(INDEX_SECIDS.map(async ([secid]) => {
+    const url = `https://push2delay.eastmoney.com/api/qt/stock/get?secid=${secid}&fltt=2&fields=f43,f58,f170`;
+    let lastError;
+    for (let attempt = 0; attempt <= retries; attempt += 1) {
+      try {
+        const response = await fetchImpl(url, {
+          headers: { Accept: "application/json,text/plain,*/*", Referer: "https://quote.eastmoney.com/", "User-Agent": "Mozilla/5.0" },
+          signal: AbortSignal.timeout(timeoutMs),
+        });
+        if (!response.ok) throw new Error(`index quote returned HTTP ${response.status}`);
+        const json = await response.json();
+        const data = json?.data;
+        if (!data?.f58) throw new Error(`index ${secid} unavailable`);
+        const changePct = Number(data.f170);
+        if (!Number.isFinite(changePct)) throw new Error(`index ${secid} change not numeric`);
+        return { name: String(data.f58), changePct };
+      } catch (error) {
+        lastError = error;
+        if (attempt < retries) await wait(retryDelayMs);
+      }
+    }
+    throw new Error(`index quote failed: ${lastError?.message ?? "unknown"}`);
+  }));
+}
+
 function optionalNumber(value) {
   const number = Number(value);
   return value === null || value === undefined || value === "-" || !Number.isFinite(number) ? null : number;
