@@ -191,6 +191,17 @@ export function buildDailySummary(snapshot) {
     lines.push(`• 破高动态：${nameOf(newHigh)} 盘中触及 52 周高点`);
   }
   lines.push("");
+  // 消息面速览(焦点股当日新闻,标题须含公司名)
+  const newsItems = top.filter((item) => Array.isArray(item.news) && item.news.length > 0).slice(0, 4);
+  if (newsItems.length > 0) {
+    lines.push("");
+    lines.push("消息面速览");
+    for (const item of newsItems) {
+      const article = item.news[0];
+      const title = article.title.length > 34 ? `${article.title.slice(0, 34)}…` : article.title;
+      lines.push(`• ${nameOf(item)}：${title}（${article.mediaName}）`);
+    }
+  }
   lines.push(`数据来源：港股通收盘正式快照（截至 ${hhmm}）`);
   return lines.join("\n");
 }
