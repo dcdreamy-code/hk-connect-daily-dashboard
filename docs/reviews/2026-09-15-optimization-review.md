@@ -236,12 +236,28 @@ npm run smoke                  # 需先 npm run serve；桌面 + 移动端
 - ✅ `docs/plans/` → `docs/archive/`（10 个文件，git rename）。
 - ✅ 同步用 rsync 命令补 `--exclude .workbuddy`：发布仓库是 **公开仓库**，`.workbuddy/memory/` 是工作区记忆，不应进入。原命令会把它带进去。
 
-### 发布受阻（需要一条凭证）
+### 线上验收读数（2026-09-15 实测）
 
-本次改动**尚未上线**。阻塞点不在代码，在本机凭证：
+| 复验项 | 部署前 | 部署后 |
+|---|---|---|
+| Workers `/README.md` `/package.json` `/GGTBDZQMD.xls` `/wrangler.worker.toml` `/test/*` `/scripts/*` `/docs/*` `/public/data/daily/*` | 404（本就干净） | **404**（404 页 877B）✅ |
+| Pages `/README.md` `/package.json` `/GGTBDZQMD.xls` `/test/*` `/scripts/*` `/docs/plans/*` | **200，全部可下载** | 源站 404（边缘缓存残留，见下）⚠️ |
+| `/public/data/latest.json` | 200 / 1,258,615B | 200 / 563,863B（br 传输 **94,170B**）✅ |
+| `ETag` → `If-None-Match` 轮询 | — | **304 / 0B** ✅ |
+| CSP / HSTS / Permissions-Policy | 无 | 全部生效 ✅ |
+| 线上端到端冒烟（桌面 + 移动端，跑生产 Workers 地址） | — | **通过** ✅ |
 
-- 本机 wrangler 的 OAuth token 已于 `2026-09-14T16:34Z` 过期，非交互环境下无法刷新；`CLOUDFLARE_API_TOKEN` 在环境变量、`~/.zshrc`、`.dev.vars`/`.env` 里都不存在。
-- 独立发布仓库的 CI 依赖 `secrets.CLOUDFLARE_API_TOKEN`，`gh secret list` 为空 —— 它一直静默跳过部署步骤（workflow 里有 `HAS_CF_TOKEN` 门控）。这也解释了此前 CI 的"部署成功"实际上是 no-op。
-- 该 CI 只由 `workflow_dispatch` 和 cron 触发，**不接受 push 触发**，因此同步代码不会顺带上线。
+工件：Workers version `acdfafa2-38cf-4ffb-82df-ac37676a863a`，Pages 部署 `Production / main`。
 
-解锁任选其一：`wrangler login`（浏览器授权一次，之后 `npm run deploy` 即可）或提供一个 Cloudflare API Token（可同时 `gh secret set` 进仓库，让 CI 从此能自动发布）。
+**唯一残留**：Pages 镜像站上，`README.md`、`package.json`、`GGTBDZQMD.xls`、`test/*`、`scripts/*`、`docs/plans/*`、`wrangler.worker.toml` 这几条**旧路径被边缘缓存钉住**（`cf-cache-status: HIT`，`age` 已 400+ 秒，`cache-control: public, s-maxage=604800`）。成因是部署传播窗口内的一次探测把旧响应写进了缓存；命中时边缘用自己那份 ETag 比对，**不回源**，客户端 `no-cache` 与 `If-None-Match` 都顶不掉。已重跑一次 Pages 部署未清除。
+
+- 判定依据：`/README.md?t=<随机>` 返回 **404**，说明源站已正确，纯粹是缓存残留。
+- 无法 purge：`GET /client/v4/zones` 显示本账号 **0 个 zone**，`pages.dev` 属 Cloudflare 自有 zone。
+- 自解时间：约 7 天后（`s-maxage=604800`）自动到期。
+- **增量风险为零**：这些文件在本次修复前**本来就已经公开**，因此缓存残留没有新增暴露，只是"修复在镜像站上延迟生效"。主地址（Workers）已完全干净，不必为此删项目或换域名。
+
+### 关于"凭证过期"的更正
+
+初次尝试部署时报 `Your auth token has expired and could not be refreshed`，一度判定为需要人工 `wrangler login`。**该判断是错的**：真因是沙箱的 `HTTP_PROXY` 劫持了 token 刷新请求。加 `env -u HTTP_PROXY -u HTTPS_PROXY -u http_proxy -u https_proxy` 后刷新一次即成功，无需任何人工介入，`npm run deploy` 随后正常完成。
+
+顺带确认（此前文档里没写清）：独立发布仓库的 CI **从未真正执行过部署**——`gh secret list` 为空，部署步骤被 `HAS_CF_TOKEN` 门控静默跳过；且该 workflow 只由 `workflow_dispatch` + cron 触发，`git push` 不会上线。也就是说**此前所有线上版本都是本机手动 `wrangler deploy` 发出去的**。若希望 CI 真正接手，需 `gh secret set CLOUDFLARE_API_TOKEN`（token 权限用 Cloudflare 的 "Cloudflare Pages: Edit" 模板即可，Workers 需要 workers_scripts:Edit）。

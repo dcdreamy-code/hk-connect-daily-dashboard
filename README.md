@@ -101,13 +101,39 @@ AH 身份映射不随日行情重复请求。`.github/workflows/refresh-ah.yml` 
 
 三条发布路径互为冗余（每次同时更新两个地址）：
 
-- **手动发布**：`npm run deploy`（依赖本机 `wrangler login`）。
+- **手动发布**：`npm run deploy`（依赖本机 `wrangler login`）。**这是目前唯一真正生效的路径。**
 - **本地定时发布**：`npm run serve` 会在工作日 16:30/16:45 执行 `publish:daily`（刷新 + 校验 + 出图 + 部署）。
-- **CI 自动发布**：在 GitHub 仓库配置 `CLOUDFLARE_API_TOKEN` secret（Cloudflare Dashboard → My Profile → API Tokens，权限用 "Cloudflare Pages: Edit" 模板）后，每日收盘工作流在提交快照后会自动构建并部署；未配置该 secret 时此步骤自动跳过，不影响数据刷新。
+- **CI 自动发布**：在 GitHub 仓库配置 `CLOUDFLARE_API_TOKEN` secret（Cloudflare Dashboard → My Profile → API Tokens，权限用 "Cloudflare Pages: Edit" 模板，另需 workers_scripts:Edit 才能发 Workers）后，每日收盘工作流在提交快照后会自动构建并部署；未配置该 secret 时此步骤自动跳过，不影响数据刷新。
+
+> 截至 2026-09-15，该 secret **未配置**（`gh secret list` 为空），所以 CI 的部署步骤一直在静默跳过——线上版本全部由本机 `npm run deploy` 发出。另外该 workflow 只由 `workflow_dispatch` 与 cron 触发，`git push` 不会触发部署。
 
 `*.workers.dev` 与 `*.pages.dev` 的可达性因地区运营商而异，以实测为准；正式传播建议绑定自有域名（免费版支持，无需改代码）。根目录 `_headers` 提供安全响应头（含 CSP）与缓存策略，并对 `latest.json` 与传播图设置不缓存，读者始终拿到最新收盘数据。`404.html` 让不存在的路径返回真正的 404，而不是静默回退成首页。
 
-> 改完发布相关配置后，验收方式是直接打线上路径：那些不该公开的文件应全部返回 404，`/public/data/latest.json` 应保持在约 0.6MB 以内。
+### 发布后验收
+
+改完发布面必须**直接打线上路径**验收，不能只看部署日志成功：
+
+```bash
+# 泄漏路径应全部 404
+for p in /README.md /package.json /GGTBDZQMD.xls /test/ui.test.mjs /scripts/refresh-data.mjs; do
+  curl -s -o /dev/null -w "%{http_code} %{size_download}  $p\n" "https://hk-gmx.dcdreamy.workers.dev$p"
+done
+curl -s -o /dev/null -w "latest.json: %{http_code} %{size_download}B\n" \
+  "https://hk-gmx.dcdreamy.workers.dev/public/data/latest.json"   # 原始约 0.56MB；--compressed 约 94KB
+
+# 协商缓存：带 ETag 轮询应返回 304 / 0B
+ET=$(curl -sI "https://hk-gmx.dcdreamy.workers.dev/public/data/latest.json" | grep -i '^etag:' | tr -d '\r' | cut -d' ' -f2-)
+curl -s -o /dev/null -w "If-None-Match: %{http_code} %{size_download}B\n" \
+  -H "If-None-Match: $ET" "https://hk-gmx.dcdreamy.workers.dev/public/data/latest.json"
+```
+
+**注意 Pages 镜像站的边缘缓存**：新部署刚生效的几十秒内若访问了某个旧路径，边缘会把**旧响应**连同 `cache-control: public, s-maxage=604800` 一起缓存 7 天；此后命中缓存时边缘只用自己的 ETag 比对，**不回源**，客户端 `no-cache` 也顶不掉，本账号又无 zone 权限 purge。判断"源站改了没"要**换 key** 探测：
+
+```bash
+curl -s -o /dev/null -w "%{http_code}\n" "https://hk-gmx.pages.dev/README.md?t=$RANDOM"   # 404 = 源站已正确
+```
+
+也就是说：部署完成后**不要立刻去点那些刚下线的路径**，否则会把旧内容钉进缓存。先等一两分钟，或只用带随机查询串的地址探测。
 
 ### 与工作台同步
 
