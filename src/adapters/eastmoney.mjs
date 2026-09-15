@@ -122,7 +122,7 @@ export async function fetchEastmoneyShortSelling({
   return shortByCode;
 }
 
-const SOUTHTBOUND_LEGS = ["002", "004"];
+const SOUTHBOUND_LEGS = ["002", "004"];
 
 export async function fetchSouthboundFlow({
   fetchImpl = fetch,
@@ -130,7 +130,7 @@ export async function fetchSouthboundFlow({
   retries = 1,
   retryDelayMs = 800,
 } = {}) {
-  const legs = await Promise.all(SOUTHTBOUND_LEGS.map(async (mutualType) => {
+  const legs = await Promise.all(SOUTHBOUND_LEGS.map(async (mutualType) => {
     const url = new URL(DATACENTER_ENDPOINT);
     url.search = new URLSearchParams({
       reportName: "RPT_MUTUAL_DEAL_HISTORY",

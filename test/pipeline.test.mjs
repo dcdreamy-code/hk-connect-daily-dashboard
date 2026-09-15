@@ -85,7 +85,10 @@ test("buildSnapshot adds profiles and a market summary", () => {
   assert.equal(snapshot.market.decliners, 1);
   assert.equal(snapshot.market.turnover, 14492325440);
   assert.equal(snapshot.rankings.turnover[0].industry, "互联网");
-  assert.equal(snapshot.rankings.turnover[0].introduction, "社交与数字内容平台。");
+  // 简介是静态长文本，刻意不进快照：页面展开详情时按需读 company-profiles.json。
+  // 同一段文字曾内嵌于 securities(660) + 三个榜单(各 50)，占快照磁盘体积 53%。
+  assert.equal("introduction" in snapshot.rankings.turnover[0], false);
+  assert.equal("introduction" in snapshot.securities.find((item) => item.code === "00700"), false);
   assert.equal(snapshot.rankings.turnover[0].ah.aCode, "600700");
   assert.equal(snapshot.securities.length, 3);
   assert.equal(snapshot.securities.find((item) => item.code === "00700").ah.aCode, "600700");

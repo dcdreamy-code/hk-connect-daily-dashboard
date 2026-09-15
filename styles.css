@@ -325,3 +325,15 @@ footer strong{color:var(--ink);font-weight:600}
 }
 
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* 404 页（原样复用刊头配色，避免纯白默认页） */
+.not-found{max-width:640px;margin:0 auto;padding:96px 24px 120px;text-align:left}
+.not-found-code{margin:0 0 4px;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.28em;color:var(--copper)}
+.not-found h1{margin:0 0 14px;font-family:var(--serif);font-size:34px;font-weight:700;letter-spacing:.02em;color:var(--ink)}
+.not-found p{margin:0 0 12px;font-size:14px;line-height:1.75;color:var(--muted)}
+.not-found a{color:var(--copper-deep);font-weight:600;text-decoration:none;border-bottom:1px solid var(--gold)}
+.not-found a:hover{border-bottom-color:var(--copper)}
+@media(max-width:760px){
+  .not-found{padding:64px 18px 80px}
+  .not-found h1{font-size:26px}
+}

@@ -94,8 +94,10 @@ function enrich(quote, profiles, ahPairs, shortSelling, week52, newsByCode) {
   const week = week52[quote.code] ?? null;
   return {
     ...quote,
+    // 公司简介是静态长文本，刻意不进快照：它曾被写入 securities(660) 和三个榜单(各 50)
+    // 导致同一段文字在一份快照里重复约 810 词、占磁盘体积 53%。页面改为展开详情时
+    // 按需读取 data/company-profiles.json（同一份资料，可长缓存）。
     industry: profile.industry ?? quote.industry ?? null,
-    introduction: profile.introduction ?? null,
     ah: ahPairs[quote.code] ?? null,
     shortRatio: short?.shortRatio ?? null,
     shortAmt: short?.shortAmt ?? null,
@@ -234,7 +236,7 @@ export function buildSnapshot({
   const securities = enrichList(eligible);
 
   return {
-    schemaVersion: 2,
+    schemaVersion: 3,
     tradeDate,
     generatedAt,
     marketStatus,

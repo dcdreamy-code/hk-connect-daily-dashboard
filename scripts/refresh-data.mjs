@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchEastmoneyShortSelling, fetchEastmoneyStockNews, fetchEastmoneyUniverseQuotes, fetchSouthboundFlow } from "../src/adapters/eastmoney.mjs";
 import { fetchTencent52wRange } from "../src/adapters/tencent.mjs";
+import { hongKongDate } from "../src/lib/market-clock.mjs";
 import { backfillEnhancements, buildContinuity, buildSnapshot, rankableUniverse, sameMarketSnapshot } from "../src/lib/pipeline.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -29,15 +30,46 @@ function resolveTradeDate(quotes) {
   return dateInHongKong(Math.max(...timestamps));
 }
 
+// 盘中区间必须与 src/lib/market-clock.mjs 一致：09:30–12:00 / 13:00–16:10。
+// 这里原先是 16:15，会在 16:10–16:15 之间产出与实际不符的 intraday 快照。
+const INTRADAY_CLOSE_HHMM = "16:10";
+
 function marketStatus(tradeDate, now = new Date()) {
-  const date = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Hong_Kong" }).format(now);
   const time = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Asia/Hong_Kong",
     hour: "2-digit",
     minute: "2-digit",
     hour12: false,
   }).format(now);
-  return tradeDate === date && time < "16:15" ? "intraday" : "close";
+  return tradeDate === hongKongDate(now) && time < INTRADAY_CLOSE_HHMM ? "intraday" : "close";
+}
+
+// 归档默认全部保留（Git 历史本身有价值，且部署时已不再发布它们）。
+// 若工作区体积需要控制，设 ARCHIVE_RETENTION_DAYS=60 只保留最近 N 个交易日。
+async function pruneArchives(tradeDate, retentionDays) {
+  if (!Number.isInteger(retentionDays) || retentionDays <= 0) return [];
+  const cutoff = new Date(`${tradeDate}T00:00:00Z`);
+  cutoff.setUTCDate(cutoff.getUTCDate() - retentionDays);
+  const cutoffDate = cutoff.toISOString().slice(0, 10);
+  const targets = [
+    [path.join(outputDir, "daily"), /^\d{4}-\d{2}-\d{2}\.json$/],
+    [path.join(root, "public", "images", "daily"), /^\d{4}-\d{2}-\d{2}\.png$/],
+  ];
+  const removed = [];
+  for (const [dir, pattern] of targets) {
+    let files = [];
+    try {
+      files = await fs.readdir(dir);
+    } catch {
+      continue;
+    }
+    for (const file of files) {
+      if (!pattern.test(file) || file.slice(0, 10) >= cutoffDate) continue;
+      await fs.rm(path.join(dir, file), { force: true });
+      removed.push(file);
+    }
+  }
+  return removed;
 }
 
 async function atomicWrite(filePath, value) {
@@ -201,5 +233,13 @@ if (focusCodes.length > 0) {
 
 await fs.mkdir(path.join(outputDir, "daily"), { recursive: true });
 await atomicWrite(path.join(outputDir, "daily", `${tradeDate}.json`), snapshot);
-await atomicWrite(path.join(outputDir, "latest.json"), snapshot);
-console.log(`Generated ${tradeDate}: ${snapshot.coverage.matched}/${snapshot.coverage.universe} securities matched.`);
+const latestPath = path.join(outputDir, "latest.json");
+await atomicWrite(latestPath, snapshot);
+const { size } = await fs.stat(latestPath);
+console.log(`Generated ${tradeDate}: ${snapshot.coverage.matched}/${snapshot.coverage.universe} securities matched. Snapshot ${(size / 1048576).toFixed(2)} MB.`);
+
+const retention = Number(process.env.ARCHIVE_RETENTION_DAYS ?? 0);
+if (Number.isInteger(retention) && retention > 0) {
+  const removed = await pruneArchives(tradeDate, retention);
+  console.log(`Archive retention ${retention} days: removed ${removed.length} file(s)${removed.length ? ` (${removed.join(", ")})` : ""}.`);
+}

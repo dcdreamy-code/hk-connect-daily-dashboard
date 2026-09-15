@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import test from "node:test";
-import { buildDailyInsights, buildShareImageSvg } from "../src/lib/share-image.mjs";
+import { buildDailyInsights } from "../src/lib/insights.mjs";
+import { buildShareImageSvg } from "../src/lib/share-image.mjs";
 
 const snapshot = JSON.parse(await fs.readFile(new URL("../public/data/latest.json", import.meta.url)));
 

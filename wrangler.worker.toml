@@ -1,5 +1,8 @@
 name = "hk-gmx"
 compatibility_date = "2026-09-01"
 
+# 只发布 dist/（由 scripts/build-pages.mjs 生成）。两条发布路径共用同一份输出，
+# 避免再出现"某条 ignore 规则只对其中一个目标生效"导致的发布面漂移。
 [assets]
-directory = "."
+directory = "dist"
+not_found_handling = "404-page"

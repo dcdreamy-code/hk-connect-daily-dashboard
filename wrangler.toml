@@ -1,2 +1,4 @@
 name = "hk-gmx"
-pages_build_output_dir = "."
+# Pages 直传不读 .assetsignore。用独立输出目录而不是仓库根，
+# 否则 README/docs/test/scripts/package.json/原始数据会被一起发到公网。
+pages_build_output_dir = "dist"

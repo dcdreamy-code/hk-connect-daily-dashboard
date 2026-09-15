@@ -1,3 +1,16 @@
+import { fetchEastmoneyUniverseQuotes } from "./src/adapters/eastmoney.mjs";
+import { buildDailySummary } from "./src/lib/daily-summary.mjs";
+import { compactHkd, formatPercent, formatRate } from "./src/lib/format.mjs";
+import { average, buildDailyInsights, median } from "./src/lib/insights.mjs";
+import {
+  dataFreshness,
+  hongKongDate,
+  liveMarketPhase,
+  shouldRefreshAtClose,
+  shouldRefreshLive,
+} from "./src/lib/market-clock.mjs";
+import { buildSnapshot, carryForwardEnhancements, normalizeCode, rankableUniverse } from "./src/lib/pipeline.mjs";
+
 const metricCopy = {
   turnover: "成交额",
   changePercent: "涨跌幅",
@@ -7,18 +20,7 @@ const metricCopy = {
 
 export function formatSignedHkd(value) {
   if (!Number.isFinite(value)) return "--";
-  return `${value > 0 ? "+" : value < 0 ? "-" : ""}${formatHkd(Math.abs(value))}`;
-}
-
-export function formatRate(value) {
-  return Number.isFinite(value) ? `${value.toFixed(2)}%` : "--";
-}
-
-export function formatHkd(value) {
-  if (!Number.isFinite(value)) return "--";
-  if (Math.abs(value) >= 100_000_000) return `${(value / 100_000_000).toFixed(2)}亿`;
-  if (Math.abs(value) >= 10_000) return `${(value / 10_000).toFixed(1)}万`;
-  return new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 0 }).format(value);
+  return `${value > 0 ? "+" : value < 0 ? "-" : ""}${compactHkd(Math.abs(value))}`;
 }
 
 export function turnoverShare(value, leaderValue) {
@@ -33,11 +35,7 @@ function formatPrice(value) {
 
 function formatVolume(value) {
   if (!Number.isFinite(value)) return "--";
-  return `${formatHkd(value)}股`;
-}
-
-export function selectRanking(rankings, mode) {
-  return rankings?.[mode] ?? rankings?.turnover ?? [];
+  return `${compactHkd(value)}股`;
 }
 
 export function sortSecurities(items, metric, direction = "desc", limit = 50) {
@@ -59,16 +57,6 @@ export function filterRanking(items, query) {
   return items.filter((item) => `${item.code} ${item.name}`.toLocaleLowerCase("zh-CN").includes(normalized));
 }
 
-function average(values) {
-  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
-}
-
-function median(values) {
-  if (!values.length) return null;
-  const sorted = values.toSorted((left, right) => left - right);
-  const middle = Math.floor(sorted.length / 2);
-  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
-}
 
 export function summarizeRanking(items) {
   const turnovers = items.map((item) => item.turnover).filter(Number.isFinite);
@@ -217,12 +205,14 @@ function visibleColumnCount() {
     .filter((th) => getComputedStyle(th).display !== "none").length || 9;
 }
 
-function detailRow(item) {
+// 列数只在每次渲染时算一次并透传进来：原先每个详情行各自调用 visibleColumnCount()，
+// 50 行 × 8 个表头 = 每次渲染约 400 次 getComputedStyle，会强制样式重算。
+function detailRow(item, columnCount) {
   const row = document.createElement("tr");
   row.className = "detail-row";
   row.hidden = true;
   const cell = document.createElement("td");
-  cell.colSpan = visibleColumnCount();
+  cell.colSpan = columnCount;
   const panel = document.createElement("div");
   panel.className = "detail-panel";
   const industryBlock = document.createElement("div");
@@ -238,12 +228,13 @@ function detailRow(item) {
   introLabel.className = "detail-label";
   introLabel.textContent = "公司简介";
   const intro = document.createElement("p");
-  intro.textContent = item.introduction || "暂无公司简介";
+  intro.className = "introduction";
+  intro.textContent = item.introduction || "正在读取公司简介…";
   introBlock.append(introLabel, intro);
   const facts = document.createElement("div");
   facts.className = "detail-facts";
   facts.append(
-    detailFact("总市值", `${formatHkd(item.marketCap)} 港币`),
+    detailFact("总市值", `${compactHkd(item.marketCap)} 港币`),
     detailFact("换手率", formatRate(item.turnoverRate)),
     detailFact("振幅", formatRate(item.amplitude)),
     detailFact("成交量", formatVolume(item.volume)),
@@ -251,7 +242,7 @@ function detailRow(item) {
     detailFact("市盈率 TTM", Number.isFinite(item.peTtm) ? item.peTtm.toFixed(2) : "--"),
     detailFact("市净率", Number.isFinite(item.pb) ? item.pb.toFixed(2) : "--"),
     detailFact("沽空比率", Number.isFinite(item.shortRatio) ? formatRate(item.shortRatio) : "--"),
-    detailFact("沽空金额", Number.isFinite(item.shortAmt) ? `${formatHkd(item.shortAmt)} 港币` : "--"),
+    detailFact("沽空金额", Number.isFinite(item.shortAmt) ? `${compactHkd(item.shortAmt)} 港币` : "--"),
     detailFact("52周最高", Number.isFinite(item.high52) ? formatPrice(item.high52) : "--"),
     detailFact("52周最低", Number.isFinite(item.low52) ? formatPrice(item.low52) : "--"),
   );
@@ -307,7 +298,28 @@ function detailRow(item) {
   return row;
 }
 
-function createDataRow(item, rank, { showContinuity = false } = {}) {
+// 公司简介是静态长文本，已不再内嵌进每份快照（曾占快照磁盘体积 53%）。
+// 首次展开详情时按需取一次并复用同一个 Promise，浏览器 HTTP 缓存兜底。
+let profilesPromise = null;
+function loadProfiles() {
+  if (!profilesPromise) {
+    profilesPromise = fetch("data/company-profiles.json")
+      .then((response) => (response.ok ? response.json() : {}))
+      .catch((error) => {
+        console.warn("Company profiles unavailable", error);
+        return {};
+      });
+  }
+  return profilesPromise;
+}
+
+async function fillIntroduction(item, element) {
+  if (!element || item.introduction) return;
+  const profiles = await loadProfiles();
+  element.textContent = profiles[item.code]?.introduction || "暂无公司简介";
+}
+
+function createDataRow(item, rank, { showContinuity = false, columnCount = 9 } = {}) {
   const row = document.createElement("tr");
   row.className = "data-row";
   row.tabIndex = 0;
@@ -316,15 +328,26 @@ function createDataRow(item, rank, { showContinuity = false } = {}) {
   securityCell(row, item, showContinuity);
   appendCell(row, formatPrice(item.close), "numeric optional-col");
   appendCell(row, formatPercent(item.changePercent), `numeric ${trendClass(item.changePercent)}`);
-  appendCell(row, formatHkd(item.turnover), "numeric");
-  appendCell(row, formatHkd(item.marketCap), "numeric optional-col");
+  appendCell(row, compactHkd(item.turnover), "numeric");
+  appendCell(row, compactHkd(item.marketCap), "numeric optional-col");
   appendCell(row, formatRate(item.turnoverRate), "numeric optional-col");
   appendCell(row, formatRate(item.amplitude), "numeric optional-col");
-  const detail = detailRow(item);
+  // 详情行按需构建：50 行全预建会产生约 1,250 个永远隐藏的 DOM 节点，
+  // 而 renderRows 会被搜索按键、排序切换和每次轮询触发。
+  let detail = null;
   const toggle = () => {
-    const expanded = row.getAttribute("aria-expanded") === "true";
-    row.setAttribute("aria-expanded", String(!expanded));
-    detail.hidden = expanded;
+    if (row.getAttribute("aria-expanded") === "true") {
+      row.setAttribute("aria-expanded", "false");
+      if (detail) detail.hidden = true;
+      return;
+    }
+    if (!detail) {
+      detail = detailRow(item, columnCount);
+      row.after(detail);
+      fillIntroduction(item, detail.querySelector(".introduction"));
+    }
+    row.setAttribute("aria-expanded", "true");
+    detail.hidden = false;
   };
   row.addEventListener("click", toggle);
   row.addEventListener("keydown", (event) => {
@@ -333,7 +356,7 @@ function createDataRow(item, rank, { showContinuity = false } = {}) {
       toggle();
     }
   });
-  return [row, detail];
+  return row;
 }
 
 function dashboard() {
@@ -381,9 +404,10 @@ function dashboard() {
       ? filterRanking(sortSecurities(eligible, state.metric, state.direction, eligible.length), state.query).slice(0, 50)
       : fullRanking;
     const items = searchPool;
+    const columnCount = visibleColumnCount();
     elements.body.replaceChildren();
     const showContinuity = state.metric === "turnover" && state.direction === "desc";
-    items.forEach((item, index) => elements.body.append(...createDataRow(item, index + 1, { showContinuity })));
+    items.forEach((item, index) => elements.body.append(createDataRow(item, index + 1, { showContinuity, columnCount })));
     const metricLabel = metricCopy[state.metric];
     const directionLabel = state.direction === "desc" ? "由高到低" : "由低到高";
     elements.title.textContent = `${metricLabel} Top 50`;
@@ -400,8 +424,8 @@ function dashboard() {
   }
 
   function renderSummary(summary) {
-    setSummaryValue("#average-turnover", `${formatHkd(summary.averageTurnover)} 港币`);
-    setSummaryValue("#median-turnover", `${formatHkd(summary.medianTurnover)} 港币`);
+    setSummaryValue("#average-turnover", `${compactHkd(summary.averageTurnover)} 港币`);
+    setSummaryValue("#median-turnover", `${compactHkd(summary.medianTurnover)} 港币`);
     setSummaryValue("#average-change", formatPercent(summary.averageChangePercent), summary.averageChangePercent);
     setSummaryValue("#median-change", formatPercent(summary.medianChangePercent), summary.medianChangePercent);
     setSummaryValue(
@@ -412,8 +436,8 @@ function dashboard() {
       "#change-range",
       `${formatPercent(summary.maxChangePercent)} / ${formatPercent(summary.minChangePercent)}`,
     );
-    setSummaryValue("#average-market-cap", `${formatHkd(summary.averageMarketCap)} 港币`);
-    setSummaryValue("#median-market-cap", `${formatHkd(summary.medianMarketCap)} 港币`);
+    setSummaryValue("#average-market-cap", `${compactHkd(summary.averageMarketCap)} 港币`);
+    setSummaryValue("#median-market-cap", `${compactHkd(summary.medianMarketCap)} 港币`);
     setSummaryValue("#ah-count", `${summary.ahCount} 只`);
   }
 
@@ -431,7 +455,7 @@ function dashboard() {
     document.querySelector("#status-dot").classList.toggle("close", snapshot.marketStatus !== "intraday");
     document.querySelector("#advancers").textContent = snapshot.market.advancers;
     document.querySelector("#decliners").textContent = snapshot.market.decliners;
-    document.querySelector("#market-turnover").textContent = `${formatHkd(snapshot.market.turnover)} 港币`;
+    document.querySelector("#market-turnover").textContent = `${compactHkd(snapshot.market.turnover)} 港币`;
     document.querySelector("#coverage").textContent = `${(snapshot.coverage.ratio * 100).toFixed(1)}%`;
     document.querySelector("#coverage-bar").style.width = `${snapshot.coverage.ratio * 100}%`;
     document.querySelector("#source-note").textContent = `行情：${snapshot.source.market}。公司资料：${snapshot.source.profiles}。`;
@@ -445,7 +469,7 @@ function dashboard() {
     document.querySelector("#issue-number").textContent = snapshot.tradeDate.replaceAll("-", "").slice(2);
     document.querySelector("#cover-advancers").textContent = snapshot.market.advancers;
     document.querySelector("#cover-decliners").textContent = snapshot.market.decliners;
-    document.querySelector("#cover-turnover").textContent = formatHkd(snapshot.market.turnover);
+    document.querySelector("#cover-turnover").textContent = compactHkd(snapshot.market.turnover);
     const southbound = document.querySelector("#cover-southbound");
     southbound.textContent = formatSignedHkd(snapshot.market.southboundNetBuy);
     southbound.className = trendClass(snapshot.market.southboundNetBuy);
@@ -479,9 +503,33 @@ function dashboard() {
   function renderFocusRanking(items) {
     const container = document.querySelector("#focus-ranking");
     const leaderTurnover = items[0]?.turnover;
+    // 用 DOM 构建而非 innerHTML：item.name 来自外部行情接口，拼字符串会引入注入口，
+    // 且行内 style 属性会被严格 CSP 拦掉（宽度会失效）。改为 textContent + CSSOM。
     container.replaceChildren(...items.map((item, index) => {
       const row = document.createElement("li");
-      row.innerHTML = `<span class="focus-rank">${String(index + 1).padStart(2, "0")}</span><a href="${xueqiuUrl(item.code)}" target="_blank" rel="noopener noreferrer"><strong>${item.name}</strong><small>${item.code}.HK</small></a><span class="focus-change ${trendClass(item.changePercent)}">${formatPercent(item.changePercent)}</span><span class="focus-bar"><i style="width:${turnoverShare(item.turnover, leaderTurnover)}%"></i></span><b>${formatHkd(item.turnover)}</b>`;
+      const rank = document.createElement("span");
+      rank.className = "focus-rank";
+      rank.textContent = String(index + 1).padStart(2, "0");
+      const link = document.createElement("a");
+      link.href = xueqiuUrl(item.code);
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      const name = document.createElement("strong");
+      name.textContent = item.name;
+      const code = document.createElement("small");
+      code.textContent = `${item.code}.HK`;
+      link.append(name, code);
+      const change = document.createElement("span");
+      change.className = `focus-change ${trendClass(item.changePercent)}`.trim();
+      change.textContent = formatPercent(item.changePercent);
+      const bar = document.createElement("span");
+      bar.className = "focus-bar";
+      const fill = document.createElement("i");
+      fill.style.width = `${turnoverShare(item.turnover, leaderTurnover)}%`;
+      bar.append(fill);
+      const turnover = document.createElement("b");
+      turnover.textContent = compactHkd(item.turnover);
+      row.append(rank, link, change, bar, turnover);
       return row;
     }));
   }
@@ -544,7 +592,7 @@ function dashboard() {
     if (!state.liveResources) {
       state.liveResources = Promise.all([
         fetch("data/universe.json").then((response) => response.json()),
-        fetch("data/company-profiles.json").then((response) => response.json()),
+        loadProfiles(),
         fetch("public/data/ah-pairs.json").then((response) => response.json()),
       ]).then(([universe, profiles, ahData]) => ({ universe: rankableUniverse(universe), profiles, ahPairs: ahData.pairs }));
     }
@@ -610,7 +658,9 @@ function dashboard() {
   async function checkStaticSnapshot() {
     if (document.visibilityState !== "visible") return;
     try {
-      const response = await fetch(`public/data/latest.json?ts=${Date.now()}`, { cache: "no-store" });
+      // cache:"no-cache" = 允许存副本但每次协商。原先的 ?ts= 时间戳 + no-store 会双重绕过缓存，
+      // 让服务端的 ETag/304 完全失效，每次轮询都整包重下（实测约 389KB）。
+      const response = await fetch("public/data/latest.json", { cache: "no-cache" });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const candidate = await response.json();
       if (!isNewerSnapshot(state.baseSnapshot, candidate)) return;
@@ -704,7 +754,7 @@ function dashboard() {
     if (state.snapshot) renderFreshness(state.snapshot);
   }, 15_000);
 
-  fetch(`public/data/latest.json?ts=${Date.now()}`, { cache: "no-store" })
+  fetch("public/data/latest.json", { cache: "no-cache" })
     .then((response) => {
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return response.json();
@@ -727,17 +777,3 @@ function dashboard() {
 }
 
 if (typeof document !== "undefined") dashboard();
-import { fetchEastmoneyUniverseQuotes } from "./src/adapters/eastmoney.mjs";
-import { formatPercent } from "./src/lib/format.mjs";
-import { buildDailySummary } from "./src/lib/daily-summary.mjs";
-
-export { formatPercent };
-import { buildSnapshot, carryForwardEnhancements, normalizeCode, rankableUniverse } from "./src/lib/pipeline.mjs";
-import { buildDailyInsights } from "./src/lib/share-image.mjs";
-import {
-  dataFreshness,
-  hongKongDate,
-  liveMarketPhase,
-  shouldRefreshAtClose,
-  shouldRefreshLive,
-} from "./src/lib/market-clock.mjs";

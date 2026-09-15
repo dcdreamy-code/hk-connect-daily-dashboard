@@ -8,6 +8,8 @@ from playwright.sync_api import sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
+BASE_URL = os.getenv("SMOKE_BASE_URL", "http://127.0.0.1:4173")
+
 
 
 def assert_nonblank(path: Path) -> None:
@@ -19,6 +21,12 @@ def assert_nonblank(path: Path) -> None:
 def exercise(page, screenshot_name: str, test_live: bool = False, test_static_poll: bool = False) -> None:
     console_errors = []
     page.on("console", lambda message: console_errors.append(message.text) if message.type == "error" else None)
+    # 外部字体不是被测对象：无外网环境（本地沙箱 / CI）下它会失败并污染 console 断言。
+    # 页面自身已声明回退字体栈，这里把外部样式表打桩，让冒烟测试可离线复跑。
+    page.route(
+        "https://fonts.googleapis.com/**",
+        lambda route: route.fulfill(status=200, content_type="text/css", body=""),
+    )
     if test_static_poll:
         snapshot = json.loads((ROOT / "public" / "data" / "latest.json").read_text())
         initial = copy.deepcopy(snapshot)
@@ -39,7 +47,7 @@ def exercise(page, screenshot_name: str, test_live: bool = False, test_static_po
               nativeSetInterval(callback, delay === 60000 ? 100 : delay, ...args);
         """)
     page.goto(
-        "http://127.0.0.1:4173",
+        BASE_URL,
         wait_until="domcontentloaded" if test_static_poll else "networkidle",
     )
     page.locator("#table-wrap:not([hidden])").wait_for()
@@ -56,7 +64,8 @@ def exercise(page, screenshot_name: str, test_live: bool = False, test_static_po
     assert page.locator("#concentration-value").inner_text().endswith("%")
     summary_text = page.locator("#summary-text").inner_text()
     assert "数据来源：港股通收盘正式快照" in summary_text
-    assert "$" in summary_text and "南向资金" in summary_text
+    # 文稿的分节格式：项目符号 + 必要字段。
+    assert "•" in summary_text and "南向资金" in summary_text
     if page.viewport_size["width"] > 760:
         headers = page.locator("thead").inner_text()
         assert all(label in headers for label in ["总市值", "换手率", "振幅"])
@@ -124,13 +133,34 @@ def exercise(page, screenshot_name: str, test_live: bool = False, test_static_po
     first_row.locator(".rank").click()
     assert first_row.get_attribute("aria-expanded") == "true"
     assert page.locator("tr.detail-row:not([hidden])").count() == 1
+    # 公司简介不再内嵌在快照里，改为展开时按需读 company-profiles.json。
+    page.wait_for_function(
+        """() => {
+            const el = document.querySelector("tr.detail-row:not([hidden]) .introduction");
+            return el && el.textContent.trim() && el.textContent.trim() !== "正在读取公司简介…";
+        }""",
+        timeout=5_000,
+    )
+    # 详情行是懒构建的：展开才插入 DOM，且只插一行。
+    assert page.locator("tr.detail-row").count() == 1
+
+    if page.viewport_size["width"] > 760:
+        # 焦点条宽度由 CSSOM 设置。若页面被严格 CSP 限制或改回内联 style，
+        # 这里会退化成 0px —— 这是最容易静默坏掉的一处。
+        bar_widths = page.eval_on_selector_all(
+            "#focus-ranking .focus-bar i",
+            "els => els.map(el => parseFloat(getComputedStyle(el).width))",
+        )
+        assert len(bar_widths) == 10, bar_widths
+        assert all(width > 0 for width in bar_widths), bar_widths
 
     dimensions = page.evaluate("({width: document.documentElement.scrollWidth, viewport: innerWidth})")
     assert dimensions["width"] <= dimensions["viewport"], dimensions
     assert not console_errors, console_errors
 
     screenshot = ROOT / "outputs" / screenshot_name
-    screenshot.parent.mkdir(exist_ok=True)
+    if not screenshot.parent.exists():
+        screenshot.parent.mkdir(parents=True, exist_ok=True)
     page.screenshot(path=str(screenshot), full_page=True)
     assert_nonblank(screenshot)
 

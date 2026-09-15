@@ -12,7 +12,9 @@
     "daily": "npm run refresh && npm run validate && npm run image && npm run summary",
     "validate": "node scripts/validate-data.mjs public/data/latest.json",
     "serve": "node scripts/serve.mjs",
-    "deploy": "wrangler deploy -c wrangler.worker.toml && wrangler pages deploy",
+    "smoke": "python3 test/browser-smoke.py",
+    "build:pages": "node scripts/build-pages.mjs",
+    "deploy": "npm run build:pages && wrangler deploy -c wrangler.worker.toml && wrangler pages deploy",
     "publish:daily": "npm run daily && npm run deploy"
   },
   "engines": {

@@ -1,3 +1,6 @@
+import { compactHkd, percent } from "./format.mjs";
+import { average, buildDailyInsights, median, numbers } from "./insights.mjs";
+
 const WIDTH = 1242;
 const HEIGHT = 3660;
 const INK = "#1B1D1B";
@@ -26,34 +29,6 @@ function xml(value) {
   return String(value ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
 }
 
-function numbers(items, key) {
-  return items.map((item) => item[key]).filter(Number.isFinite);
-}
-
-function average(values) {
-  return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
-}
-
-function median(values) {
-  if (!values.length) return null;
-  const sorted = values.toSorted((left, right) => left - right);
-  const middle = Math.floor(sorted.length / 2);
-  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
-}
-
-function compact(value) {
-  if (!Number.isFinite(value)) return "--";
-  if (Math.abs(value) >= 1_000_000_000_000) return `${(value / 1_000_000_000_000).toFixed(2)}万亿`;
-  if (Math.abs(value) >= 100_000_000) return `${(value / 100_000_000).toFixed(2)}亿`;
-  if (Math.abs(value) >= 10_000) return `${(value / 10_000).toFixed(1)}万`;
-  return String(Math.round(value));
-}
-
-function percent(value, signed = true) {
-  if (!Number.isFinite(value)) return "--";
-  return `${signed && value > 0 ? "+" : ""}${value.toFixed(2)}%`;
-}
-
 function shorten(value, max = 13) {
   const text = String(value ?? "");
   return text.length > max ? `${text.slice(0, max - 1)}…` : text;
@@ -73,47 +48,6 @@ function wrapHeadline(text, max = 23) {
   return lines.slice(0, 3);
 }
 
-export function buildDailyInsights(items) {
-  const changes = numbers(items, "changePercent");
-  const advancers = changes.filter((value) => value > 0).length;
-  const decliners = changes.filter((value) => value < 0).length;
-  const totalTurnover = items.reduce((sum, item) => sum + (item.turnover ?? 0), 0);
-  const topTenTurnover = items.slice(0, 10).reduce((sum, item) => sum + (item.turnover ?? 0), 0);
-  const concentration = totalTurnover ? topTenTurnover / totalTurnover * 100 : 0;
-  const leader = items[0];
-  const extremeUp = items.filter((item) => Number.isFinite(item.changePercent)).toSorted((left, right) => right.changePercent - left.changePercent)[0];
-  const extremeDown = items.filter((item) => Number.isFinite(item.changePercent)).toSorted((left, right) => left.changePercent - right.changePercent)[0];
-  const shortFocus = items.filter((item) => Number.isFinite(item.shortRatio)).toSorted((left, right) => right.shortRatio - left.shortRatio)[0] ?? null;
-  const atHighs = items.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.close) && item.close >= item.high52);
-  const atLows = items.filter((item) => Number.isFinite(item.low52) && Number.isFinite(item.close) && item.close <= item.low52);
-  const nearHighs = items.filter((item) => Number.isFinite(item.high52) && Number.isFinite(item.close) && item.close >= item.high52 * 0.98 && item.close < item.high52);
-  const nearLows = items.filter((item) => Number.isFinite(item.low52) && Number.isFinite(item.close) && item.close <= item.low52 * 1.02 && item.close > item.low52);
-  const leaderDays = leader?.continuity?.top50Days;
-
-  const names = (list) => list.slice(0, 2).map((item) => item.name).join("、");
-  const standout = atHighs.length >= 1
-    ? `${names(atHighs)}创 52 周新高`
-    : atLows.length >= 1
-      ? `${names(atLows)}创 52 周新低`
-      : nearHighs.length >= 1
-        ? `${names(nearHighs)}逼近 52 周高点`
-        : nearLows.length >= 1
-          ? `${names(nearLows)}逼近 52 周低点`
-          : extremeUp
-            ? `${extremeUp.name}领涨全场`
-            : "";
-
-  const headline = `Top 50 榜单 ${advancers} 涨 ${decliners} 跌${standout ? `；${standout}` : ""}。`;
-
-  const bullets = [
-    `成交集中度｜Top 10 占 Top 50 成交额 ${concentration.toFixed(1)}%`,
-    `龙头观察｜${leader.name} 成交 ${compact(leader.turnover)}港币居首${leaderDays ? `，连续 ${leaderDays} 日上榜` : ""}`,
-    shortFocus && shortFocus.shortRatio >= 20
-      ? `沽空与极值｜${extremeUp.name} ${percent(extremeUp.changePercent)} 领涨，${extremeDown.name} ${percent(extremeDown.changePercent)} 领跌；${shortFocus.name} 沽空比 ${percent(shortFocus.shortRatio, false)}`
-      : `极值扫描｜${extremeUp.name} ${percent(extremeUp.changePercent)} 领涨，${extremeDown.name} ${percent(extremeDown.changePercent)} 领跌`,
-  ];
-  return { headline, bullets };
-}
 
 function concentrationOf(items) {
   const total = items.reduce((sum, item) => sum + (item.turnover ?? 0), 0);
@@ -126,9 +60,9 @@ function buildSummary(items) {
   const marketCaps = numbers(items, "marketCap");
   const changes = numbers(items, "changePercent");
   return [
-    ["TOP 50 总成交额", `${compact(turnovers.reduce((sum, value) => sum + value, 0))} 港币`],
-    ["成交额中位数", `${compact(median(turnovers))} 港币`],
-    ["总市值中位数", `${compact(median(marketCaps))} 港币`],
+    ["TOP 50 总成交额", `${compactHkd(turnovers.reduce((sum, value) => sum + value, 0))} 港币`],
+    ["成交额中位数", `${compactHkd(median(turnovers))} 港币`],
+    ["总市值中位数", `${compactHkd(median(marketCaps))} 港币`],
     ["平均涨跌幅", percent(average(changes))],
     ["上涨 / 下跌", `${changes.filter((value) => value > 0).length} / ${changes.filter((value) => value < 0).length}`],
     ["AH 股票", `${items.filter((item) => item.ah).length} 只`],
@@ -162,8 +96,8 @@ function renderCover(items, snapshot) {
   const stats = [
     ["港股通上涨", String(market.advancers ?? "--"), UP],
     ["港股通下跌", String(market.decliners ?? "--"), DOWN],
-    ["港股通标的成交额 · 港币", compact(market.turnover), INK],
-    ["南向净买入 · 港币", southboundNetBuy === null ? "--" : `${southboundNetBuy > 0 ? "+" : southboundNetBuy < 0 ? "-" : ""}${compact(Math.abs(southboundNetBuy))}`, southboundNetBuy > 0 ? UP : southboundNetBuy < 0 ? DOWN : INK],
+    ["港股通标的成交额 · 港币", compactHkd(market.turnover), INK],
+    ["南向净买入 · 港币", southboundNetBuy === null ? "--" : `${southboundNetBuy > 0 ? "+" : southboundNetBuy < 0 ? "-" : ""}${compactHkd(Math.abs(southboundNetBuy))}`, southboundNetBuy > 0 ? UP : southboundNetBuy < 0 ? DOWN : INK],
   ];
   return `
     <text x="42" y="234" class="cover-edition" fill="${COPPER}">港美侠资金雷达</text>
@@ -231,7 +165,7 @@ function renderRows(items) {
     const divider = rank % 10 === 0
       ? `<line data-group-divider="${rank}" x1="42" y1="${y + rowHeight}" x2="1200" y2="${y + rowHeight}" stroke="${LINE_STRONG}" stroke-width="2"/>`
       : `<line x1="42" y1="${y + rowHeight}" x2="1200" y2="${y + rowHeight}" stroke="${LINE}"/>`;
-    return `<g data-rank-row="${rank}"><rect x="42" y="${y}" width="1158" height="${rowHeight}" fill="${zebra}"/><text x="66" y="${y + 31}" class="rank" fill="${rank <= 10 ? COPPER : FAINT}">${String(rank).padStart(2, "0")}</text><g data-security-line="${rank}"><text x="118" y="${y + 31}" class="name" fill="${INK}">${xml(shorten(item.name, 7))}</text><text x="300" y="${y + 31}" class="code" fill="${FAINT}">${xml(item.code)}.HK</text>${badge}${lossMark}</g><text x="610" y="${y + 31}" text-anchor="end" class="number" fill="${trendColor}">${xml(percent(item.changePercent))}</text><text x="800" y="${y + 31}" text-anchor="end" class="number" fill="${INK}">${xml(compact(item.turnover))}</text><text x="1010" y="${y + 31}" text-anchor="end" class="figure" fill="${INK}">${xml(compact(item.marketCap))}</text><text x="1190" y="${y + 31}" text-anchor="end" class="figure" fill="${INK}">${xml(percent(item.turnoverRate, false))}</text>${divider}</g>`;
+    return `<g data-rank-row="${rank}"><rect x="42" y="${y}" width="1158" height="${rowHeight}" fill="${zebra}"/><text x="66" y="${y + 31}" class="rank" fill="${rank <= 10 ? COPPER : FAINT}">${String(rank).padStart(2, "0")}</text><g data-security-line="${rank}"><text x="118" y="${y + 31}" class="name" fill="${INK}">${xml(shorten(item.name, 7))}</text><text x="300" y="${y + 31}" class="code" fill="${FAINT}">${xml(item.code)}.HK</text>${badge}${lossMark}</g><text x="610" y="${y + 31}" text-anchor="end" class="number" fill="${trendColor}">${xml(percent(item.changePercent))}</text><text x="800" y="${y + 31}" text-anchor="end" class="number" fill="${INK}">${xml(compactHkd(item.turnover))}</text><text x="1010" y="${y + 31}" text-anchor="end" class="figure" fill="${INK}">${xml(compactHkd(item.marketCap))}</text><text x="1190" y="${y + 31}" text-anchor="end" class="figure" fill="${INK}">${xml(percent(item.turnoverRate, false))}</text>${divider}</g>`;
   }).join("");
 }
 

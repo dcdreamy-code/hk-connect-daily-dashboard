@@ -1,15 +1,12 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import test from "node:test";
+import { compactHkd, formatPercent, formatRate } from "../src/lib/format.mjs";
 import {
   filterRanking,
-  formatHkd,
-  formatPercent,
-  formatRate,
   isNewerSnapshot,
   profitabilityCounts,
   rangePosition,
-  selectRanking,
   summarizeRanking,
   sortSecurities,
   turnoverShare,
@@ -25,15 +22,20 @@ const rankings = {
 test("formatters preserve signs and compact Hong Kong dollar units", () => {
   assert.equal(formatPercent(2.5), "+2.50%");
   assert.equal(formatPercent(-3.2), "-3.20%");
-  assert.equal(formatHkd(9_100_000_000), "91.00亿");
-  assert.equal(formatHkd(null), "--");
+  assert.equal(compactHkd(9_100_000_000), "91.00亿");
+  assert.equal(compactHkd(null), "--");
   assert.equal(formatRate(2.5), "2.50%");
 });
 
-test("selectRanking returns only supported ranking modes", () => {
-  assert.equal(selectRanking(rankings, "gainers")[0].code, "00100");
-  assert.equal(selectRanking(rankings, "unknown")[0].code, "00700");
+test("compactHkd uses the same unit on the page and in the share image", () => {
+  assert.equal(compactHkd(1_500_000_000_000), "1.50万亿");
+  assert.equal(compactHkd(3_919_822_000_000), "3.92万亿");
+  assert.equal(compactHkd(133_824_057_637), "1338.24亿");
+  assert.equal(compactHkd(52_300), "5.2万");
+  assert.equal(compactHkd(5000), "5,000");
+  assert.equal(compactHkd(-2_000_000_000_000), "-2.00万亿");
 });
+
 
 test("filterRanking matches either code or name without case sensitivity", () => {
   assert.equal(filterRanking(rankings.turnover, "700").length, 1);

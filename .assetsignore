@@ -1,9 +1,16 @@
+# 仅对 Cloudflare Workers Static Assets 生效 —— Pages 直传不读本文件。
+# 正式发布走 scripts/build-pages.mjs 生成的 dist/（两个目标共用），
+# 本文件只是"若有人把发布目录改回仓库根"时的兜底。
 node_modules
 outputs
 .github
 docs
 test
 scripts
+dist
+.wrangler
+public/data/daily
+public/images/daily
 GGTBDZQMD.xls
 README.md
 package.json
@@ -11,3 +18,4 @@ package-lock.json
 wrangler.toml
 wrangler.worker.toml
 .gitignore
+.assetsignore
