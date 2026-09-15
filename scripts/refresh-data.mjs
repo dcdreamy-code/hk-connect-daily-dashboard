@@ -207,6 +207,18 @@ if (sameMarketSnapshot(currentSnapshot, snapshot)) {
 const fetchedRanges = Object.keys(week52).length;
 console.log(`52w range coverage: ${fetchedRanges}/${pool.length} securities.`);
 
+// 南向净买入每日序列(近 20 个交易日,供页面走势图与播报引用)
+const southboundSeries = [];
+for (const snap of [...previousSnapshots].reverse()) {
+  const net = snap.market?.southboundNetBuy;
+  if (Number.isFinite(net)) southboundSeries.push({ date: snap.tradeDate, net });
+}
+if (Number.isFinite(snapshot.market.southboundNetBuy)) {
+  southboundSeries.push({ date: snapshot.tradeDate, net: snapshot.market.southboundNetBuy });
+}
+snapshot.market.southboundSeries = southboundSeries.slice(-20);
+console.log(`Southbound series: ${southboundSeries.length} trading days.`);
+
 const focusCodes = focusCodesFor(snapshot);
 if (focusCodes.length > 0) {
   const newsResults = await Promise.all(focusCodes.map(async (code) => {

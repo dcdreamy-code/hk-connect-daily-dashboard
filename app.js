@@ -1,5 +1,8 @@
 import { fetchEastmoneyUniverseQuotes } from "./src/adapters/eastmoney.mjs";
 import { buildDailySummary } from "./src/lib/daily-summary.mjs";
+
+const localStorageSafe = globalThis.localStorage ?? { getItem: () => null, setItem: () => {} };
+const isBrowser = typeof document !== "undefined";
 import { compactHkd, formatPercent, formatRate } from "./src/lib/format.mjs";
 import { average, buildDailyInsights, median } from "./src/lib/insights.mjs";
 import {
@@ -359,9 +362,9 @@ function createDataRow(item, rank, { showContinuity = false, columnCount = 9 } =
   return row;
 }
 
-function dashboard() {
-  const savedMetric = localStorage.getItem("hk-connect-sort-metric");
-  const savedDirection = localStorage.getItem("hk-connect-sort-direction");
+  if (isBrowser) {
+  const savedMetric = localStorageSafe.getItem("hk-connect-sort-metric");
+  const savedDirection = localStorageSafe.getItem("hk-connect-sort-direction");
   const state = {
     snapshot: null,
     baseSnapshot: null,
@@ -369,7 +372,7 @@ function dashboard() {
     direction: savedDirection === "asc" ? "asc" : "desc",
     query: "",
     ahOnly: false,
-    liveEnabled: localStorage.getItem("hk-connect-live") === "true",
+    liveEnabled: localStorageSafe.getItem("hk-connect-live") === "true",
     liveResources: null,
     lastRefreshAt: 0,
     closeRefreshDate: null,
@@ -473,6 +476,7 @@ function dashboard() {
     const southbound = document.querySelector("#cover-southbound");
     southbound.textContent = formatSignedHkd(snapshot.market.southboundNetBuy);
     southbound.className = trendClass(snapshot.market.southboundNetBuy);
+    renderSouthboundChart(snapshot);
     renderSummaryText(snapshot);
     const list = document.querySelector("#observation-list");
     list.replaceChildren(...insights.bullets.map((text) => {
@@ -678,7 +682,7 @@ function dashboard() {
   document.querySelectorAll("[data-metric]").forEach((button) => {
     button.addEventListener("click", () => {
       state.metric = button.dataset.metric;
-      localStorage.setItem("hk-connect-sort-metric", state.metric);
+      localStorageSafe.setItem("hk-connect-sort-metric", state.metric);
       document.querySelectorAll("[data-metric]").forEach((candidate) => {
         const active = candidate === button;
         candidate.classList.toggle("active", active);
@@ -689,7 +693,7 @@ function dashboard() {
   });
   elements.directionButton.addEventListener("click", () => {
     state.direction = state.direction === "desc" ? "asc" : "desc";
-    localStorage.setItem("hk-connect-sort-direction", state.direction);
+    localStorageSafe.setItem("hk-connect-sort-direction", state.direction);
     elements.directionButton.textContent = state.direction === "desc" ? "从高到低" : "从低到高";
     renderRows();
   });
@@ -703,7 +707,7 @@ function dashboard() {
   });
   elements.liveToggle.addEventListener("change", () => {
     state.liveEnabled = elements.liveToggle.checked;
-    localStorage.setItem("hk-connect-live", String(state.liveEnabled));
+    localStorageSafe.setItem("hk-connect-live", String(state.liveEnabled));
     if (state.liveEnabled) {
       state.lastRefreshAt = 0;
       refreshLive();
@@ -774,6 +778,40 @@ function dashboard() {
       elements.error.textContent = `榜单加载失败：${error.message}。请稍后重试。`;
       document.querySelector("#status-text").textContent = "数据异常";
     });
+  }
+
+function renderSouthboundChart(snapshot) {
+  const section = document.querySelector(".southbound-trend");
+  const chart = document.querySelector("#southbound-chart");
+  const series = (snapshot.market?.southboundSeries ?? []).filter((point) => Number.isFinite(point.net));
+  if (!chart || !section) return;
+  if (series.length < 2) {
+    section.hidden = true;
+    return;
+  }
+  section.hidden = false;
+  const width = 720;
+  const height = 190;
+  const padX = 10;
+  const baselineY = 120;
+  const scaleMax = Math.max(...series.map((point) => Math.abs(point.net)), 1);
+  const barSlot = (width - padX * 2) / series.length;
+  const barWidth = Math.min(30, barSlot * 0.6);
+  const bars = [
+    `<line x1="${padX}" y1="${baselineY}" x2="${width - padX}" y2="${baselineY}" stroke="#b8b4a6" stroke-width="1"/>`,
+  ];
+  series.forEach((point, index) => {
+    const magnitude = (Math.abs(point.net) / scaleMax) * 95;
+    const positive = point.net >= 0;
+    const barY = positive ? baselineY - magnitude : baselineY;
+    const color = positive ? "#a4763a" : "#6d736e";
+    const x = padX + index * barSlot + (barSlot - barWidth) / 2;
+    bars.push(`<rect x="${x.toFixed(1)}" y="${barY.toFixed(1)}" width="${barWidth.toFixed(1)}" height="${magnitude.toFixed(1)}" fill="${color}"><title>${point.date}：${positive ? "净买入" : "净卖出"} ${Math.abs(point.net / 100_000_000).toFixed(2)} 亿</title></rect>`);
+  });
+  const firstDay = series[0].date.slice(5);
+  const lastDay = series[series.length - 1].date.slice(5);
+  bars.push(`<text x="${padX}" y="${height - 6}" class="chart-label">${firstDay}</text>`);
+  bars.push(`<text x="${width - padX}" y="${height - 6}" text-anchor="end" class="chart-label">${lastDay}</text>`);
+  chart.innerHTML = `<svg viewBox="0 0 ${width} ${height}" width="100%" role="img" aria-label="南向资金近 ${series.length} 个交易日净买入走势">${bars.join("")}</svg>`;
 }
 
-if (typeof document !== "undefined") dashboard();
