@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
   "tradeDate": "2026-10-05",
-  "generatedAt": "2026-10-05T17:17:08.900Z",
+  "generatedAt": "2026-10-05T17:23:39.499Z",
   "marketStatus": "close",
   "source": {
     "market": "东方财富网页行情",
@@ -3486,14 +3486,7 @@
       "shortAmt": 1433453260,
       "high52": 677.2,
       "low52": 411,
-      "news": [
-        {
-          "title": "腾讯控股回购23.8万股股份",
-          "mediaName": "财联社",
-          "date": "2026-10-05 17:46:36",
-          "url": "http://finance.eastmoney.com/a/202610053888646859.html"
-        }
-      ],
+      "news": null,
       "continuity": {
         "top50Days": 6,
         "prevRank": 1,
@@ -18750,14 +18743,7 @@
         "shortAmt": 1433453260,
         "high52": 677.2,
         "low52": 411,
-        "news": [
-          {
-            "title": "腾讯控股回购23.8万股股份",
-            "mediaName": "财联社",
-            "date": "2026-10-05 17:46:36",
-            "url": "http://finance.eastmoney.com/a/202610053888646859.html"
-          }
-        ],
+        "news": null,
         "continuity": {
           "top50Days": 6,
           "prevRank": 1,
